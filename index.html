@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bruno Brochenin — Auteur et consultant</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --noir:    #1a1a18;
+      --encre:   #2e2e2b;
+      --pierre:  #6b6b65;
+      --sable:   #c8c2b0;
+      --ivoire:  #f5f2eb;
+      --blanc:   #fafaf7;
+      --or:      #9a7c3e;
+      --or-clair:#c4a55a;
+      --serif:   "Georgia", "Times New Roman", serif;
+      --sans:    "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--serif);
+      background: var(--blanc);
+      color: var(--encre);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--blanc);
+      border-bottom: 1px solid var(--sable);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 2.5rem;
+    }
+
+    .nav-lang {
+      display: flex;
+      gap: 1rem;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-lang a {
+      color: var(--pierre);
+      text-decoration: none;
+    }
+    .nav-lang a.active { color: var(--or); border-bottom: 1px solid var(--or); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      color: var(--pierre);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--or); }
+
+    /* ── Hero ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      min-height: 92vh;
+      border-bottom: 1px solid var(--sable);
+    }
+
+    .hero-image {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(20%);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 5rem 5rem 4rem;
+      background: var(--ivoire);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--noir);
+      margin-bottom: 2rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--or);
+    }
+
+    .hero-quote {
+      font-size: 1rem;
+      color: var(--pierre);
+      font-style: italic;
+      line-height: 1.6;
+      border-left: 2px solid var(--or);
+      padding-left: 1.2rem;
+      max-width: 42ch;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 6rem 2.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--sable);
+      padding-bottom: 1rem;
+    }
+
+    .section-number {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--or);
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--noir);
+    }
+
+    /* ── Thèse ── */
+    .these-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .these-card {
+      border-top: 2px solid var(--or);
+      padding-top: 1.2rem;
+    }
+
+    .these-card-label {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 0.6rem;
+    }
+
+    .these-card p {
+      font-size: 0.92rem;
+      color: var(--pierre);
+      line-height: 1.6;
+    }
+
+    .these-synthese {
+      background: var(--noir);
+      color: var(--ivoire);
+      padding: 2rem 2.5rem;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .these-synthese strong {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--or-clair);
+      font-style: normal;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Livres ── */
+    .livres-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .livre-item {
+      display: grid;
+      grid-template-columns: 5rem 1fr;
+      gap: 2rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--sable);
+    }
+
+    .livre-item:last-child { border-bottom: none; }
+
+    .livre-annee {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--or);
+      padding-top: 0.25rem;
+    }
+
+    .livre-genre {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pierre);
+      margin-bottom: 0.4rem;
+    }
+
+    .livre-titre {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--noir);
+      margin-bottom: 0.2rem;
+    }
+
+    .livre-sous-titre {
+      font-style: italic;
+      color: var(--pierre);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .livre-desc {
+      font-size: 0.92rem;
+      color: var(--encre);
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+
+    .livre-editeur {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sable);
+    }
+
+    /* ── Articles / contributions ── */
+    .articles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .article-item {
+      display: grid;
+      grid-template-columns: 5rem 1fr;
+      gap: 2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article-item:last-child { border-bottom: none; }
+
+    .article-annee {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--or);
+      padding-top: 0.2rem;
+    }
+
+    .article-source {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--pierre);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+
+    .article-titre {
+      font-size: 0.97rem;
+      color: var(--encre);
+      line-height: 1.5;
+    }
+
+    /* ── Outils ── */
+    .outils-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .outil-card {
+      border: 1px solid var(--sable);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .outil-symbol {
+      font-size: 1.4rem;
+      color: var(--or);
+      margin-bottom: 0.8rem;
+    }
+
+    .outil-nom {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 0.3rem;
+    }
+
+    .outil-titre {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--noir);
+      margin-bottom: 0.6rem;
+    }
+
+    .outil-desc {
+      font-size: 0.88rem;
+      color: var(--pierre);
+      line-height: 1.6;
+    }
+
+    /* ── Collaboration ── */
+    .collab-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .collab-card {
+      background: var(--ivoire);
+      padding: 2.5rem;
+    }
+
+    .collab-nom {
+      font-size: 1.1rem;
+      color: var(--noir);
+      margin-bottom: 0.2rem;
+    }
+
+    .collab-role {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 1rem;
+    }
+
+    .collab-desc {
+      font-size: 0.9rem;
+      color: var(--pierre);
+      line-height: 1.7;
+    }
+
+    /* ── IBET chiffres ── */
+    .ibet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .ibet-card {
+      border-top: 3px solid var(--or);
+      padding: 1.5rem 0 0;
+    }
+
+    .ibet-chiffre {
+      font-size: 2.4rem;
+      font-weight: 400;
+      color: var(--or);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    .ibet-label {
+      font-size: 0.88rem;
+      color: var(--encre);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+
+    .ibet-source {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      color: var(--pierre);
+      letter-spacing: 0.08em;
+    }
+
+    .ibet-prix {
+      background: var(--noir);
+      color: var(--ivoire);
+      padding: 2rem 2.5rem;
+      grid-column: span 3;
+    }
+
+    .ibet-prix-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--or-clair);
+      margin-bottom: 0.5rem;
+    }
+
+    .ibet-prix p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--sable);
+    }
+
+    /* ── Qualitique articles ── */
+    .qualitique-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .qualitique-card {
+      border: 1px solid var(--sable);
+      padding: 1.8rem;
+    }
+
+    .qualitique-num {
+      font-family: var(--sans);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--sable);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .qualitique-source {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      color: var(--pierre);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .qualitique-titre {
+      font-size: 0.95rem;
+      color: var(--noir);
+      margin-bottom: 0.6rem;
+      font-weight: 400;
+    }
+
+    .qualitique-desc {
+      font-size: 0.85rem;
+      color: var(--pierre);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .qualitique-tags {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      color: var(--or);
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    .qualitique-card a {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--encre);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--sable);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .qualitique-card a:hover { color: var(--or); border-color: var(--or); }
+
+    /* ── Presse ── */
+    .presse-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .presse-item {
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--sable);
+    }
+
+    .presse-item:last-child { border-bottom: none; }
+
+    .presse-meta {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--or);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .presse-livre {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--pierre);
+      margin-bottom: 0.5rem;
+    }
+
+    .presse-citation {
+      background: var(--ivoire);
+      border-left: 2px solid var(--or);
+      padding: 1rem 1.5rem;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--encre);
+      line-height: 1.7;
+    }
+
+    /* ── Contact ── */
+    .contact-section {
+      background: var(--noir);
+      padding: 6rem 2.5rem;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      color: var(--ivoire);
+      font-weight: 400;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-section p {
+      color: var(--pierre);
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .contact-links a {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--or-clair);
+      text-decoration: none;
+      border: 1px solid var(--or);
+      padding: 0.6rem 1.4rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .contact-links a:hover { background: var(--or); color: var(--noir); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--ivoire);
+      text-align: center;
+      padding: 1.5rem;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--pierre);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-image { height: 50vw; }
+      .hero-content { padding: 3rem 1.5rem; }
+      .these-grid, .outils-grid, .collab-grid, .ibet-grid, .qualitique-grid { grid-template-columns: 1fr; }
+      .ibet-prix { grid-column: span 1; }
+      nav { padding: 0.75rem 1.2rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-lang">
+    <a href="#" class="active">FR</a>
+    <a href="#">EN</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#these">Thèse</a></li>
+    <li><a href="#livres">Livres</a></li>
+    <li><a href="#articles">Articles</a></li>
+    <li><a href="#outils">Outils</a></li>
+    <li><a href="#collaboration">Collaboration</a></li>
+    <li><a href="#ibet">IBET</a></li>
+    <li><a href="#qualitique">Articles</a></li>
+    <li><a href="#presse">Presse</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <div class="hero-image">
+    <img src="photo.jpg" alt="Bruno Brochenin" />
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Auteur · Consultant en organisation · Essayiste</p>
+    <h1 class="hero-name">Bruno <em>Brochenin</em></h1>
+    <p class="hero-quote">« L'individu ne trouve sa liberté réelle que dans la conscience du cadre collectif qui l'a constitué — jamais contre lui. »</p>
+  </div>
+</div>
+
+<!-- ── I. Thèse ── -->
+<section id="these">
+  <div class="section-header">
+    <span class="section-number">I</span>
+    <h2 class="section-title">Une thèse centrale, vingt ans de constance</h2>
+  </div>
+
+  <div class="these-grid">
+    <div class="these-card">
+      <p class="these-card-label">Plan psychologique</p>
+      <p>La vanité est l'égarement de l'esprit qui se croit plus grand que ses aptitudes réelles. <em>(Paul Diel)</em></p>
+    </div>
+    <div class="these-card">
+      <p class="these-card-label">Plan sociologique</p>
+      <p>L'individu est toujours déjà social. Il n'existe que dans et par le collectif. <em>(Marcel Mauss)</em></p>
+    </div>
+    <div class="these-card">
+      <p class="these-card-label">Plan politique</p>
+      <p>Le pouvoir structurel tend à externaliser les coûts de ses dysfonctionnements vers la collectivité. <em>(James C. Scott)</em></p>
+    </div>
+  </div>
+
+  <div class="these-synthese">
+    <strong>Synthèse</strong>
+    L'engagement collectif est la condition de toute performance durable — et il ne se décrète pas.
+  </div>
+</section>
+
+<!-- ── II. Livres ── -->
+<section id="livres" style="background: var(--ivoire); max-width: 100%; padding: 6rem 0;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
+    <div class="section-header">
+      <span class="section-number">II</span>
+      <h2 class="section-title">Livres</h2>
+    </div>
+
+    <div class="livres-list">
+      <div class="livre-item">
+        <div class="livre-annee">2010</div>
+        <div>
+          <p class="livre-genre">Essai · Management</p>
+          <h3 class="livre-titre">Où va l'entreprise ?</h3>
+          <p class="livre-sous-titre">Organisation et dérives</p>
+          <p class="livre-desc">Diagnostic des dérives organisationnelles à l'ère des procédures et des progiciels. Témoignages de terrain, portraits, analyse de l'architecture d'entreprise comme outil de libération ou d'asservissement selon l'intention qui la pilote.</p>
+          <p class="livre-editeur">Éditions ESKA</p>
+        </div>
+      </div>
+
+      <div class="livre-item">
+        <div class="livre-annee">2019</div>
+        <div>
+          <p class="livre-genre">Essai · Management · Économie sociale</p>
+          <h3 class="livre-titre">L'engagement collectif dans l'entreprise</h3>
+          <p class="livre-sous-titre">La part magique de la performance</p>
+          <p class="livre-desc">Proposition du modèle du « cercle magique » à cinq dimensions. Démonstration que l'entropie organisationnelle est un coût mesurable, systématiquement ignoré par la comptabilité classique.</p>
+          <p class="livre-editeur">L'Harmattan</p>
+        </div>
+      </div>
+
+      <div class="livre-item">
+        <div class="livre-annee">2024</div>
+        <div>
+          <p class="livre-genre">Essai · Économie · Sciences sociales</p>
+          <h3 class="livre-titre">Indice de bien-être au travail</h3>
+          <p class="livre-sous-titre">On compte tout sauf ce qui compte</p>
+          <p class="livre-desc">Fondation théorique à trois piliers (Diel, Mauss, Scott) d'un outil de mesure du désengagement. Plaidoyer pour une réforme des normes comptables intégrant les coûts systémiques du mal-être.</p>
+          <p class="livre-editeur">L'Harmattan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── III. Contributions ── -->
+<section id="articles">
+  <div class="section-header">
+    <span class="section-number">III</span>
+    <h2 class="section-title">Contributions et articles</h2>
+  </div>
+
+  <div class="articles-list">
+    <div class="article-item">
+      <div class="article-annee">2011</div>
+      <div>
+        <p class="article-source">Qualitique n°222 · Janvier 2011</p>
+        <p class="article-titre">Travaillons mieux pour vivre mieux ! Entre R.P.S. et R.S.E., les Parties Prenantes sont-elles victimes ou responsables ?</p>
+      </div>
+    </div>
+    <div class="article-item">
+      <div class="article-annee">2011</div>
+      <div>
+        <p class="article-source">Qualitique n°225 · Mai 2011</p>
+        <p class="article-titre">Quelle est la valeur économique de la prestation des sapeurs-pompiers ?</p>
+      </div>
+    </div>
+    <div class="article-item">
+      <div class="article-annee">2011</div>
+      <div>
+        <p class="article-source">Qualitique n°229</p>
+        <p class="article-titre">L'entreprise contemporaine face aux risques</p>
+      </div>
+    </div>
+    <div class="article-item">
+      <div class="article-annee">2012</div>
+      <div>
+        <p class="article-source">Qualitique n°233 · Avril 2012</p>
+        <p class="article-titre">La conduite du changement est-elle une croyance efficace ?</p>
+      </div>
+    </div>
+    <div class="article-item">
+      <div class="article-annee">2015</div>
+      <div>
+        <p class="article-source">coord. Jacques Delga · Penser et repenser le terrorisme · L'Harmattan</p>
+        <p class="article-titre">De l'équilibre de la terreur au terrorisme international</p>
+      </div>
+    </div>
+    <div class="article-item">
+      <div class="article-annee">2016</div>
+      <div>
+        <p class="article-source">coord. Jacques Delga · Criminalité en col blanc · L'Harmattan</p>
+        <p class="article-titre">Corsaires ou pirates ? La guerre économique en col blanc</p>
+      </div>
+    </div>
+    <div class="article-item">
+      <div class="article-annee">2022</div>
+      <div>
+        <p class="article-source">coord. Jacques Delga · Libertaire, libertinage · L'Harmattan</p>
+        <p class="article-titre">Le théâtre du libertinage</p>
+      </div>
+    </div>
+    <div class="article-item">
+      <div class="article-annee">2023</div>
+      <div>
+        <p class="article-source">coord. Jacques Delga · Face à la mort · L'Harmattan</p>
+        <p class="article-titre">Expérience de mort imminente</p>
+      </div>
+    </div>
+    <div class="article-item">
+      <div class="article-annee">2024</div>
+      <div>
+        <p class="article-source">coord. Corentin Gombert · Démocratie(s) en action · Agora D.O.D.E.S.</p>
+        <p class="article-titre">Une entreprise démocratique dans une république sociale</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── IV. Outils ── -->
+<section id="outils" style="background: var(--ivoire); max-width: 100%; padding: 6rem 0;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
+    <div class="section-header">
+      <span class="section-number">IV</span>
+      <h2 class="section-title">Outils conceptuels</h2>
+    </div>
+
+    <div class="outils-grid">
+      <div class="outil-card">
+        <p class="outil-nom">IBET</p>
+        <h3 class="outil-titre">Indice de Bien-Être au Travail</h3>
+        <p class="outil-desc">Mesure la dégradation de valeur ajoutée due au désengagement. IBET = VA − IMET. Pendant social de l'EBIT financier. Développé avec Victor Waknine / Mozart Consulting.</p>
+      </div>
+      <div class="outil-card">
+        <p class="outil-symbol">⊙</p>
+        <h3 class="outil-titre">Le Cercle Magique</h3>
+        <p class="outil-desc">Modèle à cinq dimensions de l'engagement collectif : valeurs partagées, objectif commun, organisation, règles de fonctionnement, dispositif de mesure. Issu de la cindynique de Kervern.</p>
+      </div>
+      <div class="outil-card">
+        <p class="outil-symbol">∇</p>
+        <h3 class="outil-titre">Entropie organisationnelle</h3>
+        <p class="outil-desc">Coût systémique du désordre interne — troisième terme manquant dans les équations comptables classiques entre produits et charges.</p>
+      </div>
+      <div class="outil-card">
+        <p class="outil-symbol">△</p>
+        <h3 class="outil-titre">Modèle ago-antagonique</h3>
+        <p class="outil-desc">Triple polarisation (mœurs / pouvoir / spiritualité) pour analyser les dynamiques sociales complexes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── V. Collaboration ── -->
+<section id="collaboration">
+  <div class="section-header">
+    <span class="section-number">V</span>
+    <h2 class="section-title">Collaboration intellectuelle principale</h2>
+  </div>
+
+  <div class="collab-grid">
+    <div class="collab-card">
+      <h3 class="collab-nom">Bruno Brochenin</h3>
+      <p class="collab-role">Auteur · Consultant en organisation</p>
+      <p class="collab-desc">Diplômé ESSEC. Apporte les fondements théoriques (Diel, Mauss, Scott, Kervern), la profondeur historique et philosophique, et inscrit l'IBET dans une vision élargie de la société et de la démocratie.</p>
+    </div>
+    <div class="collab-card">
+      <h3 class="collab-nom">Victor Waknine</h3>
+      <p class="collab-role">Concepteur de l'IBET · Mozart Consulting</p>
+      <p class="collab-desc">Ingénieur Télécom. Directions générales chez France Telecom, Airbus, Lehman Brothers. Emmy Award 2000. Apporte la légitimité technique, le langage financier et l'ancrage dans les réseaux professionnels.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── VI. IBET en chiffres ── -->
+<section id="ibet" style="background: var(--ivoire); max-width: 100%; padding: 6rem 0;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
+    <div class="section-header">
+      <span class="section-number">VI</span>
+      <h2 class="section-title">L'IBET en chiffres</h2>
+    </div>
+
+    <div class="ibet-grid">
+      <div class="ibet-card">
+        <div class="ibet-chiffre">0,73</div>
+        <p class="ibet-label"><strong>IBET national 2020 (données 2018) — niveau « Alerte »</strong><br>Perte de valeur ajoutée de 27 % de la masse salariale, soit 400 milliards d'euros — dont 252 milliards maîtrisables. Coût moyen par salarié : 14 310 €/an.</p>
+        <p class="ibet-source">Groupe APICIL / Mozart Consulting · 2020</p>
+      </div>
+      <div class="ibet-card">
+        <div class="ibet-chiffre">0,88</div>
+        <p class="ibet-label">IBET Industrie — niveau « Satisfaction »<br>L'industrie affiche le meilleur IBET sectoriel, stable depuis 4 ans.</p>
+        <p class="ibet-source">Groupe APICIL / Mozart Consulting · 2020</p>
+      </div>
+      <div class="ibet-card">
+        <div class="ibet-chiffre">63%</div>
+        <p class="ibet-label">Des coûts du mal-être sont maîtrisables<br>Sur 14 310 € de coût annuel par salarié, 9 010 € sont directement maîtrisables par des actions ciblées.</p>
+        <p class="ibet-source">Groupe APICIL / Mozart Consulting · 2014→2020</p>
+      </div>
+      <div class="ibet-card">
+        <div class="ibet-chiffre">17 M</div>
+        <p class="ibet-label">Données sociales cumulées dans l'observatoire IBET<br>Construit sur les statistiques officielles DARES et CNAMTS. Aucun questionnaire nécessaire.</p>
+        <p class="ibet-source">Revue Française de Comptabilité n°590 · Oct. 2024</p>
+      </div>
+      <div class="ibet-prix" style="grid-column: span 2;">
+        <p class="ibet-prix-label">Prix du Cercle Montesquieu 2024</p>
+        <p>Ouvrage récompensé citant l'IBET comme outil CSRD de référence. Dans « Comprendre la RSE, levier de transformation durable » (Larcier, 2024), l'IBET est positionné aux côtés de l'IFRS, GRI, ISO 26000 et de l'EU Taxonomy dans le panorama mondial des normes ESG/CSRD.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VIII. Articles Qualitique ── -->
+<section id="qualitique">
+  <div class="section-header">
+    <span class="section-number">VIII</span>
+    <h2 class="section-title">Articles Qualitique — accès libre</h2>
+  </div>
+
+  <p style="font-size: 0.9rem; color: var(--pierre); font-style: italic; margin-bottom: 2.5rem; max-width: 70ch;">La revue <em>Qualitique</em> a cessé de paraître lorsque son fondateur a pris sa retraite sans trouver de repreneur. L'éditeur a remis à Bruno Brochenin les tirés-à-part de ses articles, qui sont ici mis à disposition en lecture libre avec son autorisation.</p>
+
+  <div class="qualitique-grid">
+    <div class="qualitique-card">
+      <p class="qualitique-num">229</p>
+      <p class="qualitique-source">Qualitique · n°229 · Novembre 2011</p>
+      <h3 class="qualitique-titre">L'entreprise contemporaine face aux risques</h3>
+      <p class="qualitique-desc">Des opportunités à trouver du côté de l'état d'esprit des équipes opérationnelles. De Columbia à Fukushima, l'état d'esprit des collaborateurs est central dans l'exposition aux risques.</p>
+      <p class="qualitique-tags">Risques · IBET · État d'esprit</p>
+      <a href="qualitique_229_risques.pdf" target="_blank">Lire l'article →</a>
+    </div>
+    <div class="qualitique-card">
+      <p class="qualitique-num">222</p>
+      <p class="qualitique-source">Qualitique · n°222 · Janvier–Février 2011</p>
+      <h3 class="qualitique-titre">Entre RPS et RSE, les Parties Prenantes sont-elles victimes ou responsables ?</h3>
+      <p class="qualitique-desc">Les risques psychosociaux sont le résultat prévisible d'un mode de fonctionnement. Présentation de l'IBET et de l'IDEC.</p>
+      <p class="qualitique-tags">RPS · RSE · IBET · IDEC</p>
+      <a href="qualitique_222_rps_rse.pdf" target="_blank">Lire l'article →</a>
+    </div>
+    <div class="qualitique-card">
+      <p class="qualitique-num">225</p>
+      <p class="qualitique-source">Qualitique · n°225 · Mai 2011</p>
+      <h3 class="qualitique-titre">Quelle est la valeur économique de la prestation des sapeurs-pompiers ?</h3>
+      <p class="qualitique-desc">Application de l'IBET au service public. Ni la valeur ajoutée marchande ni les coûts publics ne sont des indicateurs valables de performance.</p>
+      <p class="qualitique-tags">Service public · IBET · Performance</p>
+      <a href="qualitique_225_pompiers.pdf" target="_blank">Lire l'article →</a>
+    </div>
+    <div class="qualitique-card">
+      <p class="qualitique-num">233</p>
+      <p class="qualitique-source">Qualitique · n°233 · Avril 2012</p>
+      <h3 class="qualitique-titre">La conduite du changement est-elle une croyance efficace ?</h3>
+      <p class="qualitique-desc">Critique de la vision cartésienne des projets de transformation. La cindynique de Kervern comme dépassement décisif.</p>
+      <p class="qualitique-tags">Changement · Cindynique · IBET</p>
+      <a href="qualitique_233_changement.pdf" target="_blank">Lire l'article →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── IX. Presse ── -->
+<section id="presse" style="background: var(--ivoire); max-width: 100%; padding: 6rem 0;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
+    <div class="section-header">
+      <span class="section-number">IX</span>
+      <h2 class="section-title">Presse &amp; recensions</h2>
+    </div>
+
+    <div class="presse-list">
+      <div class="presse-item">
+        <p class="presse-meta">France Catholique n°3230 · 15 octobre 2010</p>
+        <p class="presse-livre">À propos de : <em>Où va l'entreprise ? Organisation et dérives</em> — par Denis Lensel</p>
+        <blockquote class="presse-citation">« Comment réagir face à des processus qui asphyxient salariés et entreprises ? » — Brochenin joue ici un rôle de faux naïf qui promène un regard critique sur une économie échappant à la plupart de ses acteurs.</blockquote>
+      </div>
+      <div class="presse-item">
+        <p class="presse-meta">Paris Normandie · 9 octobre 2010</p>
+        <p class="presse-livre">À propos de : <em>Où va l'entreprise ? Organisation et dérives</em> — Interview par Sophie Bogatay</p>
+        <blockquote class="presse-citation">« J'ai voulu faire entrer le lecteur dans la mécanique de ces sociétés qui fonctionnent à très court terme. J'ai décortiqué ces procédures qui étouffent la vie des salariés et les privent de ce qui devrait être le plus important : vivre de leur métier et exprimer leurs compétences. »</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<div class="contact-section">
+  <h2>Entrer en contact</h2>
+  <p>Pour toute demande éditoriale, conférence ou collaboration.</p>
+  <div class="contact-links">
+    <a href="https://www.linkedin.com/in/bruno-brochenin-b25140/" target="_blank">LinkedIn</a>
+    <a href="https://www.amazon.fr/stores/Bruno-Brochenin/author/B0D6RWMRS2" target="_blank">Page auteur Amazon</a>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  © Bruno Brochenin — Auteur et consultant en organisation
+</footer>
+
+</body>
+</html>
