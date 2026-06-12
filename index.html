@@ -31,37 +31,123 @@
       line-height: 1.7;
     }
 
-    /* ── Navigation ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--blanc);
+    /* ── Lang switcher ── */
+    .lang-bar {
+      background: var(--ivoire);
       border-bottom: 1px solid var(--sable);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 2.5rem;
+      justify-content: flex-end;
+      padding: 0.5rem 2rem;
+      gap: 0.5rem;
     }
 
-    .nav-lang {
-      display: flex;
-      gap: 1rem;
+    .lang-bar a {
       font-family: var(--sans);
       font-size: 0.75rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      color: var(--pierre);
     }
 
-    .nav-lang a {
-      color: var(--pierre);
-      text-decoration: none;
+    .lang-bar a.active {
+      background: var(--noir);
+      color: var(--blanc);
     }
-    .nav-lang a.active { color: var(--or); border-bottom: 1px solid var(--or); }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--noir);
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 4rem 6rem;
+      min-height: 70vh;
+    }
+
+    .hero-image {
+      flex-shrink: 0;
+      width: 180px;
+      height: 220px;
+      overflow: hidden;
+      border: 2px solid var(--or);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 1rem;
+    }
+
+    .hero-name {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--blanc);
+      margin-bottom: 1rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: #888;
+    }
+
+    .hero-bio {
+      font-size: 0.95rem;
+      color: var(--sable);
+      line-height: 1.7;
+      max-width: 55ch;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-separator {
+      width: 2.5rem;
+      height: 2px;
+      background: var(--or);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-quote {
+      font-size: 0.97rem;
+      color: #aaa;
+      font-style: italic;
+      line-height: 1.7;
+      max-width: 55ch;
+    }
+
+    /* ── Navigation (below hero) ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--ivoire);
+      border-bottom: 1px solid var(--sable);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.85rem 2.5rem;
+    }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       list-style: none;
       font-family: var(--sans);
       font-size: 0.72rem;
@@ -74,68 +160,9 @@
       text-decoration: none;
       transition: color 0.2s;
     }
+
     .nav-links a:hover { color: var(--or); }
-
-    /* ── Hero ── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      min-height: 92vh;
-      border-bottom: 1px solid var(--sable);
-    }
-
-    .hero-image {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: grayscale(20%);
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5rem 5rem 5rem 4rem;
-      background: var(--ivoire);
-    }
-
-    .hero-eyebrow {
-      font-family: var(--sans);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--or);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-name {
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      font-weight: 400;
-      line-height: 1.1;
-      color: var(--noir);
-      margin-bottom: 2rem;
-    }
-
-    .hero-name em {
-      font-style: italic;
-      color: var(--or);
-    }
-
-    .hero-quote {
-      font-size: 1rem;
-      color: var(--pierre);
-      font-style: italic;
-      line-height: 1.6;
-      border-left: 2px solid var(--or);
-      padding-left: 1.2rem;
-      max-width: 42ch;
-    }
+    .nav-links li:first-child a { color: var(--or); border-bottom: 2px solid var(--or); padding-bottom: 2px; }
 
     /* ── Sections ── */
     section {
@@ -604,25 +631,40 @@
 
     /* ── Responsive ── */
     @media (max-width: 800px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-image { height: 50vw; }
-      .hero-content { padding: 3rem 1.5rem; }
+      .hero { flex-direction: column; padding: 2.5rem 1.5rem; gap: 1.5rem; min-height: auto; }
+      .hero-image { width: 130px; height: 160px; }
       .these-grid, .outils-grid, .collab-grid, .ibet-grid, .qualitique-grid { grid-template-columns: 1fr; }
       .ibet-prix { grid-column: span 1; }
-      nav { padding: 0.75rem 1.2rem; }
-      .nav-links { display: none; }
+      nav { padding: 0.75rem 1rem; overflow-x: auto; }
+      .nav-links { gap: 1.2rem; flex-wrap: nowrap; }
       section { padding: 4rem 1.2rem; }
     }
   </style>
 </head>
 <body>
 
+<!-- ── Lang bar ── -->
+<div class="lang-bar">
+  <a href="#" class="active">FR</a>
+  <a href="#">EN</a>
+</div>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <div class="hero-image">
+    <img src="BROCHENIN Photo.png" alt="Bruno Brochenin" />
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Auteur · Consultant en organisation · Essayiste</p>
+    <h1 class="hero-name">Bruno<br><em>Brochenin</em></h1>
+    <div class="hero-separator"></div>
+    <p class="hero-bio">Diplômé de l'ESSEC. Vingt ans d'observation des organisations, de leurs dérives et de leurs ressources cachées. Trois livres, six contributions collectives, un fil conducteur.</p>
+    <p class="hero-quote">« L'individu ne trouve sa liberté réelle que dans la conscience du cadre collectif qui l'a constitué — jamais contre lui. »</p>
+  </div>
+</div>
+
 <!-- ── Navigation ── -->
 <nav>
-  <div class="nav-lang">
-    <a href="#" class="active">FR</a>
-    <a href="#">EN</a>
-  </div>
   <ul class="nav-links">
     <li><a href="#these">Thèse</a></li>
     <li><a href="#livres">Livres</a></li>
@@ -634,18 +676,6 @@
     <li><a href="#presse">Presse</a></li>
   </ul>
 </nav>
-
-<!-- ── Hero ── -->
-<div class="hero">
-  <div class="hero-image">
-    <img src="BROCHENIN Photo.png" alt="Bruno Brochenin" />
-  </div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Auteur · Consultant en organisation · Essayiste</p>
-    <h1 class="hero-name">Bruno <em>Brochenin</em></h1>
-    <p class="hero-quote">« L'individu ne trouve sa liberté réelle que dans la conscience du cadre collectif qui l'a constitué — jamais contre lui. »</p>
-  </div>
-</div>
 
 <!-- ── I. Thèse ── -->
 <section id="these">
