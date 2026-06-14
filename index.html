@@ -169,6 +169,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative; /* for resize handle */
   transform-origin: bottom right;
   transform: scale(.88) translateY(16px);
   opacity: 0;
@@ -776,10 +777,7 @@ function go(id,btn){
         <div id="bb-header-name">Bruno Brochenin</div>
         <div id="bb-header-sub" id="bb-header-sub-text">Explorez les thèses et concepts</div>
       </div>
-      <div id="bb-lang-toggle">
-        <button class="bb-lang-btn active" data-lang="fr">FR</button>
-        <button class="bb-lang-btn" data-lang="en">EN</button>
-      </div>
+      <div id="bb-lang-indicator" style="margin-left:auto;font-family:var(--bb-sans);font-size:10px;color:rgba(255,255,255,.55);font-style:italic;">any language</div>
     </div>
 
     <!-- Messages -->
@@ -839,7 +837,7 @@ RÈGLES IMPÉRATIVES
 1. Cite toujours tes sources entre parenthèses (titre abrégé + année).
 2. Ne reproduis jamais de passages textuels ; paraphrase et synthétise toujours.
 3. Si une question dépasse le corpus, dis-le clairement et renvoie vers les publications concernées.
-4. Réponds en français, de manière concise (4 à 8 phrases) mais substantielle.
+4. Réponds TOUJOURS dans la langue utilisée par le visiteur (français, anglais, allemand, espagnol, etc.). Adapte-toi à chaque message. Sois concis (4 à 8 phrases) mais substantiel.
 5. Tu n'exprimes pas d'opinions politiques personnelles ; tu rapportes les thèses de l'auteur.
 
 ══════════════════════════════════════════════════════
@@ -963,7 +961,11 @@ FIN DU CORPUS
      MESSAGE DE BIENVENUE
   ───────────────────────────────────────────────────────────────── */
   function addWelcome() {
-    addMessage('assistant', LANG[state.lang].welcome);
+    addMessage('assistant',
+      'Bonjour / Hello / Hola / Guten Tag ! ' +
+      'Je réponds dans votre langue — I reply in your language. ' +
+      'Posez votre question sur les travaux de Bruno Brochenin / Ask me about Bruno Brochenin’s work.'
+    );
   }
 
   /* ─────────────────────────────────────────────────────────────────
@@ -1070,7 +1072,7 @@ FIN DU CORPUS
       body: JSON.stringify({
         model: CONFIG.model,
         max_tokens: CONFIG.maxTokens,
-        system: SYSTEM_PROMPT + '\n\n' + LANG[state.lang].langInstruction,
+        system: SYSTEM_PROMPT,
         messages: state.history,
       }),
     });
@@ -1197,9 +1199,7 @@ FIN DU CORPUS
     }
   }
 
-  document.querySelectorAll('.bb-lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => setLang(btn.dataset.lang));
-  });
+  // Language: auto-detected from visitor's message
 
   // ── Resize panel ──
   const resizeHandle = document.getElementById('bb-resize-handle');
