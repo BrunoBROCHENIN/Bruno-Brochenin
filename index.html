@@ -169,7 +169,6 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  position: relative; /* for resize handle */
   transform-origin: bottom right;
   transform: scale(.88) translateY(16px);
   opacity: 0;
@@ -394,10 +393,6 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 
 /* ── Resize handle ── */
-#bb-panel {
-  resize: both;
-  overflow: hidden;
-}
 #bb-resize-handle {
   position: absolute;
   bottom: 0;
@@ -1201,7 +1196,7 @@ FIN DU CORPUS
 
   // Language: auto-detected from visitor's message
 
-  // ── Resize panel ──
+  // ── Resize panel (drag bottom-left handle, panel anchored bottom-right) ──
   const resizeHandle = document.getElementById('bb-resize-handle');
   if (resizeHandle) {
     let startX, startY, startW, startH;
@@ -1210,11 +1205,10 @@ FIN DU CORPUS
       const rect = panel.getBoundingClientRect();
       startX = e.clientX; startY = e.clientY;
       startW = rect.width; startH = rect.height;
-      function onMove(e) {
-        const dx = startX - e.clientX;
-        const dy = startY - e.clientY;
-        const newW = Math.max(300, Math.min(700, startW + dx));
-        const newH = Math.max(350, Math.min(window.innerHeight - 120, startH + dy));
+      function onMove(ev) {
+        // Moving left → wider; moving up → taller
+        const newW = Math.max(300, Math.min(720, startW + (startX - ev.clientX)));
+        const newH = Math.max(380, Math.min(window.innerHeight - 120, startH + (startY - ev.clientY)));
         panel.style.width = newW + 'px';
         panel.style.height = newH + 'px';
       }
@@ -1225,6 +1219,23 @@ FIN DU CORPUS
       document.addEventListener('mousemove', onMove);
       document.addEventListener('mouseup', onUp);
     });
+    // Touch support
+    resizeHandle.addEventListener('touchstart', e => {
+      const t = e.touches[0];
+      const rect = panel.getBoundingClientRect();
+      let sX = t.clientX, sY = t.clientY, sW = rect.width, sH = rect.height;
+      function onMove(ev) {
+        const tc = ev.touches[0];
+        panel.style.width  = Math.max(300, Math.min(720, sW + (sX - tc.clientX))) + 'px';
+        panel.style.height = Math.max(380, Math.min(window.innerHeight - 120, sH + (sY - tc.clientY))) + 'px';
+      }
+      function onEnd() {
+        document.removeEventListener('touchmove', onMove);
+        document.removeEventListener('touchend', onEnd);
+      }
+      document.addEventListener('touchmove', onMove, { passive: false });
+      document.addEventListener('touchend', onEnd);
+    }, { passive: false });
   }
 
 })();
