@@ -1,1002 +1,1876 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bruno Brochenin — Auteur et consultant</title>
-  <style>
-    /* ── Reset & base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --noir:    #1a1a18;
-      --encre:   #2e2e2b;
-      --pierre:  #6b6b65;
-      --sable:   #c8c2b0;
-      --ivoire:  #f5f2eb;
-      --blanc:   #fafaf7;
-      --or:      #9a7c3e;
-      --or-clair:#c4a55a;
-      --serif:   "Georgia", "Times New Roman", serif;
-      --sans:    "Helvetica Neue", Arial, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--serif);
-      background: var(--blanc);
-      color: var(--encre);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    /* ── Lang switcher ── */
-    .lang-bar {
-      background: var(--ivoire);
-      border-bottom: 1px solid var(--sable);
-      display: flex;
-      justify-content: flex-end;
-      padding: 0.5rem 2rem;
-      gap: 0.5rem;
-    }
-
-    .lang-bar a {
-      font-family: var(--sans);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.25rem 0.6rem;
-      color: var(--pierre);
-    }
-
-    .lang-bar a.active {
-      background: var(--noir);
-      color: var(--blanc);
-    }
-
-    /* ── Hero ── */
-    .hero {
-      background: var(--noir);
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      padding: 4rem 6rem;
-      min-height: 70vh;
-    }
-
-    .hero-image {
-      flex-shrink: 0;
-      width: 180px;
-      height: 220px;
-      overflow: hidden;
-      border: 2px solid var(--or);
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--sans);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--or);
-      margin-bottom: 1rem;
-    }
-
-    .hero-name {
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      font-weight: 400;
-      line-height: 1.1;
-      color: var(--blanc);
-      margin-bottom: 1rem;
-    }
-
-    .hero-name em {
-      font-style: italic;
-      color: #888;
-    }
-
-    .hero-bio {
-      font-size: 0.95rem;
-      color: var(--sable);
-      line-height: 1.7;
-      max-width: 55ch;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-separator {
-      width: 2.5rem;
-      height: 2px;
-      background: var(--or);
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-quote {
-      font-size: 0.97rem;
-      color: #aaa;
-      font-style: italic;
-      line-height: 1.7;
-      max-width: 55ch;
-    }
-
-    /* ── Navigation (below hero) ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--ivoire);
-      border-bottom: 1px solid var(--sable);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.85rem 2.5rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-      font-family: var(--sans);
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
-      color: var(--pierre);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--or); }
-    .nav-links li:first-child a { color: var(--or); border-bottom: 2px solid var(--or); padding-bottom: 2px; }
-
-    /* ── Sections ── */
-    section {
-      padding: 6rem 2.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1.5rem;
-      margin-bottom: 3.5rem;
-      border-bottom: 1px solid var(--sable);
-      padding-bottom: 1rem;
-    }
-
-    .section-number {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      color: var(--or);
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: var(--noir);
-    }
-
-    /* ── Thèse ── */
-    .these-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .these-card {
-      border-top: 2px solid var(--or);
-      padding-top: 1.2rem;
-    }
-
-    .these-card-label {
-      font-family: var(--sans);
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--or);
-      margin-bottom: 0.6rem;
-    }
-
-    .these-card p {
-      font-size: 0.92rem;
-      color: var(--pierre);
-      line-height: 1.6;
-    }
-
-    .these-synthese {
-      background: var(--noir);
-      color: var(--ivoire);
-      padding: 2rem 2.5rem;
-      font-style: italic;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .these-synthese strong {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--or-clair);
-      font-style: normal;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    /* ── Livres ── */
-    .livres-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    .livre-item {
-      display: grid;
-      grid-template-columns: 5rem 1fr;
-      gap: 2rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid var(--sable);
-    }
-
-    .livre-item:last-child { border-bottom: none; }
-
-    .livre-annee {
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      color: var(--or);
-      padding-top: 0.25rem;
-    }
-
-    .livre-genre {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--pierre);
-      margin-bottom: 0.4rem;
-    }
-
-    .livre-titre {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--noir);
-      margin-bottom: 0.2rem;
-    }
-
-    .livre-sous-titre {
-      font-style: italic;
-      color: var(--pierre);
-      font-size: 0.95rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .livre-desc {
-      font-size: 0.92rem;
-      color: var(--encre);
-      line-height: 1.7;
-      margin-bottom: 0.6rem;
-    }
-
-    .livre-editeur {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--sable);
-    }
-
-    /* ── Articles / contributions ── */
-    .articles-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
-    .article-item {
-      display: grid;
-      grid-template-columns: 5rem 1fr;
-      gap: 2rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .article-item:last-child { border-bottom: none; }
-
-    .article-annee {
-      font-family: var(--sans);
-      font-size: 0.78rem;
-      color: var(--or);
-      padding-top: 0.2rem;
-    }
-
-    .article-source {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      color: var(--pierre);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.2rem;
-    }
-
-    .article-titre {
-      font-size: 0.97rem;
-      color: var(--encre);
-      line-height: 1.5;
-    }
-
-    /* ── Outils ── */
-    .outils-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    .outil-card {
-      border: 1px solid var(--sable);
-      padding: 2rem;
-      position: relative;
-    }
-
-    .outil-symbol {
-      font-size: 1.4rem;
-      color: var(--or);
-      margin-bottom: 0.8rem;
-    }
-
-    .outil-nom {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--or);
-      margin-bottom: 0.3rem;
-    }
-
-    .outil-titre {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--noir);
-      margin-bottom: 0.6rem;
-    }
-
-    .outil-desc {
-      font-size: 0.88rem;
-      color: var(--pierre);
-      line-height: 1.6;
-    }
-
-    /* ── Collaboration ── */
-    .collab-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    .collab-card {
-      background: var(--ivoire);
-      padding: 2.5rem;
-    }
-
-    .collab-nom {
-      font-size: 1.1rem;
-      color: var(--noir);
-      margin-bottom: 0.2rem;
-    }
-
-    .collab-role {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--or);
-      margin-bottom: 1rem;
-    }
-
-    .collab-desc {
-      font-size: 0.9rem;
-      color: var(--pierre);
-      line-height: 1.7;
-    }
-
-    /* ── IBET chiffres ── */
-    .ibet-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .ibet-card {
-      border-top: 3px solid var(--or);
-      padding: 1.5rem 0 0;
-    }
-
-    .ibet-chiffre {
-      font-size: 2.4rem;
-      font-weight: 400;
-      color: var(--or);
-      line-height: 1;
-      margin-bottom: 0.6rem;
-    }
-
-    .ibet-label {
-      font-size: 0.88rem;
-      color: var(--encre);
-      line-height: 1.5;
-      margin-bottom: 0.5rem;
-    }
-
-    .ibet-source {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      color: var(--pierre);
-      letter-spacing: 0.08em;
-    }
-
-    .ibet-prix {
-      background: var(--noir);
-      color: var(--ivoire);
-      padding: 2rem 2.5rem;
-      grid-column: span 3;
-    }
-
-    .ibet-prix-label {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--or-clair);
-      margin-bottom: 0.5rem;
-    }
-
-    .ibet-prix p {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--sable);
-    }
-
-    /* ── Qualitique articles ── */
-    .qualitique-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    .qualitique-card {
-      border: 1px solid var(--sable);
-      padding: 1.8rem;
-    }
-
-    .qualitique-num {
-      font-family: var(--sans);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--sable);
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-
-    .qualitique-source {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      color: var(--pierre);
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-    }
-
-    .qualitique-titre {
-      font-size: 0.95rem;
-      color: var(--noir);
-      margin-bottom: 0.6rem;
-      font-weight: 400;
-    }
-
-    .qualitique-desc {
-      font-size: 0.85rem;
-      color: var(--pierre);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .qualitique-tags {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      color: var(--or);
-      letter-spacing: 0.08em;
-      margin-bottom: 1rem;
-    }
-
-    .qualitique-card a {
-      font-family: var(--sans);
-      font-size: 0.72rem;
-      color: var(--encre);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      border-bottom: 1px solid var(--sable);
-      padding-bottom: 1px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .qualitique-card a:hover { color: var(--or); border-color: var(--or); }
-
-    /* ── Presse ── */
-    .presse-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    .presse-item {
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid var(--sable);
-    }
-
-    .presse-item:last-child { border-bottom: none; }
-
-    .presse-meta {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      color: var(--or);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.3rem;
-    }
-
-    .presse-livre {
-      font-size: 0.82rem;
-      font-style: italic;
-      color: var(--pierre);
-      margin-bottom: 0.5rem;
-    }
-
-    .presse-citation {
-      background: var(--ivoire);
-      border-left: 2px solid var(--or);
-      padding: 1rem 1.5rem;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--encre);
-      line-height: 1.7;
-    }
-
-    /* ── Contact ── */
-    .contact-section {
-      background: var(--noir);
-      padding: 6rem 2.5rem;
-      text-align: center;
-    }
-
-    .contact-section h2 {
-      color: var(--ivoire);
-      font-weight: 400;
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-section p {
-      color: var(--pierre);
-      font-size: 0.92rem;
-      margin-bottom: 2rem;
-    }
-
-    .contact-links {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-
-    .contact-links a {
-      font-family: var(--sans);
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--or-clair);
-      text-decoration: none;
-      border: 1px solid var(--or);
-      padding: 0.6rem 1.4rem;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .contact-links a:hover { background: var(--or); color: var(--noir); }
-
-    /* ── Footer ── */
-    footer {
-      background: var(--ivoire);
-      text-align: center;
-      padding: 1.5rem;
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      color: var(--pierre);
-      letter-spacing: 0.08em;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 800px) {
-      .hero { flex-direction: column; padding: 2.5rem 1.5rem; gap: 1.5rem; min-height: auto; }
-      .hero-image { width: 130px; height: 160px; }
-      .these-grid, .outils-grid, .collab-grid, .ibet-grid, .qualitique-grid { grid-template-columns: 1fr; }
-      .ibet-prix { grid-column: span 1; }
-      nav { padding: 0.75rem 1rem; overflow-x: auto; }
-      .nav-links { gap: 1.2rem; flex-wrap: nowrap; }
-      section { padding: 4rem 1.2rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bruno Brochenin — Auteur et consultant</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#1a1915;--ink2:#4a4840;--ink3:#8a8780;--cream:#faf8f3;--paper:#f0ede4;--rule:#d4cfc0;--accent:#8b3a1e;--accent2:#c4622e;--gold:#b8972a}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);min-height:100vh}
+.lang-bar{background:var(--paper);border-bottom:1px solid var(--rule);display:flex;justify-content:flex-end;padding:.5rem 2rem;gap:4px}
+.lang-btn{padding:.3rem .9rem;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--rule);background:transparent;color:var(--ink2);cursor:pointer;border-radius:1px;transition:all .2s;font-family:"DM Sans",sans-serif}
+.lang-btn.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.lang-btn:hover:not(.active){border-color:var(--accent);color:var(--accent)}
+header{background:var(--ink);color:var(--cream);padding:3.5rem 2rem 3rem;position:relative;overflow:hidden}
+header::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px);pointer-events:none}
+.header-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center;position:relative;z-index:1}
+.photo-frame{width:130px;height:160px;border:2px solid rgba(255,255,255,.15);border-radius:3px;overflow:hidden;flex-shrink:0}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.header-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.header-name{font-family:"Cormorant Garamond",serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:500;line-height:1.05;margin-bottom:.75rem}
+.header-name em{font-style:italic;color:rgba(255,255,255,.55)}
+.header-rule{width:36px;height:1px;background:var(--gold);margin:.75rem 0}
+.header-tagline{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;max-width:480px;font-weight:300;margin-bottom:1rem}
+.header-thesis{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.05rem;color:rgba(255,255,255,.7);max-width:480px;line-height:1.6}
+nav{background:var(--paper);border-bottom:1px solid var(--rule);padding:0 2rem;display:flex;justify-content:center;position:sticky;top:0;z-index:100;overflow-x:auto}
+.nav-link{padding:1rem 1.1rem;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);border-bottom:2px solid transparent;transition:all .2s;cursor:pointer;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:"DM Sans",sans-serif}
+.nav-link:hover,.nav-link.active{color:var(--accent);border-bottom-color:var(--accent)}
+main{max-width:900px;margin:0 auto;padding:4rem 2rem}
+.section{margin-bottom:5rem}
+.section-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.5rem;padding-bottom:1rem;border-bottom:1px solid var(--rule)}
+.section-num{font-family:"Cormorant Garamond",serif;font-size:2.5rem;font-weight:400;color:var(--rule);line-height:1}
+.section-title{font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-weight:500;color:var(--ink)}
+.theses{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem}
+.these-card{background:white;border:1px solid var(--rule);border-top:3px solid var(--accent);padding:1.4rem;border-radius:2px}
+.these-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.these-text{font-family:"Cormorant Garamond",serif;font-size:1rem;line-height:1.6;color:var(--ink);font-style:italic}
+.book-row{display:grid;grid-template-columns:72px 1fr auto;gap:1.5rem;align-items:start;background:white;border:1px solid var(--rule);padding:1.4rem;border-radius:2px;margin-bottom:.75rem;transition:border-color .2s}
+.book-row:hover{border-color:var(--accent2)}
+.book-year{font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:400;color:var(--rule);line-height:1;text-align:center;padding-top:3px}
+.book-type{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:.35rem}
+.book-title{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:.35rem}
+.book-subtitle{font-size:.82rem;color:var(--ink2);font-style:italic;margin-bottom:.5rem;line-height:1.5}
+.book-desc{font-size:.8rem;color:var(--ink2);line-height:1.6}
+.book-pub{font-size:11px;color:var(--ink3);text-align:right;white-space:nowrap;padding-top:3px}
+.articles-list{display:flex;flex-direction:column;gap:.75rem}
+.article-row{padding:1.1rem 1.4rem;background:white;border:1px solid var(--rule);border-radius:2px;border-left:3px solid var(--gold)}
+.article-meta{font-size:10px;color:var(--ink3);letter-spacing:.05em;margin-bottom:.25rem}
+.article-title{font-size:.9rem;font-weight:500;color:var(--ink);line-height:1.4;margin-bottom:.25rem}
+.article-venue{font-size:11px;color:var(--accent);font-style:italic}
+.outils-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:1rem}
+.outil-card{background:var(--ink);color:var(--cream);padding:1.6rem 1.4rem;border-radius:2px}
+.outil-acronym{font-family:"Cormorant Garamond",serif;font-size:2.2rem;font-weight:600;color:var(--accent2);line-height:1;margin-bottom:.4rem}
+.outil-name{font-size:.72rem;letter-spacing:.05em;color:rgba(255,255,255,.45);text-transform:uppercase;margin-bottom:.75rem;line-height:1.5}
+.outil-desc{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.6}
+.collab-card{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.collab-person{background:white;padding:1.75rem}
+.collab-person:last-child{background:var(--paper)}
+.collab-name{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:600;margin-bottom:.4rem}
+.collab-role{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+.collab-bio{font-size:.8rem;color:var(--ink2);line-height:1.6}
+.contact-section{background:var(--ink);color:var(--cream);padding:3rem 2rem;text-align:center;margin-top:5rem}
+.contact-section h2{font-family:"Cormorant Garamond",serif;font-size:1.8rem;margin-bottom:.6rem}
+.contact-section p{font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:1.25rem}
+.contact-links{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.contact-link{padding:.55rem 1.25rem;border:1px solid rgba(255,255,255,.2);color:var(--cream);text-decoration:none;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:1px;transition:all .2s}
+.contact-link:hover{background:var(--accent);border-color:var(--accent)}
+footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 2rem;text-align:center;font-size:11px;color:var(--ink3);letter-spacing:.05em}
+@media(max-width:640px){.header-inner{grid-template-columns:1fr;gap:1.5rem}.book-row{grid-template-columns:1fr}.book-year{text-align:left;font-size:1.2rem}.book-pub{text-align:left}.collab-card{grid-template-columns:1fr}}
+
+.presse-list{display:flex;flex-direction:column;gap:1.25rem}
+.presse-card{background:white;border:1px solid var(--rule);border-radius:2px;padding:1.75rem;border-left:4px solid var(--gold);position:relative}
+.presse-meta{display:flex;align-items:baseline;gap:1rem;margin-bottom:.6rem;flex-wrap:wrap}
+.presse-source{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:600;color:var(--ink)}
+.presse-date{font-size:11px;color:var(--ink3);letter-spacing:.05em}
+.presse-book{font-size:.82rem;color:var(--ink2);margin-bottom:.3rem}
+.presse-book em{font-style:italic}
+.presse-author{font-size:11px;color:var(--ink3);letter-spacing:.05em;margin-bottom:1rem}
+.presse-quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.05rem;line-height:1.65;color:var(--ink);border:none;margin:0;padding-left:1rem;border-left:2px solid var(--rule)}
+
+.ibet-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-bottom:2rem}
+.ibet-card{background:white;border:1px solid var(--rule);border-radius:2px;padding:1.6rem;border-top:3px solid var(--ink)}
+.ibet-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.ibet-source{font-family:"Cormorant Garamond",serif;font-size:1.05rem;font-weight:600;color:var(--ink);line-height:1.3}
+.ibet-year{font-size:11px;color:var(--ink3);letter-spacing:.08em;white-space:nowrap;padding-top:3px}
+.ibet-stat{font-family:"Cormorant Garamond",serif;font-size:2.8rem;font-weight:600;color:var(--accent);line-height:1;margin-bottom:.4rem}
+.ibet-stat-label{font-size:.75rem;color:var(--ink2);line-height:1.5;margin-bottom:1rem}
+.ibet-desc{font-size:.78rem;color:var(--ink2);line-height:1.6;border-top:1px solid var(--rule);padding-top:.85rem}
+.ibet-banner{background:var(--ink);color:var(--cream);border-radius:2px;padding:1.5rem 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.ibet-banner-num{font-family:"Cormorant Garamond",serif;font-size:3.5rem;font-weight:600;color:var(--accent2);line-height:1;flex-shrink:0}
+.ibet-banner-text{font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.6}
+.ibet-banner-text strong{color:var(--cream);font-weight:500}
+
+.qualitique-note{background:var(--paper);border:1px solid var(--rule);border-left:4px solid var(--gold);border-radius:2px;padding:1rem 1.5rem;margin-bottom:2rem;font-size:.82rem;color:var(--ink2);line-height:1.6}
+.qualitique-note strong{color:var(--ink)}
+.articles-biblio{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.biblio-card{background:white;border:1px solid var(--rule);border-radius:2px;overflow:hidden;transition:border-color .2s;display:flex;flex-direction:column}
+.biblio-card:hover{border-color:var(--accent2)}
+.biblio-card-header{background:var(--ink);padding:1.25rem 1.5rem;position:relative}
+.biblio-card-num{font-family:"Cormorant Garamond",serif;font-size:3rem;font-weight:600;color:rgba(255,255,255,.08);position:absolute;top:.25rem;right:1rem;line-height:1;pointer-events:none}
+.biblio-card-revue{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.biblio-card-num-revue{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:.6rem}
+.biblio-card-title{font-family:"Cormorant Garamond",serif;font-size:1.05rem;font-weight:600;color:var(--cream);line-height:1.3}
+.biblio-card-body{padding:1.25rem 1.5rem;flex:1;display:flex;flex-direction:column;gap:.75rem}
+.biblio-card-desc{font-size:.78rem;color:var(--ink2);line-height:1.6;flex:1}
+.biblio-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:.75rem;border-top:1px solid var(--rule)}
+.biblio-tag{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.biblio-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem 1rem;background:var(--accent);color:var(--cream);text-decoration:none;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border-radius:1px;transition:background .2s}
+.biblio-btn:hover{background:var(--accent2)}
+.biblio-btn svg{width:12px;height:12px;flex-shrink:0}
+
+/* ── Chatbot BB ── */
+ dans le <head>
+       2. Copier le bloc <div id="bb-chat-root"> avant 
+<!-- ═══════ CHATBOT ═══════ -->
+<div id="bb-chat-root">
+
+  <!-- Trigger -->
+  <button id="bb-trigger" aria-label="Ouvrir le chatbot" aria-expanded="false">
+    <!-- Book icon (open) -->
+    <svg class="bb-open-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </svg>
+    <!-- Close icon -->
+    <svg class="bb-close-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <!-- Panel -->
+  <div id="bb-panel" role="dialog" aria-label="Chatbot Bruno Brochenin" aria-modal="true">
+
+    <!-- Header -->
+    <div id="bb-header">
+      <div id="bb-avatar">BB</div>
+      <div id="bb-header-text">
+        <div id="bb-header-name">Bruno Brochenin</div>
+        <div id="bb-header-sub">Explorez les thèses et concepts</div>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="bb-messages" aria-live="polite" aria-label="Conversation"></div>
+
+    <!-- Suggestion chips (visibles uniquement au départ) -->
+    <div id="bb-chips">
+      <button class="bb-chip" data-q="Qu'est-ce que l'IBET et comment se calcule-t-il ?">Qu'est-ce que l'IBET et comment se calcule-t-il ?</button>
+      <button class="bb-chip" data-q="Quelle est la thèse centrale de L'engagement collectif dans l'entreprise ?">Quelle est la thèse centrale de <em>L'engagement collectif</em> ?</button>
+      <button class="bb-chip" data-q="En quoi la conduite du changement est-elle une croyance ?">En quoi la conduite du changement est-elle une croyance ?</button>
+    </div>
+
+    <!-- Input -->
+    <div id="bb-inputbar">
+      <textarea id="bb-input" rows="1"
+        placeholder="Posez votre question sur les travaux de Bruno Brochenin…"
+        aria-label="Votre question"></textarea>
+      <button id="bb-send" aria-label="Envoyer" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="bb-disclaimer">
+      Réponses synthétiques fondées sur les publications de Bruno Brochenin.<br>
+      Les textes originaux sont protégés par le droit d'auteur.
+    </div>
+
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────────────────────────────
+     CONFIGURATION
+     Remplacez YOUR_API_KEY par votre clé Anthropic.
+     Pour la production, préférez un proxy backend (ex. /api/chat)
+     qui conserve la clé côté serveur.
+  ───────────────────────────────────────────────────────────────── */
+  const CONFIG = {
+    endpoint: 'https://bb-chat-proxy.brochenin-bruno.workers.dev/chat',
+    model:    'claude-sonnet-4-6',
+    maxTokens: 600,
+  };
+
+  /* ─────────────────────────────────────────────────────────────────
+     CORPUS : condensé documenté de toutes les publications.
+     Il structure la mémoire du chatbot sans reproduire les textes.
+  ───────────────────────────────────────────────────────────────── */
+  const SYSTEM_PROMPT = `Tu es l'assistant littéraire de Bruno Brochenin, auteur et consultant en organisation. Tu réponds aux questions des visiteurs de son site en t'appuyant exclusivement sur ses publications listées ci-dessous. Tu fournis des réponses synthétiques, précises et documentées.
+
+RÈGLES IMPÉRATIVES
+1. Cite toujours tes sources entre parenthèses (titre abrégé + année).
+2. Ne reproduis jamais de passages textuels ; paraphrase et synthétise toujours.
+3. Si une question dépasse le corpus, dis-le clairement et renvoie vers les publications concernées.
+4. Réponds en français, de manière concise (4 à 8 phrases) mais substantielle.
+5. Tu n'exprimes pas d'opinions politiques personnelles ; tu rapportes les thèses de l'auteur.
+
+══════════════════════════════════════════════════════
+CORPUS DES PUBLICATIONS
+══════════════════════════════════════════════════════
+
+── LIVRES ──
+
+[OVE-2010] OÙ VA L'ENTREPRISE ? Organisation et dérives (Eska, 2010)
+Thèse centrale : les organisations modernes ont substitué aux métiers humains une architecture de processus et de progiciels (type SAP/ARIS) qui engendre le désordre même qu'elle prétend éliminer. L'auteur introduit le concept d'entropie organisationnelle : énergie dissipée en non-qualité, conflits et procédures d'exception. La vision « cartésienne » de l'entreprise (enchaînements univoques causes→effets, modélisation totale) est une fiction productive du désordre. Deux représentations alternatives sont esquissées : l'entreprise comme « corail » (ordre relatif en symbiose avec l'environnement) et le modèle cindynique de Kervern. Terrains : grandes entreprises françaises, projets SAP, industrie.
+
+[ENG-2019] L'ENGAGEMENT COLLECTIF DANS L'ENTREPRISE, la part magique de la performance (L'Harmattan, 2019)
+Modèle du « cercle magique » à cinq dimensions : valeurs partagées, objectif commun, organisation, règles de fonctionnement, dispositif de mesure. L'engagement collectif est la condition de la performance durable ; il ne se décrète pas mais résulte d'un dialogue structuré entre parties prenantes. L'entropie organisationnelle est un coût mesurable, systématiquement ignoré par la comptabilité classique. Formule clé : HVA (Human Value Added) = EBIT × IBET. Distinction entre résistance au changement légitime (incompréhension ou contraintes réelles non prises en compte) et désengagement structurel. Fondements théoriques : Marcel Mauss (l'individu est toujours déjà social), cindynique de Kervern, travaux ISEOR (coûts cachés). La direction d'entreprise a pour responsabilité primordiale d'élaborer des synthèses acceptables par l'ensemble des parties prenantes.
+
+[IBET-2024] INDICE DE BIEN-ÊTRE AU TRAVAIL (L'Harmattan, 2024)
+Approfondissement théorique à trois piliers : Paul Diel (la vanité comme égarement de l'esprit qui se croit plus grand que ses aptitudes), Marcel Mauss (l'individu n'existe que dans et par le collectif), James C. Scott (le pouvoir structurel externalise ses coûts de dysfonctionnement vers la collectivité). L'IBET est l'indicateur socio-économique central : IBET(%) = 100 × (VA − ΣIMET) / VA, où VA = valeur ajoutée et IMET = indicateurs du mal-être au travail (absentéisme, turn-over, AT/MP, grèves/contentieux, mesures palliatives, perte de qualité, perte de productivité, retards de projets). EBIT max = EBIT réalisé + VA(1 − IBET). L'IBET national 2020 est de 0,73 (niveau « Alerte »), signifiant 27 % de perte de valeur ajoutée, soit ~400 Md€ dont 252 Md€ maîtrisables. Plaidoyer pour une réforme des normes comptables intégrant les coûts systémiques sociaux, sociétaux et environnementaux. Modèle ago-antagonique (Donnadieu/Bernard-Weil) appliqué aux dynamiques sociales : triple polarisation mœurs/pouvoir/spiritualité. Récompensé Prix du Cercle Montesquieu 2024.
+
+── ARTICLES QUALITIQUE ──
+
+[Q222-2011] « Travaillons mieux pour vivre mieux ! Entre RPS et RSE, les Parties Prenantes sont-elles victimes ou responsables ? » (Qualitique n°222, jan.-fév. 2011)
+Les risques psychosociaux sont le résultat prévisible d'un mode de fonctionnement, non une fatalité : ils sont spécifiques aux grandes organisations anonymes (étude Médéric Malakoff). Distinction prévention primaire (combat le risque à sa source, approche collective sur l'organisation) vs prévention secondaire (renforce la capacité individuelle à faire face au stress). Présentation initiale de l'IBET et de l'IDEC (Indice de Dissipation de l'Effort Collectif). IDEC(%) = 100 × (VA − ΣIR) / VA, où IR = indicateurs de résistance (délai, budget, contenu). Formule de performance globale : PG = EBIT × IBET × IDEC. Concept de Goodwill Social et Badwill Social. La responsabilité essentielle de la direction est d'élaborer des synthèses acceptables ; celle des IRP est de se ressourcer auprès de leurs mandants, développer une vision claire des enjeux et assumer les nécessités du compromis.
+
+[Q225-2011] « Quelle est la valeur économique de la prestation des sapeurs-pompiers ? » (Qualitique n°225, mai 2011)
+Application de l'IBET au service public. Distinction monopole public vs entreprise marchande : le secteur marchand présente des surcoûts structurels (investissements redondants, coûts de mise sur le marché, structures dupliquées) ; la comparaison sur la seule valeur ajoutée est sans fondement. Pour un organisme sans but lucratif : IBET(%) = 100 × (Production − ΣIMET) / Production. Taxonomie de la demande : Demande Latente (DL), Demande Instruite Instantanée (DII), Demande Instruite Optimisée (DIO), Demande Exprimée (DE). La demande hors marché (Dhm) se divise en sub-marché (Dsm : petits besoins peu rentables) et ultra-marché (Dum : besoins à moyens hors normes). L'ouverture à la concurrence augmente la demande exprimée et érode les comportements altruistes et coopératifs. Hiérarchie recommandée : prévention > intervention d'urgence > réparation > assurance.
+
+[Q229-2011] « L'entreprise contemporaine face aux risques » (Qualitique n°229, nov. 2011)
+L'état d'esprit des équipes opérationnelles est le premier facteur de risque (référence Columbia/NASA 2003, Bhopal, AZF, BP Golfe du Mexique, Fukushima). La surabondance de procédures contraignantes aggrave le mauvais état d'esprit. Cartographie des états d'esprit (René Rupert) : confrontation aspirations vs perception des contraintes ; quatre modes de fonctionnement (taylorien C1, expert C2, projet C3, créatif C4). Trois facteurs de risque majeurs : direction à « huis clos » (insuffisamment ouverte au débat contradictoire), communication interne en décalage avec la pratique managériale, optimisation excessive des processus (organisations « anorexiques » — Robert Branche). Statistique : en moyenne nationale, les organisations sacrifient 23 % de la valeur ajoutée au nom de la rigueur gestionnaire.
+
+[Q233-2012] « La conduite du changement est-elle une croyance efficace ? » (Qualitique n°233, avr. 2012)
+Critique de la vision cartésienne des projets de transformation (SAP, ARIS). Cinq contradictions majeures : (a) prétend valoriser le métier mais astreint à l'exécution de procédures, rendant les collaborateurs « interchangeables » ; (b) prétend valoriser les coopérations mais exacerbe les compétitions contreproductives ; (c) croit en une cohérence spontanée mais tait les logiques multiples contradictoires ; (d) fait de l'informatique un instrument de pilotage distant et désincarné ; (e) prétend mobiliser mais conduit à tout allotir à des tiers de passage. Palliatifs pragmatiques : méthode Agile (James Martin, RAD) ; cartographie des états d'esprit (Rupert) ; IBET comme mesure du désengagement. Dépassement décisif : le modèle cindynique de la Sorbonne (Kervern/Boulanger) voit l'entreprise comme réseau d'acteurs décidés à se parler, caractérisé par objectif, valeurs, modèles de représentation, règles et façon d'appréhender les faits. Cinq propriétés de la rationalité collective cindynique. Principe fondateur : l'engagement mutuel des parties prenantes ne se décrète pas — il trouve sa puissance dans le sens du projet.
+
+── CONTRIBUTIONS À OUVRAGES COLLECTIFS ──
+
+[TERR-2017] « De l'équilibre de la terreur au terrorisme international » in Penser et repenser le terrorisme (coord. J. Delga, L'Harmattan, 2017)
+Analyse géopolitique de la transition de la dissuasion nucléaire (équilibre de la terreur) vers la guerre asymétrique et le terrorisme international. Lecture socio-politique des logiques de puissance, de l'État-nation à l'acteur transnational.
+
+[CORS-2017] « Corsaires ou pirates ? La guerre économique contre la démocratie se mène en col blanc » in Criminalité en col blanc (coord. J. Delga, L'Harmattan, 2017)
+La délinquance en col blanc s'inscrit sur fond de guerre économique. Distinction corsaires (acteurs mandatés par un État, dans un cadre légal apparent) vs pirates (acteurs hors-la-loi au service de leurs seuls intérêts). La prédation économique use des outils du droit et de la finance pour contourner les régulations démocratiques. Les acteurs du marché mondial exercent une violence symbolique et économique structurelle sur les citoyens, les États et les institutions. Référence à Marcel Mauss : les comportements économiques sont profondément socialement régulés. Le libertinage économique des élites n'est que la face visible d'une destruction du pacte social. Analyse des prédateurs type Weinstein comme symptôme d'un désordre systémique.
+
+[MORT-2018] « Expérience de mort imminente au 19 septembre » in Face à la mort (coord. J. Delga, L'Harmattan, 2018/2023)
+Témoignage personnel et réflexion philosophique sur l'expérience de mort imminente (EMI). Confrontation à la finitude comme révélateur des priorités et des valeurs. Articulation avec les thèses sur le collectif : la mort comme moment de transmission, la société qui refuse d'envisager sa propre mort s'appauvrit culturellement.
+
+[LIBERT-2023] « Le théâtre du libertinage, entre unité de temps et unité de lieu » in Libertaire, libertinage et intervention de l'État... (coord. J. Delga, L'Harmattan, 2022/2023)
+Approche sociologique et philosophique du libertinage comme phénomène social. Libertinage et libertaire : cousins germains de l'affranchissement, mais distingués par leur rapport à la norme (religieuse vs institutionnelle). Le libertinage historiquement conservateur sociologiquement (petits bourgeois). Modèle ago-antagonique appliqué aux dynamiques sociales : triple axe mœurs/pouvoir/spiritualité. La société française caractérisée par une relative liberté des mœurs comme constante historique. Mouvement #MeToo comme bousculement de l'axe des mœurs. La famille monoparentale comme produit d'une culture individualiste et hédoniste. Référence aux cindyniques de Kervern et Boulanger. Dialogue socratique fictif entre deux interlocuteurs (A et B).
+
+[DEM-2024] « Une entreprise démocratique dans une République sociale : pour qui ? pourquoi ? comment ? » in Démocratie(s) en action (coord. C. Gombert, Agora D.O.D.E.S., 2024)
+L'entreprise est en pratique le lieu de l'action du citoyen sur la société. La République française installe l'entreprise hors du champ démocratique : seul l'actionnaire est représenté au conseil d'administration. Historique : loi Le Chapelier (1791), éphémère droit au travail de 1848, contention de la Commune par la Troisième République. La République n'est pas née plébéienne mais de la coalition aristocratique et ploutocratique. Proposition : instituer le conseil d'administration comme instance de délibération de toutes les parties prenantes légalement désignées (collaborateurs, financeurs, fournisseurs, clients, associations, collectivités, assureurs). La rhétorique est l'instrument de toutes les manipulations ; seul le rapport à la vérité garantit la justice. Référence à Julien Benda (La trahison des clercs, 1927) : les intellectuels ont pour fonction de porter la vérité dans la sphère publique.
+
+[WAK-2024] (co-référencé) « L'opérateur d'assurance, témoin de l'urgence démocratique en entreprise » (Victor Waknine, même ouvrage, 2024)
+Waknine y cite et prolonge les travaux de Brochenin : distinction surcoûts affectant la production (non-qualité), les personnes physiques (coûts du mal-être) et le corps social (aléa non-maîtrisé). Plaidoyer pour une nouvelle norme comptable socio-économique. L'assureur doit disposer de la BDSE (base de données économiques et sociales) pour évaluer les risques systémiques, actuellement absents du contrat.
+
+── COLLABORATION PRINCIPALE ──
+Victor Waknine (Mozart Consulting) : concepteur technique de l'IBET, Emmy Award 2000, directions générales France Telecom / Airbus / Lehman Brothers. Apporte le langage financier, la légitimité technique et l'ancrage dans les réseaux professionnels.
+
+══════════════════════════════════════════════════════
+FIN DU CORPUS
+══════════════════════════════════════════════════════`;
+
+  /* ─────────────────────────────────────────────────────────────────
+     ÉTAT
+  ───────────────────────────────────────────────────────────────── */
+  const state = {
+    open: false,
+    history: [],          // [{role, content}]
+    loading: false,
+    chipsVisible: true,
+  };
+
+  /* ─────────────────────────────────────────────────────────────────
+     ÉLÉMENTS DOM
+  ───────────────────────────────────────────────────────────────── */
+  const trigger  = document.getElementById('bb-trigger');
+  const panel    = document.getElementById('bb-panel');
+  const messages = document.getElementById('bb-messages');
+  const chips    = document.getElementById('bb-chips');
+  const input    = document.getElementById('bb-input');
+  const sendBtn  = document.getElementById('bb-send');
+
+  /* ─────────────────────────────────────────────────────────────────
+     TOGGLE PANEL
+  ───────────────────────────────────────────────────────────────── */
+  function togglePanel() {
+    state.open = !state.open;
+    panel.classList.toggle('open', state.open);
+    trigger.classList.toggle('open', state.open);
+    trigger.setAttribute('aria-expanded', state.open);
+    if (state.open) {
+      if (state.history.length === 0) addWelcome();
+      setTimeout(() => input.focus(), 280);
+    }
+  }
+  trigger.addEventListener('click', togglePanel);
+
+  /* ─────────────────────────────────────────────────────────────────
+     MESSAGE DE BIENVENUE
+  ───────────────────────────────────────────────────────────────── */
+  function addWelcome() {
+    addMessage('assistant',
+      `Bonjour ! Je peux vous aider à explorer les travaux de Bruno Brochenin — ses thèses sur l'engagement collectif, l'IBET, la cindynique ou la démocratie d'entreprise. Que souhaitez-vous approfondir ?`
+    );
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     RENDU D'UN MESSAGE
+  ───────────────────────────────────────────────────────────────── */
+  function addMessage(role, text, sources) {
+    const div = document.createElement('div');
+    div.className = `bb-msg ${role}`;
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bb-bubble';
+    bubble.textContent = text;
+    div.appendChild(bubble);
+
+    if (sources && sources.length) {
+      const pills = document.createElement('div');
+      pills.className = 'bb-sources';
+      sources.forEach(s => {
+        const pill = document.createElement('span');
+        pill.className = 'bb-source-pill';
+        pill.textContent = s;
+        pills.appendChild(pill);
+      });
+      div.appendChild(pills);
+    }
+
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     INDICATEUR DE FRAPPE
+  ───────────────────────────────────────────────────────────────── */
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'bb-msg assistant';
+    div.id = 'bb-typing-msg';
+    const typing = document.createElement('div');
+    typing.className = 'bb-typing';
+    for (let i = 0; i < 3; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'bb-dot';
+      typing.appendChild(dot);
+    }
+    div.appendChild(typing);
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+  function hideTyping() {
+    const el = document.getElementById('bb-typing-msg');
+    if (el) el.remove();
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     EXTRACTION DES SOURCES CITÉES DANS LA RÉPONSE
+     Cherche les codes entre crochets [XXX-AAAA] ou les titres en italique
+  ───────────────────────────────────────────────────────────────── */
+  function extractSources(text) {
+    const map = {
+      'OVE-2010':  "Où va l'entreprise ? (2010)",
+      'ENG-2019':  "L'engagement collectif (2019)",
+      'IBET-2024': 'Indice de bien-être au travail (2024)',
+      'Q222-2011': 'Qualitique n°222 (2011)',
+      'Q225-2011': 'Qualitique n°225 (2011)',
+      'Q229-2011': 'Qualitique n°229 (2011)',
+      'Q233-2012': 'Qualitique n°233 (2012)',
+      'TERR-2017': 'Équilibre de la terreur (2017)',
+      'CORS-2017': 'Corsaires ou pirates ? (2017)',
+      'MORT-2018': 'Mort imminente (2018/2023)',
+      'LIBERT-2023':'Le théâtre du libertinage (2023)',
+      'DEM-2024':  'Entreprise démocratique (2024)',
+    };
+    const found = new Set();
+    Object.keys(map).forEach(code => {
+      if (text.includes(code)) found.add(map[code]);
+    });
+    // Aussi détecter les mentions directes par titre
+    if (text.includes("Où va l'entreprise") || text.includes('OVE')) found.add(map['OVE-2010']);
+    if (text.includes('engagement collectif') && text.includes('2019')) found.add(map['ENG-2019']);
+    if (text.includes('IBET') || text.includes("Indice de bien-être")) found.add(map['IBET-2024']);
+    if (text.includes('Qualitique') && text.includes('222')) found.add(map['Q222-2011']);
+    if (text.includes('pompiers') || text.includes('225')) found.add(map['Q225-2011']);
+    if (text.includes('risques') && text.includes('229')) found.add(map['Q229-2011']);
+    if (text.includes('conduite du changement') || text.includes('233')) found.add(map['Q233-2012']);
+    if (text.includes('libertinage')) found.add(map['LIBERT-2023']);
+    if (text.includes('démocratie') && text.includes('entreprise') && text.includes('2024')) found.add(map['DEM-2024']);
+    return [...found];
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     APPEL API
+  ───────────────────────────────────────────────────────────────── */
+  async function callAPI(userText) {
+    state.history.push({ role: 'user', content: userText });
+
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    const response = await fetch(CONFIG.endpoint, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        model: CONFIG.model,
+        max_tokens: CONFIG.maxTokens,
+        system: SYSTEM_PROMPT,
+        messages: state.history,
+      }),
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.error?.message || `Erreur ${response.status}`);
+    }
+
+    const data = await response.json();
+    const assistantText = data.content.map(b => b.type === 'text' ? b.text : '').join('');
+    state.history.push({ role: 'assistant', content: assistantText });
+    return assistantText;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     ENVOI D'UNE QUESTION
+  ───────────────────────────────────────────────────────────────── */
+  async function sendMessage(text) {
+    if (!text.trim() || state.loading) return;
+
+    // Masquer les chips après la première question
+    if (state.chipsVisible) {
+      chips.style.display = 'none';
+      state.chipsVisible = false;
+    }
+
+    addMessage('user', text.trim());
+    input.value = '';
+    autoResizeInput();
+    updateSendBtn();
+
+    state.loading = true;
+    sendBtn.disabled = true;
+    showTyping();
+
+    try {
+      const reply = await callAPI(text.trim());
+      hideTyping();
+      const sources = extractSources(reply);
+      addMessage('assistant', reply, sources);
+    } catch (e) {
+      hideTyping();
+      addMessage('assistant',
+        `Une erreur est survenue. Vérifiez la configuration de la clé API ou réessayez dans un instant. (${e.message})`
+      );
+    } finally {
+      state.loading = false;
+      updateSendBtn();
+      input.focus();
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     ÉVÉNEMENTS
+  ───────────────────────────────────────────────────────────────── */
+  function updateSendBtn() {
+    sendBtn.disabled = !input.value.trim() || state.loading;
+  }
+
+  function autoResizeInput() {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+  }
+
+  input.addEventListener('input', () => { autoResizeInput(); updateSendBtn(); });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage(input.value);
+    }
+  });
+  sendBtn.addEventListener('click', () => sendMessage(input.value));
+
+  // Chips de suggestion
+  document.querySelectorAll('.bb-chip').forEach(chip => {
+    chip.addEventListener('click', () => sendMessage(chip.dataset.q || chip.textContent.trim()));
+  });
+
+  // Fermeture au clic hors du panel
+  document.addEventListener('click', e => {
+    if (state.open && !panel.contains(e.target) && !trigger.contains(e.target)) {
+      togglePanel();
+    }
+  });
+
+  // Touche Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && state.open) togglePanel();
+  });
+
+})();
+</script>
+<!-- ═══════ FIN CHATBOT ═══════ -->
+</body>
+       3. Copier le bloc <script id="bb-chat-script"> avant 
+<!-- ═══════ CHATBOT ═══════ -->
+<div id="bb-chat-root">
+
+  <!-- Trigger -->
+  <button id="bb-trigger" aria-label="Ouvrir le chatbot" aria-expanded="false">
+    <!-- Book icon (open) -->
+    <svg class="bb-open-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </svg>
+    <!-- Close icon -->
+    <svg class="bb-close-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <!-- Panel -->
+  <div id="bb-panel" role="dialog" aria-label="Chatbot Bruno Brochenin" aria-modal="true">
+
+    <!-- Header -->
+    <div id="bb-header">
+      <div id="bb-avatar">BB</div>
+      <div id="bb-header-text">
+        <div id="bb-header-name">Bruno Brochenin</div>
+        <div id="bb-header-sub">Explorez les thèses et concepts</div>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="bb-messages" aria-live="polite" aria-label="Conversation"></div>
+
+    <!-- Suggestion chips (visibles uniquement au départ) -->
+    <div id="bb-chips">
+      <button class="bb-chip" data-q="Qu'est-ce que l'IBET et comment se calcule-t-il ?">Qu'est-ce que l'IBET et comment se calcule-t-il ?</button>
+      <button class="bb-chip" data-q="Quelle est la thèse centrale de L'engagement collectif dans l'entreprise ?">Quelle est la thèse centrale de <em>L'engagement collectif</em> ?</button>
+      <button class="bb-chip" data-q="En quoi la conduite du changement est-elle une croyance ?">En quoi la conduite du changement est-elle une croyance ?</button>
+    </div>
+
+    <!-- Input -->
+    <div id="bb-inputbar">
+      <textarea id="bb-input" rows="1"
+        placeholder="Posez votre question sur les travaux de Bruno Brochenin…"
+        aria-label="Votre question"></textarea>
+      <button id="bb-send" aria-label="Envoyer" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="bb-disclaimer">
+      Réponses synthétiques fondées sur les publications de Bruno Brochenin.<br>
+      Les textes originaux sont protégés par le droit d'auteur.
+    </div>
+
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────────────────────────────
+     CONFIGURATION
+     Remplacez YOUR_API_KEY par votre clé Anthropic.
+     Pour la production, préférez un proxy backend (ex. /api/chat)
+     qui conserve la clé côté serveur.
+  ───────────────────────────────────────────────────────────────── */
+  const CONFIG = {
+    endpoint: 'https://bb-chat-proxy.brochenin-bruno.workers.dev/chat',
+    model:    'claude-sonnet-4-6',
+    maxTokens: 600,
+  };
+
+  /* ─────────────────────────────────────────────────────────────────
+     CORPUS : condensé documenté de toutes les publications.
+     Il structure la mémoire du chatbot sans reproduire les textes.
+  ───────────────────────────────────────────────────────────────── */
+  const SYSTEM_PROMPT = `Tu es l'assistant littéraire de Bruno Brochenin, auteur et consultant en organisation. Tu réponds aux questions des visiteurs de son site en t'appuyant exclusivement sur ses publications listées ci-dessous. Tu fournis des réponses synthétiques, précises et documentées.
+
+RÈGLES IMPÉRATIVES
+1. Cite toujours tes sources entre parenthèses (titre abrégé + année).
+2. Ne reproduis jamais de passages textuels ; paraphrase et synthétise toujours.
+3. Si une question dépasse le corpus, dis-le clairement et renvoie vers les publications concernées.
+4. Réponds en français, de manière concise (4 à 8 phrases) mais substantielle.
+5. Tu n'exprimes pas d'opinions politiques personnelles ; tu rapportes les thèses de l'auteur.
+
+══════════════════════════════════════════════════════
+CORPUS DES PUBLICATIONS
+══════════════════════════════════════════════════════
+
+── LIVRES ──
+
+[OVE-2010] OÙ VA L'ENTREPRISE ? Organisation et dérives (Eska, 2010)
+Thèse centrale : les organisations modernes ont substitué aux métiers humains une architecture de processus et de progiciels (type SAP/ARIS) qui engendre le désordre même qu'elle prétend éliminer. L'auteur introduit le concept d'entropie organisationnelle : énergie dissipée en non-qualité, conflits et procédures d'exception. La vision « cartésienne » de l'entreprise (enchaînements univoques causes→effets, modélisation totale) est une fiction productive du désordre. Deux représentations alternatives sont esquissées : l'entreprise comme « corail » (ordre relatif en symbiose avec l'environnement) et le modèle cindynique de Kervern. Terrains : grandes entreprises françaises, projets SAP, industrie.
+
+[ENG-2019] L'ENGAGEMENT COLLECTIF DANS L'ENTREPRISE, la part magique de la performance (L'Harmattan, 2019)
+Modèle du « cercle magique » à cinq dimensions : valeurs partagées, objectif commun, organisation, règles de fonctionnement, dispositif de mesure. L'engagement collectif est la condition de la performance durable ; il ne se décrète pas mais résulte d'un dialogue structuré entre parties prenantes. L'entropie organisationnelle est un coût mesurable, systématiquement ignoré par la comptabilité classique. Formule clé : HVA (Human Value Added) = EBIT × IBET. Distinction entre résistance au changement légitime (incompréhension ou contraintes réelles non prises en compte) et désengagement structurel. Fondements théoriques : Marcel Mauss (l'individu est toujours déjà social), cindynique de Kervern, travaux ISEOR (coûts cachés). La direction d'entreprise a pour responsabilité primordiale d'élaborer des synthèses acceptables par l'ensemble des parties prenantes.
+
+[IBET-2024] INDICE DE BIEN-ÊTRE AU TRAVAIL (L'Harmattan, 2024)
+Approfondissement théorique à trois piliers : Paul Diel (la vanité comme égarement de l'esprit qui se croit plus grand que ses aptitudes), Marcel Mauss (l'individu n'existe que dans et par le collectif), James C. Scott (le pouvoir structurel externalise ses coûts de dysfonctionnement vers la collectivité). L'IBET est l'indicateur socio-économique central : IBET(%) = 100 × (VA − ΣIMET) / VA, où VA = valeur ajoutée et IMET = indicateurs du mal-être au travail (absentéisme, turn-over, AT/MP, grèves/contentieux, mesures palliatives, perte de qualité, perte de productivité, retards de projets). EBIT max = EBIT réalisé + VA(1 − IBET). L'IBET national 2020 est de 0,73 (niveau « Alerte »), signifiant 27 % de perte de valeur ajoutée, soit ~400 Md€ dont 252 Md€ maîtrisables. Plaidoyer pour une réforme des normes comptables intégrant les coûts systémiques sociaux, sociétaux et environnementaux. Modèle ago-antagonique (Donnadieu/Bernard-Weil) appliqué aux dynamiques sociales : triple polarisation mœurs/pouvoir/spiritualité. Récompensé Prix du Cercle Montesquieu 2024.
+
+── ARTICLES QUALITIQUE ──
+
+[Q222-2011] « Travaillons mieux pour vivre mieux ! Entre RPS et RSE, les Parties Prenantes sont-elles victimes ou responsables ? » (Qualitique n°222, jan.-fév. 2011)
+Les risques psychosociaux sont le résultat prévisible d'un mode de fonctionnement, non une fatalité : ils sont spécifiques aux grandes organisations anonymes (étude Médéric Malakoff). Distinction prévention primaire (combat le risque à sa source, approche collective sur l'organisation) vs prévention secondaire (renforce la capacité individuelle à faire face au stress). Présentation initiale de l'IBET et de l'IDEC (Indice de Dissipation de l'Effort Collectif). IDEC(%) = 100 × (VA − ΣIR) / VA, où IR = indicateurs de résistance (délai, budget, contenu). Formule de performance globale : PG = EBIT × IBET × IDEC. Concept de Goodwill Social et Badwill Social. La responsabilité essentielle de la direction est d'élaborer des synthèses acceptables ; celle des IRP est de se ressourcer auprès de leurs mandants, développer une vision claire des enjeux et assumer les nécessités du compromis.
+
+[Q225-2011] « Quelle est la valeur économique de la prestation des sapeurs-pompiers ? » (Qualitique n°225, mai 2011)
+Application de l'IBET au service public. Distinction monopole public vs entreprise marchande : le secteur marchand présente des surcoûts structurels (investissements redondants, coûts de mise sur le marché, structures dupliquées) ; la comparaison sur la seule valeur ajoutée est sans fondement. Pour un organisme sans but lucratif : IBET(%) = 100 × (Production − ΣIMET) / Production. Taxonomie de la demande : Demande Latente (DL), Demande Instruite Instantanée (DII), Demande Instruite Optimisée (DIO), Demande Exprimée (DE). La demande hors marché (Dhm) se divise en sub-marché (Dsm : petits besoins peu rentables) et ultra-marché (Dum : besoins à moyens hors normes). L'ouverture à la concurrence augmente la demande exprimée et érode les comportements altruistes et coopératifs. Hiérarchie recommandée : prévention > intervention d'urgence > réparation > assurance.
+
+[Q229-2011] « L'entreprise contemporaine face aux risques » (Qualitique n°229, nov. 2011)
+L'état d'esprit des équipes opérationnelles est le premier facteur de risque (référence Columbia/NASA 2003, Bhopal, AZF, BP Golfe du Mexique, Fukushima). La surabondance de procédures contraignantes aggrave le mauvais état d'esprit. Cartographie des états d'esprit (René Rupert) : confrontation aspirations vs perception des contraintes ; quatre modes de fonctionnement (taylorien C1, expert C2, projet C3, créatif C4). Trois facteurs de risque majeurs : direction à « huis clos » (insuffisamment ouverte au débat contradictoire), communication interne en décalage avec la pratique managériale, optimisation excessive des processus (organisations « anorexiques » — Robert Branche). Statistique : en moyenne nationale, les organisations sacrifient 23 % de la valeur ajoutée au nom de la rigueur gestionnaire.
+
+[Q233-2012] « La conduite du changement est-elle une croyance efficace ? » (Qualitique n°233, avr. 2012)
+Critique de la vision cartésienne des projets de transformation (SAP, ARIS). Cinq contradictions majeures : (a) prétend valoriser le métier mais astreint à l'exécution de procédures, rendant les collaborateurs « interchangeables » ; (b) prétend valoriser les coopérations mais exacerbe les compétitions contreproductives ; (c) croit en une cohérence spontanée mais tait les logiques multiples contradictoires ; (d) fait de l'informatique un instrument de pilotage distant et désincarné ; (e) prétend mobiliser mais conduit à tout allotir à des tiers de passage. Palliatifs pragmatiques : méthode Agile (James Martin, RAD) ; cartographie des états d'esprit (Rupert) ; IBET comme mesure du désengagement. Dépassement décisif : le modèle cindynique de la Sorbonne (Kervern/Boulanger) voit l'entreprise comme réseau d'acteurs décidés à se parler, caractérisé par objectif, valeurs, modèles de représentation, règles et façon d'appréhender les faits. Cinq propriétés de la rationalité collective cindynique. Principe fondateur : l'engagement mutuel des parties prenantes ne se décrète pas — il trouve sa puissance dans le sens du projet.
+
+── CONTRIBUTIONS À OUVRAGES COLLECTIFS ──
+
+[TERR-2017] « De l'équilibre de la terreur au terrorisme international » in Penser et repenser le terrorisme (coord. J. Delga, L'Harmattan, 2017)
+Analyse géopolitique de la transition de la dissuasion nucléaire (équilibre de la terreur) vers la guerre asymétrique et le terrorisme international. Lecture socio-politique des logiques de puissance, de l'État-nation à l'acteur transnational.
+
+[CORS-2017] « Corsaires ou pirates ? La guerre économique contre la démocratie se mène en col blanc » in Criminalité en col blanc (coord. J. Delga, L'Harmattan, 2017)
+La délinquance en col blanc s'inscrit sur fond de guerre économique. Distinction corsaires (acteurs mandatés par un État, dans un cadre légal apparent) vs pirates (acteurs hors-la-loi au service de leurs seuls intérêts). La prédation économique use des outils du droit et de la finance pour contourner les régulations démocratiques. Les acteurs du marché mondial exercent une violence symbolique et économique structurelle sur les citoyens, les États et les institutions. Référence à Marcel Mauss : les comportements économiques sont profondément socialement régulés. Le libertinage économique des élites n'est que la face visible d'une destruction du pacte social. Analyse des prédateurs type Weinstein comme symptôme d'un désordre systémique.
+
+[MORT-2018] « Expérience de mort imminente au 19 septembre » in Face à la mort (coord. J. Delga, L'Harmattan, 2018/2023)
+Témoignage personnel et réflexion philosophique sur l'expérience de mort imminente (EMI). Confrontation à la finitude comme révélateur des priorités et des valeurs. Articulation avec les thèses sur le collectif : la mort comme moment de transmission, la société qui refuse d'envisager sa propre mort s'appauvrit culturellement.
+
+[LIBERT-2023] « Le théâtre du libertinage, entre unité de temps et unité de lieu » in Libertaire, libertinage et intervention de l'État... (coord. J. Delga, L'Harmattan, 2022/2023)
+Approche sociologique et philosophique du libertinage comme phénomène social. Libertinage et libertaire : cousins germains de l'affranchissement, mais distingués par leur rapport à la norme (religieuse vs institutionnelle). Le libertinage historiquement conservateur sociologiquement (petits bourgeois). Modèle ago-antagonique appliqué aux dynamiques sociales : triple axe mœurs/pouvoir/spiritualité. La société française caractérisée par une relative liberté des mœurs comme constante historique. Mouvement #MeToo comme bousculement de l'axe des mœurs. La famille monoparentale comme produit d'une culture individualiste et hédoniste. Référence aux cindyniques de Kervern et Boulanger. Dialogue socratique fictif entre deux interlocuteurs (A et B).
+
+[DEM-2024] « Une entreprise démocratique dans une République sociale : pour qui ? pourquoi ? comment ? » in Démocratie(s) en action (coord. C. Gombert, Agora D.O.D.E.S., 2024)
+L'entreprise est en pratique le lieu de l'action du citoyen sur la société. La République française installe l'entreprise hors du champ démocratique : seul l'actionnaire est représenté au conseil d'administration. Historique : loi Le Chapelier (1791), éphémère droit au travail de 1848, contention de la Commune par la Troisième République. La République n'est pas née plébéienne mais de la coalition aristocratique et ploutocratique. Proposition : instituer le conseil d'administration comme instance de délibération de toutes les parties prenantes légalement désignées (collaborateurs, financeurs, fournisseurs, clients, associations, collectivités, assureurs). La rhétorique est l'instrument de toutes les manipulations ; seul le rapport à la vérité garantit la justice. Référence à Julien Benda (La trahison des clercs, 1927) : les intellectuels ont pour fonction de porter la vérité dans la sphère publique.
+
+[WAK-2024] (co-référencé) « L'opérateur d'assurance, témoin de l'urgence démocratique en entreprise » (Victor Waknine, même ouvrage, 2024)
+Waknine y cite et prolonge les travaux de Brochenin : distinction surcoûts affectant la production (non-qualité), les personnes physiques (coûts du mal-être) et le corps social (aléa non-maîtrisé). Plaidoyer pour une nouvelle norme comptable socio-économique. L'assureur doit disposer de la BDSE (base de données économiques et sociales) pour évaluer les risques systémiques, actuellement absents du contrat.
+
+── COLLABORATION PRINCIPALE ──
+Victor Waknine (Mozart Consulting) : concepteur technique de l'IBET, Emmy Award 2000, directions générales France Telecom / Airbus / Lehman Brothers. Apporte le langage financier, la légitimité technique et l'ancrage dans les réseaux professionnels.
+
+══════════════════════════════════════════════════════
+FIN DU CORPUS
+══════════════════════════════════════════════════════`;
+
+  /* ─────────────────────────────────────────────────────────────────
+     ÉTAT
+  ───────────────────────────────────────────────────────────────── */
+  const state = {
+    open: false,
+    history: [],          // [{role, content}]
+    loading: false,
+    chipsVisible: true,
+  };
+
+  /* ─────────────────────────────────────────────────────────────────
+     ÉLÉMENTS DOM
+  ───────────────────────────────────────────────────────────────── */
+  const trigger  = document.getElementById('bb-trigger');
+  const panel    = document.getElementById('bb-panel');
+  const messages = document.getElementById('bb-messages');
+  const chips    = document.getElementById('bb-chips');
+  const input    = document.getElementById('bb-input');
+  const sendBtn  = document.getElementById('bb-send');
+
+  /* ─────────────────────────────────────────────────────────────────
+     TOGGLE PANEL
+  ───────────────────────────────────────────────────────────────── */
+  function togglePanel() {
+    state.open = !state.open;
+    panel.classList.toggle('open', state.open);
+    trigger.classList.toggle('open', state.open);
+    trigger.setAttribute('aria-expanded', state.open);
+    if (state.open) {
+      if (state.history.length === 0) addWelcome();
+      setTimeout(() => input.focus(), 280);
+    }
+  }
+  trigger.addEventListener('click', togglePanel);
+
+  /* ─────────────────────────────────────────────────────────────────
+     MESSAGE DE BIENVENUE
+  ───────────────────────────────────────────────────────────────── */
+  function addWelcome() {
+    addMessage('assistant',
+      `Bonjour ! Je peux vous aider à explorer les travaux de Bruno Brochenin — ses thèses sur l'engagement collectif, l'IBET, la cindynique ou la démocratie d'entreprise. Que souhaitez-vous approfondir ?`
+    );
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     RENDU D'UN MESSAGE
+  ───────────────────────────────────────────────────────────────── */
+  function addMessage(role, text, sources) {
+    const div = document.createElement('div');
+    div.className = `bb-msg ${role}`;
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bb-bubble';
+    bubble.textContent = text;
+    div.appendChild(bubble);
+
+    if (sources && sources.length) {
+      const pills = document.createElement('div');
+      pills.className = 'bb-sources';
+      sources.forEach(s => {
+        const pill = document.createElement('span');
+        pill.className = 'bb-source-pill';
+        pill.textContent = s;
+        pills.appendChild(pill);
+      });
+      div.appendChild(pills);
+    }
+
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     INDICATEUR DE FRAPPE
+  ───────────────────────────────────────────────────────────────── */
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'bb-msg assistant';
+    div.id = 'bb-typing-msg';
+    const typing = document.createElement('div');
+    typing.className = 'bb-typing';
+    for (let i = 0; i < 3; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'bb-dot';
+      typing.appendChild(dot);
+    }
+    div.appendChild(typing);
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+  function hideTyping() {
+    const el = document.getElementById('bb-typing-msg');
+    if (el) el.remove();
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     EXTRACTION DES SOURCES CITÉES DANS LA RÉPONSE
+     Cherche les codes entre crochets [XXX-AAAA] ou les titres en italique
+  ───────────────────────────────────────────────────────────────── */
+  function extractSources(text) {
+    const map = {
+      'OVE-2010':  "Où va l'entreprise ? (2010)",
+      'ENG-2019':  "L'engagement collectif (2019)",
+      'IBET-2024': 'Indice de bien-être au travail (2024)',
+      'Q222-2011': 'Qualitique n°222 (2011)',
+      'Q225-2011': 'Qualitique n°225 (2011)',
+      'Q229-2011': 'Qualitique n°229 (2011)',
+      'Q233-2012': 'Qualitique n°233 (2012)',
+      'TERR-2017': 'Équilibre de la terreur (2017)',
+      'CORS-2017': 'Corsaires ou pirates ? (2017)',
+      'MORT-2018': 'Mort imminente (2018/2023)',
+      'LIBERT-2023':'Le théâtre du libertinage (2023)',
+      'DEM-2024':  'Entreprise démocratique (2024)',
+    };
+    const found = new Set();
+    Object.keys(map).forEach(code => {
+      if (text.includes(code)) found.add(map[code]);
+    });
+    // Aussi détecter les mentions directes par titre
+    if (text.includes("Où va l'entreprise") || text.includes('OVE')) found.add(map['OVE-2010']);
+    if (text.includes('engagement collectif') && text.includes('2019')) found.add(map['ENG-2019']);
+    if (text.includes('IBET') || text.includes("Indice de bien-être")) found.add(map['IBET-2024']);
+    if (text.includes('Qualitique') && text.includes('222')) found.add(map['Q222-2011']);
+    if (text.includes('pompiers') || text.includes('225')) found.add(map['Q225-2011']);
+    if (text.includes('risques') && text.includes('229')) found.add(map['Q229-2011']);
+    if (text.includes('conduite du changement') || text.includes('233')) found.add(map['Q233-2012']);
+    if (text.includes('libertinage')) found.add(map['LIBERT-2023']);
+    if (text.includes('démocratie') && text.includes('entreprise') && text.includes('2024')) found.add(map['DEM-2024']);
+    return [...found];
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     APPEL API
+  ───────────────────────────────────────────────────────────────── */
+  async function callAPI(userText) {
+    state.history.push({ role: 'user', content: userText });
+
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    const response = await fetch(CONFIG.endpoint, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        model: CONFIG.model,
+        max_tokens: CONFIG.maxTokens,
+        system: SYSTEM_PROMPT,
+        messages: state.history,
+      }),
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.error?.message || `Erreur ${response.status}`);
+    }
+
+    const data = await response.json();
+    const assistantText = data.content.map(b => b.type === 'text' ? b.text : '').join('');
+    state.history.push({ role: 'assistant', content: assistantText });
+    return assistantText;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     ENVOI D'UNE QUESTION
+  ───────────────────────────────────────────────────────────────── */
+  async function sendMessage(text) {
+    if (!text.trim() || state.loading) return;
+
+    // Masquer les chips après la première question
+    if (state.chipsVisible) {
+      chips.style.display = 'none';
+      state.chipsVisible = false;
+    }
+
+    addMessage('user', text.trim());
+    input.value = '';
+    autoResizeInput();
+    updateSendBtn();
+
+    state.loading = true;
+    sendBtn.disabled = true;
+    showTyping();
+
+    try {
+      const reply = await callAPI(text.trim());
+      hideTyping();
+      const sources = extractSources(reply);
+      addMessage('assistant', reply, sources);
+    } catch (e) {
+      hideTyping();
+      addMessage('assistant',
+        `Une erreur est survenue. Vérifiez la configuration de la clé API ou réessayez dans un instant. (${e.message})`
+      );
+    } finally {
+      state.loading = false;
+      updateSendBtn();
+      input.focus();
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     ÉVÉNEMENTS
+  ───────────────────────────────────────────────────────────────── */
+  function updateSendBtn() {
+    sendBtn.disabled = !input.value.trim() || state.loading;
+  }
+
+  function autoResizeInput() {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+  }
+
+  input.addEventListener('input', () => { autoResizeInput(); updateSendBtn(); });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage(input.value);
+    }
+  });
+  sendBtn.addEventListener('click', () => sendMessage(input.value));
+
+  // Chips de suggestion
+  document.querySelectorAll('.bb-chip').forEach(chip => {
+    chip.addEventListener('click', () => sendMessage(chip.dataset.q || chip.textContent.trim()));
+  });
+
+  // Fermeture au clic hors du panel
+  document.addEventListener('click', e => {
+    if (state.open && !panel.contains(e.target) && !trigger.contains(e.target)) {
+      togglePanel();
+    }
+  });
+
+  // Touche Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && state.open) togglePanel();
+  });
+
+})();
+</script>
+<!-- ═══════ FIN CHATBOT ═══════ -->
+</body>
+       4. Remplacer YOUR_API_KEY par votre clé Anthropic
+          (idéalement via un proxy backend pour ne pas exposer la clé)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<style id="bb-chat-style">
+/* ── Imports ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap');
+
+/* ── Tokens ── */
+:root {
+  --bb-ink:       #1a1a1a;
+  --bb-paper:     #fafaf8;
+  --bb-slate:     #3d5166;
+  --bb-slate-lt:  #e8edf2;
+  --bb-accent:    #4a6fa5;
+  --bb-accent-dk: #2d4d7a;
+  --bb-muted:     #6b7280;
+  --bb-border:    #dde1e7;
+  --bb-shadow:    0 8px 32px rgba(0,0,0,.14), 0 2px 8px rgba(0,0,0,.08);
+  --bb-radius:    14px;
+  --bb-serif:     'Playfair Display', Georgia, serif;
+  --bb-sans:      'Inter', system-ui, sans-serif;
+  --bb-speed:     .22s;
+}
+
+/* ── Trigger button ── */
+#bb-trigger {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9998;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bb-slate);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(61,81,102,.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--bb-speed), background var(--bb-speed);
+}
+#bb-trigger:hover { background: var(--bb-accent-dk); transform: scale(1.07); }
+#bb-trigger svg { width: 26px; height: 26px; }
+#bb-trigger .bb-close-icon { display: none; }
+#bb-trigger.open .bb-open-icon  { display: none; }
+#bb-trigger.open .bb-close-icon { display: block; }
+
+/* ── Panel ── */
+#bb-panel {
+  position: fixed;
+  bottom: 96px;
+  right: 28px;
+  z-index: 9999;
+  width: min(400px, calc(100vw - 40px));
+  height: min(580px, calc(100vh - 130px));
+  background: var(--bb-paper);
+  border-radius: var(--bb-radius);
+  box-shadow: var(--bb-shadow);
+  border: 1px solid var(--bb-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform-origin: bottom right;
+  transform: scale(.88) translateY(16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--bb-speed) cubic-bezier(.34,1.3,.64,1),
+              opacity  var(--bb-speed) ease;
+}
+#bb-panel.open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Header ── */
+#bb-header {
+  background: var(--bb-slate);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+#bb-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bb-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--bb-serif);
+  font-size: 15px;
+  color: #fff;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+#bb-header-text {}
+#bb-header-name {
+  font-family: var(--bb-serif);
+  font-size: 15px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.2;
+}
+#bb-header-sub {
+  font-family: var(--bb-sans);
+  font-size: 11px;
+  color: rgba(255,255,255,.65);
+  margin-top: 1px;
+}
+
+/* ── Messages ── */
+#bb-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scroll-behavior: smooth;
+}
+#bb-messages::-webkit-scrollbar { width: 4px; }
+#bb-messages::-webkit-scrollbar-thumb { background: var(--bb-border); border-radius: 2px; }
+
+.bb-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 88%;
+}
+.bb-msg.assistant { align-self: flex-start; }
+.bb-msg.user      { align-self: flex-end; }
+
+.bb-bubble {
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-family: var(--bb-sans);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--bb-ink);
+}
+.bb-msg.assistant .bb-bubble {
+  background: #fff;
+  border: 1px solid var(--bb-border);
+  border-bottom-left-radius: 4px;
+}
+.bb-msg.user .bb-bubble {
+  background: var(--bb-slate);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+/* Source pills */
+.bb-sources {
+  margin-top: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.bb-source-pill {
+  font-family: var(--bb-sans);
+  font-size: 10.5px;
+  padding: 2px 8px;
+  background: var(--bb-slate-lt);
+  color: var(--bb-slate);
+  border-radius: 99px;
+  border: 1px solid var(--bb-border);
+  font-style: italic;
+}
+
+/* Typing indicator */
+.bb-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 11px 14px;
+  background: #fff;
+  border: 1px solid var(--bb-border);
+  border-radius: 12px;
+  border-bottom-left-radius: 4px;
+  width: fit-content;
+}
+.bb-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bb-muted);
+  animation: bb-bounce .9s ease-in-out infinite;
+}
+.bb-dot:nth-child(2) { animation-delay: .15s; }
+.bb-dot:nth-child(3) { animation-delay: .3s; }
+@keyframes bb-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity:.5; }
+  40%           { transform: translateY(-5px); opacity:1; }
+}
+
+/* Welcome chips */
+#bb-chips {
+  padding: 0 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.bb-chip {
+  background: var(--bb-slate-lt);
+  border: 1px solid var(--bb-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: var(--bb-sans);
+  font-size: 12px;
+  color: var(--bb-slate);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--bb-speed), border-color var(--bb-speed);
+  line-height: 1.4;
+}
+.bb-chip:hover { background: #dce4ee; border-color: var(--bb-accent); }
+
+/* ── Input bar ── */
+#bb-inputbar {
+  padding: 12px 14px;
+  border-top: 1px solid var(--bb-border);
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  flex-shrink: 0;
+  background: var(--bb-paper);
+}
+#bb-input {
+  flex: 1;
+  resize: none;
+  border: 1px solid var(--bb-border);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-family: var(--bb-sans);
+  font-size: 13px;
+  color: var(--bb-ink);
+  background: #fff;
+  outline: none;
+  max-height: 100px;
+  min-height: 38px;
+  line-height: 1.5;
+  transition: border-color var(--bb-speed);
+}
+#bb-input:focus { border-color: var(--bb-accent); }
+#bb-input::placeholder { color: var(--bb-muted); }
+#bb-send {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bb-slate);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--bb-speed);
+  align-self: flex-end;
+}
+#bb-send:hover:not(:disabled) { background: var(--bb-accent-dk); }
+#bb-send:disabled { opacity: .4; cursor: default; }
+#bb-send svg { width: 16px; height: 16px; }
+
+/* ── Disclaimer ── */
+#bb-disclaimer {
+  padding: 7px 16px 10px;
+  font-family: var(--bb-sans);
+  font-size: 10.5px;
+  color: var(--bb-muted);
+  text-align: center;
+  border-top: 1px solid var(--bb-border);
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  #bb-panel { bottom: 84px; right: 16px; left: 16px; width: auto; }
+  #bb-trigger { bottom: 20px; right: 16px; }
+}
+
+</style>
 </head>
 <body>
 
-<!-- ── Lang bar ── -->
 <div class="lang-bar">
-  <a href="#" class="active">FR</a>
-  <a href="#">EN</a>
+  <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
 </div>
 
-<!-- ── Hero ── -->
-<div class="hero">
-  <div class="hero-image">
-    <img src="BROCHENIN Photo.png" alt="Bruno Brochenin" />
+<header>
+  <div class="header-inner">
+    <div class="photo-frame">
+      <img src="data:image/jpeg;base64,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" alt="Bruno Brochenin">
+    </div>
+    <div>
+      <div class="header-eyebrow" data-fr="Auteur · Consultant en organisation · Essayiste" data-en="Author · Management Consultant · Essayist">Auteur · Consultant en organisation · Essayiste</div>
+      <h1 class="header-name">Bruno<br><em>Brochenin</em></h1>
+      <div class="header-rule"></div>
+      <p class="header-tagline" data-fr="Diplômé de l'ESSEC. Vingt ans d'observation des organisations, de leurs dérives et de leurs ressources cachées. Trois livres, six contributions collectives, un fil conducteur." data-en="Graduate of ESSEC Business School. Twenty years observing organisations, their dysfunctions and hidden resources. Three books, six collective contributions, one constant thread.">Diplômé de l'ESSEC. Vingt ans d'observation des organisations, de leurs dérives et de leurs ressources cachées. Trois livres, six contributions collectives, un fil conducteur.</p>
+      <p class="header-thesis" data-fr="« L'individu ne trouve sa liberté réelle que dans la conscience du cadre collectif qui l'a constitué — jamais contre lui. »" data-en="&ldquo;The individual finds genuine freedom only through awareness of the collective framework that constitutes them — never in opposition to it.&rdquo;">« L'individu ne trouve sa liberté réelle que dans la conscience du cadre collectif qui l'a constitué — jamais contre lui. »</p>
+    </div>
   </div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Auteur · Consultant en organisation · Essayiste</p>
-    <h1 class="hero-name">Bruno<br><em>Brochenin</em></h1>
-    <div class="hero-separator"></div>
-    <p class="hero-bio">Diplômé de l'ESSEC. Vingt ans d'observation des organisations, de leurs dérives et de leurs ressources cachées. Trois livres, six contributions collectives, un fil conducteur.</p>
-    <p class="hero-quote">« L'individu ne trouve sa liberté réelle que dans la conscience du cadre collectif qui l'a constitué — jamais contre lui. »</p>
-  </div>
-</div>
+</header>
 
-<!-- ── Navigation ── -->
 <nav>
-  <ul class="nav-links">
-    <li><a href="#these">Thèse</a></li>
-    <li><a href="#livres">Livres</a></li>
-    <li><a href="#articles">Articles</a></li>
-    <li><a href="#outils">Outils</a></li>
-    <li><a href="#collaboration">Collaboration</a></li>
-    <li><a href="#ibet">IBET</a></li>
-    <li><a href="#qualitique">Articles</a></li>
-    <li><a href="#presse">Presse</a></li>
-  </ul>
+  <button class="nav-link active" onclick="go('these',this)" data-fr="Thèse" data-en="Thesis">Thèse</button>
+  <button class="nav-link" onclick="go('livres',this)" data-fr="Livres" data-en="Books">Livres</button>
+  <button class="nav-link" onclick="go('articles',this)" data-fr="Articles" data-en="Articles">Articles</button>
+  <button class="nav-link" onclick="go('outils',this)" data-fr="Outils" data-en="Concepts">Outils</button>
+  <button class="nav-link" onclick="go('collab',this)" data-fr="Collaboration" data-en="Collaboration">Collaboration</button>
+  <button class="nav-link" onclick="go('ibet-chiffres',this)" data-fr="IBET" data-en="IBET">IBET</button>
+  <button class="nav-link" onclick="go('qualitique',this)" data-fr="Articles" data-en="Articles">Articles</button>
+  <button class="nav-link" onclick="go('presse',this)" data-fr="Presse" data-en="Press">Presse</button>
 </nav>
 
-<!-- ── I. Thèse ── -->
-<section id="these">
+<main>
+
+<section class="section" id="these">
   <div class="section-header">
-    <span class="section-number">I</span>
-    <h2 class="section-title">Une thèse centrale, vingt ans de constance</h2>
+    <span class="section-num">I</span>
+    <h2 class="section-title" data-fr="Une thèse centrale, vingt ans de constance" data-en="One central thesis, twenty years of consistency">Une thèse centrale, vingt ans de constance</h2>
   </div>
-
-  <div class="these-grid">
-    <div class="these-card">
-      <p class="these-card-label">Plan psychologique</p>
-      <p>La vanité est l'égarement de l'esprit qui se croit plus grand que ses aptitudes réelles. <em>(Paul Diel)</em></p>
-    </div>
-    <div class="these-card">
-      <p class="these-card-label">Plan sociologique</p>
-      <p>L'individu est toujours déjà social. Il n'existe que dans et par le collectif. <em>(Marcel Mauss)</em></p>
-    </div>
-    <div class="these-card">
-      <p class="these-card-label">Plan politique</p>
-      <p>Le pouvoir structurel tend à externaliser les coûts de ses dysfonctionnements vers la collectivité. <em>(James C. Scott)</em></p>
-    </div>
-  </div>
-
-  <div class="these-synthese">
-    <strong>Synthèse</strong>
-    L'engagement collectif est la condition de toute performance durable — et il ne se décrète pas.
+  <div class="theses">
+    <div class="these-card"><div class="these-label" data-fr="Plan psychologique" data-en="Psychological level">Plan psychologique</div><div class="these-text" data-fr="La vanité est l'égarement de l'esprit qui se croit plus grand que ses aptitudes réelles. (Paul Diel)" data-en="Vanity is the mind's delusion that it is greater than its actual capacities. (Paul Diel)">La vanité est l'égarement de l'esprit qui se croit plus grand que ses aptitudes réelles. (Paul Diel)</div></div>
+    <div class="these-card"><div class="these-label" data-fr="Plan sociologique" data-en="Sociological level">Plan sociologique</div><div class="these-text" data-fr="L'individu est toujours déjà social. Il n'existe que dans et par le collectif. (Marcel Mauss)" data-en="The individual is always already social. They exist only within and through the collective. (Marcel Mauss)">L'individu est toujours déjà social. Il n'existe que dans et par le collectif. (Marcel Mauss)</div></div>
+    <div class="these-card"><div class="these-label" data-fr="Plan politique" data-en="Political level">Plan politique</div><div class="these-text" data-fr="Le pouvoir structurel tend à externaliser les coûts de ses dysfonctionnements vers la collectivité. (James C. Scott)" data-en="Structural power tends to externalise the costs of its dysfunctions onto the collective. (James C. Scott)">Le pouvoir structurel tend à externaliser les coûts de ses dysfonctionnements vers la collectivité. (James C. Scott)</div></div>
+    <div class="these-card"><div class="these-label" data-fr="Synthèse" data-en="Synthesis">Synthèse</div><div class="these-text" data-fr="L'engagement collectif est la condition de toute performance durable — et il ne se décrète pas." data-en="Collective engagement is the condition of all lasting performance — and it cannot be decreed.">L'engagement collectif est la condition de toute performance durable — et il ne se décrète pas.</div></div>
   </div>
 </section>
 
-<!-- ── II. Livres ── -->
-<section id="livres" style="background: var(--ivoire); max-width: 100%; padding: 6rem 0;">
-  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
-    <div class="section-header">
-      <span class="section-number">II</span>
-      <h2 class="section-title">Livres</h2>
-    </div>
-
-    <div class="livres-list">
-      <div class="livre-item">
-        <div class="livre-annee">2010</div>
-        <div>
-          <p class="livre-genre">Essai · Management</p>
-          <h3 class="livre-titre">Où va l'entreprise ?</h3>
-          <p class="livre-sous-titre">Organisation et dérives</p>
-          <p class="livre-desc">Diagnostic des dérives organisationnelles à l'ère des procédures et des progiciels. Témoignages de terrain, portraits, analyse de l'architecture d'entreprise comme outil de libération ou d'asservissement selon l'intention qui la pilote.</p>
-          <p class="livre-editeur">Éditions ESKA</p>
-        </div>
-      </div>
-
-      <div class="livre-item">
-        <div class="livre-annee">2019</div>
-        <div>
-          <p class="livre-genre">Essai · Management · Économie sociale</p>
-          <h3 class="livre-titre">L'engagement collectif dans l'entreprise</h3>
-          <p class="livre-sous-titre">La part magique de la performance</p>
-          <p class="livre-desc">Proposition du modèle du « cercle magique » à cinq dimensions. Démonstration que l'entropie organisationnelle est un coût mesurable, systématiquement ignoré par la comptabilité classique.</p>
-          <p class="livre-editeur">L'Harmattan</p>
-        </div>
-      </div>
-
-      <div class="livre-item">
-        <div class="livre-annee">2024</div>
-        <div>
-          <p class="livre-genre">Essai · Économie · Sciences sociales</p>
-          <h3 class="livre-titre">Indice de bien-être au travail</h3>
-          <p class="livre-sous-titre">On compte tout sauf ce qui compte</p>
-          <p class="livre-desc">Fondation théorique à trois piliers (Diel, Mauss, Scott) d'un outil de mesure du désengagement. Plaidoyer pour une réforme des normes comptables intégrant les coûts systémiques du mal-être.</p>
-          <p class="livre-editeur">L'Harmattan</p>
-        </div>
-      </div>
-    </div>
+<section class="section" id="livres">
+  <div class="section-header">
+    <span class="section-num">II</span>
+    <h2 class="section-title" data-fr="Livres" data-en="Books">Livres</h2>
   </div>
+  <div class="book-row"><div class="book-year">2010</div><div><div class="book-type" data-fr="Essai · Management" data-en="Essay · Management">Essai · Management</div><div class="book-title" data-fr="Où va l'entreprise ?" data-en="Where is the organisation headed?">Où va l'entreprise ?</div><div class="book-subtitle" data-fr="Organisation et dérives" data-en="Organisation and its drifts">Organisation et dérives</div><div class="book-desc" data-fr="Diagnostic des dérives organisationnelles à l'ère des procédures et des progiciels. Témoignages de terrain, portraits, analyse de l'architecture d'entreprise comme outil de libération ou d'asservissement selon l'intention qui la pilote." data-en="Diagnosis of organisational drift in the age of procedures and ERP systems. Field testimonies, portraits, analysis of enterprise architecture as a tool of liberation or subjugation depending on the intention behind it.">Diagnostic des dérives organisationnelles à l'ère des procédures et des progiciels. Témoignages de terrain, portraits, analyse de l'architecture d'entreprise comme outil de libération ou d'asservissement selon l'intention qui la pilote.</div></div><div class="book-pub">Éditions ESKA</div></div>
+  <div class="book-row"><div class="book-year">2019</div><div><div class="book-type" data-fr="Essai · Management · Économie sociale" data-en="Essay · Management · Social economics">Essai · Management · Économie sociale</div><div class="book-title" data-fr="L'engagement collectif dans l'entreprise" data-en="Collective Engagement in the Organisation">L'engagement collectif dans l'entreprise</div><div class="book-subtitle" data-fr="La part magique de la performance" data-en="The magical dimension of performance">La part magique de la performance</div><div class="book-desc" data-fr="Proposition du modèle du « cercle magique » à cinq dimensions. Démonstration que l'entropie organisationnelle est un coût mesurable, systématiquement ignoré par la comptabilité classique." data-en="Presentation of the five-dimension 'magic circle' model. Demonstration that organisational entropy is a measurable cost, systematically ignored by conventional accounting.">Proposition du modèle du « cercle magique » à cinq dimensions. Démonstration que l'entropie organisationnelle est un coût mesurable, systématiquement ignoré par la comptabilité classique.</div></div><div class="book-pub">L'Harmattan</div></div>
+  <div class="book-row"><div class="book-year">2024</div><div><div class="book-type" data-fr="Essai · Économie · Sciences sociales" data-en="Essay · Economics · Social sciences">Essai · Économie · Sciences sociales</div><div class="book-title" data-fr="Indice de bien-être au travail" data-en="The Workplace Wellbeing Index">Indice de bien-être au travail</div><div class="book-subtitle" data-fr="On compte tout sauf ce qui compte" data-en="We measure everything except what matters">On compte tout sauf ce qui compte</div><div class="book-desc" data-fr="Fondation théorique à trois piliers (Diel, Mauss, Scott) d'un outil de mesure du désengagement. Plaidoyer pour une réforme des normes comptables intégrant les coûts systémiques du mal-être." data-en="Three-pillar theoretical foundation (Diel, Mauss, Scott) for a disengagement measurement tool. Argument for accounting reform integrating the systemic costs of workplace ill-being.">Fondation théorique à trois piliers (Diel, Mauss, Scott) d'un outil de mesure du désengagement. Plaidoyer pour une réforme des normes comptables intégrant les coûts systémiques du mal-être.</div></div><div class="book-pub">L'Harmattan</div></div>
 </section>
 
-<!-- ── III. Contributions ── -->
-<section id="articles">
+<section class="section" id="articles">
   <div class="section-header">
-    <span class="section-number">III</span>
-    <h2 class="section-title">Contributions et articles</h2>
+    <span class="section-num">III</span>
+    <h2 class="section-title" data-fr="Contributions et articles" data-en="Contributions and articles">Contributions et articles</h2>
   </div>
-
   <div class="articles-list">
-    <div class="article-item">
-      <div class="article-annee">2011</div>
-      <div>
-        <p class="article-source">Qualitique n°222 · Janvier 2011</p>
-        <p class="article-titre">Travaillons mieux pour vivre mieux ! Entre R.P.S. et R.S.E., les Parties Prenantes sont-elles victimes ou responsables ?</p>
-      </div>
-    </div>
-    <div class="article-item">
-      <div class="article-annee">2011</div>
-      <div>
-        <p class="article-source">Qualitique n°225 · Mai 2011</p>
-        <p class="article-titre">Quelle est la valeur économique de la prestation des sapeurs-pompiers ?</p>
-      </div>
-    </div>
-    <div class="article-item">
-      <div class="article-annee">2011</div>
-      <div>
-        <p class="article-source">Qualitique n°229</p>
-        <p class="article-titre">L'entreprise contemporaine face aux risques</p>
-      </div>
-    </div>
-    <div class="article-item">
-      <div class="article-annee">2012</div>
-      <div>
-        <p class="article-source">Qualitique n°233 · Avril 2012</p>
-        <p class="article-titre">La conduite du changement est-elle une croyance efficace ?</p>
-      </div>
-    </div>
-    <div class="article-item">
-      <div class="article-annee">2015</div>
-      <div>
-        <p class="article-source">coord. Jacques Delga · Penser et repenser le terrorisme · L'Harmattan</p>
-        <p class="article-titre">De l'équilibre de la terreur au terrorisme international</p>
-      </div>
-    </div>
-    <div class="article-item">
-      <div class="article-annee">2016</div>
-      <div>
-        <p class="article-source">coord. Jacques Delga · Criminalité en col blanc · L'Harmattan</p>
-        <p class="article-titre">Corsaires ou pirates ? La guerre économique en col blanc</p>
-      </div>
-    </div>
-    <div class="article-item">
-      <div class="article-annee">2022</div>
-      <div>
-        <p class="article-source">coord. Jacques Delga · Libertaire, libertinage · L'Harmattan</p>
-        <p class="article-titre">Le théâtre du libertinage</p>
-      </div>
-    </div>
-    <div class="article-item">
-      <div class="article-annee">2023</div>
-      <div>
-        <p class="article-source">coord. Jacques Delga · Face à la mort · L'Harmattan</p>
-        <p class="article-titre">Expérience de mort imminente</p>
-      </div>
-    </div>
-    <div class="article-item">
-      <div class="article-annee">2024</div>
-      <div>
-        <p class="article-source">coord. Corentin Gombert · Démocratie(s) en action · Agora D.O.D.E.S.</p>
-        <p class="article-titre">Une entreprise démocratique dans une république sociale</p>
-      </div>
-    </div>
+    <div class="article-row"><div class="article-meta">2011</div><div class="article-title" data-fr="L'entreprise contemporaine face aux risques : des opportunités à trouver du côté de l'état d'esprit des équipes opérationnelles" data-en="The contemporary firm facing risk: opportunities to be found in the mindset of operational teams">L'entreprise contemporaine face aux risques</div><div class="article-venue">Qualitique n°229</div></div>
+    <div class="article-row"><div class="article-meta" data-fr="2015 — coord. Jacques Delga" data-en="2015 — ed. Jacques Delga">2015 — coord. Jacques Delga</div><div class="article-title" data-fr="De l'équilibre de la terreur au terrorisme international" data-en="From the balance of terror to international terrorism">De l'équilibre de la terreur au terrorisme international</div><div class="article-venue" data-fr="Penser et repenser le terrorisme · L'Harmattan" data-en="Thinking and rethinking terrorism · L'Harmattan">Penser et repenser le terrorisme · L'Harmattan</div></div>
+    <div class="article-row"><div class="article-meta" data-fr="2016 — coord. Jacques Delga" data-en="2016 — ed. Jacques Delga">2016 — coord. Jacques Delga</div><div class="article-title" data-fr="Corsaires ou pirates ? La guerre économique contre la démocratie se mène en col blanc" data-en="Privateers or pirates? The economic war against democracy is waged in white collar">Corsaires ou pirates ? La guerre économique en col blanc</div><div class="article-venue" data-fr="Criminalité en col blanc · L'Harmattan" data-en="White-collar Crime · L'Harmattan">Criminalité en col blanc · L'Harmattan</div></div>
+    <div class="article-row"><div class="article-meta" data-fr="2022 — coord. Jacques Delga" data-en="2022 — ed. Jacques Delga">2022 — coord. Jacques Delga</div><div class="article-title" data-fr="Le théâtre du libertinage : modèle à trois axes ago-antagoniques" data-en="The theatre of libertinage: a three-axis ago-antagonistic model">Le théâtre du libertinage</div><div class="article-venue" data-fr="Libertaire, libertinage et intervention de l'État · L'Harmattan" data-en="Libertarian thought, libertinage and state intervention · L'Harmattan">Libertaire, libertinage · L'Harmattan</div></div>
+    <div class="article-row"><div class="article-meta" data-fr="2023 — coord. Jacques Delga" data-en="2023 — ed. Jacques Delga">2023 — coord. Jacques Delga</div><div class="article-title" data-fr="Expérience de mort imminente : lecture symbolique selon Paul Diel" data-en="Near-death experience: a symbolic reading through Paul Diel">Expérience de mort imminente</div><div class="article-venue" data-fr="Face à la mort · L'Harmattan" data-en="Facing death · L'Harmattan">Face à la mort · L'Harmattan</div></div>
+    <div class="article-row"><div class="article-meta" data-fr="2024 — coord. Corentin Gombert" data-en="2024 — ed. Corentin Gombert">2024 — coord. Corentin Gombert</div><div class="article-title" data-fr="Une entreprise démocratique dans une république sociale" data-en="A democratic firm within a social republic">Une entreprise démocratique dans une république sociale</div><div class="article-venue" data-fr="Démocratie(s) en action · Agora D.O.D.E.S." data-en="Democracy in action · Agora D.O.D.E.S.">Démocratie(s) en action · Agora D.O.D.E.S.</div></div>
   </div>
 </section>
 
-<!-- ── IV. Outils ── -->
-<section id="outils" style="background: var(--ivoire); max-width: 100%; padding: 6rem 0;">
-  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
-    <div class="section-header">
-      <span class="section-number">IV</span>
-      <h2 class="section-title">Outils conceptuels</h2>
-    </div>
-
-    <div class="outils-grid">
-      <div class="outil-card">
-        <p class="outil-nom">IBET</p>
-        <h3 class="outil-titre">Indice de Bien-Être au Travail</h3>
-        <p class="outil-desc">Mesure la dégradation de valeur ajoutée due au désengagement. IBET = VA − IMET. Pendant social de l'EBIT financier. Développé avec Victor Waknine / Mozart Consulting.</p>
-      </div>
-      <div class="outil-card">
-        <p class="outil-symbol">⊙</p>
-        <h3 class="outil-titre">Le Cercle Magique</h3>
-        <p class="outil-desc">Modèle à cinq dimensions de l'engagement collectif : valeurs partagées, objectif commun, organisation, règles de fonctionnement, dispositif de mesure. Issu de la cindynique de Kervern.</p>
-      </div>
-      <div class="outil-card">
-        <p class="outil-symbol">∇</p>
-        <h3 class="outil-titre">Entropie organisationnelle</h3>
-        <p class="outil-desc">Coût systémique du désordre interne — troisième terme manquant dans les équations comptables classiques entre produits et charges.</p>
-      </div>
-      <div class="outil-card">
-        <p class="outil-symbol">△</p>
-        <h3 class="outil-titre">Modèle ago-antagonique</h3>
-        <p class="outil-desc">Triple polarisation (mœurs / pouvoir / spiritualité) pour analyser les dynamiques sociales complexes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── V. Collaboration ── -->
-<section id="collaboration">
+<section class="section" id="outils">
   <div class="section-header">
-    <span class="section-number">V</span>
-    <h2 class="section-title">Collaboration intellectuelle principale</h2>
+    <span class="section-num">IV</span>
+    <h2 class="section-title" data-fr="Outils conceptuels" data-en="Conceptual tools">Outils conceptuels</h2>
   </div>
-
-  <div class="collab-grid">
-    <div class="collab-card">
-      <h3 class="collab-nom">Bruno Brochenin</h3>
-      <p class="collab-role">Auteur · Consultant en organisation</p>
-      <p class="collab-desc">Diplômé ESSEC. Apporte les fondements théoriques (Diel, Mauss, Scott, Kervern), la profondeur historique et philosophique, et inscrit l'IBET dans une vision élargie de la société et de la démocratie.</p>
-    </div>
-    <div class="collab-card">
-      <h3 class="collab-nom">Victor Waknine</h3>
-      <p class="collab-role">Concepteur de l'IBET · Mozart Consulting</p>
-      <p class="collab-desc">Ingénieur Télécom. Directions générales chez France Telecom, Airbus, Lehman Brothers. Emmy Award 2000. Apporte la légitimité technique, le langage financier et l'ancrage dans les réseaux professionnels.</p>
-    </div>
+  <div class="outils-grid">
+    <div class="outil-card"><div class="outil-acronym">IBET</div><div class="outil-name" data-fr="Indice de Bien-Être au Travail" data-en="Workplace Wellbeing Index">Indice de Bien-Être au Travail</div><div class="outil-desc" data-fr="Mesure la dégradation de valeur ajoutée due au désengagement. IBET = VA − IMET. Pendant social de l'EBIT financier. Développé avec Victor Waknine / Mozart Consulting." data-en="Measures value-added degradation due to disengagement. IBET = VA − IMET. Social counterpart to the EBIT. Developed with Victor Waknine / Mozart Consulting.">Mesure la dégradation de valeur ajoutée due au désengagement. IBET = VA − IMET. Pendant social de l'EBIT financier. Développé avec Victor Waknine / Mozart Consulting.</div></div>
+    <div class="outil-card"><div class="outil-acronym">⊙</div><div class="outil-name" data-fr="Le Cercle Magique" data-en="The Magic Circle">Le Cercle Magique</div><div class="outil-desc" data-fr="Modèle à cinq dimensions de l'engagement collectif : valeurs partagées, objectif commun, organisation, règles de fonctionnement, dispositif de mesure." data-en="Five-dimension model of collective engagement: shared values, common goal, organisation, operating rules, measurement framework.">Modèle à cinq dimensions de l'engagement collectif : valeurs partagées, objectif commun, organisation, règles de fonctionnement, dispositif de mesure.</div></div>
+    <div class="outil-card"><div class="outil-acronym">∇</div><div class="outil-name" data-fr="Entropie organisationnelle" data-en="Organisational entropy">Entropie organisationnelle</div><div class="outil-desc" data-fr="Coût systémique du désordre interne — troisième terme manquant dans les équations comptables classiques entre produits et charges." data-en="Systemic cost of internal disorder — the missing third term in conventional accounting equations between revenues and costs.">Coût systémique du désordre interne — troisième terme manquant dans les équations comptables classiques entre produits et charges.</div></div>
+    <div class="outil-card"><div class="outil-acronym">△</div><div class="outil-name" data-fr="Modèle ago-antagonique" data-en="Ago-antagonistic model">Modèle ago-antagonique</div><div class="outil-desc" data-fr="Triple polarisation (mœurs / pouvoir / spiritualité) pour analyser les dynamiques sociales complexes. Issu de la cindynique de Kervern." data-en="Triple polarisation (mores / power / spirituality) for analysing complex social dynamics. Rooted in Kervern's cindynics.">Triple polarisation (mœurs / pouvoir / spiritualité) pour analyser les dynamiques sociales complexes. Issu de la cindynique de Kervern.</div></div>
   </div>
 </section>
 
-<!-- ── VI. IBET en chiffres ── -->
-<section id="ibet" style="background: var(--ivoire); max-width: 100%; padding: 6rem 0;">
-  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
-    <div class="section-header">
-      <span class="section-number">VI</span>
-      <h2 class="section-title">L'IBET en chiffres</h2>
-    </div>
-
-    <div class="ibet-grid">
-      <div class="ibet-card">
-        <div class="ibet-chiffre">0,73</div>
-        <p class="ibet-label"><strong>IBET national 2020 (données 2018) — niveau « Alerte »</strong><br>Perte de valeur ajoutée de 27 % de la masse salariale, soit 400 milliards d'euros — dont 252 milliards maîtrisables. Coût moyen par salarié : 14 310 €/an.</p>
-        <p class="ibet-source">Groupe APICIL / Mozart Consulting · 2020</p>
-      </div>
-      <div class="ibet-card">
-        <div class="ibet-chiffre">0,88</div>
-        <p class="ibet-label">IBET Industrie — niveau « Satisfaction »<br>L'industrie affiche le meilleur IBET sectoriel, stable depuis 4 ans.</p>
-        <p class="ibet-source">Groupe APICIL / Mozart Consulting · 2020</p>
-      </div>
-      <div class="ibet-card">
-        <div class="ibet-chiffre">63%</div>
-        <p class="ibet-label">Des coûts du mal-être sont maîtrisables<br>Sur 14 310 € de coût annuel par salarié, 9 010 € sont directement maîtrisables par des actions ciblées.</p>
-        <p class="ibet-source">Groupe APICIL / Mozart Consulting · 2014→2020</p>
-      </div>
-      <div class="ibet-card">
-        <div class="ibet-chiffre">17 M</div>
-        <p class="ibet-label">Données sociales cumulées dans l'observatoire IBET<br>Construit sur les statistiques officielles DARES et CNAMTS. Aucun questionnaire nécessaire.</p>
-        <p class="ibet-source">Revue Française de Comptabilité n°590 · Oct. 2024</p>
-      </div>
-      <div class="ibet-prix" style="grid-column: span 2;">
-        <p class="ibet-prix-label">Prix du Cercle Montesquieu 2024</p>
-        <p>Ouvrage récompensé citant l'IBET comme outil CSRD de référence. Dans « Comprendre la RSE, levier de transformation durable » (Larcier, 2024), l'IBET est positionné aux côtés de l'IFRS, GRI, ISO 26000 et de l'EU Taxonomy dans le panorama mondial des normes ESG/CSRD.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── VIII. Articles Qualitique ── -->
-<section id="qualitique">
+<section class="section" id="collab">
   <div class="section-header">
-    <span class="section-number">VIII</span>
-    <h2 class="section-title">Articles Qualitique — accès libre</h2>
+    <span class="section-num">V</span>
+    <h2 class="section-title" data-fr="Collaboration intellectuelle principale" data-en="Main intellectual collaboration">Collaboration intellectuelle principale</h2>
+  </div>
+  <div class="collab-card">
+    <div class="collab-person"><div class="collab-name">Bruno Brochenin</div><div class="collab-role" data-fr="Auteur · Consultant en organisation" data-en="Author · Management consultant">Auteur · Consultant en organisation</div><div class="collab-bio" data-fr="Diplômé ESSEC. Apporte les fondements théoriques (Diel, Mauss, Scott, Kervern), la profondeur historique et philosophique, et inscrit l'IBET dans une vision élargie de la société et de la démocratie." data-en="ESSEC graduate. Provides the theoretical foundations (Diel, Mauss, Scott, Kervern), historical and philosophical depth, and situates the IBET within a broader vision of society and democracy.">Diplômé ESSEC. Apporte les fondements théoriques (Diel, Mauss, Scott, Kervern), la profondeur historique et philosophique, et inscrit l'IBET dans une vision élargie de la société et de la démocratie.</div></div>
+    <div class="collab-person"><div class="collab-name">Victor Waknine</div><div class="collab-role" data-fr="Concepteur de l'IBET · Mozart Consulting" data-en="Creator of the IBET · Mozart Consulting">Concepteur de l'IBET · Mozart Consulting</div><div class="collab-bio" data-fr="Ingénieur Télécom. Directions générales chez France Telecom, Airbus, Lehman Brothers. Emmy Award 2000. Apporte la légitimité technique, le langage financier et l'ancrage dans les réseaux professionnels." data-en="Telecom engineer. Senior executive at France Telecom, Airbus, Lehman Brothers. Emmy Award 2000. Brings technical credibility, financial language and professional network reach.">Ingénieur Télécom. Directions générales chez France Telecom, Airbus, Lehman Brothers. Emmy Award 2000. Apporte la légitimité technique, le langage financier et l'ancrage dans les réseaux professionnels.</div></div>
+  </div>
+</section>
+
+</main>
+
+
+
+<section class="section" id="ibet-chiffres">
+  <div class="section-header">
+    <span class="section-num">VI</span>
+    <h2 class="section-title" data-fr="L'IBET en chiffres" data-en="The IBET in figures">L'IBET en chiffres</h2>
   </div>
 
-  <p style="font-size: 0.9rem; color: var(--pierre); font-style: italic; margin-bottom: 2.5rem; max-width: 70ch;">La revue <em>Qualitique</em> a cessé de paraître lorsque son fondateur a pris sa retraite sans trouver de repreneur. L'éditeur a remis à Bruno Brochenin les tirés-à-part de ses articles, qui sont ici mis à disposition en lecture libre avec son autorisation.</p>
+  <div class="ibet-banner">
+    <div class="ibet-banner-num">0,73</div>
+    <div class="ibet-banner-text">
+      <strong data-fr="IBET national 2020 (données 2018) — niveau « Alerte »" data-en="National IBET 2020 (2018 data) — 'Alert' level">IBET national 2020 (données 2018) — niveau « Alerte »</strong><br>
+      <span data-fr="Soit une perte de valeur ajoutée de 27 % de la masse salariale, représentant 400 milliards d'euros — dont 252 milliards maîtrisables. Coût moyen par salarié : 14 310 €/an. Source : Groupe APICIL / Mozart Consulting, Étude sectorielle IBET© 2020, 17,5 millions de données sociales cumulées." data-en="Representing a 27% loss of value added on the wage bill — equivalent to €400 billion nationally, of which €252 billion is actionable. Average cost per employee: €14,310/year. Source: Groupe APICIL / Mozart Consulting, IBET© 2020 sectoral study, 17.5 million cumulative social data points.">Soit une perte de valeur ajoutée de 27 % de la masse salariale, représentant 400 milliards d'euros — dont 252 milliards maîtrisables. Coût moyen par salarié : 14 310 €/an. Source : Groupe APICIL / Mozart Consulting, Étude sectorielle IBET© 2020, 17,5 millions de données sociales cumulées.</span>
+    </div>
+  </div>
 
-  <div class="qualitique-grid">
-    <div class="qualitique-card">
-      <p class="qualitique-num">229</p>
-      <p class="qualitique-source">Qualitique · n°229 · Novembre 2011</p>
-      <h3 class="qualitique-titre">L'entreprise contemporaine face aux risques</h3>
-      <p class="qualitique-desc">Des opportunités à trouver du côté de l'état d'esprit des équipes opérationnelles. De Columbia à Fukushima, l'état d'esprit des collaborateurs est central dans l'exposition aux risques.</p>
-      <p class="qualitique-tags">Risques · IBET · État d'esprit</p>
-      <a href="qualitique_229_risques.pdf" target="_blank">Lire l'article →</a>
+  <div style="margin-top:1.25rem" class="ibet-grid">
+    <div class="ibet-card">
+      <div class="ibet-card-header">
+        <div class="ibet-source">Groupe APICIL<br>Mozart Consulting</div>
+        <div class="ibet-year">2020</div>
+      </div>
+      <div class="ibet-stat">0,88</div>
+      <div class="ibet-stat-label" data-fr="IBET Industrie — niveau « Satisfaction »" data-en="Industry IBET — 'Satisfaction' level">IBET Industrie — niveau « Satisfaction »</div>
+      <div class="ibet-desc" data-fr="L'industrie affiche le meilleur IBET sectoriel, stable depuis 4 ans. Cet attachement au produit à fabriquer et la durabilité des emplois de filière expliquent cet écart de 10 points avec le tertiaire (0,74–0,80)." data-en="Industry records the best sectoral IBET, stable for 4 years. Attachment to the manufactured product and durability of supply-chain jobs explain the 10-point gap with the service sector (0.74–0.80).">L'industrie affiche le meilleur IBET sectoriel, stable depuis 4 ans. Cet attachement au produit à fabriquer et la durabilité des emplois de filière expliquent cet écart de 10 points avec le tertiaire.</div>
     </div>
-    <div class="qualitique-card">
-      <p class="qualitique-num">222</p>
-      <p class="qualitique-source">Qualitique · n°222 · Janvier–Février 2011</p>
-      <h3 class="qualitique-titre">Entre RPS et RSE, les Parties Prenantes sont-elles victimes ou responsables ?</h3>
-      <p class="qualitique-desc">Les risques psychosociaux sont le résultat prévisible d'un mode de fonctionnement. Présentation de l'IBET et de l'IDEC.</p>
-      <p class="qualitique-tags">RPS · RSE · IBET · IDEC</p>
-      <a href="qualitique_222_rps_rse.pdf" target="_blank">Lire l'article →</a>
+
+    <div class="ibet-card">
+      <div class="ibet-card-header">
+        <div class="ibet-source">Groupe APICIL<br>Mozart Consulting</div>
+        <div class="ibet-year">2020</div>
+      </div>
+      <div class="ibet-stat">63%</div>
+      <div class="ibet-stat-label" data-fr="Des coûts du mal-être sont maîtrisables" data-en="Of ill-being costs are actionable">Des coûts du mal-être sont maîtrisables</div>
+      <div class="ibet-desc" data-fr="Sur 14 310 € de coût annuel par salarié, 9 010 € sont directement maîtrisables par des actions ciblées de Santé & Qualité de Vie au Travail (SQVT), sans investissement majeur." data-en="Of the €14,310 annual cost per employee, €9,010 is directly actionable through targeted Health & Quality of Work Life measures, without major investment.">Sur 14 310 € de coût annuel par salarié, 9 010 € sont directement maîtrisables par des actions ciblées de SQVT — sans investissement majeur.</div>
     </div>
-    <div class="qualitique-card">
-      <p class="qualitique-num">225</p>
-      <p class="qualitique-source">Qualitique · n°225 · Mai 2011</p>
-      <h3 class="qualitique-titre">Quelle est la valeur économique de la prestation des sapeurs-pompiers ?</h3>
-      <p class="qualitique-desc">Application de l'IBET au service public. Ni la valeur ajoutée marchande ni les coûts publics ne sont des indicateurs valables de performance.</p>
-      <p class="qualitique-tags">Service public · IBET · Performance</p>
-      <a href="qualitique_225_pompiers.pdf" target="_blank">Lire l'article →</a>
+
+    <div class="ibet-card">
+      <div class="ibet-card-header">
+        <div class="ibet-source">Groupe APICIL<br>Mozart Consulting</div>
+        <div class="ibet-year">2014 → 2020</div>
+      </div>
+      <div class="ibet-stat">17 M</div>
+      <div class="ibet-stat-label" data-fr="Données sociales cumulées dans l'observatoire IBET" data-en="Cumulative social data points in the IBET observatory">Données sociales cumulées dans l'observatoire IBET</div>
+      <div class="ibet-desc" data-fr="L'IBET est construit sur les statistiques officielles DARES et CNAMTS (mouvements de main-d'œuvre, arrêts de travail AT/MP/Trajet). Aucun questionnaire n'est nécessaire — l'outil parle les données existantes des RH." data-en="The IBET is built on official DARES and CNAMTS statistics (workforce movements, sick leave AT/MP/Journey). No questionnaire required — the tool speaks the existing HR data.">L'IBET est construit sur les statistiques officielles DARES et CNAMTS. Aucun questionnaire nécessaire — il mobilise les données RH existantes.</div>
     </div>
-    <div class="qualitique-card">
-      <p class="qualitique-num">233</p>
-      <p class="qualitique-source">Qualitique · n°233 · Avril 2012</p>
-      <h3 class="qualitique-titre">La conduite du changement est-elle une croyance efficace ?</h3>
-      <p class="qualitique-desc">Critique de la vision cartésienne des projets de transformation. La cindynique de Kervern comme dépassement décisif.</p>
-      <p class="qualitique-tags">Changement · Cindynique · IBET</p>
-      <a href="qualitique_233_changement.pdf" target="_blank">Lire l'article →</a>
+  
+    <div class="ibet-card">
+      <div class="ibet-card-header">
+        <div class="ibet-source">Revue Française<br>de Comptabilité</div>
+        <div class="ibet-year">n°590 · Oct. 2024</div>
+      </div>
+      <div class="ibet-stat" style="font-size:1.6rem;line-height:1.2;margin-bottom:.5rem" data-fr="Prix du Cercle Montesquieu 2024" data-en="Cercle Montesquieu Prize 2024">Prix du Cercle<br>Montesquieu 2024</div>
+      <div class="ibet-stat-label" data-fr="Ouvrage récompensé citant l'IBET comme outil CSRD de référence" data-en="Award-winning work citing the IBET as a reference CSRD tool">Ouvrage récompensé citant l'IBET comme outil CSRD de référence</div>
+      <div class="ibet-desc" data-fr="Dans « Comprendre la RSE, levier de transformation durable » (Larcier, Fraisse, Jaulmes, Bellanger), l'IBET est décrit comme « un marqueur statistique et prédictif de l'engagement réciproque entre l'employeur et les collaborateurs ». Il est positionné dans le panorama mondial des normes ESG/CSRD aux côtés de l'IFRS, GRI, ISO 26000 et de l'EU Taxonomy." data-en="In 'Understanding CSR as a lever for sustainable transformation' (Larcier, 2024), the IBET is described as 'a statistical and predictive marker of reciprocal engagement between employer and employees'. It is positioned in the global ESG/CSRD framework alongside IFRS, GRI, ISO 26000 and EU Taxonomy.">Dans « Comprendre la RSE, levier de transformation durable » (Larcier, 2024), l'IBET est décrit comme « un marqueur statistique et prédictif de l'engagement réciproque entre l'employeur et les collaborateurs ». Positionné aux côtés de l'IFRS, GRI, ISO 26000 et de l'EU Taxonomy dans le panorama mondial des normes ESG/CSRD.</div>
+    </div>
+  </div>
+
+  <p style="font-size:.75rem;color:var(--ink3);margin-top:.5rem;line-height:1.6" data-fr="D'autres publications institutionnelles cautionnant l'IBET seront ajoutées ici." data-en="Further institutional publications supporting the IBET will be added here.">D'autres publications institutionnelles cautionnant l'IBET seront ajoutées ici.</p>
+</section>
+
+
+<section class="section" id="qualitique">
+  <div class="section-header">
+    <span class="section-num">VIII</span>
+    <h2 class="section-title" data-fr="Articles Qualitique — accès libre" data-en="Qualitique articles — open access">Articles Qualitique — accès libre</h2>
+  </div>
+
+  <div class="qualitique-note">
+    <strong>Note éditoriale.</strong> La revue <em>Qualitique</em> a cessé de paraître lorsque son fondateur a pris sa retraite sans trouver de repreneur. L'éditeur a remis à Bruno Brochenin les tirés-à-part de ses articles, qui sont ici mis à disposition en lecture libre avec son autorisation.
+  </div>
+
+  <div class="articles-biblio">
+
+    <div class="biblio-card">
+      <div class="biblio-card-header">
+        <div class="biblio-card-num">229</div>
+        <div class="biblio-card-revue">Qualitique</div>
+        <div class="biblio-card-num-revue" data-fr="n°229 · Novembre 2011" data-en="n°229 · November 2011">n°229 · Novembre 2011</div>
+        <div class="biblio-card-title" data-fr="L'entreprise contemporaine face aux risques" data-en="The contemporary firm facing risk">L'entreprise contemporaine face aux risques</div>
+      </div>
+      <div class="biblio-card-body">
+        <div class="biblio-card-desc" data-fr="Des opportunités à trouver du côté de l'état d'esprit des équipes opérationnelles. L'état d'esprit des collaborateurs est prégnant dans l'exposition aux risques — de Columbia à Fukushima. Présentation des outils IBET et cartographie des états d'esprit." data-en="Opportunities to be found in the mindset of operational teams. Employee mindset is a key factor in organisational risk exposure — from Columbia to Fukushima. Presentation of the IBET tool and mindset mapping.">Des opportunités à trouver du côté de l'état d'esprit des équipes opérationnelles. De Columbia à Fukushima, l'état d'esprit des collaborateurs est central dans l'exposition aux risques. Présentation de l'IBET et de la cartographie des états d'esprit.</div>
+        <div class="biblio-card-footer">
+          <span class="biblio-tag" data-fr="Risques · IBET · État d'esprit" data-en="Risk · IBET · Mindset">Risques · IBET · État d'esprit</span>
+          <a class="biblio-btn" href="qualitique_229_risques.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-fr="Lire l'article" data-en="Read article">Lire l'article</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="biblio-card">
+      <div class="biblio-card-header">
+        <div class="biblio-card-num">222</div>
+        <div class="biblio-card-revue">Qualitique</div>
+        <div class="biblio-card-num-revue" data-fr="n°222 · Janvier–Février 2011" data-en="n°222 · January–February 2011">n°222 · Janvier–Février 2011</div>
+        <div class="biblio-card-title" data-fr="Entre RPS et RSE, les Parties Prenantes sont-elles victimes ou responsables ?" data-en="Between psychosocial risks and CSR, are stakeholders victims or responsible?">Entre RPS et RSE, les Parties Prenantes sont-elles victimes ou responsables ?</div>
+      </div>
+      <div class="biblio-card-body">
+        <div class="biblio-card-desc" data-fr="Les risques psychosociaux, loin d'être une fatalité, sont le résultat prévisible d'un mode de fonctionnement. Présentation de l'IBET et de l'IDEC comme outils de mesure du désengagement. La performance globale : PG = RESOP × IBET × IDEC." data-en="Psychosocial risks are the predictable result of an organisational mode of operation, not inevitable. Presentation of the IBET and IDEC as disengagement measurement tools. Global performance: GP = EBIT × WBW × LOSE.">Les risques psychosociaux sont le résultat prévisible d'un mode de fonctionnement. Présentation de l'IBET et de l'IDEC. Performance globale : PG = RESOP × IBET × IDEC.</div>
+        <div class="biblio-card-footer">
+          <span class="biblio-tag" data-fr="RPS · RSE · IBET · IDEC" data-en="PSR · CSR · IBET · IDEC">RPS · RSE · IBET · IDEC</span>
+          <a class="biblio-btn" href="qualitique_222_rps_rse.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-fr="Lire l'article" data-en="Read article">Lire l'article</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="biblio-card">
+      <div class="biblio-card-header">
+        <div class="biblio-card-num">225</div>
+        <div class="biblio-card-revue">Qualitique</div>
+        <div class="biblio-card-num-revue" data-fr="n°225 · Mai 2011" data-en="n°225 · May 2011">n°225 · Mai 2011</div>
+        <div class="biblio-card-title" data-fr="Quelle est la valeur économique de la prestation des sapeurs-pompiers ?" data-en="What is the economic value of the fire service?">Quelle est la valeur économique de la prestation des sapeurs-pompiers ?</div>
+      </div>
+      <div class="biblio-card-body">
+        <div class="biblio-card-desc" data-fr="Application de l'IBET au service public. Démonstration que ni la valeur ajoutée marchande ni le niveau des coûts publics ne sont des indicateurs valables de performance économique. L'IBET est plus pertinent dans les deux cas." data-en="Application of the IBET to public services. Demonstration that neither market value-added nor public cost levels are valid performance indicators. The IBET is more relevant in both contexts.">Application de l'IBET au service public. Ni la valeur ajoutée marchande ni les coûts publics ne sont des indicateurs valables de performance. L'IBET s'avère plus pertinent dans les deux contextes.</div>
+        <div class="biblio-card-footer">
+          <span class="biblio-tag" data-fr="Service public · IBET · Performance" data-en="Public service · IBET · Performance">Service public · IBET · Performance</span>
+          <a class="biblio-btn" href="qualitique_225_pompiers.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-fr="Lire l'article" data-en="Read article">Lire l'article</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="biblio-card">
+      <div class="biblio-card-header">
+        <div class="biblio-card-num">233</div>
+        <div class="biblio-card-revue">Qualitique</div>
+        <div class="biblio-card-num-revue" data-fr="n°233 · Avril 2012" data-en="n°233 · April 2012">n°233 · Avril 2012</div>
+        <div class="biblio-card-title" data-fr="La conduite du changement est-elle une croyance efficace ?" data-en="Is change management an effective belief?">La conduite du changement est-elle une croyance efficace ?</div>
+      </div>
+      <div class="biblio-card-body">
+        <div class="biblio-card-desc" data-fr="Critique radicale de la vision cartésienne de l'entreprise et de ses projets de transformation. La cindynique de Kervern comme dépassement décisif. L'IBET comme mesure de la performance collective face aux logiques de résistance au changement." data-en="Radical critique of the Cartesian vision of the firm and its transformation projects. Kervern's cindynics as a decisive advance. The IBET as a measure of collective performance in the face of change resistance.">Critique de la vision cartésienne des projets de transformation. La cindynique de Kervern comme dépassement décisif. L'IBET mesure la performance collective face à la résistance au changement.</div>
+        <div class="biblio-card-footer">
+          <span class="biblio-tag" data-fr="Changement · Cindynique · IBET" data-en="Change · Cindynics · IBET">Changement · Cindynique · IBET</span>
+          <a class="biblio-btn" href="qualitique_233_changement.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-fr="Lire l'article" data-en="Read article">Lire l'article</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="presse">
+  <div class="section-header">
+    <span class="section-num">IX</span>
+    <h2 class="section-title" data-fr="Presse &amp; recensions" data-en="Press &amp; reviews">Presse &amp; recensions</h2>
+  </div>
+  <div class="presse-list">
+    <div class="presse-card">
+      <div class="presse-meta">
+        <span class="presse-source">France Catholique</span>
+        <span class="presse-date" data-fr="n°3230 · 15 octobre 2010" data-en="n°3230 · 15 October 2010">n°3230 · 15 octobre 2010</span>
+      </div>
+      <div class="presse-book" data-fr="À propos de : Où va l'entreprise ? Organisation et dérives" data-en="On: Où va l'entreprise? Organisation and its drifts">À propos de : <em>Où va l'entreprise ? Organisation et dérives</em></div>
+      <div class="presse-author" data-fr="par Denis Lensel" data-en="by Denis Lensel">par Denis Lensel</div>
+      <blockquote class="presse-quote" data-fr="« Comment réagir face à des processus qui asphyxient salariés et entreprises ? » — Brochenin joue ici un rôle de faux naïf qui promène un regard critique sur une économie échappant à la plupart de ses acteurs." data-en="&ldquo;How to react in the face of processes that suffocate employees and organisations?&rdquo; — Brochenin plays the role of the innocent abroad, casting a critical eye on an economy that has escaped the grasp of most of its actors.">« Comment réagir face à des processus qui asphyxient salariés et entreprises ? » — Brochenin joue ici un rôle de faux naïf qui promène un regard critique sur une économie échappant à la plupart de ses acteurs.</blockquote>
+    </div>
+  
+    <div class="presse-card">
+      <div class="presse-meta">
+        <span class="presse-source">Paris Normandie</span>
+        <span class="presse-date" data-fr="9 octobre 2010" data-en="9 October 2010">9 octobre 2010</span>
+      </div>
+      <div class="presse-book" data-fr="À propos de : Où va l'entreprise ? Organisation et dérives" data-en="On: Où va l'entreprise? Organisation and its drifts">À propos de : <em>Où va l'entreprise ? Organisation et dérives</em></div>
+      <div class="presse-author" data-fr="Interview par Sophie Bogatay" data-en="Interview by Sophie Bogatay">Interview par Sophie Bogatay</div>
+      <blockquote class="presse-quote" data-fr="« J'ai voulu faire entrer le lecteur dans la mécanique de ces sociétés qui fonctionnent à très court terme. J'ai décortiqué ces procédures qui étouffent la vie des salariés et les privent de ce qui devrait être le plus important : vivre de leur métier et exprimer leurs compétences. »" data-en="&ldquo;I wanted to take the reader inside the mechanics of organisations that operate on very short time horizons. I dissected the procedures that suffocate employees and deprive them of what should matter most: practising their craft and expressing their skills.&rdquo;">« J'ai voulu faire entrer le lecteur dans la mécanique de ces sociétés qui fonctionnent à très court terme. J'ai décortiqué ces procédures qui étouffent la vie des salariés et les privent de ce qui devrait être le plus important : vivre de leur métier et exprimer leurs compétences. »</blockquote>
     </div>
   </div>
 </section>
 
-<!-- ── IX. Presse ── -->
-<section id="presse" style="background: var(--ivoire); max-width: 100%; padding: 6rem 0;">
-  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
-    <div class="section-header">
-      <span class="section-number">IX</span>
-      <h2 class="section-title">Presse &amp; recensions</h2>
-    </div>
-
-    <div class="presse-list">
-      <div class="presse-item">
-        <p class="presse-meta">France Catholique n°3230 · 15 octobre 2010</p>
-        <p class="presse-livre">À propos de : <em>Où va l'entreprise ? Organisation et dérives</em> — par Denis Lensel</p>
-        <blockquote class="presse-citation">« Comment réagir face à des processus qui asphyxient salariés et entreprises ? » — Brochenin joue ici un rôle de faux naïf qui promène un regard critique sur une économie échappant à la plupart de ses acteurs.</blockquote>
-      </div>
-      <div class="presse-item">
-        <p class="presse-meta">Paris Normandie · 9 octobre 2010</p>
-        <p class="presse-livre">À propos de : <em>Où va l'entreprise ? Organisation et dérives</em> — Interview par Sophie Bogatay</p>
-        <blockquote class="presse-citation">« J'ai voulu faire entrer le lecteur dans la mécanique de ces sociétés qui fonctionnent à très court terme. J'ai décortiqué ces procédures qui étouffent la vie des salariés et les privent de ce qui devrait être le plus important : vivre de leur métier et exprimer leurs compétences. »</blockquote>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Contact ── -->
 <div class="contact-section">
-  <h2>Entrer en contact</h2>
-  <p>Pour toute demande éditoriale, conférence ou collaboration.</p>
+  <h2 data-fr="Entrer en contact" data-en="Get in touch">Entrer en contact</h2>
+  <p data-fr="Pour toute demande éditoriale, conférence ou collaboration." data-en="For editorial enquiries, speaking engagements or collaboration.">Pour toute demande éditoriale, conférence ou collaboration.</p>
   <div class="contact-links">
-    <a href="https://www.linkedin.com/in/bruno-brochenin-b25140/" target="_blank">LinkedIn</a>
-    <a href="https://www.amazon.fr/stores/Bruno-Brochenin/author/B0D6RWMRS2" target="_blank">Page auteur Amazon</a>
+    <a class="contact-link" href="https://www.linkedin.com/in/bruno-brochenin-b25140/">LinkedIn</a>
+    <a class="contact-link" href="https://www.amazon.fr/stores/Bruno-Brochenin/author/B0D6RWMRS2?ref=sr_ntt_srch_lnk_1&qid=1780814069&sr=1-1&shoppingPortalEnabled=true" data-fr="Page auteur Amazon" data-en="Amazon author page">Page auteur Amazon</a>
   </div>
 </div>
 
-<!-- ── Footer ── -->
 <footer>
-  © Bruno Brochenin — Auteur et consultant en organisation
+  <span data-fr="© Bruno Brochenin — Auteur et consultant en organisation" data-en="© Bruno Brochenin — Author and management consultant">© Bruno Brochenin — Auteur et consultant en organisation</span>
 </footer>
 
+<script>
+function setLang(l){
+  document.querySelectorAll('[data-fr]').forEach(function(e){e.textContent=e.getAttribute('data-'+l)});
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent===l.toUpperCase())});
+  document.documentElement.lang=l;
+}
+function go(id,btn){
+  var el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelectorAll('.nav-link').forEach(function(l){l.classList.remove('active')});
+  if(btn)btn.classList.add('active');
+}
+</script>
+
+<!-- ═══════ CHATBOT ═══════ -->
+<div id="bb-chat-root">
+
+  <!-- Trigger -->
+  <button id="bb-trigger" aria-label="Ouvrir le chatbot" aria-expanded="false">
+    <!-- Book icon (open) -->
+    <svg class="bb-open-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </svg>
+    <!-- Close icon -->
+    <svg class="bb-close-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <!-- Panel -->
+  <div id="bb-panel" role="dialog" aria-label="Chatbot Bruno Brochenin" aria-modal="true">
+
+    <!-- Header -->
+    <div id="bb-header">
+      <div id="bb-avatar">BB</div>
+      <div id="bb-header-text">
+        <div id="bb-header-name">Bruno Brochenin</div>
+        <div id="bb-header-sub">Explorez les thèses et concepts</div>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="bb-messages" aria-live="polite" aria-label="Conversation"></div>
+
+    <!-- Suggestion chips (visibles uniquement au départ) -->
+    <div id="bb-chips">
+      <button class="bb-chip" data-q="Qu'est-ce que l'IBET et comment se calcule-t-il ?">Qu'est-ce que l'IBET et comment se calcule-t-il ?</button>
+      <button class="bb-chip" data-q="Quelle est la thèse centrale de L'engagement collectif dans l'entreprise ?">Quelle est la thèse centrale de <em>L'engagement collectif</em> ?</button>
+      <button class="bb-chip" data-q="En quoi la conduite du changement est-elle une croyance ?">En quoi la conduite du changement est-elle une croyance ?</button>
+    </div>
+
+    <!-- Input -->
+    <div id="bb-inputbar">
+      <textarea id="bb-input" rows="1"
+        placeholder="Posez votre question sur les travaux de Bruno Brochenin…"
+        aria-label="Votre question"></textarea>
+      <button id="bb-send" aria-label="Envoyer" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="bb-disclaimer">
+      Réponses synthétiques fondées sur les publications de Bruno Brochenin.<br>
+      Les textes originaux sont protégés par le droit d'auteur.
+    </div>
+
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────────────────────────────
+     CONFIGURATION
+     Remplacez YOUR_API_KEY par votre clé Anthropic.
+     Pour la production, préférez un proxy backend (ex. /api/chat)
+     qui conserve la clé côté serveur.
+  ───────────────────────────────────────────────────────────────── */
+  const CONFIG = {
+    endpoint: 'https://bb-chat-proxy.brochenin-bruno.workers.dev/chat',
+    model:    'claude-sonnet-4-6',
+    maxTokens: 600,
+  };
+
+  /* ─────────────────────────────────────────────────────────────────
+     CORPUS : condensé documenté de toutes les publications.
+     Il structure la mémoire du chatbot sans reproduire les textes.
+  ───────────────────────────────────────────────────────────────── */
+  const SYSTEM_PROMPT = `Tu es l'assistant littéraire de Bruno Brochenin, auteur et consultant en organisation. Tu réponds aux questions des visiteurs de son site en t'appuyant exclusivement sur ses publications listées ci-dessous. Tu fournis des réponses synthétiques, précises et documentées.
+
+RÈGLES IMPÉRATIVES
+1. Cite toujours tes sources entre parenthèses (titre abrégé + année).
+2. Ne reproduis jamais de passages textuels ; paraphrase et synthétise toujours.
+3. Si une question dépasse le corpus, dis-le clairement et renvoie vers les publications concernées.
+4. Réponds en français, de manière concise (4 à 8 phrases) mais substantielle.
+5. Tu n'exprimes pas d'opinions politiques personnelles ; tu rapportes les thèses de l'auteur.
+
+══════════════════════════════════════════════════════
+CORPUS DES PUBLICATIONS
+══════════════════════════════════════════════════════
+
+── LIVRES ──
+
+[OVE-2010] OÙ VA L'ENTREPRISE ? Organisation et dérives (Eska, 2010)
+Thèse centrale : les organisations modernes ont substitué aux métiers humains une architecture de processus et de progiciels (type SAP/ARIS) qui engendre le désordre même qu'elle prétend éliminer. L'auteur introduit le concept d'entropie organisationnelle : énergie dissipée en non-qualité, conflits et procédures d'exception. La vision « cartésienne » de l'entreprise (enchaînements univoques causes→effets, modélisation totale) est une fiction productive du désordre. Deux représentations alternatives sont esquissées : l'entreprise comme « corail » (ordre relatif en symbiose avec l'environnement) et le modèle cindynique de Kervern. Terrains : grandes entreprises françaises, projets SAP, industrie.
+
+[ENG-2019] L'ENGAGEMENT COLLECTIF DANS L'ENTREPRISE, la part magique de la performance (L'Harmattan, 2019)
+Modèle du « cercle magique » à cinq dimensions : valeurs partagées, objectif commun, organisation, règles de fonctionnement, dispositif de mesure. L'engagement collectif est la condition de la performance durable ; il ne se décrète pas mais résulte d'un dialogue structuré entre parties prenantes. L'entropie organisationnelle est un coût mesurable, systématiquement ignoré par la comptabilité classique. Formule clé : HVA (Human Value Added) = EBIT × IBET. Distinction entre résistance au changement légitime (incompréhension ou contraintes réelles non prises en compte) et désengagement structurel. Fondements théoriques : Marcel Mauss (l'individu est toujours déjà social), cindynique de Kervern, travaux ISEOR (coûts cachés). La direction d'entreprise a pour responsabilité primordiale d'élaborer des synthèses acceptables par l'ensemble des parties prenantes.
+
+[IBET-2024] INDICE DE BIEN-ÊTRE AU TRAVAIL (L'Harmattan, 2024)
+Approfondissement théorique à trois piliers : Paul Diel (la vanité comme égarement de l'esprit qui se croit plus grand que ses aptitudes), Marcel Mauss (l'individu n'existe que dans et par le collectif), James C. Scott (le pouvoir structurel externalise ses coûts de dysfonctionnement vers la collectivité). L'IBET est l'indicateur socio-économique central : IBET(%) = 100 × (VA − ΣIMET) / VA, où VA = valeur ajoutée et IMET = indicateurs du mal-être au travail (absentéisme, turn-over, AT/MP, grèves/contentieux, mesures palliatives, perte de qualité, perte de productivité, retards de projets). EBIT max = EBIT réalisé + VA(1 − IBET). L'IBET national 2020 est de 0,73 (niveau « Alerte »), signifiant 27 % de perte de valeur ajoutée, soit ~400 Md€ dont 252 Md€ maîtrisables. Plaidoyer pour une réforme des normes comptables intégrant les coûts systémiques sociaux, sociétaux et environnementaux. Modèle ago-antagonique (Donnadieu/Bernard-Weil) appliqué aux dynamiques sociales : triple polarisation mœurs/pouvoir/spiritualité. Récompensé Prix du Cercle Montesquieu 2024.
+
+── ARTICLES QUALITIQUE ──
+
+[Q222-2011] « Travaillons mieux pour vivre mieux ! Entre RPS et RSE, les Parties Prenantes sont-elles victimes ou responsables ? » (Qualitique n°222, jan.-fév. 2011)
+Les risques psychosociaux sont le résultat prévisible d'un mode de fonctionnement, non une fatalité : ils sont spécifiques aux grandes organisations anonymes (étude Médéric Malakoff). Distinction prévention primaire (combat le risque à sa source, approche collective sur l'organisation) vs prévention secondaire (renforce la capacité individuelle à faire face au stress). Présentation initiale de l'IBET et de l'IDEC (Indice de Dissipation de l'Effort Collectif). IDEC(%) = 100 × (VA − ΣIR) / VA, où IR = indicateurs de résistance (délai, budget, contenu). Formule de performance globale : PG = EBIT × IBET × IDEC. Concept de Goodwill Social et Badwill Social. La responsabilité essentielle de la direction est d'élaborer des synthèses acceptables ; celle des IRP est de se ressourcer auprès de leurs mandants, développer une vision claire des enjeux et assumer les nécessités du compromis.
+
+[Q225-2011] « Quelle est la valeur économique de la prestation des sapeurs-pompiers ? » (Qualitique n°225, mai 2011)
+Application de l'IBET au service public. Distinction monopole public vs entreprise marchande : le secteur marchand présente des surcoûts structurels (investissements redondants, coûts de mise sur le marché, structures dupliquées) ; la comparaison sur la seule valeur ajoutée est sans fondement. Pour un organisme sans but lucratif : IBET(%) = 100 × (Production − ΣIMET) / Production. Taxonomie de la demande : Demande Latente (DL), Demande Instruite Instantanée (DII), Demande Instruite Optimisée (DIO), Demande Exprimée (DE). La demande hors marché (Dhm) se divise en sub-marché (Dsm : petits besoins peu rentables) et ultra-marché (Dum : besoins à moyens hors normes). L'ouverture à la concurrence augmente la demande exprimée et érode les comportements altruistes et coopératifs. Hiérarchie recommandée : prévention > intervention d'urgence > réparation > assurance.
+
+[Q229-2011] « L'entreprise contemporaine face aux risques » (Qualitique n°229, nov. 2011)
+L'état d'esprit des équipes opérationnelles est le premier facteur de risque (référence Columbia/NASA 2003, Bhopal, AZF, BP Golfe du Mexique, Fukushima). La surabondance de procédures contraignantes aggrave le mauvais état d'esprit. Cartographie des états d'esprit (René Rupert) : confrontation aspirations vs perception des contraintes ; quatre modes de fonctionnement (taylorien C1, expert C2, projet C3, créatif C4). Trois facteurs de risque majeurs : direction à « huis clos » (insuffisamment ouverte au débat contradictoire), communication interne en décalage avec la pratique managériale, optimisation excessive des processus (organisations « anorexiques » — Robert Branche). Statistique : en moyenne nationale, les organisations sacrifient 23 % de la valeur ajoutée au nom de la rigueur gestionnaire.
+
+[Q233-2012] « La conduite du changement est-elle une croyance efficace ? » (Qualitique n°233, avr. 2012)
+Critique de la vision cartésienne des projets de transformation (SAP, ARIS). Cinq contradictions majeures : (a) prétend valoriser le métier mais astreint à l'exécution de procédures, rendant les collaborateurs « interchangeables » ; (b) prétend valoriser les coopérations mais exacerbe les compétitions contreproductives ; (c) croit en une cohérence spontanée mais tait les logiques multiples contradictoires ; (d) fait de l'informatique un instrument de pilotage distant et désincarné ; (e) prétend mobiliser mais conduit à tout allotir à des tiers de passage. Palliatifs pragmatiques : méthode Agile (James Martin, RAD) ; cartographie des états d'esprit (Rupert) ; IBET comme mesure du désengagement. Dépassement décisif : le modèle cindynique de la Sorbonne (Kervern/Boulanger) voit l'entreprise comme réseau d'acteurs décidés à se parler, caractérisé par objectif, valeurs, modèles de représentation, règles et façon d'appréhender les faits. Cinq propriétés de la rationalité collective cindynique. Principe fondateur : l'engagement mutuel des parties prenantes ne se décrète pas — il trouve sa puissance dans le sens du projet.
+
+── CONTRIBUTIONS À OUVRAGES COLLECTIFS ──
+
+[TERR-2017] « De l'équilibre de la terreur au terrorisme international » in Penser et repenser le terrorisme (coord. J. Delga, L'Harmattan, 2017)
+Analyse géopolitique de la transition de la dissuasion nucléaire (équilibre de la terreur) vers la guerre asymétrique et le terrorisme international. Lecture socio-politique des logiques de puissance, de l'État-nation à l'acteur transnational.
+
+[CORS-2017] « Corsaires ou pirates ? La guerre économique contre la démocratie se mène en col blanc » in Criminalité en col blanc (coord. J. Delga, L'Harmattan, 2017)
+La délinquance en col blanc s'inscrit sur fond de guerre économique. Distinction corsaires (acteurs mandatés par un État, dans un cadre légal apparent) vs pirates (acteurs hors-la-loi au service de leurs seuls intérêts). La prédation économique use des outils du droit et de la finance pour contourner les régulations démocratiques. Les acteurs du marché mondial exercent une violence symbolique et économique structurelle sur les citoyens, les États et les institutions. Référence à Marcel Mauss : les comportements économiques sont profondément socialement régulés. Le libertinage économique des élites n'est que la face visible d'une destruction du pacte social. Analyse des prédateurs type Weinstein comme symptôme d'un désordre systémique.
+
+[MORT-2018] « Expérience de mort imminente au 19 septembre » in Face à la mort (coord. J. Delga, L'Harmattan, 2018/2023)
+Témoignage personnel et réflexion philosophique sur l'expérience de mort imminente (EMI). Confrontation à la finitude comme révélateur des priorités et des valeurs. Articulation avec les thèses sur le collectif : la mort comme moment de transmission, la société qui refuse d'envisager sa propre mort s'appauvrit culturellement.
+
+[LIBERT-2023] « Le théâtre du libertinage, entre unité de temps et unité de lieu » in Libertaire, libertinage et intervention de l'État... (coord. J. Delga, L'Harmattan, 2022/2023)
+Approche sociologique et philosophique du libertinage comme phénomène social. Libertinage et libertaire : cousins germains de l'affranchissement, mais distingués par leur rapport à la norme (religieuse vs institutionnelle). Le libertinage historiquement conservateur sociologiquement (petits bourgeois). Modèle ago-antagonique appliqué aux dynamiques sociales : triple axe mœurs/pouvoir/spiritualité. La société française caractérisée par une relative liberté des mœurs comme constante historique. Mouvement #MeToo comme bousculement de l'axe des mœurs. La famille monoparentale comme produit d'une culture individualiste et hédoniste. Référence aux cindyniques de Kervern et Boulanger. Dialogue socratique fictif entre deux interlocuteurs (A et B).
+
+[DEM-2024] « Une entreprise démocratique dans une République sociale : pour qui ? pourquoi ? comment ? » in Démocratie(s) en action (coord. C. Gombert, Agora D.O.D.E.S., 2024)
+L'entreprise est en pratique le lieu de l'action du citoyen sur la société. La République française installe l'entreprise hors du champ démocratique : seul l'actionnaire est représenté au conseil d'administration. Historique : loi Le Chapelier (1791), éphémère droit au travail de 1848, contention de la Commune par la Troisième République. La République n'est pas née plébéienne mais de la coalition aristocratique et ploutocratique. Proposition : instituer le conseil d'administration comme instance de délibération de toutes les parties prenantes légalement désignées (collaborateurs, financeurs, fournisseurs, clients, associations, collectivités, assureurs). La rhétorique est l'instrument de toutes les manipulations ; seul le rapport à la vérité garantit la justice. Référence à Julien Benda (La trahison des clercs, 1927) : les intellectuels ont pour fonction de porter la vérité dans la sphère publique.
+
+[WAK-2024] (co-référencé) « L'opérateur d'assurance, témoin de l'urgence démocratique en entreprise » (Victor Waknine, même ouvrage, 2024)
+Waknine y cite et prolonge les travaux de Brochenin : distinction surcoûts affectant la production (non-qualité), les personnes physiques (coûts du mal-être) et le corps social (aléa non-maîtrisé). Plaidoyer pour une nouvelle norme comptable socio-économique. L'assureur doit disposer de la BDSE (base de données économiques et sociales) pour évaluer les risques systémiques, actuellement absents du contrat.
+
+── COLLABORATION PRINCIPALE ──
+Victor Waknine (Mozart Consulting) : concepteur technique de l'IBET, Emmy Award 2000, directions générales France Telecom / Airbus / Lehman Brothers. Apporte le langage financier, la légitimité technique et l'ancrage dans les réseaux professionnels.
+
+══════════════════════════════════════════════════════
+FIN DU CORPUS
+══════════════════════════════════════════════════════`;
+
+  /* ─────────────────────────────────────────────────────────────────
+     ÉTAT
+  ───────────────────────────────────────────────────────────────── */
+  const state = {
+    open: false,
+    history: [],          // [{role, content}]
+    loading: false,
+    chipsVisible: true,
+  };
+
+  /* ─────────────────────────────────────────────────────────────────
+     ÉLÉMENTS DOM
+  ───────────────────────────────────────────────────────────────── */
+  const trigger  = document.getElementById('bb-trigger');
+  const panel    = document.getElementById('bb-panel');
+  const messages = document.getElementById('bb-messages');
+  const chips    = document.getElementById('bb-chips');
+  const input    = document.getElementById('bb-input');
+  const sendBtn  = document.getElementById('bb-send');
+
+  /* ─────────────────────────────────────────────────────────────────
+     TOGGLE PANEL
+  ───────────────────────────────────────────────────────────────── */
+  function togglePanel() {
+    state.open = !state.open;
+    panel.classList.toggle('open', state.open);
+    trigger.classList.toggle('open', state.open);
+    trigger.setAttribute('aria-expanded', state.open);
+    if (state.open) {
+      if (state.history.length === 0) addWelcome();
+      setTimeout(() => input.focus(), 280);
+    }
+  }
+  trigger.addEventListener('click', togglePanel);
+
+  /* ─────────────────────────────────────────────────────────────────
+     MESSAGE DE BIENVENUE
+  ───────────────────────────────────────────────────────────────── */
+  function addWelcome() {
+    addMessage('assistant',
+      `Bonjour ! Je peux vous aider à explorer les travaux de Bruno Brochenin — ses thèses sur l'engagement collectif, l'IBET, la cindynique ou la démocratie d'entreprise. Que souhaitez-vous approfondir ?`
+    );
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     RENDU D'UN MESSAGE
+  ───────────────────────────────────────────────────────────────── */
+  function addMessage(role, text, sources) {
+    const div = document.createElement('div');
+    div.className = `bb-msg ${role}`;
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bb-bubble';
+    bubble.textContent = text;
+    div.appendChild(bubble);
+
+    if (sources && sources.length) {
+      const pills = document.createElement('div');
+      pills.className = 'bb-sources';
+      sources.forEach(s => {
+        const pill = document.createElement('span');
+        pill.className = 'bb-source-pill';
+        pill.textContent = s;
+        pills.appendChild(pill);
+      });
+      div.appendChild(pills);
+    }
+
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     INDICATEUR DE FRAPPE
+  ───────────────────────────────────────────────────────────────── */
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'bb-msg assistant';
+    div.id = 'bb-typing-msg';
+    const typing = document.createElement('div');
+    typing.className = 'bb-typing';
+    for (let i = 0; i < 3; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'bb-dot';
+      typing.appendChild(dot);
+    }
+    div.appendChild(typing);
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+  function hideTyping() {
+    const el = document.getElementById('bb-typing-msg');
+    if (el) el.remove();
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     EXTRACTION DES SOURCES CITÉES DANS LA RÉPONSE
+     Cherche les codes entre crochets [XXX-AAAA] ou les titres en italique
+  ───────────────────────────────────────────────────────────────── */
+  function extractSources(text) {
+    const map = {
+      'OVE-2010':  "Où va l'entreprise ? (2010)",
+      'ENG-2019':  "L'engagement collectif (2019)",
+      'IBET-2024': 'Indice de bien-être au travail (2024)',
+      'Q222-2011': 'Qualitique n°222 (2011)',
+      'Q225-2011': 'Qualitique n°225 (2011)',
+      'Q229-2011': 'Qualitique n°229 (2011)',
+      'Q233-2012': 'Qualitique n°233 (2012)',
+      'TERR-2017': 'Équilibre de la terreur (2017)',
+      'CORS-2017': 'Corsaires ou pirates ? (2017)',
+      'MORT-2018': 'Mort imminente (2018/2023)',
+      'LIBERT-2023':'Le théâtre du libertinage (2023)',
+      'DEM-2024':  'Entreprise démocratique (2024)',
+    };
+    const found = new Set();
+    Object.keys(map).forEach(code => {
+      if (text.includes(code)) found.add(map[code]);
+    });
+    // Aussi détecter les mentions directes par titre
+    if (text.includes("Où va l'entreprise") || text.includes('OVE')) found.add(map['OVE-2010']);
+    if (text.includes('engagement collectif') && text.includes('2019')) found.add(map['ENG-2019']);
+    if (text.includes('IBET') || text.includes("Indice de bien-être")) found.add(map['IBET-2024']);
+    if (text.includes('Qualitique') && text.includes('222')) found.add(map['Q222-2011']);
+    if (text.includes('pompiers') || text.includes('225')) found.add(map['Q225-2011']);
+    if (text.includes('risques') && text.includes('229')) found.add(map['Q229-2011']);
+    if (text.includes('conduite du changement') || text.includes('233')) found.add(map['Q233-2012']);
+    if (text.includes('libertinage')) found.add(map['LIBERT-2023']);
+    if (text.includes('démocratie') && text.includes('entreprise') && text.includes('2024')) found.add(map['DEM-2024']);
+    return [...found];
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     APPEL API
+  ───────────────────────────────────────────────────────────────── */
+  async function callAPI(userText) {
+    state.history.push({ role: 'user', content: userText });
+
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    const response = await fetch(CONFIG.endpoint, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        model: CONFIG.model,
+        max_tokens: CONFIG.maxTokens,
+        system: SYSTEM_PROMPT,
+        messages: state.history,
+      }),
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.error?.message || `Erreur ${response.status}`);
+    }
+
+    const data = await response.json();
+    const assistantText = data.content.map(b => b.type === 'text' ? b.text : '').join('');
+    state.history.push({ role: 'assistant', content: assistantText });
+    return assistantText;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     ENVOI D'UNE QUESTION
+  ───────────────────────────────────────────────────────────────── */
+  async function sendMessage(text) {
+    if (!text.trim() || state.loading) return;
+
+    // Masquer les chips après la première question
+    if (state.chipsVisible) {
+      chips.style.display = 'none';
+      state.chipsVisible = false;
+    }
+
+    addMessage('user', text.trim());
+    input.value = '';
+    autoResizeInput();
+    updateSendBtn();
+
+    state.loading = true;
+    sendBtn.disabled = true;
+    showTyping();
+
+    try {
+      const reply = await callAPI(text.trim());
+      hideTyping();
+      const sources = extractSources(reply);
+      addMessage('assistant', reply, sources);
+    } catch (e) {
+      hideTyping();
+      addMessage('assistant',
+        `Une erreur est survenue. Vérifiez la configuration de la clé API ou réessayez dans un instant. (${e.message})`
+      );
+    } finally {
+      state.loading = false;
+      updateSendBtn();
+      input.focus();
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+     ÉVÉNEMENTS
+  ───────────────────────────────────────────────────────────────── */
+  function updateSendBtn() {
+    sendBtn.disabled = !input.value.trim() || state.loading;
+  }
+
+  function autoResizeInput() {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+  }
+
+  input.addEventListener('input', () => { autoResizeInput(); updateSendBtn(); });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage(input.value);
+    }
+  });
+  sendBtn.addEventListener('click', () => sendMessage(input.value));
+
+  // Chips de suggestion
+  document.querySelectorAll('.bb-chip').forEach(chip => {
+    chip.addEventListener('click', () => sendMessage(chip.dataset.q || chip.textContent.trim()));
+  });
+
+  // Fermeture au clic hors du panel
+  document.addEventListener('click', e => {
+    if (state.open && !panel.contains(e.target) && !trigger.contains(e.target)) {
+      togglePanel();
+    }
+  });
+
+  // Touche Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && state.open) togglePanel();
+  });
+
+})();
+</script>
+<!-- ═══════ FIN CHATBOT ═══════ -->
 </body>
 </html>
