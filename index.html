@@ -983,14 +983,7 @@ FIN DU CORPUS
 
     const headers = {
       'Content-Type': 'application/json',
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true',
     };
-    // Clé en header direct uniquement si on appelle l'API Anthropic.
-    // En production : supprimer cette ligne et utiliser un proxy backend.
-    if (CONFIG.apiKey !== 'YOUR_API_KEY') {
-      headers['x-api-key'] = CONFIG.apiKey;
-    }
 
     const response = await fetch(CONFIG.endpoint, {
       method: 'POST',
