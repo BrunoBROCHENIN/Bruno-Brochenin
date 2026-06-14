@@ -391,6 +391,56 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
   #bb-trigger { bottom: 20px; right: 16px; }
 }
 
+
+/* ── Resize handle ── */
+#bb-panel {
+  resize: both;
+  overflow: hidden;
+}
+#bb-resize-handle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  cursor: nw-resize;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 3px;
+  opacity: .35;
+  transition: opacity var(--bb-speed);
+  z-index: 10;
+}
+#bb-resize-handle:hover { opacity: .8; }
+#bb-resize-handle svg { width: 11px; height: 11px; }
+
+/* ── Language toggle ── */
+#bb-lang-toggle {
+  margin-left: auto;
+  display: flex;
+  gap: 2px;
+  background: rgba(255,255,255,.12);
+  border-radius: 6px;
+  padding: 2px;
+}
+.bb-lang-btn {
+  font-family: var(--bb-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+  transition: background var(--bb-speed), color var(--bb-speed);
+}
+.bb-lang-btn.active {
+  background: rgba(255,255,255,.22);
+  color: #fff;
+}
 </style>
 </head>
 <body>
@@ -724,7 +774,11 @@ function go(id,btn){
       <div id="bb-avatar">BB</div>
       <div id="bb-header-text">
         <div id="bb-header-name">Bruno Brochenin</div>
-        <div id="bb-header-sub">Explorez les thèses et concepts</div>
+        <div id="bb-header-sub" id="bb-header-sub-text">Explorez les thèses et concepts</div>
+      </div>
+      <div id="bb-lang-toggle">
+        <button class="bb-lang-btn active" data-lang="fr">FR</button>
+        <button class="bb-lang-btn" data-lang="en">EN</button>
       </div>
     </div>
 
@@ -751,6 +805,7 @@ function go(id,btn){
       </button>
     </div>
 
+    <div id="bb-resize-handle" title="Redimensionner"><svg viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M5 10L10 5M9 10L10 9" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
     <div id="bb-disclaimer">
       Réponses synthétiques fondées sur les publications de Bruno Brochenin.<br>
       Les textes originaux sont protégés par le droit d'auteur.
@@ -851,6 +906,32 @@ FIN DU CORPUS
     history: [],          // [{role, content}]
     loading: false,
     chipsVisible: true,
+    lang: 'fr',           // 'fr' or 'en'
+  };
+
+  const LANG = {
+    fr: {
+      sub: 'Explorez les thèses et concepts',
+      welcome: `Bonjour ! Je peux vous aider à explorer les travaux de Bruno Brochenin — ses thèses sur l'engagement collectif, l'IBET, la cindynique ou la démocratie d'entreprise. Que souhaitez-vous approfondir ?`,
+      placeholder: 'Posez votre question sur les travaux de Bruno Brochenin…',
+      langInstruction: 'Réponds toujours en français.',
+      chips: [
+        { q: "Qu'est-ce que l'IBET et comment se calcule-t-il ?", label: "Qu'est-ce que l'IBET et comment se calcule-t-il ?" },
+        { q: "Quelle est la thèse centrale de L'engagement collectif dans l'entreprise ?", label: "Quelle est la thèse centrale de <em>L'engagement collectif</em> ?" },
+        { q: "En quoi la conduite du changement est-elle une croyance ?", label: "En quoi la conduite du changement est-elle une croyance ?" },
+      ],
+    },
+    en: {
+      sub: 'Explore the theses and concepts',
+      welcome: "Hello! I can help you explore Bruno Brochenin's work — his theses on collective engagement, the IBET index, cindynics, or corporate democracy. What would you like to explore?",
+      placeholder: 'Ask a question about Bruno Brochenin’s work…',
+      langInstruction: 'Always reply in English.',
+      chips: [
+        { q: "What is the IBET index and how is it calculated?", label: "What is the IBET index and how is it calculated?" },
+        { q: "What is the central thesis of L'engagement collectif dans l'entreprise?", label: "What is the central thesis of <em>L'engagement collectif</em>?" },
+        { q: "Why does Brochenin say change management is a belief system?", label: "Why is change management a belief system?" },
+      ],
+    },
   };
 
   /* ─────────────────────────────────────────────────────────────────
@@ -882,9 +963,7 @@ FIN DU CORPUS
      MESSAGE DE BIENVENUE
   ───────────────────────────────────────────────────────────────── */
   function addWelcome() {
-    addMessage('assistant',
-      `Bonjour ! Je peux vous aider à explorer les travaux de Bruno Brochenin — ses thèses sur l'engagement collectif, l'IBET, la cindynique ou la démocratie d'entreprise. Que souhaitez-vous approfondir ?`
-    );
+    addMessage('assistant', LANG[state.lang].welcome);
   }
 
   /* ─────────────────────────────────────────────────────────────────
@@ -991,7 +1070,7 @@ FIN DU CORPUS
       body: JSON.stringify({
         model: CONFIG.model,
         max_tokens: CONFIG.maxTokens,
-        system: SYSTEM_PROMPT,
+        system: SYSTEM_PROMPT + '\n\n' + LANG[state.lang].langInstruction,
         messages: state.history,
       }),
     });
@@ -1082,6 +1161,71 @@ FIN DU CORPUS
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && state.open) togglePanel();
   });
+
+  // ── Language toggle ──
+  function setLang(lang) {
+    state.lang = lang;
+    // Update button states
+    document.querySelectorAll('.bb-lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // Update subtitle and placeholder
+    const sub = document.getElementById('bb-header-sub-text') || document.getElementById('bb-header-sub');
+    if (sub) sub.textContent = LANG[lang].sub;
+    const inp = document.getElementById('bb-input');
+    if (inp) inp.placeholder = LANG[lang].placeholder;
+    // Rebuild chips
+    const chipsEl = document.getElementById('bb-chips');
+    if (chipsEl && state.chipsVisible) {
+      chipsEl.innerHTML = '';
+      LANG[lang].chips.forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = 'bb-chip';
+        btn.dataset.q = c.q;
+        btn.innerHTML = c.label;
+        btn.addEventListener('click', () => sendMessage(btn.dataset.q));
+        chipsEl.appendChild(btn);
+      });
+    }
+    // Clear conversation and restart in new language
+    if (state.history.length > 0) {
+      state.history = [];
+      document.getElementById('bb-messages').innerHTML = '';
+      state.chipsVisible = true;
+      if (chipsEl) { chipsEl.style.display = ''; chipsEl.innerHTML = ''; LANG[lang].chips.forEach(c => { const btn = document.createElement('button'); btn.className = 'bb-chip'; btn.dataset.q = c.q; btn.innerHTML = c.label; btn.addEventListener('click', () => sendMessage(btn.dataset.q)); chipsEl.appendChild(btn); }); }
+      addWelcome();
+    }
+  }
+
+  document.querySelectorAll('.bb-lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  // ── Resize panel ──
+  const resizeHandle = document.getElementById('bb-resize-handle');
+  if (resizeHandle) {
+    let startX, startY, startW, startH;
+    resizeHandle.addEventListener('mousedown', e => {
+      e.preventDefault();
+      const rect = panel.getBoundingClientRect();
+      startX = e.clientX; startY = e.clientY;
+      startW = rect.width; startH = rect.height;
+      function onMove(e) {
+        const dx = startX - e.clientX;
+        const dy = startY - e.clientY;
+        const newW = Math.max(300, Math.min(700, startW + dx));
+        const newH = Math.max(350, Math.min(window.innerHeight - 120, startH + dy));
+        panel.style.width = newW + 'px';
+        panel.style.height = newH + 'px';
+      }
+      function onUp() {
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onUp);
+      }
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onUp);
+    });
+  }
 
 })();
 </script>
