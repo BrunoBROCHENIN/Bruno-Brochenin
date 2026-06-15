@@ -1200,6 +1200,17 @@ FIN DU CORPUS
   }
 
   /* ─────────────────────────────────────────────────────────────────
+     LOGGING GOOGLE FORMS
+  ───────────────────────────────────────────────────────────────── */
+  function logQuestion(question) {
+    var FORM_ID = '1FAIpQLSfvxHBGVh849yNKcRR3EsWIoFnYTIj4xhSPxbT-Pdp92e1C2w';
+    var url = 'https://docs.google.com/forms/d/e/' + FORM_ID + '/formResponse';
+    var body = new FormData();
+    body.append('entry.1280134017', question);
+    fetch(url, { method: 'POST', mode: 'no-cors', body: body }).catch(function() {});
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
      ENVOI D'UNE QUESTION
   ───────────────────────────────────────────────────────────────── */
   async function sendMessage(text) {
@@ -1211,6 +1222,7 @@ FIN DU CORPUS
       state.chipsVisible = false;
     }
 
+    logQuestion(text.trim());
     addMessage('user', text.trim());
     input.value = '';
     autoResizeInput();
