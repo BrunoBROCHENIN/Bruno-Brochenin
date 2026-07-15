@@ -193,6 +193,24 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 .formation-cta-btn{padding:.65rem 1.5rem;background:var(--accent);color:var(--cream);text-decoration:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border-radius:1px;transition:background .2s;white-space:nowrap;flex-shrink:0}
 .formation-cta-btn:hover{background:var(--accent2)}
 @media(max-width:640px){.formation-modules{grid-template-columns:1fr}.formation-cta{flex-direction:column;gap:1rem}}
+
+/* --- Repères chronologiques --- */
+.frise-wrap{position:relative;padding-left:2rem;margin-top:.5rem}
+.frise-wrap::before{content:"";position:absolute;left:7px;top:.4rem;bottom:.4rem;width:1px;background:var(--rule)}
+.frise-periode{margin-bottom:2.5rem}
+.frise-periode:last-child{margin-bottom:0}
+.frise-periode-tag{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:500}
+.frise-periode-tag span{color:var(--ink3);letter-spacing:.06em}
+.frise-jalon{position:relative;padding-bottom:1.5rem}
+.frise-jalon:last-child{padding-bottom:0}
+.frise-jalon::before{content:"";position:absolute;left:calc(-2rem + 3px);top:.35rem;width:9px;height:9px;border-radius:50%;background:var(--cream);border:1.5px solid var(--accent2)}
+.frise-jalon.majeur::before{background:var(--accent);border-color:var(--accent)}
+.frise-date{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:.2rem}
+.frise-jalon p{font-size:.9rem;line-height:1.6;color:var(--ink2);max-width:60ch;margin:0}
+.frise-jalon em{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--ink);font-size:1.02em}
+.frise-src{display:block;margin-top:.3rem;font-size:10px;letter-spacing:.04em;color:var(--ink3)}
+.frise-src::before{content:"— ";color:var(--gold)}
+.frise-note{font-size:.78rem;color:var(--ink3);line-height:1.5;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--rule);max-width:64ch}
 </style>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap');
@@ -548,6 +566,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 <nav>
   <button class="nav-link active" onclick="go('these',this)" data-fr="Thèse" data-en="Thesis">Thèse</button>
+  <button class="nav-link" onclick="go('reperes',this)" data-fr="Repères" data-en="Timeline">Repères</button>
   <button class="nav-link" onclick="go('livres',this)" data-fr="Livres" data-en="Books">Livres</button>
   <button class="nav-link" onclick="go('articles',this)" data-fr="Articles" data-en="Articles">Articles</button>
   <button class="nav-link" onclick="go('outils',this)" data-fr="Outils" data-en="Concepts">Outils</button>
@@ -573,9 +592,88 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
   </div>
 </section>
 
-<section class="section" id="livres" aria-label="Livres de Bruno Brochenin sur le management collaboratif et les cindyniques">
+<section class="section" id="reperes" aria-label="Repères chronologiques des travaux de Bruno Brochenin et de la démarche IBET">
   <div class="section-header">
     <span class="section-num">II</span>
+    <h2 class="section-title" data-fr="Repères — d'où viennent ces travaux" data-en="Timeline — where this work comes from">Repères — d'où viennent ces travaux</h2>
+  </div>
+  <p style="font-size:.95rem;line-height:1.7;color:var(--ink2);max-width:64ch;margin-bottom:2rem" data-fr="Quinze ans séparent la première alerte de la première synthèse. Chaque jalon ci-dessous est adossé à une pièce publiée et datée — études, ouvrages, agréments, reconnaissances de tiers." data-en="Fifteen years separate the first warning from the first synthesis. Each milestone below rests on a published, dated source — studies, books, accreditations, third-party recognitions.">Quinze ans séparent la première alerte de la première synthèse. Chaque jalon ci-dessous est adossé à une pièce publiée et datée — études, ouvrages, agréments, reconnaissances de tiers.</p>
+  <div class="frise-wrap">
+    <div class="frise-periode">
+      <div class="frise-periode-tag" data-fr="La problématisation" data-en="Problem framing">La problématisation <span>· 2008 – 2010</span></div>
+      <div class="frise-jalon">
+        <div class="frise-date" data-fr="2008" data-en="2008">2008</div>
+        <p data-fr="La souffrance au travail devient une question nationale ; les travaux qui conduiront à l'IBET© débutent la même année." data-en="Workplace suffering becomes a national issue; the work that would lead to the IBET© begins the same year.">La souffrance au travail devient une question nationale ; les travaux qui conduiront à l'IBET© débutent la même année.</p>
+        <span class="frise-src" data-fr="Commission de réflexion sur la souffrance au travail, 2008" data-en="Commission on workplace suffering, 2008">Commission de réflexion sur la souffrance au travail, 2008</span>
+      </div>
+      <div class="frise-jalon majeur">
+        <div class="frise-date" data-fr="Mars 2010" data-en="March 2010">Mars 2010</div>
+        <p data-fr="Bruno Brochenin publie <em>Où va l'entreprise ? Organisation et dérives</em> : le diagnostic des logiques organisationnelles et de leurs effets sur le travail." data-en="Bruno Brochenin publishes <em>Où va l'entreprise ?</em>: a diagnosis of organisational logics and their effects on work.">Bruno Brochenin publie <em>Où va l'entreprise ? Organisation et dérives</em> : le diagnostic des logiques organisationnelles et de leurs effets sur le travail.</p>
+        <span class="frise-src" data-fr="Éditions Eska, 2010" data-en="Eska, 2010">Éditions Eska, 2010</span>
+      </div>
+    </div>
+    <div class="frise-periode">
+      <div class="frise-periode-tag" data-fr="L'invention et la validation de la mesure" data-en="Inventing and validating the measure">L'invention et la validation de la mesure <span>· 2011 – 2014</span></div>
+      <div class="frise-jalon majeur">
+        <div class="frise-date" data-fr="5 septembre 2011" data-en="5 September 2011">5 septembre 2011</div>
+        <p data-fr="Première édition de l'étude nationale de l'IBET©, sur données officielles 2009 (DARES, CNAMTS), plus de 18 millions de salariés : indice global de 0,77 et équation fondatrice — engagement et désengagements se complètent à l'unité." data-en="First edition of the national IBET© study, on official 2009 data (DARES, CNAMTS), over 18 million employees: overall index of 0.77 and the founding equation — engagement and disengagements sum to one.">Première édition de l'étude nationale de l'IBET©, sur données officielles 2009 (DARES, CNAMTS), plus de 18 millions de salariés : indice global de 0,77 et équation fondatrice — engagement et désengagements se complètent à l'unité.</p>
+        <span class="frise-src" data-fr="Rapport d'étude, Mozart Consulting, septembre 2011" data-en="Study report, Mozart Consulting, September 2011">Rapport d'étude, Mozart Consulting, septembre 2011</span>
+      </div>
+      <div class="frise-jalon">
+        <div class="frise-date" data-fr="2011 – 2012" data-en="2011 – 2012">2011 – 2012</div>
+        <p data-fr="Quatre articles dans <em>Qualitique</em> — risques psychosociaux, cindynique, conduite du changement. La convergence avec les travaux de Mozart Consulting y est déjà documentée." data-en="Four articles in <em>Qualitique</em> — psychosocial risks, cindynics, change management. Convergence with Mozart Consulting's work is already documented.">Quatre articles dans <em>Qualitique</em> — risques psychosociaux, cindynique, conduite du changement. La convergence avec les travaux de Mozart Consulting y est déjà documentée.</p>
+        <span class="frise-src" data-fr="Qualitique n° 222, 225, 229, 233" data-en="Qualitique no. 222, 225, 229, 233">Qualitique n° 222, 225, 229, 233</span>
+      </div>
+      <div class="frise-jalon majeur">
+        <div class="frise-date" data-fr="Avril 2014" data-en="April 2014">Avril 2014</div>
+        <p data-fr="L'IBET© est agréé « innovation sociale » par le pôle de compétitivité mondial Finance Innovation." data-en="The IBET© is accredited as a 'social innovation' by the global competitiveness cluster Finance Innovation.">L'IBET© est agréé « innovation sociale » par le pôle de compétitivité mondial Finance Innovation.</p>
+        <span class="frise-src" data-fr="Agrément du 9 avril 2014" data-en="Accreditation of 9 April 2014">Agrément du 9 avril 2014</span>
+      </div>
+    </div>
+    <div class="frise-periode">
+      <div class="frise-periode-tag" data-fr="L'élaboration pédagogique et la reconnaissance tierce" data-en="Pedagogical development and third-party recognition">L'élaboration pédagogique et la reconnaissance tierce <span>· 2014 – 2021</span></div>
+      <div class="frise-jalon majeur">
+        <div class="frise-date" data-fr="2014 – 2016" data-en="2014 – 2016">2014 – 2016</div>
+        <p data-fr="Conception du parcours « Les aventures d'un manager collaboratif », déployé depuis en entreprise : la matière des ouvrages est éprouvée face à des managers réels avant de devenir des chapitres." data-en="Design of the training programme 'The adventures of a collaborative manager', deployed in companies ever since: the books' material is tested with real managers before becoming chapters.">Conception du parcours « Les aventures d'un manager collaboratif », déployé depuis en entreprise : la matière des ouvrages est éprouvée face à des managers réels avant de devenir des chapitres.</p>
+        <span class="frise-src" data-fr="Supports de formation, 2014-2016" data-en="Training materials, 2014-2016">Supports de formation, 2014-2016</span>
+      </div>
+      <div class="frise-jalon">
+        <div class="frise-date" data-fr="2016 – 2017" data-en="2016 – 2017">2016 – 2017</div>
+        <p data-fr="Le Social Advisor Index chiffre les critères RSE de la loi Grenelle II pour le CAC 40 ; le livre blanc DFCG/ANDRH préconise l'IBET© pour la valorisation du capital immatériel." data-en="The Social Advisor Index quantifies the Grenelle II CSR criteria for the CAC 40; the DFCG/ANDRH white paper recommends the IBET© for valuing intangible capital.">Le Social Advisor Index chiffre les critères RSE de la loi Grenelle II pour le CAC 40 ; le livre blanc DFCG/ANDRH préconise l'IBET© pour la valorisation du capital immatériel.</p>
+        <span class="frise-src" data-fr="Social Advisor 2016 ; livre blanc DFCG/ANDRH, 2017" data-en="Social Advisor 2016; DFCG/ANDRH white paper, 2017">Social Advisor 2016 ; livre blanc DFCG/ANDRH, 2017</span>
+      </div>
+      <div class="frise-jalon majeur">
+        <div class="frise-date" data-fr="2019" data-en="2019">2019</div>
+        <p data-fr="Bruno Brochenin publie <em>L'engagement collectif dans l'entreprise, part magique de la performance</em> : le modèle du cercle magique." data-en="Bruno Brochenin publishes <em>L'engagement collectif dans l'entreprise</em>: the magic-circle model.">Bruno Brochenin publie <em>L'engagement collectif dans l'entreprise, part magique de la performance</em> : le modèle du cercle magique.</p>
+        <span class="frise-src" data-fr="L'Harmattan, 2019" data-en="L'Harmattan, 2019">L'Harmattan, 2019</span>
+      </div>
+    </div>
+    <div class="frise-periode">
+      <div class="frise-periode-tag" data-fr="La rencontre avec l'ère extra-financière" data-en="Meeting the extra-financial era">La rencontre avec l'ère extra-financière <span>· 2022 – 2026</span></div>
+      <div class="frise-jalon majeur">
+        <div class="frise-date" data-fr="2024" data-en="2024">2024</div>
+        <p data-fr="Bruno Brochenin publie <em>Indice de bien-être au travail : on compte tout sauf ce qui compte</em>, préfacé par Victor Waknine : les fondements théoriques de la mesure." data-en="Bruno Brochenin publishes <em>Indice de bien-être au travail</em>, prefaced by Victor Waknine: the theoretical foundations of the measure.">Bruno Brochenin publie <em>Indice de bien-être au travail : on compte tout sauf ce qui compte</em>, préfacé par Victor Waknine : les fondements théoriques de la mesure.</p>
+        <span class="frise-src" data-fr="L'Harmattan, 2024" data-en="L'Harmattan, 2024">L'Harmattan, 2024</span>
+      </div>
+      <div class="frise-jalon">
+        <div class="frise-date" data-fr="Septembre 2025" data-en="September 2025">Septembre 2025</div>
+        <p data-fr="Victor Waknine est le « grand témoin » du magazine de la CFE-CGC : reconnaissance par une organisation représentative des salariés." data-en="Victor Waknine is the featured expert of the CFE-CGC magazine: recognition by a representative employee organisation.">Victor Waknine est le « grand témoin » du magazine de la CFE-CGC : reconnaissance par une organisation représentative des salariés.</p>
+        <span class="frise-src" data-fr="Magazine CFE-CGC, septembre 2025" data-en="CFE-CGC magazine, September 2025">Magazine CFE-CGC, septembre 2025</span>
+      </div>
+      <div class="frise-jalon majeur">
+        <div class="frise-date" data-fr="2024 – 2026" data-en="2024 – 2026">2024 – 2026</div>
+        <p data-fr="Écriture du diptyque — <em>Les quatre postures du dialogue managérial</em> et <em>Construire l'engagement réciproque</em> — où la fiction incarne quinze ans de matière éprouvée." data-en="Writing of the diptych — <em>The four postures of managerial dialogue</em> and <em>Building reciprocal engagement</em> — where fiction embodies fifteen years of tested material.">Écriture du diptyque — <em>Les quatre postures du dialogue managérial</em> et <em>Construire l'engagement réciproque</em> — où la fiction incarne quinze ans de matière éprouvée.</p>
+        <span class="frise-src" data-fr="À paraître" data-en="Forthcoming">À paraître</span>
+      </div>
+    </div>
+  </div>
+  <p class="frise-note" data-fr="Chaque jalon correspond à un document daté conservé dans les archives de l'auteur ; les références complètes sont disponibles sur demande." data-en="Each milestone corresponds to a dated document held in the author's archives; full references are available on request.">Chaque jalon correspond à un document daté conservé dans les archives de l'auteur ; les références complètes sont disponibles sur demande.</p>
+</section>
+
+
+<section class="section" id="livres" aria-label="Livres de Bruno Brochenin sur le management collaboratif et les cindyniques">
+  <div class="section-header">
+    <span class="section-num">III</span>
     <h2 class="section-title" data-fr="Livres" data-en="Books">Livres</h2>
   </div>
   <div class="book-row"><div class="book-year">2010</div><div><div class="book-type" data-fr="Essai · Management" data-en="Essay · Management">Essai · Management</div><div class="book-title" data-fr="Où va l'entreprise ?" data-en="Where is the organisation headed?">Où va l'entreprise ?</div><div class="book-subtitle" data-fr="Organisation et dérives" data-en="Organisation and its drifts">Organisation et dérives</div><div class="book-desc" data-fr="Diagnostic des dérives organisationnelles à l'ère des procédures et des progiciels. Témoignages de terrain, portraits, analyse de l'architecture d'entreprise comme outil de libération ou d'asservissement selon l'intention qui la pilote." data-en="Diagnosis of organisational drift in the age of procedures and ERP systems. Field testimonies, portraits, analysis of enterprise architecture as a tool of liberation or subjugation depending on the intention behind it.">Diagnostic des dérives organisationnelles à l'ère des procédures et des progiciels. Témoignages de terrain, portraits, analyse de l'architecture d'entreprise comme outil de libération ou d'asservissement selon l'intention qui la pilote.</div></div><div class="book-pub">Éditions ESKA</div></div>
@@ -585,7 +683,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 <section class="section" id="articles" aria-label="Articles et contributions de Bruno Brochenin dans Qualitique et autres revues">
   <div class="section-header">
-    <span class="section-num">III</span>
+    <span class="section-num">IV</span>
     <h2 class="section-title" data-fr="Contributions et articles" data-en="Contributions and articles">Contributions et articles</h2>
   </div>
   <div class="articles-list">
@@ -600,7 +698,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 <section class="section" id="outils" aria-label="Outils conceptuels : cindyniques, entropie organisationnelle, management collaboratif">
   <div class="section-header">
-    <span class="section-num">IV</span>
+    <span class="section-num">V</span>
     <h2 class="section-title" data-fr="Outils conceptuels" data-en="Conceptual tools">Outils conceptuels</h2>
   </div>
   <div class="outils-grid">
@@ -614,7 +712,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 <section class="section" id="formation">
   <div class="section-header">
-    <span class="section-num">V</span>
+    <span class="section-num">VI</span>
     <h2 class="section-title" data-fr="Formation — Les aventures d'un Manager Collaboratif" data-en="Training — The Adventures of a Collaborative Manager">Formation — Les aventures d'un Manager Collaboratif</h2>
   </div>
 
@@ -691,7 +789,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 <section class="section" id="collab">
   <div class="section-header">
-    <span class="section-num">VI</span>
+    <span class="section-num">VII</span>
     <h2 class="section-title" data-fr="Collaboration intellectuelle principale" data-en="Main intellectual collaboration">Collaboration intellectuelle principale</h2>
   </div>
   <div class="collab-card">
@@ -706,7 +804,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 <section class="section" id="ibet-chiffres" aria-label="IBET Indice de Bien-Être au Travail — données et chiffres clés">
   <div class="section-header">
-    <span class="section-num">VI</span>
+    <span class="section-num">VIII</span>
     <h2 class="section-title" data-fr="L'IBET en chiffres" data-en="The IBET in figures">L'IBET en chiffres</h2>
   </div>
 
@@ -799,7 +897,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 <section class="section" id="qualitique" aria-label="Articles Qualitique de Bruno Brochenin — accès libre">
   <div class="section-header">
-    <span class="section-num">VIII</span>
+    <span class="section-num">IX</span>
     <h2 class="section-title" data-fr="Articles Qualitique — accès libre" data-en="Qualitique articles — open access">Articles Qualitique — accès libre</h2>
   </div>
 
@@ -890,7 +988,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 <section class="section" id="presse">
   <div class="section-header">
-    <span class="section-num">IX</span>
+    <span class="section-num">X</span>
     <h2 class="section-title" data-fr="Presse &amp; recensions" data-en="Press &amp; reviews">Presse &amp; recensions</h2>
   </div>
   <div class="presse-list">
