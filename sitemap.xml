@@ -9,4 +9,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://brunobrochenin.com/?lang=en"/>
   </url>
+  <url>
+    <loc>https://brunobrochenin.com/chronologie.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
