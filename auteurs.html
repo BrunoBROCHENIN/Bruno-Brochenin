@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les auteurs qui inspirent mes travaux — Bruno Brochenin</title>
+<meta name="description" content="Neuf ouvrages qui nourrissent le renouveau de la pensée managériale et fondent mes travaux : Diel, Solotareff, Mauss et Hubert, Kervern, Hertz, Dumont, Sahlins, Fourquet, Scott. Pour chacun, pourquoi il compte — et un lien pour en discuter sur Babelio.">
+<meta name="keywords" content="Bruno Brochenin, sources théoriques, Paul Diel, Marcel Mauss, James Scott, Robert Hertz, cindyniques Kervern, anthropologie du management, géographie sociale, cercle magique">
+<meta name="author" content="Bruno Brochenin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brunobrochenin.com/auteurs.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Les auteurs qui inspirent mes travaux — Bruno Brochenin">
+<meta property="og:description" content="Neuf ouvrages qui nourrissent le renouveau de la pensée managériale et fondent mes travaux. Pour chacun, pourquoi il compte.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brunobrochenin.com/auteurs.html">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papier:#FDFDFB;
+    --encre:#212A33;
+    --encre-douce:#4A5560;
+    --marine:#2C4A6E;
+    --filet:#DCE0E4;
+    --sable:#B08D57;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--papier);
+    color:var(--encre);
+    font-family:'Spectral',Georgia,serif;
+    font-weight:300;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;}
+
+  /* ---------- entête ---------- */
+  header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
+  .retour{
+    display:inline-block;margin-bottom:26px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;
+    letter-spacing:.08em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .retour:hover{color:var(--sable);border-color:var(--sable);}
+  .surtitre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--sable);margin-bottom:18px;
+  }
+  h1{font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.01em;}
+  .chapeau{margin-top:22px;font-size:18px;color:var(--encre-douce);max-width:62ch;}
+  .chapeau em{font-style:italic;}
+
+  /* ---------- regroupement par pilier ---------- */
+  .pilier{
+    margin-top:60px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--marine);
+    padding-bottom:10px;border-bottom:1px solid var(--filet);
+  }
+  .pilier-sous{
+    margin-top:8px;font-size:15px;color:var(--encre-douce);font-style:italic;max-width:60ch;
+    font-family:'Spectral',Georgia,serif;letter-spacing:0;text-transform:none;font-weight:300;
+  }
+
+  /* ---------- notices ---------- */
+  .livre{margin-top:48px;padding-top:32px;border-top:1px solid var(--filet);}
+  .livre:first-of-type{border-top:none;}
+  .livre-auteur{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--marine);margin-bottom:8px;
+  }
+  .livre h2{font-weight:600;font-size:22px;line-height:1.3;letter-spacing:-.005em;max-width:60ch;}
+  .livre-ref{
+    margin-top:10px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:13px;
+    color:var(--encre-douce);letter-spacing:.01em;max-width:62ch;
+  }
+  .livre-accroche{margin-top:20px;max-width:62ch;font-size:17.5px;}
+  .livre-accroche em{font-style:italic;}
+
+  /* ---------- commentaire dépliable ---------- */
+  .livre-note{margin-top:8px;max-width:62ch;}
+  .livre-note summary{
+    list-style:none;cursor:pointer;display:inline-block;margin-top:12px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:500;
+    letter-spacing:.05em;color:var(--encre-douce);
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .livre-note summary::-webkit-details-marker{display:none;}
+  .livre-note summary:hover{color:var(--sable);border-color:var(--sable);}
+  .livre-note[open] summary{margin-bottom:16px;color:var(--sable);border-color:var(--sable);}
+  .livre-note-corps p{margin-bottom:14px;}
+  .livre-note-corps p:last-child{margin-bottom:0;}
+  .livre-note-corps em{font-style:italic;}
+
+  .livre-lien{
+    display:inline-block;margin-top:18px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:500;
+    letter-spacing:.05em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .livre-lien:hover{color:var(--sable);border-color:var(--sable);}
+
+  /* ---------- pied ---------- */
+  .colophon{
+    margin-top:80px;padding-top:28px;border-top:1px solid var(--filet);
+    color:var(--encre-douce);font-size:15px;max-width:64ch;
+  }
+  .colophon a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);}
+  .colophon a:hover{color:var(--sable);}
+
+  /* ---------- apparition douce ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .livre{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;}
+    .livre.visible{opacity:1;transform:none;}
+  }
+  @media (max-width:560px){
+    header{padding-top:56px;}
+    .livre{margin-top:36px;}
+    .pilier{margin-top:48px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <a class="retour" href="index.html">← Retour à l'accueil</a>
+  <div class="surtitre">Bibliothèque de travail</div>
+  <h1>Les auteurs qui inspirent mes travaux</h1>
+  <p class="chapeau">Ceux qui pourraient inspirer le renouveau de la pensée managériale se lisent
+  rarement dans les rayons du management. Je les ai cherchés ailleurs — dans la psychologie de la
+  valorisation, dans l'anthropologie de l'efficacité collective, dans l'histoire longue de la
+  contrainte. Voici neuf livres qui fondent mes propres travaux, et, pour chacun, <em>pourquoi</em>
+  il compte. Le commentaire complet est ici même ; si vous voulez le voir vivre dans la conversation
+  des lecteurs, chaque notice ouvre sur sa fiche Babelio.</p>
+</header>
+
+<!-- ============ PILIER 1 : la valorisation ============ -->
+<div class="pilier">Premier pilier — la psychologie de la valorisation
+  <div class="pilier-sous">Paul Diel : rien ne se fait dans un collectif qui ne soit d'abord,
+  chez chacun, psychiquement motivé — et la vanité est la première des fausses valeurs.</div>
+</div>
+
+<section class="livre">
+  <div class="livre-auteur">Paul Diel</div>
+  <h2>Psychologie de la motivation</h2>
+  <p class="livre-ref">Théorie et application thérapeutique — Payot, coll. « Petite Bibliothèque Payot »
+  (1<sup>re</sup> éd. PUF, 1947).</p>
+  <p class="livre-accroche">Une théorie de la motivation qui ne flatte personne — ni l'individu,
+  jamais simple victime de son contexte, ni la société, dont elle voit lucidement les dérèglements de
+  valeurs. C'est l'un des trois piliers sur lesquels j'ai construit mes travaux, et celui par lequel
+  je conseille de commencer.</p>
+  <details class="livre-note">
+    <summary>Lire mon commentaire</summary>
+    <div class="livre-note-corps">
+      <p>Il y a des livres qu'on lit, et des livres avec lesquels on travaille pendant des décennies.
+      <em>Psychologie de la motivation</em> appartient pour moi à la seconde catégorie. Diel y construit
+      une chose rare : une théorie de la motivation qui ne flatte personne. Ni l'individu, jamais simple
+      victime de son contexte puisque rien ne se fait en lui qui ne soit d'abord psychiquement motivé ;
+      ni la société, dont il voit lucidement les dérèglements de valeurs. Sa clé de voûte — la vanité
+      comme faute primordiale, cause unique d'aveuglement, aux mille visages versatiles (l'exaltation,
+      la colère, le désespoir, la flagornerie, l'apitoiement) — est d'une fécondité que je n'ai cessé
+      d'éprouver sur un terrain que Diel n'a jamais foulé : l'entreprise.</p>
+      <p>Car c'est là que je l'ai fait travailler. La surestime et la sous-estime de soi et d'autrui,
+      les quatre fautes d'évaluation qu'il identifie, se rencontrent chaque jour dans les équipes —
+      chez le dirigeant infatué de son plan stratégique comme chez le collaborateur muré dans le déni
+      ou l'accusation. Sa distinction entre valeurs vitalement fondées et fausses valeurs, entre juste
+      estime et estime faussée, m'a fourni l'armature de ce que je cherchais : comprendre pourquoi des
+      organisations techniquement irréprochables produisent du désengagement, et pourquoi aucun système
+      de sanctions/récompenses n'y remédie. La réponse de Diel : parce que le comportement procède de la
+      dynamique intérieure du sujet, dont le social n'est que le contexte — on ne « motive » pas autrui,
+      on crée ou détruit les conditions de sa motivation.</p>
+      <p>On lui reprochera sa dureté apparente, son refus sans concession de la sentimentalité et de
+      l'apitoiement. J'y vois l'inverse d'une dureté : une main tendue à quiconque accepte de sortir de
+      ses postures pour une action mûrie. Soixante-quinze ans après, ce livre exigeant reste d'une
+      actualité que la vogue du bien-être marchandisé rend presque cruelle. C'est un des trois piliers
+      sur lesquels j'ai construit mes propres travaux, et celui par lequel je conseille de commencer.</p>
+    </div>
+  </details>
+  <br>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Diel-Psychologie-de-la-motivation/134207" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+</section>
+
+<section class="livre">
+  <div class="livre-auteur">Jeanine Solotareff</div>
+  <h2>Le symbolisme dans les rêves</h2>
+  <p class="livre-ref">La méthode de traduction de Paul Diel — Payot, coll. « Petite Bibliothèque Payot ».</p>
+  <p class="livre-accroche">L'atelier de Diel plutôt que sa théorie : le livre qui montre comment on
+  travaille. Il m'a donné une méthode dont je me sers depuis plus de vingt ans, bien au-delà des
+  rêves — jusque dans les réunions, où l'on dit toujours une chose pour une autre.</p>
+  <details class="livre-note">
+    <summary>Lire mon commentaire</summary>
+    <div class="livre-note-corps">
+      <p>Il y a deux façons d'aborder Paul Diel. Par la théorie, avec <em>Psychologie de la
+      motivation</em>, qui expose sa lecture de la vanité et des fausses valeurs. Ou par l'atelier,
+      avec ce livre-ci, qui montre comment on travaille. Je conseillerais volontiers l'atelier : c'est
+      là qu'on comprend, en le pratiquant, ce que vaut l'instrument.</p>
+      <p>La thèse est simple et vertigineuse. Le langage symbolique n'est pas un décor poétique posé
+      sur les idées : c'est le mode d'expression naturel de l'esprit, une langue à part entière,
+      partagée par tous — les rêveurs, les poètes, les malades, les chamanes et les auteurs de mythes.
+      Diel en établit la grammaire avec une patience d'artisan. Chaque figure du récit onirique n'est
+      pas un symbole flottant qu'on interpréterait au gré de son humeur, mais un élément d'un système
+      cohérent où le père, le monstre, la mer, le héros occupent des positions déterminées dans
+      l'économie psychique. La lecture se conduit sur trois plans distincts — réel, linguistique,
+      symbolique — et c'est leur croisement qui fait la preuve.</p>
+      <p>Ce livre m'a donné une méthode dont je me sers depuis plus de vingt ans, bien au-delà des
+      rêves. Je l'ai appliquée aux récits d'expérience de mort imminente : leur permanence de
+      structure, à travers des cultures et des époques que rien ne relie, interdit de les traiter comme
+      des anecdotes cliniques et oblige à les lire comme un mythe au sens de Diel, c'est-à-dire comme
+      l'énoncé d'une vérité de la vie de l'esprit. Mais je m'en sers tout autant en réunion. Car dans
+      une organisation, on parle rarement littéralement : on dit une chose pour une autre, on assigne
+      des rôles, on rejoue des scènes anciennes — et qui n'entend que le premier degré ne comprend rien
+      à ce qui se joue.</p>
+      <p>Le reproche qu'on fera à Diel est celui qu'on fait à toute méthode d'interprétation : qu'elle
+      trouve ce qu'elle cherche. Il l'a devancé, précisément en imposant l'examen conjoint des trois
+      plans, qui interdit les lectures complaisantes. Reste que ce livre exige un lecteur actif : on
+      ne le consomme pas, on l'exerce. Ce qui est, je crois, la définition d'un maître.</p>
+      <p>Une dernière chose. Le langage symbolique n'est pas une langue morte, puisque c'est celle de
+      l'esprit — et l'entreprise obstinée de notre époque pour n'écouter que le sens littéral n'est pas
+      une victoire de la rigueur : c'est un appauvrissement dont nous mesurons chaque jour les effets.</p>
+    </div>
+  </details>
+  <br>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Solotareff-Le-symbolisme-dans-les-reves/1117181" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+</section>
+
+<!-- ============ PILIER 2 : l'efficacité magique du collectif ============ -->
+<div class="pilier">Deuxième pilier — l'efficacité magique du collectif
+  <div class="pilier-sous">Mauss et Hubert : le résultat collectif n'émerge ni des machines ni des
+  procédures, mais de la croyance partagée qui fait entrer les acteurs dans le cercle. Autour :
+  ceux qui outillent ou prolongent cette intuition.</div>
+</div>
+
+<section class="livre">
+  <div class="livre-auteur">Henri Hubert &amp; Marcel Mauss</div>
+  <h2>Esquisse d'une théorie générale de la magie</h2>
+  <p class="livre-ref">Paru dans <em>L'Année sociologique</em>, 1904 — éd. PUF, présentée par
+  Frédéric Keck.</p>
+  <p class="livre-accroche">La magie n'est pas une erreur de primitifs mal informés : c'est une
+  institution sociale d'une efficacité réelle, dont la condition n'est ni le trucage ni la crédulité,
+  mais la croyance collective. C'est de ce petit essai centenaire que j'ai tiré le concept autour
+  duquel s'organisent mes travaux.</p>
+  <details class="livre-note">
+    <summary>Lire mon commentaire</summary>
+    <div class="livre-note-corps">
+      <p>De tous les textes de Mauss, c'est celui-ci — écrit avec Henri Hubert, on l'oublie trop — qui
+      a le plus durablement travaillé ma propre réflexion. Sa thèse tient en peu de mots et n'a pas fini
+      de déranger : la magie n'est pas une erreur de primitifs mal informés des lois de la physique,
+      c'est une institution sociale d'une efficacité réelle, dont la condition n'est ni le trucage ni la
+      crédulité, mais la croyance collective. Le rite ne produit rien si le groupe n'y entre pas ; il
+      produit réellement dès que le groupe y croit assez pour s'y engager. Et le magicien n'est ni dupe
+      ni charlatan : il connaît son artifice et son efficacité tout ensemble.</p>
+      <p>J'ai passé une partie de ma vie professionnelle dans les organisations, et je n'y ai rien vu
+      d'autre. Une entreprise est un cercle magique : une ambition proclamée, des valeurs affichées, des
+      rôles distribués, des règles, une mesure de la performance — un décor qui ne produit strictement
+      rien par lui-même, et qui produit tout dès que les acteurs y adhèrent. Le résultat collectif ne
+      sort ni des machines ni des procédures : il émerge de la mobilisation des forces psychiques en
+      présence. Quand les esprits rationalistes s'étonnent qu'un projet techniquement parfait échoue,
+      Hubert et Mauss ont la réponse depuis 1903 : on a oublié de faire entrer les participants dans le
+      cercle. Et quand les modernes invoquent sans rougir la « main invisible » des marchés ou les
+      « miracles » de la technologie, ils font exactement ce qu'ils croient que font les sorciers.</p>
+      <p>Lu avec l'<em>Essai sur le don</em>, ce texte dessine une mécanique complète : la magie agit
+      sur les choses par le truchement des dieux, le don agit sur les hommes par le truchement des
+      choses. Qui veut comprendre pourquoi les collectifs humains tiennent — ou se défont — trouvera ici
+      plus que dans bien des traités de management. C'est de ce petit essai centenaire que j'ai tiré le
+      concept autour duquel s'organisent mes propres travaux.</p>
+    </div>
+  </details>
+  <br>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Mauss-Esquisse-dune-theorie-generale-de-la-magie/1166030" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+</section>
+
+<section class="livre">
+  <div class="livre-auteur">Georges-Yves Kervern &amp; Philippe Boulenger</div>
+  <h2>Cindyniques — Concepts et mode d'emploi</h2>
+  <p class="livre-ref">Economica, 2007.</p>
+  <p class="livre-accroche">Ce livre m'a donné plus qu'une méthode : par contrecoup, il m'a donné le
+  concept autour duquel j'ai construit tout mon travail. C'est en devant traduire « l'hyperespace
+  cindynique du danger » pour des cadres américains — « magic circle » — que j'ai compris ce que la
+  formalisation ne pouvait pas nommer : la part magique.</p>
+  <details class="livre-note">
+    <summary>Lire mon commentaire</summary>
+    <div class="livre-note-corps">
+      <p>Ce livre m'a donné plus qu'une méthode : il m'a donné, par contrecoup, le concept autour duquel
+      j'ai construit tout mon travail depuis. Je dois donc commencer par une dette.</p>
+      <p>Kervern et Boulenger proposent ici une science du danger — les cindyniques — dont la clé est un
+      espace à cinq dimensions : les faits, les modèles, les règles, les objectifs et les valeurs. Le
+      danger, disent-ils, ne naît pas d'une défaillance technique mais des dissonances entre ces cinq
+      plans : quand ce qu'une organisation sait, ce qu'elle croit, ce qu'elle prescrit, ce qu'elle vise
+      et ce qu'elle tient pour bon cessent d'être cohérents. C'est rigoureux, c'est opérant, et c'est
+      d'une justesse que vingt ans de pratique n'ont pas démentie.</p>
+      <p>Reste que je me souviens du jour où j'ai dû l'expliquer. J'étais aux États-Unis, devant une
+      salle de cadres américains, et il m'est apparu avec une clarté soudaine que jamais aucun d'eux
+      n'écouterait trois minutes un exposé sur « l'hyperespace cindynique du danger ». J'ai dit « magic
+      circle ». Ils ont adoré, et se sont mis à prendre des notes. Sur le moment, j'ai cru n'avoir fait
+      que traduire pour un public. J'ai compris ensuite que j'avais dit autre chose — et quelque chose
+      de plus exact.</p>
+      <p>Car ce que la formalisation cindynique ne peut pas nommer, c'est ce qui fait tenir l'ensemble :
+      la part magique. Les cinq dimensions ne produisent pas la cohérence, elles la mesurent ; ce qui la
+      produit, c'est l'adhésion des acteurs à un pacte qui n'existe que parce qu'ils y croient —
+      exactement comme le cercle du magicien, qui ne fait rien tant que le groupe n'y entre pas. Je ne
+      le reproche pas aux auteurs : leur qualité d'ingénieurs, qui fait la force du modèle, leur
+      interdisait sans doute de concevoir cette part-là plus encore que de l'exprimer. Un ingénieur ne
+      peut pas écrire que son objet repose sur une croyance.</p>
+      <p>C'est donc à ce livre que je dois à la fois mon outillage et l'endroit précis où j'ai dû le
+      dépasser. On ne peut pas demander davantage à un ouvrage de méthode.</p>
+    </div>
+  </details>
+  <br>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Georges-Yves-Kervern-Cindyniques--Concepts-et-mode-demploi/2076428" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+</section>
+
+<section class="livre">
+  <div class="livre-auteur">Robert Hertz</div>
+  <h2>Sociologie religieuse et anthropologie</h2>
+  <p class="livre-ref">Deux enquêtes de terrain, 1912-1915 — PUF, coll. « Quadrige », 2015, postface
+  de Marcel Mauss. Contient « Saint Besse, étude d'un culte alpestre » (1913).</p>
+  <p class="livre-accroche">Un texte fondateur que presque personne ne lit. « Saint Besse » démontre,
+  un demi-siècle avant les grandes synthèses, qu'un objet n'est jamais ni pure chose ni pur symbole,
+  et que la géographie sociale renverse la géographie physique. C'est, pour ma part, la référence
+  absolue de ce que j'appelle la géographie sociale.</p>
+  <details class="livre-note">
+    <summary>Lire mon commentaire</summary>
+    <div class="livre-note-corps">
+      <p>Il y a des textes fondateurs que tout le monde cite, et des textes fondateurs que presque
+      personne ne lit. « Saint Besse » appartient à la seconde espèce, et c'est une injustice que chaque
+      lecteur peut réparer en quelques heures — l'étude est courte, limpide, et d'une modernité
+      stupéfiante pour un texte de 1913.</p>
+      <p>Robert Hertz, le plus doué des élèves de Mauss, y fait ce que son maître théorisait : il monte.
+      À deux mille mètres, dans les Alpes, un rocher attire chaque 10 août des milliers de montagnards
+      venus de vallées qui s'ignorent tout le reste de l'année. Hertz observe tout : la procession et
+      ses querelles de préséance, les communautés qui se disputent la propriété du saint, les fragments
+      de pierre qu'on détache et qu'on emporte comme reliques, et ce dédoublement admirable — pour le
+      clergé, Besse est un soldat de la légion thébaine ; pour les bergers, c'est un des leurs,
+      martyrisé sur sa montagne. Même rocher, même saint, deux lectures — et chacune dit la vérité de
+      ceux qui la portent.</p>
+      <p>Ce petit texte démontre, un demi-siècle avant les grandes synthèses, qu'un objet matériel n'est
+      jamais ni une pure chose ni un pur symbole, mais les deux simultanément ; que le même lieu est
+      enjeu de culte pour les uns et enjeu de conflit entre les autres, à quelques mètres de distance ;
+      et que la géographie sociale renverse la géographie physique — cette montagne que les cartes
+      donnent pour l'obstacle entre les vallées est en réalité leur centre, le seul point où elles font
+      société. Quiconque observe une organisation moderne — ses machines vénérées, ses lieux évités, ses
+      querelles de préséance — retrouvera tout, absolument tout, dans ces pages. Hertz est tombé au front
+      en 1915, à trente-trois ans. Mauss édita pieusement ses papiers. Lisez « Saint Besse » pour ce
+      qu'il est : le chef-d'œuvre bref d'une sociologie de terrain qui n'a jamais été dépassée sur son
+      objet — et, pour ma part, la référence absolue de ce que j'appelle ailleurs la géographie
+      sociale.</p>
+    </div>
+  </details>
+  <br>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Hertz-Sociologie-religieuse-et-anthropologie-Deux-enque/2076325" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+</section>
+
+<section class="livre">
+  <div class="livre-auteur">Louis Dumont</div>
+  <h2>Essais sur l'individualisme</h2>
+  <p class="livre-ref">Une perspective anthropologique sur l'idéologie moderne — Seuil, coll. « Esprit ».</p>
+  <p class="livre-accroche">Et si l'individu n'allait pas de soi ? Dumont montre que l'individu comme
+  valeur suprême est une exception historique, devenue si évidente que nous la prenons pour la nature
+  humaine. Il donne la clé de ce qui manque à nos tableaux de bord : nos instruments ne mesurent pas
+  les relations parce que notre idéologie ne les voit pas.</p>
+  <details class="livre-note">
+    <summary>Lire mon commentaire</summary>
+    <div class="livre-note-corps">
+      <p>Louis Dumont pose une question que presque personne n'ose formuler : et si l'individu n'allait
+      pas de soi ? Non pas l'être humain concret — qui a toujours existé — mais l'individu comme valeur
+      suprême, comme unité de base à partir de laquelle on penserait légitimement la société. Dumont
+      montre que cette configuration est une exception historique, née en Occident, longuement élaborée
+      du christianisme primitif aux Lumières, et devenue si évidente à nos yeux que nous la prenons pour
+      la nature humaine elle-même.</p>
+      <p>Sa méthode est comparative et son geste consiste à nous rendre étrangers à nous-mêmes. Face à
+      l'individualisme moderne, il place l'holisme — ces sociétés où la totalité prime sur ses parties,
+      où l'homme se définit d'abord par sa place dans un ensemble. Il ne s'agit pas de préférer l'une à
+      l'autre : Dumont n'est pas un nostalgique des hiérarchies. Il s'agit de comprendre que notre
+      idéologie, précisément parce qu'elle se croit universelle, est aveugle aux relations — elle voit
+      des individus et des contrats là où opèrent aussi des appartenances, des dettes, des hiérarchies
+      de valeurs qu'elle refuse de nommer et qui n'en agissent pas moins.</p>
+      <p>C'est là que ce livre difficile devient d'une utilité redoutable pour qui observe les
+      organisations. On y célèbre l'autonomie, la performance individuelle, le contrat de travail entre
+      parties égales — et l'on s'étonne ensuite que le collectif se délite, que les appartenances se
+      réfugient dans des sous-groupes, que ce qui tient réellement les équipes ne figure dans aucun
+      tableau de bord. Dumont donne la clé : nos instruments ne mesurent pas les relations parce que
+      notre idéologie ne les voit pas. Le lecteur de Mauss retrouvera d'ailleurs ici son héritier le
+      plus rigoureux — celui qui a compris que l'<em>Essai sur le don</em> n'était pas une curiosité
+      ethnographique mais une machine à démonter nos évidences.</p>
+      <p>L'ouvrage est exigeant, parfois aride, et l'on peut discuter sa lecture de l'histoire
+      chrétienne. Mais il fait ce que peu de livres font : il rend visible l'eau dans laquelle nous
+      nageons.</p>
+    </div>
+  </details>
+  <br>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Dumont-Essais-sur-lindividualisme-Une-perspective-anthr/346829" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+</section>
+
+<!-- ============ PILIER 3 : l'histoire longue de la contrainte ============ -->
+<div class="pilier">Troisième pilier — l'histoire longue de la contrainte
+  <div class="pilier-sous">James Scott : l'ordre inégalitaire a une date de naissance, donc une
+  composition — et ce qui est composé peut être recomposé. Autour : ceux qui, du néolithique à la
+  France d'aujourd'hui, apprennent à relire le paysage comme un fait social.</div>
+</div>
+
+<section class="livre">
+  <div class="livre-auteur">James C. Scott</div>
+  <h2>Homo domesticus</h2>
+  <p class="livre-ref">Une histoire profonde des premiers États — La Découverte, 2019 ; trad.
+  Marc Saint-Upéry, préf. Jean-Paul Demoule.</p>
+  <p class="livre-accroche">Un livre qui ruine tranquillement le plus vieux mensonge du monde :
+  « c'est la nature humaine ». On croit lire de l'archéologie ; on lit une généalogie du management.
+  Si ce modèle a un commencement, alors il a une composition — et ce qui est composé peut être
+  recomposé. C'est le troisième pilier de mes travaux.</p>
+  <details class="livre-note">
+    <summary>Lire mon commentaire</summary>
+    <div class="livre-note-corps">
+      <p>Voilà un livre qui ruine tranquillement le plus vieux mensonge du monde : « c'est la nature
+      humaine ». Scott y démonte, sources archéologiques à l'appui, le récit héroïque de la « révolution
+      néolithique » — cette fable du progrès où l'humanité, lasse d'errer, aurait inventé l'agriculture,
+      la ville et l'État dans un même élan de civilisation. La réalité qu'il restitue est tout autre :
+      les premières cités-États furent des machines à capter, retenir et faire produire un cheptel
+      humain, si dures pour le plus grand nombre qu'on les fuyait dès qu'on le pouvait. Elles n'ont pas
+      gagné parce qu'on les aimait ; elles ont gagné parce qu'autour d'elles, millénaire après
+      millénaire, l'espace où vivre autrement se refermait. Et le choix des cultures elles-mêmes — le
+      blé plutôt que tout ce qui se cache, se disperse ou mûrit à des dates imprévisibles — obéissait
+      aux exigences du percepteur : prévisible, mesurable, stockable, taxable. On croit lire de
+      l'archéologie ; on lit une généalogie du management.</p>
+      <p>Car c'est bien là que ce livre m'a saisi. Quiconque a fréquenté les organisations modernes
+      reconnaîtra tout : la captation et la rétention des « talents », les enceintes faites autant pour
+      retenir que pour protéger, la production dictée par ce qui se mesure plutôt que par ce qui nourrit.
+      L'entrepreneur qui dit « produire du blé » a littéralement raison, même s'il ignore pourquoi. Mais
+      la leçon décisive est ailleurs : si ce modèle a un commencement — une consolidation vieille de cinq
+      mille ans à peine, un raz de marée aux XIX<sup>e</sup> et XX<sup>e</sup> siècles —, alors il a une
+      composition, et ce qui est composé peut être recomposé. Ce que la société a fait, la société peut
+      le défaire.</p>
+      <p>Une réserve, qui est aussi un hommage : la sociologie de Scott, admirable au constat, reste
+      muette sur la cause profonde et le remède — tous les systèmes ne sont pas par essence des
+      dominations perverses, ils le deviennent par perte du sens de leurs propres valeurs, et cela se
+      joue aussi dans chaque conscience. Il y faut un autre compagnon de route. Mais pour libérer le
+      regard de la fausse fatalité, je ne connais pas de meilleur livre — c'est le troisième pilier sur
+      lequel j'ai construit mes propres travaux.</p>
+    </div>
+  </details>
+  <br>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Scott-Homo-Domesticus/1280556" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+</section>
+
+<section class="livre">
+  <div class="livre-auteur">Marshall Sahlins</div>
+  <h2>Âge de pierre, âge d'abondance</h2>
+  <p class="livre-ref">L'économie des sociétés primitives — Gallimard, 1976 ; trad. Tina Jolas,
+  préf. Pierre Clastres.</p>
+  <p class="livre-accroche">L'abondance n'est pas la quantité de biens accumulés, c'est le rapport
+  entre les désirs et les moyens de les satisfaire — on peut donc y parvenir en produisant beaucoup,
+  ou en désirant peu. Quiconque s'interroge sur le bien-être au travail finit par buter sur la
+  question que Sahlins pose de biais.</p>
+  <details class="livre-note">
+    <summary>Lire mon commentaire</summary>
+    <div class="livre-note-corps">
+      <p>Il faut un certain culot pour intituler « âge d'abondance » l'étude des sociétés que l'Occident
+      a le plus obstinément décrites comme misérables. Le culot de Sahlins repose pourtant sur une
+      opération simple : compter. Combien d'heures par jour les chasseurs-cueilleurs consacrent-ils
+      réellement à leur subsistance ? Les données qu'il rassemble donnent le vertige — trois à cinq
+      heures, souvent moins, avec des journées entières sans activité productive, et une insouciance du
+      lendemain qui scandalisait les observateurs européens bien plus qu'elle n'inquiétait les
+      intéressés. Le reste du temps était à eux.</p>
+      <p>Sahlins en tire une définition qui retourne la nôtre comme un gant : l'abondance n'est pas la
+      quantité de biens accumulés, c'est le rapport entre les désirs et les moyens de les satisfaire. On
+      peut donc y parvenir par deux chemins opposés — produire beaucoup, ou désirer peu. Notre économie
+      a choisi le premier et l'a érigé en évidence naturelle ; les sociétés dites primitives avaient
+      choisi le second, et vivaient dans une abondance que nos statistiques sont structurellement
+      incapables de mesurer, puisqu'elles ne comptent que ce qui se produit et jamais ce qui se vit.
+      C'est ici que ce livre d'ethnologie devient un livre sur nous. Quiconque s'interroge sur le
+      bien-être au travail finit par buter sur la question que Sahlins pose de biais : à quoi bon
+      améliorer les conditions d'une activité qui absorbe l'essentiel de nos journées, si l'on
+      n'interroge jamais la place que cette activité occupe dans une vie ? Nietzsche l'avait dit
+      brutalement — celui qui n'a pas les deux tiers de sa journée pour lui-même est un esclave. Sahlins
+      le démontre patiemment, chiffres à l'appui, et sans jamais céder à la nostalgie du paradis perdu :
+      il ne s'agit pas de retourner au Kalahari, mais de cesser de croire que notre rapport au travail
+      va de soi.</p>
+      <p>On lui a reproché d'avoir forcé le trait, et les débats sur ses données restent ouverts. Peu
+      importe : même corrigée, sa démonstration a définitivement fêlé une évidence. C'est ce qu'on
+      attend d'un grand livre.</p>
+    </div>
+  </details>
+  <br>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Sahlins-Age-de-pierre-age-dabondance/116803" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+</section>
+
+<section class="livre">
+  <div class="livre-auteur">Jérôme Fourquet &amp; Jean-Laurent Cassely</div>
+  <h2>La France sous nos yeux</h2>
+  <p class="livre-ref">Économie, paysages, nouveaux modes de vie — Seuil, 2021.</p>
+  <p class="livre-accroche">Un exercice de géographie sociale au sens le plus fort : chaque objet —
+  un rond-point, une friche, un entrepôt — n'est jamais seulement matériel, c'est aussi un signe,
+  valorisé ou dévalorisé. Depuis, je ne traverse plus une zone d'activité de la même façon — ni,
+  d'ailleurs, un open space.</p>
+  <details class="livre-note">
+    <summary>Lire mon commentaire</summary>
+    <div class="livre-note-corps">
+      <p>Voilà un livre qui fait ce que personne ne faisait plus : regarder. Fourquet et Cassely ont
+      sillonné le pays, relevé les enseignes des zones commerciales, compté les salles de sport et les
+      instituts d'ongleries, observé ce que deviennent les anciennes usines, écouté les noms qu'on donne
+      aux lotissements. De cette collecte patiente sort une France qu'aucun débat télévisé ne décrit :
+      ni celle des cartes électorales, ni celle des slogans, mais celle qui s'est construite sous nos
+      yeux pendant quarante ans, précisément parce que nous ne la regardions pas.</p>
+      <p>Ce qui m'a saisi, c'est que ce livre est un exercice de géographie sociale au sens le plus
+      fort. Chaque objet qu'il décrit — un rond-point, une friche, un entrepôt logistique, une salle de
+      padel — n'est jamais seulement une réalité matérielle : c'est aussi un signe, valorisé ou
+      dévalorisé, et l'on ne comprend rien au paysage si l'on refuse de lire les deux à la fois. Le
+      paysage français d'aujourd'hui se donne à lire comme un palimpseste : les strates de l'industrie,
+      du commerce, du tourisme, de la logistique s'y superposent, et chaque époque y a laissé ce qu'elle
+      honorait comme ce qu'elle a laissé mourir. Fourquet et Cassely montrent en outre ce que je
+      retrouve dans toutes les organisations : la saturation progressive de l'espace par des activités
+      dictées d'en haut, en dépit des populations qui y vivent — et le repli de ces populations sur des
+      sous-groupes de proximité qui se consolident par leurs oppositions mutuelles bien plus que par un
+      projet commun.</p>
+      <p>On pourra reprocher à l'ouvrage son foisonnement, parfois vertigineux, et une certaine
+      réticence à conclure. Je crois que c'est sa vertu : les auteurs préfèrent nous rendre le regard
+      plutôt que nous fournir une thèse à réciter. Ce qu'on fait ensuite de ce regard nous appartient.
+      Pour ma part, je ne traverse plus une zone d'activité de la même façon — ni, d'ailleurs, un open
+      space.</p>
+    </div>
+  </details>
+  <br>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Fourquet-La-France-sous-nos-yeux/1382219" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+</section>
+
+<p class="colophon">Ces neuf ouvrages sont référencés dans ma
+<a href="https://www.babelio.com/mon-profil/2540252/bibliotheque" target="_blank" rel="noopener">bibliothèque de lecteur sur Babelio</a>,
+aux côtés de la <a href="https://www.babelio.com/auteur/Bruno-Brochenin/720540" target="_blank" rel="noopener">page auteur</a>
+consacrée à mes propres livres. Les commentaires reproduits ici sont les miens ; sur Babelio, ils vivent
+parmi les critiques des autres lecteurs, ouverts à la discussion.</p>
+
+</div>
+<script>
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    }), { threshold: 0.15 });
+    document.querySelectorAll('.livre').forEach(c => io.observe(c));
+  } else {
+    document.querySelectorAll('.livre').forEach(c => c.classList.add('visible'));
+  }
+</script>
+</body>
+</html>
