@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jacques Delga — une méthode d'ouverture du droit — Bruno Brochenin</title>
+<meta name="description" content="Jacques Delga, professeur de droit à l'ESSEC, coordonne des ouvrages collectifs délibérément ouverts et sans filtre. Portrait de sa méthode, et récit d'une collaboration en quatre ouvrages — nés d'une rencontre organisée par un éditeur entre deux livres parus la même année.">
+<meta name="keywords" content="Jacques Delga, ESSEC, ouvrage collectif, pluridisciplinarité, droit et société, Bruno Brochenin, Souffrance au travail, Eska">
+<meta name="author" content="Bruno Brochenin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brunobrochenin.com/delga.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Jacques Delga — une méthode d'ouverture du droit">
+<meta property="og:description" content="Portrait de la méthode d'un professeur de droit qui coordonne des ouvrages collectifs sans filtre — et récit d'une collaboration en quatre volumes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brunobrochenin.com/delga.html">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papier:#FDFDFB;
+    --encre:#212A33;
+    --encre-douce:#4A5560;
+    --marine:#2C4A6E;
+    --filet:#DCE0E4;
+    --sable:#B08D57;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--papier);
+    color:var(--encre);
+    font-family:'Spectral',Georgia,serif;
+    font-weight:300;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;}
+
+  /* ---------- entête ---------- */
+  header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
+  .retour{
+    display:inline-block;margin-bottom:26px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;
+    letter-spacing:.08em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .retour:hover{color:var(--sable);border-color:var(--sable);}
+  .surtitre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--sable);margin-bottom:18px;
+  }
+  h1{font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.01em;}
+  .chapeau{margin-top:22px;font-size:18px;color:var(--encre-douce);max-width:62ch;}
+  .chapeau em{font-style:italic;}
+
+  /* ---------- corps de texte ---------- */
+  .bloc{margin-top:54px;}
+  .bloc-titre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--marine);
+    margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--filet);
+  }
+  .bloc p{margin-bottom:16px;max-width:64ch;}
+  .bloc p:last-child{margin-bottom:0;}
+  .bloc em{font-style:italic;}
+  .citation{
+    margin:26px 0;padding-left:20px;border-left:2px solid var(--sable);
+    font-style:italic;color:var(--encre-douce);max-width:60ch;
+  }
+
+  /* ---------- les quatre ouvrages ---------- */
+  .ouvrage{margin-top:40px;padding-top:28px;border-top:1px solid var(--filet);}
+  .ouvrage:first-of-type{margin-top:28px;}
+  .ouvrage-annee{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--marine);margin-bottom:8px;
+  }
+  .ouvrage h3{font-weight:600;font-size:20px;line-height:1.3;letter-spacing:-.005em;max-width:60ch;}
+  .ouvrage-ref{
+    margin-top:8px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:13px;
+    color:var(--encre-douce);letter-spacing:.01em;max-width:62ch;
+  }
+  .ouvrage-ref em{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:14.5px;}
+  .ouvrage p{margin-top:16px;max-width:62ch;}
+  .ouvrage-lien{
+    display:inline-block;margin-top:16px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:500;
+    letter-spacing:.05em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .ouvrage-lien:hover{color:var(--sable);border-color:var(--sable);}
+
+  /* ---------- encart livre sans participation ---------- */
+  .encart{
+    margin-top:44px;padding:22px 24px;background:#F6F4EF;border:1px solid var(--filet);
+    border-radius:2px;
+  }
+  .encart-eyebrow{
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--sable);margin-bottom:12px;
+  }
+  .encart h3{font-weight:600;font-size:19px;line-height:1.3;margin-bottom:4px;}
+  .encart-ref{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:var(--encre-douce);margin-bottom:14px;
+  }
+  .encart p{max-width:62ch;margin-bottom:14px;}
+  .encart p:last-child{margin-bottom:0;}
+  .encart-lien{
+    display:inline-block;margin-top:6px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:500;
+    letter-spacing:.05em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .encart-lien:hover{color:var(--sable);border-color:var(--sable);}
+
+  /* ---------- pied ---------- */
+  .colophon{
+    margin-top:80px;padding-top:28px;border-top:1px solid var(--filet);
+    color:var(--encre-douce);font-size:15px;max-width:64ch;
+  }
+  .colophon a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);}
+  .colophon a:hover{color:var(--sable);}
+
+  /* ---------- apparition douce ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .bloc,.ouvrage,.encart{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;}
+    .bloc.visible,.ouvrage.visible,.encart.visible{opacity:1;transform:none;}
+  }
+  @media (max-width:560px){
+    header{padding-top:56px;}
+    .bloc{margin-top:40px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <a class="retour" href="index.html">← Retour à l'accueil</a>
+  <div class="surtitre">Une collaboration éditoriale</div>
+  <h1>Jacques Delga, ou le droit tenu ouvert</h1>
+  <p class="chapeau">Nous nous sommes rencontrés parce qu'un éditeur avait fait paraître nos deux
+  livres la même année et voulait nous voir en débattre. Nous avons découvert ce jour-là qu'il avait
+  été, vingt ans plus tôt, mon professeur de droit à l'ESSEC. De cette rencontre sont nés quatre
+  ouvrages communs — et l'occasion de dire ici ce que je dois à sa manière, singulière, de faire
+  travailler ensemble des gens que rien ne réunissait.</p>
+</header>
+
+<!-- ============ LA RENCONTRE ============ -->
+<section class="bloc">
+  <div class="bloc-titre">La rencontre</div>
+  <p>En 2010, les Éditions ESKA publient coup sur coup deux livres qui parlent, chacun à sa façon, du
+  malaise des organisations : mon premier essai, <em>Où va l'entreprise ?</em>, et un ouvrage
+  collectif dirigé par un professeur de droit, <em>Souffrance au travail dans les grandes
+  entreprises</em>. L'éditeur, trouvant sans doute qu'ils se répondaient, organise dans ses locaux un
+  débat entre les deux auteurs. C'est ainsi que j'ai fait la connaissance de Jacques Delga.</p>
+  <p>La conversation a vite pris un tour singulier. À mesure qu'il parlait, quelque chose me revenait ;
+  à mesure que je parlais, quelque chose lui revenait aussi. Nous avons fini par comprendre que nous
+  nous étions déjà connus : Jacques Delga avait été l'un de mes professeurs de droit à l'ESSEC, vingt
+  ans auparavant. Nous ne nous étions pas reconnus — le temps avait fait son œuvre — mais la vieille
+  relation de maître à élève était toujours là, sous la discussion entre pairs. Je crois que c'est de
+  cet instant qu'est née l'envie de travailler ensemble.</p>
+</section>
+
+<!-- ============ LA MÉTHODE ============ -->
+<section class="bloc">
+  <div class="bloc-titre">Une méthode : ouvrir le droit sur la société</div>
+  <p>Jacques Delga est professeur honoraire à l'ESSEC et avocat honoraire. Mais ce qui le définit, à
+  mes yeux, tient moins à ses titres qu'à une conviction : le droit ne peut pas se penser en vase clos.
+  Une société qui change appelle un droit qui écoute, et un droit qui écoute doit d'abord tendre
+  l'oreille à des voix qu'il n'a pas l'habitude d'entendre. C'est cette conviction, proprement
+  démocratique, qui commande sa manière de faire des livres.</p>
+  <p>Car il ne dirige pas ses ouvrages collectifs comme on préside un colloque savant. Il réunit, autour
+  d'une question de société, des gens que tout sépare — universitaires et praticiens, hauts
+  responsables et anonymes, spécialistes patentés et acteurs de terrain — et il leur laisse la liberté
+  du titre comme du contenu. Chaque coauteur est responsable de son texte ; aucun cadre théorique
+  imposé, aucune conclusion à réciter. Cette ouverture, presque sans filtre, est un risque assumé : elle
+  expose le coordinateur à ce que son livre lui échappe. Elle suppose une confiance dont j'ai mesuré,
+  avec le temps, la rareté.</p>
+  <p>Il faut le lire décrire lui-même sa démarche pour mesurer sa modestie. Le premier moteur, avoue-t-il,
+  est la curiosité. Il revendique de ne pas concurrencer la recherche universitaire — son groupe d'auteurs
+  n'est, dit-il, « qu'un groupement de fait ». Il reconnaît sans détour ce qu'il ne sait pas faire :
+  entreprenant un ouvrage où il fallait aussi des récits, il note que l'écriture d'un tel texte
+  « nécessite des qualités que je ne possède pas », et se cantonne à l'analyse juridique. Cette franchise
+  sur ses propres limites est, je crois, la condition secrète de son ouverture aux autres : qui se sait
+  incomplet fait de la place.</p>
+  <div class="citation">La faiblesse d'un collectif d'auteurs libres — des portes qui se ferment, des
+  témoignages rares — est, écrit-il en substance, « compensée par la personnalité de ceux qui ont été
+  des acteurs de terrain, et par un mélange entre théorie et pratique ». Autrement dit : ce que la
+  rigueur académique perd en protection, l'ouvrage le regagne en vérité vécue.</div>
+  <p>De livre en livre, une même équipe informelle se reforme — pas une société savante, pas une
+  association, seulement des personnes qui se retrouvent parce qu'elles ont pris goût à cette liberté.
+  J'ai eu la chance d'en être. Et lorsque la maladie a frappé certains coauteurs — la Covid a laissé des
+  traces —, ses remerciements sont allés « aux présents comme aux absents, à ceux qui ont abandonné, à
+  ceux qui sont encore à l'hôpital ». On juge un homme à ces phrases-là.</p>
+</section>
+
+<!-- ============ LES QUATRE OUVRAGES ============ -->
+<section class="bloc">
+  <div class="bloc-titre">Quatre invitations, quatre déplacements</div>
+  <p>Quatre fois, Jacques Delga m'a confié un sujet dont je ne savais rien — et chaque fois, le sujet
+  s'est révélé en cacher un autre : le mien. Ces quatre participations sont la meilleure illustration de
+  sa méthode, puisqu'elles montrent ce qu'elle rend possible : qu'un consultant en organisation ait
+  quelque chose à dire sur le terrorisme, la criminalité financière, la mort ou le libertinage, et que
+  ce quelque chose finisse par éclairer, en retour, son propre domaine.</p>
+
+  <div class="ouvrage">
+    <div class="ouvrage-annee">2015</div>
+    <h3>De l'équilibre de la terreur au terrorisme international</h3>
+    <p class="ouvrage-ref">dans <em>Penser et repenser le terrorisme</em> — MA Éditions, 2015 — 26 coauteurs,
+    d'un colonel d'état-major à une animatrice de radio, d'un ancien haut responsable du renseignement à
+    un ancien détenu.</p>
+    <p>Delga y réunit des spécialistes de la police et du renseignement, des neuropsychiatres, des
+    historiens, des avocats, des journalistes — et laisse à chacun le choix de son angle. Invité à traiter
+    du terrorisme, j'ai fini par écrire sur la perte de sens : le terrorisme comme symptôme d'une
+    déstabilisation prolongée, dans une société dont le pouvoir a renoncé à produire du sens. Cette
+    question m'a suivi, intacte, jusque dans des organisations infiniment plus paisibles.</p>
+    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Penser-et-repenser-le-terrorisme/797243" target="_blank" rel="noopener">Voir sur Babelio ↗</a>
+  </div>
+
+  <div class="ouvrage">
+    <div class="ouvrage-annee">2017</div>
+    <h3>La guerre économique contre la démocratie se mène en col blanc</h3>
+    <p class="ouvrage-ref">dans <em>Criminalité en col blanc — délinquance d'affaires, financière,
+    fiscale</em> — L'Harmattan, 2017.</p>
+    <p>Consultant en organisation au milieu d'avocats, de procureurs et de fiscalistes, j'y suis parti du
+    délinquant en col blanc pour décrire non plus un homme fautif mais une position — celle du pouvoir dans
+    l'entreprise, dont l'insertion sociale est le bien le plus précieux et la condition de la fraude
+    éventuelle, et dont la survie exige de se préserver des regards. Le sujet confié s'est révélé être
+    celui de l'opacité comme condition de fonctionnement.</p>
+    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Criminalite-en-col-blanc-Delinquance-daffaires-de/2067563" target="_blank" rel="noopener">Voir sur Babelio ↗</a>
+  </div>
+
+  <div class="ouvrage">
+    <div class="ouvrage-annee">2018</div>
+    <h3>Expérience de mort imminente : mythe ou vérité d'une époque ?</h3>
+    <p class="ouvrage-ref">dans <em>Face à la mort</em> — MA Éditions, 2018 — médecins, philosophes,
+    juristes et soignants.</p>
+    <p>Ce texte est un hommage à Paul Diel. J'y prends le récit au sérieux <em>comme récit</em> — comme
+    une production de l'esprit dans son langage propre, le langage symbolique. La permanence de structure
+    de ces témoignages, à travers des cultures que rien ne relie, interdit de les traiter comme des
+    anecdotes cliniques. Ce détour par la mort m'a appris une règle que je n'ai plus quittée : écouter un
+    discours dans sa langue propre, et non le traduire d'office dans celle qui arrange l'observateur.</p>
+    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Face-a-la-mort/2067565" target="_blank" rel="noopener">Voir sur Babelio ↗</a>
+  </div>
+
+  <div class="ouvrage">
+    <div class="ouvrage-annee">2023</div>
+    <h3>Le théâtre du libertinage, entre sexe, pouvoir et religion</h3>
+    <p class="ouvrage-ref">dans <em>Libertaire, libertinage et intervention de l'État dans la vie sexuelle
+    des Français</em> — L'Harmattan, 2023.</p>
+    <p>Celui-là m'a d'abord fait sourire : que venait faire un consultant en organisation dans un volume
+    sur le libertinage ? Puis j'ai compris que la question était la mienne, déplacée d'un cran — qui décide
+    de ce qui est permis, au nom de quelles valeurs ? Le mot qui compte est le premier : théâtre. Une scène
+    sociale se lit à deux niveaux, ce qui s'y joue littéralement et ce qui s'y joue pour autre chose. On ne
+    comprend pas davantage une réunion d'entreprise qu'un souper libertin si l'on s'en tient au premier.</p>
+    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Libertaire-libertinage-et-intervention-de-lEtat-d/2067570" target="_blank" rel="noopener">Voir sur Babelio ↗</a>
+  </div>
+</section>
+
+<!-- ============ SOUFFRANCE AU TRAVAIL ============ -->
+<section class="encart">
+  <div class="encart-eyebrow">Le livre par lequel tout a commencé</div>
+  <h3>Souffrance au travail dans les grandes entreprises</h3>
+  <p class="encart-ref">Sous la direction de Jacques Delga — Éditions ESKA, 2010.</p>
+  <p>Je n'ai pas participé à celui-ci — et pourtant c'est lui qui nous a réunis. Paru chez ESKA la même
+  année que mon premier essai, il applique déjà la méthode Delga à un sujet que le haut management de
+  l'époque préférait nier : il fait dialoguer le juriste, le médecin, le sociologue, le psychanalyste et
+  le journaliste autour d'une souffrance que les directions attribuaient volontiers à la seule fragilité
+  des salariés. C'est en confrontant ce livre au mien que l'éditeur a eu l'idée de nous faire débattre.
+  Je le cite ici pour cette raison, et parce qu'il montre que l'ouverture pluridisciplinaire n'était pas,
+  chez Delga, une coquetterie tardive : elle était déjà son geste, il y a quinze ans.</p>
+  <a class="encart-lien" href="https://www.babelio.com/livres/Delga-Souffrance-au-travail-dans-les-grandes-entreprises/2077122" target="_blank" rel="noopener">Voir sur Babelio ↗</a>
+</section>
+
+<!-- ============ CE QUE JE LUI DOIS ============ -->
+<section class="bloc">
+  <div class="bloc-titre">Ce que je lui dois</div>
+  <p>On croit d'ordinaire qu'un maître transmet un savoir. Jacques Delga m'a transmis autre chose : la
+  permission de sortir de mon domaine. Sans ces quatre invitations, je n'aurais sans doute jamais écrit
+  sur le terrorisme, la mort ou le libertinage — et je n'aurais pas découvert que chacun de ces détours
+  me ramenait, par un chemin que je n'avais pas prévu, à la question qui m'occupe : que devient un
+  collectif dont le pouvoir ne produit plus de sens ?</p>
+  <p>C'est le propre des vrais maîtres que de faire trouver à l'élève ce qu'ils ne lui ont pas enseigné.
+  Le professeur de droit de l'ESSEC m'avait appris le droit ; le coordinateur d'ouvrages, vingt ans plus
+  tard, m'a appris à penser hors de mes murs. Qu'un même homme ait tenu ces deux rôles, à deux âges de ma
+  vie, sans que je le sache d'abord, est le genre de coïncidence dont je crois qu'elle n'en est pas tout
+  à fait une : elle ressemble trop à sa méthode — faire se rencontrer des gens qui se seraient ignorés,
+  y compris quand ces gens se connaissent déjà sans le savoir.</p>
+</section>
+
+<p class="colophon">Ces ouvrages collectifs sont référencés sur ma
+<a href="https://www.babelio.com/auteur/Bruno-Brochenin/720540" target="_blank" rel="noopener">page auteur Babelio</a>.
+Ce que chacune de ces invitations a ouvert en moi est détaillé sur la page
+<a href="contributions.html">contributions</a>.</p>
+
+</div>
+<script>
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.bloc,.ouvrage,.encart').forEach(c => io.observe(c));
+  } else {
+    document.querySelectorAll('.bloc,.ouvrage,.encart').forEach(c => c.classList.add('visible'));
+  }
+</script>
+</body>
+</html>
