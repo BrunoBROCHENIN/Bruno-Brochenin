@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jean-Luc Laffargue, ou la qualité comme question de sens — Bruno Brochenin</title>
+<meta name="description" content="Portrait de Jean-Luc Laffargue, directeur de la revue Qualitique pendant vingt-huit ans, et récit d'une collaboration en quatre articles — une revue de la qualité dont les éditoriaux parlaient de financiarisation, de démocratie et de perte de sens.">
+<meta name="keywords" content="Jean-Luc Laffargue, Qualitique, Groupe Qualitique, revue qualité, management responsable, RSE, ISO 26000, Bruno Brochenin, Jacques Ségot">
+<meta name="author" content="Bruno Brochenin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brunobrochenin.com/laffargue.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Jean-Luc Laffargue, ou la qualité comme question de sens">
+<meta property="og:description" content="Une revue de la qualité dont le rédacteur en chef écrivait sur la perte de sens — et quatre articles qui y trouvèrent leur place.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brunobrochenin.com/laffargue.html">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papier:#FDFDFB;
+    --encre:#212A33;
+    --encre-douce:#4A5560;
+    --marine:#2C4A6E;
+    --filet:#DCE0E4;
+    --sable:#B08D57;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--papier);
+    color:var(--encre);
+    font-family:'Spectral',Georgia,serif;
+    font-weight:300;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;}
+
+  /* ---------- entête ---------- */
+  header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
+  .retour{
+    display:inline-block;margin-bottom:26px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;
+    letter-spacing:.08em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .retour:hover{color:var(--sable);border-color:var(--sable);}
+  .surtitre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--sable);margin-bottom:18px;
+  }
+  h1{font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.01em;}
+  .chapeau{margin-top:22px;font-size:18px;color:var(--encre-douce);max-width:62ch;}
+  .chapeau em{font-style:italic;}
+
+  /* ---------- corps ---------- */
+  .bloc{margin-top:54px;}
+  .bloc-titre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--marine);
+    margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--filet);
+  }
+  .bloc p{margin-bottom:16px;max-width:64ch;}
+  .bloc p:last-child{margin-bottom:0;}
+  .bloc em{font-style:italic;}
+  .citation{
+    margin:26px 0;padding-left:20px;border-left:2px solid var(--sable);
+    font-style:italic;color:var(--encre-douce);max-width:60ch;
+  }
+  .citation .src{
+    display:block;margin-top:8px;font-style:normal;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.04em;
+  }
+
+  /* ---------- articles ---------- */
+  .article{margin-top:36px;padding-top:26px;border-top:1px solid var(--filet);}
+  .article:first-of-type{margin-top:26px;}
+  .article-ref{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--marine);margin-bottom:8px;
+  }
+  .article h3{font-weight:600;font-size:19.5px;line-height:1.32;letter-spacing:-.005em;max-width:60ch;}
+  .article p{margin-top:14px;max-width:62ch;}
+
+  /* ---------- encart ---------- */
+  .encart{
+    margin-top:44px;padding:22px 24px;background:#F6F4EF;border:1px solid var(--filet);
+    border-radius:2px;
+  }
+  .encart-eyebrow{
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--sable);margin-bottom:12px;
+  }
+  .encart p{max-width:62ch;margin-bottom:14px;}
+  .encart p:last-child{margin-bottom:0;}
+
+  /* ---------- pied ---------- */
+  .colophon{
+    margin-top:80px;padding-top:28px;border-top:1px solid var(--filet);
+    color:var(--encre-douce);font-size:15px;max-width:64ch;
+  }
+  .colophon a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);}
+  .colophon a:hover{color:var(--sable);}
+  .note-sources{
+    margin-top:18px;font-size:13.5px;color:var(--encre-douce);font-style:italic;max-width:64ch;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .bloc,.article,.encart{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;}
+    .bloc.visible,.article.visible,.encart.visible{opacity:1;transform:none;}
+  }
+  @media (max-width:560px){
+    header{padding-top:56px;}
+    .bloc{margin-top:40px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <a class="retour" href="index.html">← Retour à l'accueil</a>
+  <div class="surtitre">Une collaboration éditoriale</div>
+  <h1>Jean-Luc Laffargue, ou la qualité comme question de sens</h1>
+  <p class="chapeau">On imagine une revue professionnelle de la qualité vouée aux normes, aux audits et
+  aux procédures. Celle-ci l'était aussi. Mais son directeur y écrivait, mois après mois, sur la
+  financiarisation du monde, la panne démocratique et la perte de sens — et c'est pourquoi quatre
+  textes qui parlaient de rois-prêtres, d'Ordre et de Désordre et de crise de civilisation y trouvèrent
+  naturellement leur place.</p>
+</header>
+
+<!-- ============ LA CHAÎNE ============ -->
+<section class="bloc">
+  <div class="bloc-titre">Une chaîne de rencontres</div>
+  <p>C'est Jacques Delga qui m'a présenté Jean-Luc Laffargue. Le fait mérite d'être noté, car il dit
+  quelque chose des deux hommes : la rencontre organisée par un éditeur en 2010 entre deux auteurs qui
+  s'ignoraient a produit, de proche en proche, une chaîne. Delga m'a ouvert ses ouvrages collectifs ;
+  puis il m'a ouvert la porte d'une revue qui n'était pas la sienne. Mettre en relation des gens qui ne
+  se seraient pas rencontrés n'était pas chez lui une politesse occasionnelle, mais une manière
+  d'être.</p>
+  <p>De cette présentation sont nés quatre articles, parus entre janvier 2011 et avril 2012. Ils
+  auraient pu y paraître comme y passe une contribution parmi d'autres. Ils y ont été travaillés :
+  chapeaux introductifs, exergues extraites du corps du texte et remontées en gros caractères,
+  encadrés, sources en note. Le premier a paru en rubrique « Stratégie et Management », les trois
+  suivants en rubrique « Innovation » — un reclassement qui n'est pas anodin, et qui suppose un
+  rédacteur en chef ayant lu les textes assez attentivement pour décider de leur place dans
+  l'architecture de sa revue.</p>
+</section>
+
+<!-- ============ LA REVUE ============ -->
+<section class="bloc">
+  <div class="bloc-titre">Une revue tenue vingt-huit ans</div>
+  <p><em>Qualitique</em> était une revue mensuelle professionnelle — dix numéros par an — éditée par le
+  Groupe Qualitique, société créée en octobre 1987 et installée en Seine-et-Marne, d'abord à
+  Champs-sur-Marne puis à Bussy-Saint-Georges. Elle s'est d'abord présentée comme la revue de « la
+  culture managériale du XXI<sup>e</sup> siècle », avant d'adopter une formule plus explicite encore :
+  « la revue des managers et des organisations responsables ». Sa couverture portait sept mots — 
+  responsabilité sociétale, développement durable, responsabilité sociale, environnement, sécurité,
+  qualité, éthique — qui disent assez l'étendue de son périmètre.</p>
+  <p>Jean-Luc Laffargue en était à la fois le directeur de la publication et le directeur de la
+  rédaction : il en portait la responsabilité juridique et la ligne éditoriale. Un comité de rédaction
+  d'une douzaine de personnes l'entourait, parmi lesquelles l'universitaire Françoise de Bry, spécialiste
+  d'éthique des affaires. La revue vivait de peu — le Groupe Qualitique était une société au capital de
+  deux mille euros — et pourtant elle a tenu vingt-huit ans, jusqu'à sa cessation d'activité au
+  printemps 2016.</p>
+  <p>Elle comptait dans son champ. Dans une bibliographie de référence sur la fonction qualité publiée
+  chez Eyrolles en 2010, trois revues seulement sont recommandées aux professionnels : <em>Qualité
+  références</em>, <em>QSE Management</em> et <em>Qualitique</em>. Laffargue avait par ailleurs cosigné
+  avec Jacques Ségot — président de la commission de normalisation AFNOR « Qualité et management »,
+  chargée de l'évolution des normes ISO 9000, et responsable de la démarche d'excellence du groupe
+  La Poste — un ouvrage publié par sa propre maison, <em>L'Évolution des systèmes de management</em>. Ségot
+  en résume ainsi le propos : comment les systèmes de management permettent de réaliser, dans
+  l'entreprise, l'équilibre entre parties prenantes dans un contexte de plus en plus turbulent. On
+  retrouve Laffargue en 2010 parmi les soixante-dix-huit contributeurs des mélanges offerts à Michel
+  Joras, aux côtés d'Henri Savall, Maurice Thévenet, Hubert Landier ou Yvon Pesqueux.</p>
+</section>
+
+<!-- ============ LES ÉDITORIAUX ============ -->
+<section class="bloc">
+  <div class="bloc-titre">Ce qu'il écrivait</div>
+  <p>Voilà pour les titres. Mais ce qui frappe, quand on ouvre un numéro, c'est l'éditorial. On
+  s'attend à un billet de circonstance sur la dernière révision d'une norme ; on trouve un texte long,
+  argumenté, et d'une radicalité inattendue dans une revue professionnelle.</p>
+  <p>En mars 2015, il consacre son éditorial à la financiarisation de l'économie. Il y dénonce
+  « l'accumulation d'argent sale », « l'hypocrisie et la lâcheté des États obnubilés par leurs intérêts
+  économiques à très court terme », la marchandisation du monde, la panne démocratique, la perte de
+  sens. Il observe que les actifs financiers, autrefois répartis entre de nombreux épargnants, sont
+  désormais concentrés entre les mains d'une minorité d'investisseurs institutionnels, et que « d'une
+  économie empirique fondée sur le travail humain, nous sommes ainsi passés à une économie virtuelle de
+  la spéculation ». Il va jusqu'à décrire la mise en marché de la nature elle-même — des zones
+  naturelles achetées par des fonds d'investissement, transformées en produits boursiers, et revendues
+  sous forme de certificats de bonne conduite aux entreprises polluantes.</p>
+  <div class="citation">Faudra-t-il désormais travailler plus pour espérer ne pas gagner moins, à seule
+  fin de satisfaire l'attente immodérée de dividendes des financiers qui s'accaparent de plus en plus de
+  pans de l'économie productive ?
+  <span class="src">Éditorial, Qualitique n°259, mars 2015</span></div>
+  <p>Le mois suivant, il s'attaque à l'utopie du risque zéro. Après avoir énuméré les catastrophes
+  industrielles et sanitaires des dernières décennies, il note que la maîtrise des risques est une
+  expression paradoxale, puisqu'elle suppose l'acceptation d'un niveau de risque non nul — et il en tire
+  une formule qui vaut bien au-delà de son sujet : les structures qui se figent dans des certitudes ne
+  sont plus en mesure de s'adapter et de survivre, car la vie est antinomique avec la recherche des
+  certitudes. Il ajoute que la notion de risque est irréductiblement subjective, liée à la culture et à
+  l'histoire de chacun des acteurs concernés.</p>
+  <p>Il ne se contentait pas d'éditorialiser. Les présentations de dossier, qui situent le travail des
+  contributeurs et en donnent la cohérence, portent aussi sa signature. C'est le geste d'un homme qui
+  lit ce qu'il publie.</p>
+</section>
+
+<!-- ============ LES QUATRE ARTICLES ============ -->
+<section class="bloc">
+  <div class="bloc-titre">Quatre articles, 2011-2012</div>
+  <p>Relus aujourd'hui, ces textes forment un ensemble plus cohérent que je ne le percevais en les
+  écrivant. Ils cherchent tous la même chose : ce que les indicateurs ne mesurent pas, et pourquoi.</p>
+
+  <div class="article">
+    <div class="article-ref">n°222 — janvier-février 2011 — Stratégie et Management</div>
+    <h3>Travaillons mieux pour vivre mieux ! Entre R.P.S. et R.S.E., les parties prenantes sont-elles
+    victimes ou responsables ?</h3>
+    <p>Le premier article pose la thèse qui commandera tout le reste : les risques psychosociaux, loin
+    d'être une fatalité, sont le résultat prévisible d'un mode de fonctionnement — et une étude
+    statistique montrait alors qu'ils épargnaient les PME familiales, ce qui en faisait une maladie
+    spécifique des grandes organisations anonymes. On y trouve déjà les notions de Goodwill et de
+    Badwill Social, l'indice de dissipation de l'effort collectif — et l'IBET de Victor Waknine, exposé
+    avec ses formules. C'est dire que mes deux collaborations se croisent dès ce premier article : la
+    revue de Jean-Luc Laffargue est le lieu où elles se rencontrent, des années avant que je ne sache
+    qu'elles convergeraient.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-ref">n°225 — mai 2011 — Innovation</div>
+    <h3>Quelle est la valeur économique de la prestation des sapeurs-pompiers ?</h3>
+    <p>Né d'une question posée lors d'un cocktail par un représentant du corps des sapeurs-pompiers,
+    cet article transpose l'analyse au service public et se heurte à un problème que les comptes de la
+    Nation ne savent pas traiter : comparer entreprises publiques et privées sur la base de la valeur
+    ajoutée n'a pas de sens. Il propose une taxonomie de la demande et une formule adaptée aux
+    organismes sans but lucratif.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-ref">n°229 — novembre 2011 — Innovation</div>
+    <h3>L'entreprise contemporaine face aux risques : des opportunités à trouver du côté de l'état
+    d'esprit des équipes opérationnelles</h3>
+    <p>Cet article part du rapport interne de la NASA après l'explosion de Columbia — la culture et
+    l'organisation de l'agence y avaient autant de part que le revêtement du réservoir — pour établir
+    que l'état d'esprit des équipes commande l'exposition au risque, et que la surabondance de
+    procédures contraignantes ne fait que l'aggraver. Il y présente l'IBET de Victor Waknine comme l'une
+    des deux techniques permettant de donner aux états d'esprit une valorisation financière.</p>
+  </div>
+
+  <div class="article">
+    <div class="article-ref">n°233 — avril 2012 — Innovation</div>
+    <h3>La conduite du changement est-elle une croyance efficace ?</h3>
+    <p>Le dernier article s'en prend aux contradictions des grands projets de transformation et à la
+    représentation cartésienne qui les sous-tend, avant de proposer le modèle cindynique de Kervern
+    comme dépassement. Le titre est une question, et elle n'est pas rhétorique : l'engagement mutuel des
+    parties prenantes ne se décrète pas, il tient au sens du projet. Ce sera l'objet de mes livres
+    suivants.</p>
+  </div>
+</section>
+
+<!-- ============ CE QU'IL A RENDU POSSIBLE ============ -->
+<section class="encart">
+  <div class="encart-eyebrow">Ce que cela rendait possible</div>
+  <p>Une revue professionnelle publie d'ordinaire ce que ses lecteurs attendent : des retours
+  d'expérience, des méthodes, des commentaires de normes. Les textes que Jean-Luc Laffargue a accueillis
+  parlaient de rois-prêtres régulant l'Ordre et le Désordre pour tout un peuple, de la Conscience
+  originelle du Destin, d'une économie qu'il fallait réconcilier avec le sens. Dans beaucoup de
+  rédactions, on m'aurait demandé de couper.</p>
+  <p>S'il ne l'a pas fait, ce n'est pas par indulgence : c'est parce que ces questions étaient les
+  siennes. Un homme qui écrit que la vie est antinomique avec la recherche des certitudes ne
+  s'effarouche pas d'un détour anthropologique. La liberté qu'il m'a laissée était la même que celle
+  qu'il prenait.</p>
+</section>
+
+<p class="colophon">La collaboration avec Jacques Delga, qui m'a présenté Jean-Luc Laffargue, est
+retracée sur <a href="delga.html">une page dédiée</a>. Les quatre articles cités ici sont référencés
+dans la <a href="chronologie.html">chronologie</a>.</p>
+
+<p class="note-sources">Cette page s'appuie sur deux numéros de la revue remis par Jean-Luc Laffargue
+en 2015 (n°259 et n°260), sur les quatre articles parus entre 2011 et 2012, et sur des sources
+publiques — registres du commerce, bibliographies universitaires. Les citations d'éditoriaux sont
+données à titre de courts extraits ; les textes appartiennent à leur auteur.</p>
+
+</div>
+<script>
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.bloc,.article,.encart').forEach(c => io.observe(c));
+  } else {
+    document.querySelectorAll('.bloc,.article,.encart').forEach(c => c.classList.add('visible'));
+  }
+</script>
+</body>
+</html>
