@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Démocratie(s) en action — Note de lecture — Bruno Brochenin</title>
+<meta name="description" content="Ma lecture de Démocratie(s) en action, ouvrage collectif dirigé par Corentin Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani, et un guide pour y entrer selon dix-sept auteurs.">
+<meta name="author" content="Bruno Brochenin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brunobrochenin.com/lectures/democratie-en-action.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Démocratie(s) en action — Note de lecture — Bruno Brochenin">
+<meta property="og:description" content="Une note personnelle et un guide pour entrer dans l'ouvrage collectif Démocratie(s) en action — cinquante approches, soixante-sept voix.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://brunobrochenin.com/lectures/democratie-en-action.html">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papier:#FDFDFB;
+    --encre:#212A33;
+    --encre-douce:#4A5560;
+    --marine:#2C4A6E;
+    --filet:#DCE0E4;
+    --sable:#B08D57;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--papier);
+    color:var(--encre);
+    font-family:'Spectral',Georgia,serif;
+    font-weight:300;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;}
+
+  /* ---------- entête ---------- */
+  header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
+  .retour{
+    display:inline-block;margin-bottom:26px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;
+    letter-spacing:.08em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .retour:hover{color:var(--sable);border-color:var(--sable);}
+  .surtitre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--sable);margin-bottom:18px;
+  }
+  h1{font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.01em;}
+  .book-meta{
+    margin-top:14px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;
+    color:var(--encre-douce);letter-spacing:.01em;
+  }
+  .chapeau{margin-top:24px;font-size:18px;color:var(--encre-douce);max-width:62ch;}
+  .chapeau em{font-style:italic;}
+  .chapeau-nav{
+    margin-top:18px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:13px;
+    color:var(--encre-douce);
+  }
+  .chapeau-nav a{
+    color:var(--marine);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .chapeau-nav a:hover{color:var(--sable);border-color:var(--sable);}
+
+  /* ---------- blocs de section ---------- */
+  .bloc{margin-top:72px;}
+  .bloc-titre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--marine);
+    padding-bottom:10px;border-bottom:1px solid var(--filet);margin-bottom:28px;
+  }
+  .bloc h2{font-weight:600;font-size:24px;line-height:1.3;letter-spacing:-.005em;margin-top:32px;margin-bottom:12px;max-width:60ch;}
+  .bloc h2 a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--filet);}
+  .bloc h2 a:hover{color:var(--sable);border-color:var(--sable);}
+  .bloc p{max-width:62ch;margin-bottom:18px;}
+  .bloc p em{font-style:italic;}
+  .bloc p a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);transition:color .2s;}
+  .bloc p a:hover{color:var(--sable);}
+
+  /* ---------- pilier (sous-section dans par où entrer) ---------- */
+  .pilier{
+    margin-top:56px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--marine);
+    padding-bottom:10px;border-bottom:1px solid var(--filet);
+  }
+  .pilier-sous{
+    margin-top:10px;font-size:15px;color:var(--encre-douce);font-style:italic;max-width:60ch;
+    font-family:'Spectral',Georgia,serif;letter-spacing:0;text-transform:none;font-weight:300;
+  }
+
+  /* ---------- profils ---------- */
+  .profil{
+    margin-top:32px;padding:22px 24px;background:#F6F4EF;border:1px solid var(--filet);
+    border-radius:2px;
+  }
+  .profil-titre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--sable);margin-bottom:10px;
+  }
+  .profil h3{font-weight:600;font-size:18px;line-height:1.35;letter-spacing:-.005em;margin-bottom:12px;max-width:60ch;}
+  .profil p{max-width:62ch;margin-bottom:14px;font-size:16px;}
+  .profil ul{list-style:none;padding:0;margin-top:12px;}
+  .profil li{
+    padding:6px 0;border-top:1px solid var(--filet);
+    font-size:15.5px;
+  }
+  .profil li:first-child{border-top:none;}
+  .profil li a{color:var(--marine);text-decoration:none;font-weight:400;border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;}
+  .profil li a:hover{color:var(--sable);border-color:var(--sable);}
+  .profil li em{font-style:italic;color:var(--encre-douce);font-size:14px;display:block;margin-top:2px;}
+
+  /* ---------- partie du livre (regroupement des fiches) ---------- */
+  .partie{
+    margin-top:56px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--sable);
+    padding-bottom:8px;border-bottom:1px solid var(--filet);
+  }
+
+  /* ---------- fiches auteur ---------- */
+  .fiche{margin-top:36px;padding-top:24px;border-top:1px solid var(--filet);scroll-margin-top:24px;}
+  .fiche:first-of-type{border-top:none;padding-top:16px;}
+  .fiche-auteur{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--marine);margin-bottom:6px;
+  }
+  .fiche h3{font-weight:600;font-size:19px;line-height:1.35;letter-spacing:-.005em;max-width:60ch;font-family:'Spectral',Georgia,serif;font-style:italic;}
+  .fiche-commentaire{margin-top:14px;max-width:62ch;}
+  .fiche-commentaire em{font-style:italic;}
+  .fiche-commentaire a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;}
+  .fiche-commentaire a:hover{color:var(--sable);border-color:var(--sable);}
+
+  /* ---------- pied ---------- */
+  .colophon{
+    margin-top:80px;padding-top:28px;border-top:1px solid var(--filet);
+    color:var(--encre-douce);font-size:15px;max-width:64ch;
+  }
+  .colophon p{margin-bottom:8px;}
+  .colophon a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);}
+  .colophon a:hover{color:var(--sable);}
+
+  /* ---------- apparition douce ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .fiche,.profil{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;}
+    .fiche.visible,.profil.visible{opacity:1;transform:none;}
+  }
+  @media (max-width:560px){
+    header{padding-top:56px;}
+    .bloc{margin-top:56px;}
+    .fiche{margin-top:28px;}
+    .pilier{margin-top:44px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <a class="retour" href="../index.html">← Retour à l'accueil</a>
+  <div class="surtitre">Note de lecture · ouvrage collectif</div>
+  <h1>Démocratie(s) en action</h1>
+  <p class="book-meta">Sous la direction de Corentin Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani —
+  50 approches renouvelées de l'entreprise et du travail — Le Bord de l'Eau, 2025.</p>
+  <p class="chapeau">Cinquante approches, soixante-sept voix, douze parties : un objet-monde plutôt qu'un
+  manuel, dont la richesse se prête à plusieurs itinéraires de lecture. Deux vous sont proposés ici —
+  le mien, et le vôtre.</p>
+  <p class="chapeau-nav"><a href="#ma-lecture">Lire ma note</a> — ou <a href="#par-ou-entrer">choisir votre porte d'entrée</a>.</p>
+</header>
+
+<!-- ================ MA LECTURE ================ -->
+<section id="ma-lecture" class="bloc">
+  <div class="bloc-titre">Ma lecture</div>
+
+  <p>Il est délicat de rendre compte d'un livre auquel on a soi-même participé. On ne peut pas prendre
+  tout à fait la distance du lecteur, et on ne peut pas non plus se citer sans donner l'impression de
+  tirer la couverture. C'est pourtant l'exercice que je vais tenter ici, parce que <em>Démocratie(s)
+  en action</em> me paraît trop notable pour le laisser simplement passer.</p>
+
+  <p>C'est un ouvrage épais, choral — cinquante approches signées par soixante-sept voix de chercheurs,
+  dirigeants, syndicalistes, juristes et praticiens, regroupées en douze parties. Le parti pris éditorial
+  est explicite : ne pas trancher, ne pas unifier, mais laisser entendre la diversité de ce que peut
+  vouloir dire démocratiser une entreprise aujourd'hui. Ce parti pris est déjà une prise de position —
+  celle qui reconnaît que la démocratie au travail est un objet vivant, discuté, en formation, et non
+  un modèle fini à décréter.</p>
+
+  <p>Je ne vais pas résumer, ni reprendre chapitre par chapitre — Babelio et le site de l'éditeur le
+  font mieux. Je préfère m'arrêter sur trois idées, lues dans d'autres contributions, qui dialoguent
+  avec mes propres convictions.</p>
+
+  <h2><a href="#ferreras">Isabelle Ferreras</a> — distinguer gouvernement et gestion</h2>
+  <p>Dans la partie 1 (« Une étape historique : le Gouvernement espagnol se lance dans la démocratisation
+  des entreprises », propos recueillis par Corentin Gombert), Isabelle Ferreras rappelle une distinction
+  qu'elle porte de longue date : la gestion concerne les modalités d'organisation du travail, tandis que
+  le gouvernement concerne les finalités poursuivies par le collectif — et c'est ce dernier qui appelle
+  une légitimité démocratique. La distinction paraît simple ; elle est en réalité coupante. Elle explique
+  pourquoi tant d'expériences dites participatives finissent par tourner en rond : elles démocratisent la
+  gestion en laissant le gouvernement entièrement au capital. Elle éclaire aussi pourquoi les propositions
+  législatives sérieuses en la matière portent en premier lieu sur les organes de gouvernance, et non sur
+  la « qualité de vie au travail ».</p>
+
+  <h2><a href="#dromard">Ingrid Dromard</a> — le débat de normes comme fondement</h2>
+  <p>Dans la partie 4 (« Le débat de normes comme fondement de la démocratie au travail »), Ingrid Dromard
+  aborde la démocratie au travail par un angle très concret, hérité des ergonomes et des cliniciens du
+  travail : ce qui rend un collectif démocratique, c'est sa capacité à mettre en délibération les normes
+  qui régissent son activité, plutôt que de les recevoir depuis le haut. On y comprend que la démocratie
+  ne se joue pas seulement dans les instances formelles, mais dans la manière dont on parle du travail
+  réel, dans les tensions qu'on accepte de faire remonter, dans les arbitrages qu'on rend visibles. Une
+  lecture qui redonne un rôle central aux managers de proximité et aux collectifs de métier, souvent
+  oubliés des débats plus institutionnels.</p>
+
+  <h2><a href="#guibert">Christian Guibert</a> — la question du travail elle-même</h2>
+  <p>Dans la partie 7 (« La question du travail à l'heure de la démocratie »), Christian Guibert rappelle
+  qu'il ne suffit pas d'ajouter de la démocratie à un travail dont on garderait les traits abîmés —
+  subordination indéfinie, prescription détaillée, dépossession du sens. Redonner du pouvoir d'agir aux
+  travailleurs suppose de transformer aussi ce qu'on leur demande de faire, comment et pour quoi. On peut
+  le lire comme une objection amicale à toutes les entreprises « démocratiques » qui laisseraient intactes
+  leurs impasses de production. Cette lecture me paraît indispensable pour éviter que l'entreprise
+  démocratique ne devienne une façade sur un contenu inchangé.</p>
+
+  <p>Ces trois entrées, prises parmi cinquante possibles, donnent une idée du grain du livre. On y trouve
+  aussi bien des propositions institutionnelles fortes (statuts, codétermination, mesures de démocratie),
+  des expérimentations concrètes (la reprise de Duralex en SCOP, Upcoop, coopératives d'activité), des
+  réflexions critiques — la démocratie d'entreprise n'est-elle pas parfois le placebo d'un despotisme
+  éclairé, se demande <a href="#briere">Thibaud Brière</a> — des lectures d'auteurs classiques (Mary Parker
+  Follett, Dewey, Ostrom) et des témoignages de terrain. Cette diversité est parfois vertigineuse ; elle
+  est aussi la meilleure preuve que le sujet est vivant.</p>
+
+  <p>Ma propre contribution, <a href="#brochenin"><em>Une entreprise démocratique dans une république
+  sociale : pour qui ? pourquoi ? comment ?</em></a> (partie 1), part d'une intuition simple : la
+  démocratisation de l'entreprise n'a de sens complet qu'inscrite dans un projet de société qui la porte.
+  Je renvoie au chapitre les lecteurs qui voudront le fil détaillé.</p>
+
+  <p>Ce que je retiens, au-delà des désaccords qui traversent l'ouvrage — et il y en a — c'est que nous
+  sommes plusieurs, venus d'horizons différents, à faire converger un constat : la démocratie a besoin,
+  pour se refonder, de trouver sa place là où se joue une part décisive de nos vies. Le reste — les
+  statuts, les procédures, les instances — est indispensable, mais vient après cette conviction-là.</p>
+</section>
+
+<!-- ================ PAR OÙ ENTRER ================ -->
+<section id="par-ou-entrer" class="bloc">
+  <div class="bloc-titre">Par où entrer</div>
+
+  <p>Cinq cents pages, soixante-sept auteurs, douze parties : un ouvrage-monde plutôt qu'un manuel. On
+  peut le lire d'un trait, mais on peut aussi y entrer par une porte choisie — soit selon ce qu'on
+  cherche, soit selon un auteur qui nous intrigue.</p>
+
+  <!-- ---- Selon votre profil ---- -->
+  <div class="pilier">Selon votre profil
+    <div class="pilier-sous">Trois figures que je croise régulièrement dans mon activité —
+    chacune y trouvera un chemin d'entrée court, adossé à quatre chapitres.</div>
+  </div>
+
+  <div class="profil">
+    <div class="profil-titre">Profil I</div>
+    <h3>Si vous êtes dirigeant et que la question vous intrigue sans vous convaincre</h3>
+    <p>Vous n'êtes pas hostile à la démocratie au travail, mais vous vous demandez si ce n'est pas un
+    habillage de plus, ou une contrainte que vous ne pouvez pas vous permettre. Commencez par lire les
+    critiques — elles sont souvent les meilleures introductions — puis un témoignage long qui montre que
+    ce n'est ni de la théorie ni de la magie.</p>
+    <ul>
+      <li><a href="#briere">Thibaud Brière</a> <em>le chapitre le plus dérangeant du livre</em></li>
+      <li><a href="#ternier">Camille Ternier</a> <em>le panorama des arguments</em></li>
+      <li><a href="#jegou">Olivier Jégou</a> <em>les cinq scénarios pour se situer</em></li>
+      <li><a href="#achour">Youssef Achour</a> <em>60 ans de démocratie chez Upcoop, en pratique</em></li>
+    </ul>
+  </div>
+
+  <div class="profil">
+    <div class="profil-titre">Profil II</div>
+    <h3>Si vous accompagnez des organisations en transformation</h3>
+    <p>Vous êtes consultant, coach, formateur ; vous intervenez sur des enjeux d'organisation ou de
+    gouvernance. Ce que vous cherchez : des cadres opérationnels et des points de vigilance concrets, pas
+    seulement de la philosophie politique.</p>
+    <ul>
+      <li><a href="#arnoud">Justine Arnoud</a> <em>manuel pour l'intervenant extérieur</em></li>
+      <li><a href="#dromard">Ingrid Dromard</a> <em>le débat de normes comme cadre</em></li>
+      <li><a href="#crismer">Thibault Crismer</a> <em>construire une mesure honnête</em></li>
+      <li><a href="#colling">Louise Colling, Frédéric Dufays et Didier Van Caillie</a>
+      <em>l'autorité informelle qui rejoue la subordination</em></li>
+    </ul>
+  </div>
+
+  <div class="profil">
+    <div class="profil-titre">Profil III</div>
+    <h3>Si vous êtes représentant du personnel ou syndicaliste</h3>
+    <p>Vous vous demandez ce que ces débats sur la démocratie au travail changent — ou non — au dialogue
+    social tel que vous le pratiquez. Vous voulez aussi savoir si les propositions qui circulent sont des
+    alliées ou des concurrentes.</p>
+    <ul>
+      <li><a href="#lallemand">Nathalie Lallemand-Stempak</a> <em>ce que les lois Auroux nous apprennent encore</em></li>
+      <li><a href="#salvetat">Marianne Salvetat Bernard</a> <em>le dialogue social comme moteur d'innovation</em></li>
+      <li><a href="#elmoussaoui">Suliman El Moussaoui, Vasco Da Silva et Florence Delacroix</a>
+      <em>Duralex, la reprise racontée par les militants CFDT</em></li>
+      <li><a href="#favereau">Olivier Favereau</a> <em>la codétermination, ce dont il est question</em></li>
+    </ul>
+  </div>
+
+  <!-- ---- Selon un auteur ---- -->
+  <div class="pilier">Selon un auteur qui vous intrigue
+    <div class="pilier-sous">Dix-sept fiches, classées par partie du livre — chaque commentaire ne se
+    substitue pas au chapitre, il invite à l'ouvrir.</div>
+  </div>
+
+  <!-- ==== PARTIE 1 ==== -->
+  <div class="partie">Partie 1 — Réconcilier l'entreprise et la société</div>
+
+  <section id="ferreras" class="fiche">
+    <div class="fiche-auteur">Isabelle Ferreras</div>
+    <h3>Une étape historique : le Gouvernement espagnol se lance dans la démocratisation des entreprises</h3>
+    <p class="fiche-commentaire">Propos recueillis par Corentin Gombert. Ferreras porte depuis longtemps
+    la distinction entre gouvernement et gestion. Ce chapitre en montre la portée politique concrète :
+    quand un État européen décide de légiférer, c'est cette distinction qui fait la charnière. À lire
+    pour saisir ce qui se joue au niveau institutionnel.</p>
+  </section>
+
+  <section id="briere" class="fiche">
+    <div class="fiche-auteur">Thibaud Brière</div>
+    <h3>La démocratie d'entreprise, placebo d'un despotisme éclairé ?</h3>
+    <p class="fiche-commentaire">Un critique aguerri qui a longtemps travaillé dans des entreprises
+    « libérées ». Sa question dérange, y compris les enthousiastes : et si tout cela n'était qu'une
+    nouvelle façade sur une autorité inchangée ? Le chapitre le plus dérangeant du livre, à lire tôt.</p>
+  </section>
+
+  <section id="ternier" class="fiche">
+    <div class="fiche-auteur">Camille Ternier</div>
+    <h3>Pourquoi démocratiser les entreprises ? Panorama des arguments en faveur de la démocratisation des entreprises</h3>
+    <p class="fiche-commentaire">Ternier fait le travail que tout débat mérite mais qu'on saute souvent :
+    établir la liste raisonnée des arguments avant de prendre position. Utile pour vérifier que ses
+    convictions sont solides, quel que soit leur bord.</p>
+  </section>
+
+  <section id="fraisse" class="fiche">
+    <div class="fiche-auteur">Henri Fraisse</div>
+    <h3>Démocratie et entreprise, une nourriture réciproque. Réflexions sur les apports de l'entreprise à la démocratie</h3>
+    <p class="fiche-commentaire">Fraisse renverse la question dominante du livre : plutôt que « comment
+    démocratiser l'entreprise ? », il demande « qu'est-ce que l'entreprise apporte à la démocratie ? ».
+    Depuis son expérience du développement durable et de la responsabilité systémique — développée plus
+    longuement dans <em>Comprendre la RSE, levier de transformation durable</em> (avec Antoine Jaulmes et
+    Frédéric Ménard, Larcier, 2023 —
+    <a href="https://www.babelio.com/livres/Bellanger-RSE-et-Creation-de-valeur/1402133" target="_blank" rel="noopener">fiche Babelio</a>) —
+    il défend l'entreprise comme un des rares lieux capables d'un apprentissage collectif à l'échelle des
+    enjeux écologiques et technologiques du siècle. Une voix de praticien, singulière dans cet ouvrage,
+    dont les positions sur les cadres RSE/CSRD comme vecteurs de démocratie mériteront d'être discutées
+    avec d'autres contributions du livre.</p>
+  </section>
+
+  <section id="brochenin" class="fiche">
+    <div class="fiche-auteur">Bruno Brochenin</div>
+    <h3>Une entreprise démocratique dans une république sociale : pour qui ? pourquoi ? comment ?</h3>
+    <p class="fiche-commentaire">Ma propre contribution — je passe donc à la première personne. J'y pars
+    d'une intuition simple : la démocratisation de l'entreprise n'a de sens complet qu'inscrite dans un
+    projet de société qui la porte. Les trois questions du titre — pour qui démocratiser, pourquoi,
+    comment — organisent le chapitre. Je préfère renvoyer au livre plutôt que d'en résumer ici le fil ;
+    l'exercice serait délicat.</p>
+  </section>
+
+  <!-- ==== PARTIE 2 ==== -->
+  <div class="partie">Partie 2 — Démocratiser l'entreprise</div>
+
+  <section id="jegou" class="fiche">
+    <div class="fiche-auteur">Olivier Jégou</div>
+    <h3>La gestion participative contribue-t-elle à la démocratisation du travail ?</h3>
+    <p class="fiche-commentaire">Cinq scénarios pour évaluer où se situe une organisation, sans les
+    illusions du vocabulaire managérial à la mode. Un chapitre pratique à ouvrir devant un tableau blanc,
+    avec sa direction ou son collectif.</p>
+  </section>
+
+  <section id="arnoud" class="fiche">
+    <div class="fiche-auteur">Justine Arnoud</div>
+    <h3>Petit manuel à destination des chercheurs en quête de plus de démocratie dans les organisations</h3>
+    <p class="fiche-commentaire">Le titre trompe : ce chapitre est en réalité un guide pour toute
+    personne extérieure — consultant, chercheur, formateur — qui prétend accompagner un collectif vers
+    plus de démocratie. Une boussole précieuse contre les pièges de la posture intervenante.</p>
+  </section>
+
+  <!-- ==== PARTIE 4 ==== -->
+  <div class="partie">Partie 4 — Le Je dans le Nous</div>
+
+  <section id="dromard" class="fiche">
+    <div class="fiche-auteur">Ingrid Dromard</div>
+    <h3>Le débat de normes comme fondement de la démocratie au travail : un retour d'expérience</h3>
+    <p class="fiche-commentaire">Dromard aborde la démocratie par le travail réel : ce qui rend un
+    collectif démocratique, c'est sa capacité à mettre en délibération les normes qui régissent son
+    activité. Un chapitre qui redonne du rôle aux managers de proximité et aux collectifs de métier,
+    souvent absents des débats plus institutionnels.</p>
+  </section>
+
+  <!-- ==== PARTIE 6 ==== -->
+  <div class="partie">Partie 6 — Mesurer la démocratie</div>
+
+  <section id="crismer" class="fiche">
+    <div class="fiche-auteur">Thibault Crismer</div>
+    <h3>De la nécessité d'une mesure de démocratie dans les organisations</h3>
+    <p class="fiche-commentaire">Comment évaluer où en est un collectif, avec quels indicateurs, sans
+    réduire la démocratie à un score qui la trahirait ? Utile à qui veut construire un tableau de bord
+    honnête plutôt qu'un KPI habillé.</p>
+  </section>
+
+  <!-- ==== PARTIE 7 ==== -->
+  <div class="partie">Partie 7 — Autorité et émancipation</div>
+
+  <section id="favereau" class="fiche">
+    <div class="fiche-auteur">Olivier Favereau</div>
+    <h3>La codétermination ou les deux sources de la démocratie</h3>
+    <p class="fiche-commentaire">La proposition institutionnelle la plus travaillée du livre, par un
+    économiste qui la porte en France depuis vingt ans. À lire pour savoir précisément ce dont il est
+    question dans les débats législatifs actuels — et pour comprendre pourquoi cette voie n'est ni
+    cosmétique ni inaccessible.</p>
+  </section>
+
+  <section id="colling" class="fiche">
+    <div class="fiche-auteur">Louise Colling, Frédéric Dufays et Didier Van Caillie</div>
+    <h3>Résurgence de l'autorité informelle dans les organisations démocratiques, un frein à l'émancipation des travailleurs ?</h3>
+    <p class="fiche-commentaire">Un chapitre honnête sur ce qui se passe quand on retire l'autorité
+    formelle sans traiter l'autorité tout court. À lire par tous ceux tentés d'installer des dispositifs
+    qui produisent, en pratique, l'inverse de leur intention.</p>
+  </section>
+
+  <section id="guibert" class="fiche">
+    <div class="fiche-auteur">Christian Guibert</div>
+    <h3>La question du travail à l'heure de la démocratie</h3>
+    <p class="fiche-commentaire">Guibert rappelle qu'il ne suffit pas d'ajouter de la démocratie à un
+    travail dont on garderait les traits abîmés — subordination indéfinie, prescription détaillée,
+    dépossession du sens. Une objection amicale à toutes les entreprises « démocratiques » qui
+    laisseraient intactes leurs impasses de production.</p>
+  </section>
+
+  <!-- ==== PARTIE 8 ==== -->
+  <div class="partie">Partie 8 — Le dialogue social</div>
+
+  <section id="lallemand" class="fiche">
+    <div class="fiche-auteur">Nathalie Lallemand-Stempak</div>
+    <h3>Les lois Auroux (1982) : le précédent français du « democratizing work » ?</h3>
+    <p class="fiche-commentaire">Une remise en perspective historique qui montre que la France a déjà
+    tenté quelque chose de radical, dont on a beaucoup à réapprendre. Utile pour ne pas partir de zéro
+    dans les débats en cours et éviter les faux départs.</p>
+  </section>
+
+  <section id="salvetat" class="fiche">
+    <div class="fiche-auteur">Marianne Salvetat Bernard</div>
+    <h3>Le dialogue social, vecteur de démocratie au soutien des innovations ?</h3>
+    <p class="fiche-commentaire">Comment le dialogue social peut redevenir un moteur, à condition d'être
+    renouvelé dans ses modalités et son ambition. Écrit par quelqu'un qui connaît de l'intérieur ce
+    qu'elle décrit.</p>
+  </section>
+
+  <section id="elmoussaoui" class="fiche">
+    <div class="fiche-auteur">Suliman El Moussaoui, Vasco Da Silva et Florence Delacroix</div>
+    <h3>Duralex : la reprise en SCOP racontée par les militants CFDT</h3>
+    <p class="fiche-commentaire">Le récit d'une reprise emblématique par ceux qui l'ont menée. Un cas
+    dont chaque section syndicale peut tirer des leçons — pas comme modèle à copier, mais comme miroir
+    des dilemmes que tout collectif rencontrera.</p>
+  </section>
+
+  <!-- ==== PARTIE 10 ==== -->
+  <div class="partie">Partie 10 — Démocratie, santé et sécurité des citoyens</div>
+
+  <section id="waknine" class="fiche">
+    <div class="fiche-auteur">Victor Waknine</div>
+    <h3>L'opérateur d'assurance, témoin de l'urgence démocratique en entreprise</h3>
+    <p class="fiche-commentaire">Depuis son observatoire d'opérateur d'assurance, Waknine documente ce
+    que les statistiques d'absentéisme, de sinistralité et de mal-être au travail disent de l'état
+    démocratique — ou non — des entreprises françaises. Il présente l'IBET (Indice de Bien-Être au
+    Travail), outil qu'il a développé, qui fait l'objet d'un chapitre dédié dans <em>Comprendre la RSE,
+    levier de transformation durable</em>, ouvrage co-dirigé par Henri Fraisse avec Antoine Jaulmes et
+    Frédéric Ménard (Larcier, 2023 —
+    <a href="https://www.babelio.com/livres/Bellanger-RSE-et-Creation-de-valeur/1402133" target="_blank" rel="noopener">fiche Babelio</a>).
+    Une contribution qui rappelle que la démocratie au travail se lit aussi dans la santé de celles et
+    ceux qui y sont exposés.</p>
+  </section>
+
+  <!-- ==== PARTIE 12 ==== -->
+  <div class="partie">Partie 12 — Témoignages inspirants</div>
+
+  <section id="achour" class="fiche">
+    <div class="fiche-auteur">Youssef Achour</div>
+    <h3>Upcoop célèbre 60 ans de démocratie en entreprise</h3>
+    <p class="fiche-commentaire">Propos recueillis par Marc Buisson. Un témoignage long, incarné, d'une
+    entreprise qui vit démocratiquement depuis six décennies — avec ses tensions, ses réussites et ce
+    qu'elle a appris de ses erreurs. Précieux pour montrer que ce n'est ni de la théorie, ni de la magie.</p>
+  </section>
+</section>
+
+<!-- ================ COLOPHON ================ -->
+<p class="colophon">
+Corentin Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani (dir.),
+<em>Démocratie(s) en action. 50 approches renouvelées de l'entreprise et du travail</em>, Le Bord de l'Eau, 2025.
+<br>
+<a href="https://www.editionsbdl.com/produit/democraties-en-action/" target="_blank" rel="noopener">Fiche éditeur</a>
+—
+<a href="https://www.babelio.com/livres/Gombert-Democratiesen-action-50-approches-renouvelees-/2067572" target="_blank" rel="noopener">Fiche Babelio</a>.
+</p>
+
+</div>
+<script>
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    }), { threshold: 0.15 });
+    document.querySelectorAll('.fiche, .profil').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.fiche, .profil').forEach(el => el.classList.add('visible'));
+  }
+</script>
+</body>
+</html>
