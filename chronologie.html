@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Repères chronologiques — Bruno Brochenin</title>
 <link rel="canonical" href="https://brunobrochenin.com/chronologie.html">
+<link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/chronologie.html">
+<link rel="alternate" hreflang="en" href="https://brunobrochenin.com/chronologie.html?lang=en">
 <meta name="description" content="Repères chronologiques des travaux de Bruno Brochenin : livres, articles, contributions et jalons de la démarche IBET, de 2009 à aujourd'hui.">
 <meta name="keywords" content="Bruno Brochenin, chronologie, jalons datés, IBET, Victor Waknine, Mozart Consulting, souffrance au travail, engagement collectif, Où va l'entreprise, L'engagement collectif, Indice de bien-être au travail, Qualitique">
 <meta name="author" content="Bruno Brochenin">
@@ -16,6 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://brunobrochenin.com/chronologie.html">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -37,7 +40,22 @@
     line-height:1.65;
     font-size:17px;
   }
-  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;}
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;position:relative;}
+
+  /* ---------- commutateur de langue ---------- */
+  .lang-switch{
+    position:absolute;top:24px;right:24px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.08em;
+    z-index:10;
+  }
+  .lang-switch button{
+    background:none;border:none;color:var(--encre-douce);cursor:pointer;
+    padding:4px 6px;font:inherit;font-weight:500;letter-spacing:inherit;
+    transition:color .2s;
+  }
+  .lang-switch button.active{color:var(--sable);}
+  .lang-switch button:hover{color:var(--encre);}
+  .lang-switch .sep{color:var(--filet);}
 
   /* ---------- entête ---------- */
   header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
@@ -110,180 +128,325 @@
   @media (max-width:560px){
     header{padding-top:56px;}
     .periode{margin-top:56px;}
+    .lang-switch{top:16px;right:16px;}
   }
 </style>
 </head>
 <body>
 <div class="page">
 
+<div class="lang-switch" role="group" aria-label="Language switcher">
+  <button data-lang="fr" class="active" aria-label="Français">FR</button>
+  <span class="sep" aria-hidden="true">/</span>
+  <button data-lang="en" aria-label="English">EN</button>
+</div>
+
 <header>
-  <a class="retour" href="index.html">← Retour à l'accueil</a>
-  <div class="surtitre">Repères chronologiques</div>
-  <h1>D'où viennent ces travaux</h1>
-  <p class="chapeau">Quinze ans séparent la première alerte de la première synthèse. Cette page en donne
-  les jalons — chacun adossé à une pièce publiée et datée : études statistiques, ouvrages, agréments,
-  reconnaissances de tiers. Rien n'y est affirmé qui ne soit archivé.</p>
+  <a class="retour" href="index.html"
+     data-fr="← Retour à l'accueil"
+     data-en="← Back to home">← Retour à l'accueil</a>
+  <div class="surtitre"
+       data-fr="Repères chronologiques"
+       data-en="Timeline">Repères chronologiques</div>
+  <h1 data-fr="D'où viennent ces travaux"
+      data-en="Where these works come from">D'où viennent ces travaux</h1>
+  <p class="chapeau"
+     data-fr="Quinze ans séparent la première alerte de la première synthèse. Cette page en donne les jalons — chacun adossé à une pièce publiée et datée : études statistiques, ouvrages, agréments, reconnaissances de tiers. Rien n'y est affirmé qui ne soit archivé."
+     data-en="Fifteen years separate the first alert from the first synthesis. This page sets out the milestones — each anchored to a dated, published document: statistical studies, books, endorsements, third-party recognitions. Nothing is asserted here that is not archived.">Quinze ans séparent la première alerte de la première synthèse. Cette page en donne les jalons — chacun adossé à une pièce publiée et datée : études statistiques, ouvrages, agréments, reconnaissances de tiers. Rien n'y est affirmé qui ne soit archivé.</p>
 </header>
 
 <section class="periode">
-  <div class="periode-titre"><span class="periode-num">I</span><h2>La problématisation</h2><span class="periode-annees">2008 – 2010</span></div>
-  <p class="periode-intro">La question du mal-être au travail entre au premier plan du débat public ;
-  deux trajectoires se mettent en mouvement, séparément.</p>
+  <div class="periode-titre">
+    <span class="periode-num">I</span>
+    <h2 data-fr="La problématisation"
+        data-en="Framing the question">La problématisation</h2>
+    <span class="periode-annees">2008 – 2010</span>
+  </div>
+  <p class="periode-intro"
+     data-fr="La question du mal-être au travail entre au premier plan du débat public ; deux trajectoires se mettent en mouvement, séparément."
+     data-en="Workplace suffering enters the foreground of public debate; two trajectories begin to move, separately.">La question du mal-être au travail entre au premier plan du débat public ; deux trajectoires se mettent en mouvement, séparément.</p>
   <div class="frise">
     <div class="jalon">
-      <div class="jalon-date">2008</div>
-      <p>La souffrance au travail devient une question politique nationale ; une commission de réflexion
-      lui est consacrée, dont le rapport final marque l'entrée du sujet dans le débat institutionnel.
-      Les travaux qui conduiront à l'IBET© débutent la même année.</p>
-      <span class="jalon-source">Rapport final de la Commission de réflexion sur la souffrance au travail, 2008</span>
+      <div class="jalon-date"
+           data-fr="2008"
+           data-en="2008">2008</div>
+      <p data-fr="La souffrance au travail devient une question politique nationale ; une commission de réflexion lui est consacrée, dont le rapport final marque l'entrée du sujet dans le débat institutionnel. Les travaux qui conduiront à l'IBET© débutent la même année."
+         data-en="Workplace suffering becomes a national political issue; a commission of inquiry is set up, whose final report marks the entry of the subject into institutional debate. The work that will lead to the IBET© also begins that year.">La souffrance au travail devient une question politique nationale ; une commission de réflexion lui est consacrée, dont le rapport final marque l'entrée du sujet dans le débat institutionnel. Les travaux qui conduiront à l'IBET© débutent la même année.</p>
+      <span class="jalon-source"
+            data-fr="Rapport final de la Commission de réflexion sur la souffrance au travail, 2008"
+            data-en="Final report of the Commission of Inquiry on Workplace Suffering, 2008">Rapport final de la Commission de réflexion sur la souffrance au travail, 2008</span>
     </div>
     <div class="jalon">
-      <div class="jalon-date">2009</div>
-      <p>Portrait de presse de Victor Waknine, fondateur de Mozart Consulting :
-      « Travailler mieux pour vivre mieux ».</p>
-      <span class="jalon-source">A. Clozel, 2009</span>
+      <div class="jalon-date"
+           data-fr="2009"
+           data-en="2009">2009</div>
+      <p data-fr="Portrait de presse de Victor Waknine, fondateur de Mozart Consulting : « Travailler mieux pour vivre mieux »."
+         data-en="Press profile of Victor Waknine, founder of Mozart Consulting: “Working better to live better”.">Portrait de presse de Victor Waknine, fondateur de Mozart Consulting : « Travailler mieux pour vivre mieux ».</p>
+      <span class="jalon-source"
+            data-fr="A. Clozel, 2009"
+            data-en="A. Clozel, 2009">A. Clozel, 2009</span>
     </div>
     <div class="jalon majeur">
-      <div class="jalon-date">Mars 2010</div>
-      <p>Bruno Brochenin publie <em>Où va l'entreprise ? Organisation et dérives</em> :
-      le diagnostic des logiques organisationnelles et de leurs effets sur le travail.</p>
-      <span class="jalon-source">Éditions Eska, 2010</span>
+      <div class="jalon-date"
+           data-fr="Mars 2010"
+           data-en="March 2010">Mars 2010</div>
+      <p data-fr="Bruno Brochenin publie &lt;em&gt;Où va l'entreprise ? Organisation et dérives&lt;/em&gt; : le diagnostic des logiques organisationnelles et de leurs effets sur le travail."
+         data-en="Bruno Brochenin publishes &lt;em&gt;Où va l'entreprise ? Organisation et dérives&lt;/em&gt; (&lt;em&gt;Where is the corporate model going? Organisation and drifts&lt;/em&gt;): a diagnosis of organisational logics and their effects on work.">Bruno Brochenin publie <em>Où va l'entreprise ? Organisation et dérives</em> : le diagnostic des logiques organisationnelles et de leurs effets sur le travail.</p>
+      <span class="jalon-source"
+            data-fr="Éditions Eska, 2010"
+            data-en="Eska Editions, 2010">Éditions Eska, 2010</span>
     </div>
   </div>
 </section>
 
 <section class="periode">
-  <div class="periode-titre"><span class="periode-num">II</span><h2>L'invention et la validation de la mesure</h2><span class="periode-annees">2011 – 2014</span></div>
-  <p class="periode-intro">L'engagement devient mesurable sur données réelles ; les deux trajectoires
-  se croisent une première fois.</p>
+  <div class="periode-titre">
+    <span class="periode-num">II</span>
+    <h2 data-fr="L'invention et la validation de la mesure"
+        data-en="Inventing and validating the measure">L'invention et la validation de la mesure</h2>
+    <span class="periode-annees">2011 – 2014</span>
+  </div>
+  <p class="periode-intro"
+     data-fr="L'engagement devient mesurable sur données réelles ; les deux trajectoires se croisent une première fois."
+     data-en="Engagement becomes measurable on real data; the two trajectories cross for the first time.">L'engagement devient mesurable sur données réelles ; les deux trajectoires se croisent une première fois.</p>
   <div class="frise">
     <div class="jalon majeur">
-      <div class="jalon-date">5 septembre 2011</div>
-      <p>Première édition de l'étude nationale de l'IBET©, sur les statistiques officielles 2009
-      (DARES, CNAMTS) couvrant plus de 18 millions de salariés : un indice global de 0,77 et
-      l'équation fondatrice — l'engagement et les désengagements se complètent à l'unité.</p>
-      <span class="jalon-source">Rapport d'étude, Mozart Consulting, septembre 2011 — étude annuelle depuis</span>
+      <div class="jalon-date"
+           data-fr="5 septembre 2011"
+           data-en="5 September 2011">5 septembre 2011</div>
+      <p data-fr="Première édition de l'étude nationale de l'IBET©, sur les statistiques officielles 2009 (DARES, CNAMTS) couvrant plus de 18 millions de salariés : un indice global de 0,77 et l'équation fondatrice — l'engagement et les désengagements se complètent à l'unité."
+         data-en="First edition of the national IBET© study, based on official 2009 statistics (DARES, CNAMTS) covering more than 18 million employees: a global index of 0.77 and the founding equation — engagement and disengagement complement each other to unity.">Première édition de l'étude nationale de l'IBET©, sur les statistiques officielles 2009 (DARES, CNAMTS) couvrant plus de 18 millions de salariés : un indice global de 0,77 et l'équation fondatrice — l'engagement et les désengagements se complètent à l'unité.</p>
+      <span class="jalon-source"
+            data-fr="Rapport d'étude, Mozart Consulting, septembre 2011 — étude annuelle depuis"
+            data-en="Study report, Mozart Consulting, September 2011 — annual study since">Rapport d'étude, Mozart Consulting, septembre 2011 — étude annuelle depuis</span>
     </div>
     <div class="jalon">
-      <div class="jalon-date">Septembre 2011</div>
-      <p>Livre blanc « La santé au travail, approche économique du bien-être », avec le groupe de
-      protection sociale APICIL — début d'un partenariat qui se poursuit d'édition en édition.</p>
-      <span class="jalon-source">Dossier de presse APICIL, septembre 2011</span>
+      <div class="jalon-date"
+           data-fr="Septembre 2011"
+           data-en="September 2011">Septembre 2011</div>
+      <p data-fr="Livre blanc « La santé au travail, approche économique du bien-être », avec le groupe de protection sociale APICIL — début d'un partenariat qui se poursuit d'édition en édition."
+         data-en="White paper “Workplace health: an economic approach to well-being”, with the social protection group APICIL — the start of a partnership that continues from edition to edition.">Livre blanc « La santé au travail, approche économique du bien-être », avec le groupe de protection sociale APICIL — début d'un partenariat qui se poursuit d'édition en édition.</p>
+      <span class="jalon-source"
+            data-fr="Dossier de presse APICIL, septembre 2011"
+            data-en="APICIL press file, September 2011">Dossier de presse APICIL, septembre 2011</span>
     </div>
     <div class="jalon">
-      <div class="jalon-date">2011 – 2012</div>
-      <p>Quatre articles de Bruno Brochenin dans <em>Qualitique Magazine</em> — risques psychosociaux,
-      cindynique appliquée à l'entreprise, critique de la conduite du changement. L'article
-      d'avril 2012 renvoie déjà aux travaux de Mozart Consulting : la convergence est documentée.</p>
-      <span class="jalon-source">Qualitique n° 222, 225, 229 et 233</span>
+      <div class="jalon-date"
+           data-fr="2011 – 2012"
+           data-en="2011 – 2012">2011 – 2012</div>
+      <p data-fr="Quatre articles de Bruno Brochenin dans &lt;em&gt;Qualitique Magazine&lt;/em&gt; — risques psychosociaux, cindynique appliquée à l'entreprise, critique de la conduite du changement. L'article d'avril 2012 renvoie déjà aux travaux de Mozart Consulting : la convergence est documentée."
+         data-en="Four articles by Bruno Brochenin in &lt;em&gt;Qualitique Magazine&lt;/em&gt; — psychosocial risks, cindynics applied to the enterprise, critique of change management. The April 2012 article already refers to the work of Mozart Consulting: the convergence is documented.">Quatre articles de Bruno Brochenin dans <em>Qualitique Magazine</em> — risques psychosociaux, cindynique appliquée à l'entreprise, critique de la conduite du changement. L'article d'avril 2012 renvoie déjà aux travaux de Mozart Consulting : la convergence est documentée.</p>
+      <span class="jalon-source"
+            data-fr="Qualitique n° 222, 225, 229 et 233"
+            data-en="Qualitique No. 222, 225, 229 and 233">Qualitique n° 222, 225, 229 et 233</span>
     </div>
     <div class="jalon">
-      <div class="jalon-date">2013</div>
-      <p>Victor Waknine formalise la notion de goodwill social© dans la revue <em>Transversus</em>.</p>
-      <span class="jalon-source">Transversus n° 5, 2013</span>
+      <div class="jalon-date"
+           data-fr="2013"
+           data-en="2013">2013</div>
+      <p data-fr="Victor Waknine formalise la notion de goodwill social© dans la revue &lt;em&gt;Transversus&lt;/em&gt;."
+         data-en="Victor Waknine formalises the notion of goodwill social© in the journal &lt;em&gt;Transversus&lt;/em&gt;.">Victor Waknine formalise la notion de goodwill social© dans la revue <em>Transversus</em>.</p>
+      <span class="jalon-source"
+            data-fr="Transversus n° 5, 2013"
+            data-en="Transversus No. 5, 2013">Transversus n° 5, 2013</span>
     </div>
     <div class="jalon majeur">
-      <div class="jalon-date">Avril 2014</div>
-      <p>L'IBET© est agréé « innovation sociale » par le pôle de compétitivité mondial
-      Finance Innovation.</p>
-      <span class="jalon-source">Agrément du 9 avril 2014, attestation du 23 mai 2014</span>
+      <div class="jalon-date"
+           data-fr="Avril 2014"
+           data-en="April 2014">Avril 2014</div>
+      <p data-fr="L'IBET© est agréé « innovation sociale » par le pôle de compétitivité mondial Finance Innovation."
+         data-en="The IBET© is certified as “social innovation” by the global competitiveness cluster Finance Innovation.">L'IBET© est agréé « innovation sociale » par le pôle de compétitivité mondial Finance Innovation.</p>
+      <span class="jalon-source"
+            data-fr="Agrément du 9 avril 2014, attestation du 23 mai 2014"
+            data-en="Certification of 9 April 2014, attestation of 23 May 2014">Agrément du 9 avril 2014, attestation du 23 mai 2014</span>
     </div>
   </div>
 </section>
 
 <section class="periode">
-  <div class="periode-titre"><span class="periode-num">III</span><h2>L'élaboration pédagogique et la reconnaissance tierce</h2><span class="periode-annees">2014 – 2021</span></div>
-  <p class="periode-intro">La matière des livres se construit en salle de formation ; la mesure est
-  reconnue par des tiers de toutes natures — profession financière, cercles de réflexion, université.</p>
+  <div class="periode-titre">
+    <span class="periode-num">III</span>
+    <h2 data-fr="L'élaboration pédagogique et la reconnaissance tierce"
+        data-en="Pedagogical development and third-party recognition">L'élaboration pédagogique et la reconnaissance tierce</h2>
+    <span class="periode-annees">2014 – 2021</span>
+  </div>
+  <p class="periode-intro"
+     data-fr="La matière des livres se construit en salle de formation ; la mesure est reconnue par des tiers de toutes natures — profession financière, cercles de réflexion, université."
+     data-en="The material of the books is built in the training room; the measure gains recognition from third parties of every kind — the financial profession, think tanks, academia.">La matière des livres se construit en salle de formation ; la mesure est reconnue par des tiers de toutes natures — profession financière, cercles de réflexion, université.</p>
   <div class="frise">
     <div class="jalon majeur">
-      <div class="jalon-date">2014 – 2016</div>
-      <p>Conception du parcours de formation « Les aventures d'un manager collaboratif »,
-      déployé depuis en entreprise : les situations et les modèles des futurs ouvrages y sont
-      éprouvés face à des managers réels avant de devenir des chapitres.</p>
-      <span class="jalon-source">Supports de formation, 2014-2016</span>
+      <div class="jalon-date"
+           data-fr="2014 – 2016"
+           data-en="2014 – 2016">2014 – 2016</div>
+      <p data-fr="Conception du parcours de formation « Les aventures d'un manager collaboratif », déployé depuis en entreprise : les situations et les modèles des futurs ouvrages y sont éprouvés face à des managers réels avant de devenir des chapitres."
+         data-en="Design of the training course “The adventures of a collaborative manager”, deployed in companies ever since: the situations and models of the future books are tested against real managers before becoming chapters.">Conception du parcours de formation « Les aventures d'un manager collaboratif », déployé depuis en entreprise : les situations et les modèles des futurs ouvrages y sont éprouvés face à des managers réels avant de devenir des chapitres.</p>
+      <span class="jalon-source"
+            data-fr="Supports de formation, 2014-2016"
+            data-en="Training materials, 2014-2016">Supports de formation, 2014-2016</span>
     </div>
     <div class="jalon">
-      <div class="jalon-date">2016</div>
-      <p>Le Social Advisor Index© chiffre les trente-cinq critères RSE de la loi Grenelle II
-      pour le CAC 40 et établit que les entreprises au pilotage RSE le plus abouti affichent
-      une rentabilité opérationnelle supérieure de 12 % à la médiane — dix ans avant la CSRD.</p>
-      <span class="jalon-source">Communiqué Social Advisor, 2016 ; livret « Regards d'experts », mai 2016</span>
+      <div class="jalon-date"
+           data-fr="2016"
+           data-en="2016">2016</div>
+      <p data-fr="Le Social Advisor Index© chiffre les trente-cinq critères RSE de la loi Grenelle II pour le CAC 40 et établit que les entreprises au pilotage RSE le plus abouti affichent une rentabilité opérationnelle supérieure de 12 % à la médiane — dix ans avant la CSRD."
+         data-en="The Social Advisor Index© quantifies the thirty-five CSR criteria of the Grenelle II law for the CAC 40 companies, establishing that those with the most mature CSR governance show operating profitability 12% above the median — ten years before the CSRD.">Le Social Advisor Index© chiffre les trente-cinq critères RSE de la loi Grenelle II pour le CAC 40 et établit que les entreprises au pilotage RSE le plus abouti affichent une rentabilité opérationnelle supérieure de 12 % à la médiane — dix ans avant la CSRD.</p>
+      <span class="jalon-source"
+            data-fr="Communiqué Social Advisor, 2016 ; livret « Regards d'experts », mai 2016"
+            data-en="Social Advisor communiqué, 2016; “Experts' perspectives” booklet, May 2016">Communiqué Social Advisor, 2016 ; livret « Regards d'experts », mai 2016</span>
     </div>
     <div class="jalon">
-      <div class="jalon-date">Septembre 2017</div>
-      <p>Le livre blanc commun des associations nationales des directeurs financiers (DFCG) et des
-      DRH (ANDRH) préconise le déploiement de l'IBET© pour la valorisation du capital immatériel.
-      La même année, une note de Terra Nova cite un accord d'entreprise ayant institué l'indice
-      comme indicateur conventionnel.</p>
-      <span class="jalon-source">Livre blanc DFCG/ANDRH, septembre 2017 ; Terra Nova, 2017</span>
+      <div class="jalon-date"
+           data-fr="Septembre 2017"
+           data-en="September 2017">Septembre 2017</div>
+      <p data-fr="Le livre blanc commun des associations nationales des directeurs financiers (DFCG) et des DRH (ANDRH) préconise le déploiement de l'IBET© pour la valorisation du capital immatériel. La même année, une note de Terra Nova cite un accord d'entreprise ayant institué l'indice comme indicateur conventionnel."
+         data-en="The joint white paper of the national associations of finance directors (DFCG) and HR directors (ANDRH) recommends deploying IBET© for the valuation of intangible capital. The same year, a Terra Nova note cites a company-level agreement that had established the index as a conventional indicator.">Le livre blanc commun des associations nationales des directeurs financiers (DFCG) et des DRH (ANDRH) préconise le déploiement de l'IBET© pour la valorisation du capital immatériel. La même année, une note de Terra Nova cite un accord d'entreprise ayant institué l'indice comme indicateur conventionnel.</p>
+      <span class="jalon-source"
+            data-fr="Livre blanc DFCG/ANDRH, septembre 2017 ; Terra Nova, 2017"
+            data-en="DFCG/ANDRH white paper, September 2017; Terra Nova, 2017">Livre blanc DFCG/ANDRH, septembre 2017 ; Terra Nova, 2017</span>
     </div>
     <div class="jalon majeur">
-      <div class="jalon-date">2019</div>
-      <p>Bruno Brochenin publie <em>L'engagement collectif dans l'entreprise, part magique de la
-      performance</em> : le modèle du cercle magique.</p>
-      <span class="jalon-source">L'Harmattan, 2019 — livret IBET© avec APICIL la même année</span>
+      <div class="jalon-date"
+           data-fr="2019"
+           data-en="2019">2019</div>
+      <p data-fr="Bruno Brochenin publie &lt;em&gt;L'engagement collectif dans l'entreprise, part magique de la performance&lt;/em&gt; : le modèle du cercle magique."
+         data-en="Bruno Brochenin publishes &lt;em&gt;L'engagement collectif dans l'entreprise, part magique de la performance&lt;/em&gt; (&lt;em&gt;Corporate collective engagement, the magical share of performance&lt;/em&gt;): the magic circle model.">Bruno Brochenin publie <em>L'engagement collectif dans l'entreprise, part magique de la performance</em> : le modèle du cercle magique.</p>
+      <span class="jalon-source"
+            data-fr="L'Harmattan, 2019 — livret IBET© avec APICIL la même année"
+            data-en="L'Harmattan, 2019 — IBET© booklet with APICIL the same year">L'Harmattan, 2019 — livret IBET© avec APICIL la même année</span>
     </div>
     <div class="jalon">
-      <div class="jalon-date">Mai 2021</div>
-      <p>Un mémoire universitaire prend l'IBET© pour objet d'étude : la démarche devient elle-même
-      un objet académique.</p>
-      <span class="jalon-source">Université Paris 2, mai 2021 ; MagRH n° 14, septembre 2021</span>
+      <div class="jalon-date"
+           data-fr="Mai 2021"
+           data-en="May 2021">Mai 2021</div>
+      <p data-fr="Un mémoire universitaire prend l'IBET© pour objet d'étude : la démarche devient elle-même un objet académique."
+         data-en="A university dissertation takes IBET© as its subject: the approach itself becomes an academic object.">Un mémoire universitaire prend l'IBET© pour objet d'étude : la démarche devient elle-même un objet académique.</p>
+      <span class="jalon-source"
+            data-fr="Université Paris 2, mai 2021 ; MagRH n° 14, septembre 2021"
+            data-en="Paris 2 University, May 2021; MagRH No. 14, September 2021">Université Paris 2, mai 2021 ; MagRH n° 14, septembre 2021</span>
     </div>
   </div>
 </section>
 
 <section class="periode">
-  <div class="periode-titre"><span class="periode-num">IV</span><h2>La rencontre avec l'ère extra-financière</h2><span class="periode-annees">2022 – 2026</span></div>
-  <p class="periode-intro">Le reporting de durabilité devient obligation européenne :
-  la réglementation rejoint une mesure qui l'attendait.</p>
+  <div class="periode-titre">
+    <span class="periode-num">IV</span>
+    <h2 data-fr="La rencontre avec l'ère extra-financière"
+        data-en="Meeting the extra-financial era">La rencontre avec l'ère extra-financière</h2>
+    <span class="periode-annees">2022 – 2026</span>
+  </div>
+  <p class="periode-intro"
+     data-fr="Le reporting de durabilité devient obligation européenne : la réglementation rejoint une mesure qui l'attendait."
+     data-en="Sustainability reporting becomes a European obligation: regulation catches up with a measure that had been waiting for it.">Le reporting de durabilité devient obligation européenne : la réglementation rejoint une mesure qui l'attendait.</p>
   <div class="frise">
     <div class="jalon">
-      <div class="jalon-date">Décembre 2022</div>
-      <p>La presse économique nationale se fait l'écho de l'étude annuelle.</p>
-      <span class="jalon-source">Les Echos, 5 décembre 2022</span>
+      <div class="jalon-date"
+           data-fr="Décembre 2022"
+           data-en="December 2022">Décembre 2022</div>
+      <p data-fr="La presse économique nationale se fait l'écho de l'étude annuelle."
+         data-en="The national economic press picks up the annual study.">La presse économique nationale se fait l'écho de l'étude annuelle.</p>
+      <span class="jalon-source"
+            data-fr="Les Echos, 5 décembre 2022"
+            data-en="Les Echos, 5 December 2022">Les Echos, 5 décembre 2022</span>
     </div>
     <div class="jalon">
-      <div class="jalon-date">Octobre 2024</div>
-      <p>L'édition 2024 de l'étude nationale établit le coût du désengagement à 14 840 € par salarié
-      et par an — environ 27 % de la valeur ajoutée.</p>
-      <span class="jalon-source">Communiqué IBET©, 29 octobre 2024</span>
+      <div class="jalon-date"
+           data-fr="Octobre 2024"
+           data-en="October 2024">Octobre 2024</div>
+      <p data-fr="L'édition 2024 de l'étude nationale établit le coût du désengagement à 14 840 € par salarié et par an — environ 27 % de la valeur ajoutée."
+         data-en="The 2024 edition of the national study puts the cost of disengagement at €14,840 per employee per year — about 27% of value added.">L'édition 2024 de l'étude nationale établit le coût du désengagement à 14 840 € par salarié et par an — environ 27 % de la valeur ajoutée.</p>
+      <span class="jalon-source"
+            data-fr="Communiqué IBET©, 29 octobre 2024"
+            data-en="IBET© communiqué, 29 October 2024">Communiqué IBET©, 29 octobre 2024</span>
     </div>
     <div class="jalon majeur">
-      <div class="jalon-date">2024</div>
-      <p>Bruno Brochenin publie <em>Indice de bien-être au travail : on compte tout sauf ce qui
-      compte</em>, préfacé par Victor Waknine : les fondements théoriques de la mesure.</p>
-      <span class="jalon-source">L'Harmattan, 2024</span>
+      <div class="jalon-date"
+           data-fr="2024"
+           data-en="2024">2024</div>
+      <p data-fr="Bruno Brochenin publie &lt;em&gt;Indice de bien-être au travail : on compte tout sauf ce qui compte&lt;/em&gt;, préfacé par Victor Waknine : les fondements théoriques de la mesure."
+         data-en="Bruno Brochenin publishes &lt;em&gt;Indice de bien-être au travail : on compte tout sauf ce qui compte&lt;/em&gt; (&lt;em&gt;Well-being at work index: we count everything except what counts&lt;/em&gt;), with a preface by Victor Waknine: the theoretical foundations of the measure.">Bruno Brochenin publie <em>Indice de bien-être au travail : on compte tout sauf ce qui compte</em>, préfacé par Victor Waknine : les fondements théoriques de la mesure.</p>
+      <span class="jalon-source"
+            data-fr="L'Harmattan, 2024"
+            data-en="L'Harmattan, 2024">L'Harmattan, 2024</span>
     </div>
     <div class="jalon">
-      <div class="jalon-date">Septembre 2025</div>
-      <p>Victor Waknine est le « grand témoin » du magazine de la CFE-CGC : la reconnaissance
-      par une organisation représentative des salariés.</p>
-      <span class="jalon-source">Magazine CFE-CGC, septembre 2025</span>
+      <div class="jalon-date"
+           data-fr="Septembre 2025"
+           data-en="September 2025">Septembre 2025</div>
+      <p data-fr="Victor Waknine est le « grand témoin » du magazine de la CFE-CGC : la reconnaissance par une organisation représentative des salariés."
+         data-en="Victor Waknine is the “featured witness” of the CFE-CGC magazine: recognition by a trade union representing employees.">Victor Waknine est le « grand témoin » du magazine de la CFE-CGC : la reconnaissance par une organisation représentative des salariés.</p>
+      <span class="jalon-source"
+            data-fr="Magazine CFE-CGC, septembre 2025"
+            data-en="CFE-CGC Magazine, September 2025">Magazine CFE-CGC, septembre 2025</span>
     </div>
     <div class="jalon majeur">
-      <div class="jalon-date">2024 – 2026</div>
-      <p>Écriture du diptyque — <em>Les quatre postures du dialogue managérial</em> et
-      <em>Construire l'engagement réciproque</em> — où la fiction d'Arthur incarne quinze ans
-      de matière éprouvée.</p>
-      <span class="jalon-source">À paraître</span>
+      <div class="jalon-date"
+           data-fr="2024 – 2026"
+           data-en="2024 – 2026">2024 – 2026</div>
+      <p data-fr="Écriture du diptyque — &lt;em&gt;Les quatre postures du dialogue managérial&lt;/em&gt; et &lt;em&gt;Construire l'engagement réciproque&lt;/em&gt; — où la fiction d'Arthur incarne quinze ans de matière éprouvée."
+         data-en="Writing of the diptych — &lt;em&gt;Les quatre postures du dialogue managérial&lt;/em&gt; (&lt;em&gt;The four postures of managerial dialogue&lt;/em&gt;) and &lt;em&gt;Construire l'engagement réciproque&lt;/em&gt; (&lt;em&gt;Building reciprocal engagement&lt;/em&gt;) — where the fiction of Arthur embodies fifteen years of tested material.">Écriture du diptyque — <em>Les quatre postures du dialogue managérial</em> et <em>Construire l'engagement réciproque</em> — où la fiction d'Arthur incarne quinze ans de matière éprouvée.</p>
+      <span class="jalon-source"
+            data-fr="À paraître"
+            data-en="Forthcoming">À paraître</span>
     </div>
   </div>
 </section>
 
-<p class="colophon">Chaque jalon de cette page correspond à un document daté — rapport, ouvrage,
-agrément, article ou communiqué — conservé dans les archives de l'auteur. Les références complètes
-sont disponibles sur demande.</p>
+<p class="colophon"
+   data-fr="Chaque jalon de cette page correspond à un document daté — rapport, ouvrage, agrément, article ou communiqué — conservé dans les archives de l'auteur. Les références complètes sont disponibles sur demande."
+   data-en="Every milestone on this page corresponds to a dated document — report, book, endorsement, article or communiqué — kept in the author's archives. Full references are available on request.">Chaque jalon de cette page correspond à un document daté — rapport, ouvrage, agrément, article ou communiqué — conservé dans les archives de l'auteur. Les références complètes sont disponibles sur demande.</p>
 
 </div>
+
 <script>
+  // ---------- commutateur de langue ----------
+  function setLang(lang) {
+    if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+    document.documentElement.lang = lang;
+    // Basculer chaque élément marqué
+    document.querySelectorAll('[data-fr]').forEach(function(el) {
+      var t = el.getAttribute('data-' + lang);
+      if (t !== null) el.innerHTML = t;
+    });
+    // Mettre à jour l'état visuel du commutateur
+    document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // Propager la langue au lien de retour
+    var retour = document.querySelector('.retour');
+    if (retour) {
+      retour.setAttribute('href', lang === 'en' ? 'index.html?lang=en' : 'index.html');
+    }
+    // Mettre à jour l'URL sans recharger
+    try {
+      var url = new URL(window.location.href);
+      if (lang === 'en') url.searchParams.set('lang', 'en');
+      else url.searchParams.delete('lang');
+      history.replaceState(null, '', url.toString());
+    } catch (e) { /* IE ou navigateur ancien : on ignore */ }
+  }
+
+  // À l'ouverture : lire ?lang= dans l'URL
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var initial = params.get('lang') === 'en' ? 'en' : 'fr';
+    setLang(initial);
+  })();
+
+  // Écouter les clics sur le commutateur
+  document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+    btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
+  });
+
+  // ---------- apparition douce des jalons ----------
   if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    }), { threshold: 0.15 });
-    document.querySelectorAll('.jalon').forEach(j => io.observe(j));
+    var io = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.jalon').forEach(function(j) { io.observe(j); });
   } else {
-    document.querySelectorAll('.jalon').forEach(j => j.classList.add('visible'));
+    document.querySelectorAll('.jalon').forEach(function(j) { j.classList.add('visible'); });
   }
 </script>
 </body>
