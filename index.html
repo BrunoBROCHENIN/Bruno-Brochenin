@@ -1034,7 +1034,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
 
 <script>
 function setLang(l){
-  document.querySelectorAll('[data-fr]').forEach(function(e){e.textContent=e.getAttribute('data-'+l)});
+  document.querySelectorAll('[data-fr]').forEach(function(e){e.innerHTML=e.getAttribute('data-'+l)});
   document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent===l.toUpperCase())});
   document.documentElement.lang=l;
 }
