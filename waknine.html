@@ -9,6 +9,8 @@
 <meta name="author" content="Bruno Brochenin">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://brunobrochenin.com/waknine.html">
+<link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/waknine.html">
+<link rel="alternate" hreflang="en" href="https://brunobrochenin.com/waknine.html?lang=en">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Victor Waknine — porter la question du travail">
@@ -16,6 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://brunobrochenin.com/waknine.html">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +41,22 @@
     line-height:1.65;
     font-size:17px;
   }
-  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;}
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;position:relative;}
+
+  /* ---------- commutateur de langue ---------- */
+  .lang-switch{
+    position:absolute;top:24px;right:24px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.08em;
+    z-index:10;
+  }
+  .lang-switch button{
+    background:none;border:none;color:var(--encre-douce);cursor:pointer;
+    padding:4px 6px;font:inherit;font-weight:500;letter-spacing:inherit;
+    transition:color .2s;
+  }
+  .lang-switch button.active{color:var(--sable);}
+  .lang-switch button:hover{color:var(--encre);}
+  .lang-switch .sep{color:var(--filet);}
 
   /* ---------- entête ---------- */
   header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
@@ -123,150 +141,137 @@
   @media (max-width:560px){
     header{padding-top:56px;}
     .bloc{margin-top:40px;}
+    .lang-switch{top:16px;right:16px;}
   }
 </style>
 </head>
 <body>
 <div class="page">
 
+<div class="lang-switch" role="group" aria-label="Language switcher">
+  <button data-lang="fr" class="active" aria-label="Français">FR</button>
+  <span class="sep" aria-hidden="true">/</span>
+  <button data-lang="en" aria-label="English">EN</button>
+</div>
+
 <header>
-  <a class="retour" href="index.html">← Retour à l'accueil</a>
-  <div class="surtitre">Collaboration intellectuelle principale</div>
-  <h1>Victor Waknine, ou la constance d'une question</h1>
-  <p class="chapeau">En septembre 2008, un consultant écrit à l'Élysée pour proposer que l'on mesure
-  le bien-être au travail comme on mesure le résultat opérationnel. Il n'appartient à aucun parti,
-  à aucune institution, à aucune école. L'indicateur qu'il décrivait dans cette lettre existe
-  aujourd'hui, porte le nom qu'il lui avait donné, et s'appuie sur un observatoire de données sociales
-  qui se compte en centaines de millions. Voici la trajectoire, et les pièces qui la datent.</p>
+  <a class="retour" href="index.html"
+     data-fr="← Retour à l'accueil"
+     data-en="← Back to home">← Retour à l'accueil</a>
+  <div class="surtitre"
+       data-fr="Collaboration intellectuelle principale"
+       data-en="Principal intellectual collaboration">Collaboration intellectuelle principale</div>
+  <h1 data-fr="Victor Waknine, ou la constance d'une question"
+      data-en="Victor Waknine, or the constancy of a question">Victor Waknine, ou la constance d'une question</h1>
+  <p class="chapeau"
+     data-fr="En septembre 2008, un consultant écrit à l'Élysée pour proposer que l'on mesure le bien-être au travail comme on mesure le résultat opérationnel. Il n'appartient à aucun parti, à aucune institution, à aucune école. L'indicateur qu'il décrivait dans cette lettre existe aujourd'hui, porte le nom qu'il lui avait donné, et s'appuie sur un observatoire de données sociales qui se compte en centaines de millions. Voici la trajectoire, et les pièces qui la datent."
+     data-en="In September 2008, a consultant writes to the Élysée to propose measuring well-being at work as one measures operating profit. He belongs to no party, no institution, no school. The indicator he described in that letter exists today, bears the name he gave it, and rests on an observatory of social data numbering in the hundreds of millions. Here is the trajectory, and the documents that date it.">En septembre 2008, un consultant écrit à l'Élysée pour proposer que l'on mesure le bien-être au travail comme on mesure le résultat opérationnel. Il n'appartient à aucun parti, à aucune institution, à aucune école. L'indicateur qu'il décrivait dans cette lettre existe aujourd'hui, porte le nom qu'il lui avait donné, et s'appuie sur un observatoire de données sociales qui se compte en centaines de millions. Voici la trajectoire, et les pièces qui la datent.</p>
 </header>
 
 <!-- ============ LE POINT DE DÉPART ============ -->
 <section class="bloc">
-  <div class="bloc-titre">Le point de départ</div>
-  <p>Victor Waknine est ingénieur, diplômé de Polytech Lille. Il a exercé des responsabilités de
-  direction générale pendant environ vingt-cinq ans dans des entreprises publiques et privées — Orange,
-  le groupe Matra-Lagardère, puis Lehman Brothers où il fut senior advisor EMEA pour les investissements
-  en finance responsable. Il fonde Mozart Consulting en 2004. Rien, dans ce parcours d'ingénieur et de
-  dirigeant, ne le destinait à passer les vingt années suivantes sur la question du mal-être au
-  travail.</p>
-  <p>Il raconte lui-même le basculement. En septembre 2008, il entend à la télévision un ancien binôme
-  de sa vie professionnelle, devenu dirigeant d'un grand groupe de télécommunications, répondre à une
-  question sur les suicides dans son entreprise que ce sujet relève des ressources humaines — lui-même
-  étant, expliquait-il, payé pour faire de la finance, de l'innovation et de la stratégie. Waknine
-  décrit un choc. Il réoriente alors le cabinet qu'il avait fondé en 2004 vers une seule question :
-  comment rendre le désengagement visible à ceux qui ont le pouvoir d'y remédier.</p>
-  <p>Ce qui frappe, dans ce qui suit, c'est la rapidité. Le choc est de septembre 2008. La lettre à
-  l'Élysée est du 22 du même mois.</p>
+  <div class="bloc-titre"
+       data-fr="Le point de départ"
+       data-en="The starting point">Le point de départ</div>
+  <p data-fr="Victor Waknine est ingénieur, diplômé de Polytech Lille. Il a exercé des responsabilités de direction générale pendant environ vingt-cinq ans dans des entreprises publiques et privées — Orange, le groupe Matra-Lagardère, puis Lehman Brothers où il fut senior advisor EMEA pour les investissements en finance responsable. Il fonde Mozart Consulting en 2004. Rien, dans ce parcours d'ingénieur et de dirigeant, ne le destinait à passer les vingt années suivantes sur la question du mal-être au travail."
+     data-en="Victor Waknine is an engineer, a graduate of Polytech Lille. He held general-management positions for some twenty-five years in public and private companies — Orange, the Matra-Lagardère group, then Lehman Brothers, where he was senior advisor EMEA for responsible-finance investments. He founded Mozart Consulting in 2004. Nothing in that career as an engineer and executive destined him to spend the following twenty years on the question of workplace suffering.">Victor Waknine est ingénieur, diplômé de Polytech Lille. Il a exercé des responsabilités de direction générale pendant environ vingt-cinq ans dans des entreprises publiques et privées — Orange, le groupe Matra-Lagardère, puis Lehman Brothers où il fut senior advisor EMEA pour les investissements en finance responsable. Il fonde Mozart Consulting en 2004. Rien, dans ce parcours d'ingénieur et de dirigeant, ne le destinait à passer les vingt années suivantes sur la question du mal-être au travail.</p>
+  <p data-fr="Il raconte lui-même le basculement. En septembre 2008, il entend à la télévision un ancien binôme de sa vie professionnelle, devenu dirigeant d'un grand groupe de télécommunications, répondre à une question sur les suicides dans son entreprise que ce sujet relève des ressources humaines — lui-même étant, expliquait-il, payé pour faire de la finance, de l'innovation et de la stratégie. Waknine décrit un choc. Il réoriente alors le cabinet qu'il avait fondé en 2004 vers une seule question : comment rendre le désengagement visible à ceux qui ont le pouvoir d'y remédier."
+     data-en="He himself tells the story of the turning point. In September 2008, he hears on television a former counterpart from his professional life, now head of a major telecommunications group, answer a question about the suicides in his company by saying that the matter fell under human resources — he himself, he explained, being paid to do finance, innovation and strategy. Waknine describes a shock. He then redirects the firm he had founded in 2004 towards a single question: how to make disengagement visible to those with the power to address it.">Il raconte lui-même le basculement. En septembre 2008, il entend à la télévision un ancien binôme de sa vie professionnelle, devenu dirigeant d'un grand groupe de télécommunications, répondre à une question sur les suicides dans son entreprise que ce sujet relève des ressources humaines — lui-même étant, expliquait-il, payé pour faire de la finance, de l'innovation et de la stratégie. Waknine décrit un choc. Il réoriente alors le cabinet qu'il avait fondé en 2004 vers une seule question : comment rendre le désengagement visible à ceux qui ont le pouvoir d'y remédier.</p>
+  <p data-fr="Ce qui frappe, dans ce qui suit, c'est la rapidité. Le choc est de septembre 2008. La lettre à l'Élysée est du 22 du même mois."
+     data-en="What strikes one about what follows is the speed. The shock is from September 2008. The letter to the Élysée is dated the 22nd of the same month.">Ce qui frappe, dans ce qui suit, c'est la rapidité. Le choc est de septembre 2008. La lettre à l'Élysée est du 22 du même mois.</p>
 </section>
 
 <!-- ============ LES PIÈCES ============ -->
 <section class="bloc">
-  <div class="bloc-titre">Quatre pièces, 2008-2009</div>
-  <p>Ces quatre documents, conservés dans mes archives de travail, permettent de dater précisément la
-  naissance de l'IBET et la manière dont son concepteur a choisi de le porter. Je les présente ici pour
-  ce qu'ils sont, sans les reproduire : ils appartiennent à leur auteur.</p>
+  <div class="bloc-titre"
+       data-fr="Quatre pièces, 2008-2009"
+       data-en="Four documents, 2008-2009">Quatre pièces, 2008-2009</div>
+  <p data-fr="Ces quatre documents, conservés dans mes archives de travail, permettent de dater précisément la naissance de l'IBET et la manière dont son concepteur a choisi de le porter. Je les présente ici pour ce qu'ils sont, sans les reproduire : ils appartiennent à leur auteur."
+     data-en="These four documents, kept in my working archives, make it possible to date precisely the birth of the IBET and the way its designer chose to carry it. I present them here for what they are, without reproducing them: they belong to their author.">Ces quatre documents, conservés dans mes archives de travail, permettent de dater précisément la naissance de l'IBET et la manière dont son concepteur a choisi de le porter. Je les présente ici pour ce qu'ils sont, sans les reproduire : ils appartiennent à leur auteur.</p>
 
   <div class="piece">
-    <div class="piece-date">22 septembre 2008</div>
-    <h3>Lettre à la Présidence de la République</h3>
-    <p class="piece-nature">Courrier de Victor Waknine, gérant de Mozart Consulting, adressé à l'Élysée
-    sous le titre « Travailler mieux pour vivre mieux© — Concevoir les indicateurs du bien-être au
-    travail ».</p>
-    <p>C'est l'acte de naissance du concept, et le document le plus saisissant du lot. Tout y est déjà.
-    L'argument économique d'abord : les jours payés non travaillés représentent alors, selon le ministre
-    du travail cité par la presse, un coût de soixante milliards d'euros par an — davantage que le
-    déficit budgétaire de la France. Les quatre questions de la reconnaissance ensuite, qui deviendront
-    la colonne vertébrale de la méthode : notre employeur nous connaît-il ; notre expertise est-elle
-    reconnue dans les faits ; notre engagement est-il reconnu ; quelle est réellement notre contribution
-    à la performance globale, et comment est-elle mesurée. Le diagnostic enfin : les systèmes fondés sur
-    l'individualisation des tâches et l'autonomie font obstacle à la prise en compte globale de la
-    personne, et créent un décalage entre le perçu et le vécu.</p>
-    <p>La lettre pose surtout la stratégie qui ne variera plus : les seuls acteurs capables de modifier
-    le cours des choses ne sont ni les victimes ni leurs témoins, mais les actionnaires et les
-    dirigeants — et ceux-là n'entendent qu'une grille de lecture, l'économie. D'où la nécessité d'un
-    indicateur. Le sigle apparaît en toutes lettres dans le texte : IBET, Indicateur du Bien Être au
-    Travail. Et déjà la formule qui deviendra sa signature.</p>
-    <div class="citation">Quand les actionnaires et investisseurs financiers admettront que l'EBIT
-    c'est bien, mais que l'IBET c'est mieux, notre société aura progressé dans ce qui est son essence
-    même : le lien social.
+    <div class="piece-date"
+         data-fr="22 septembre 2008"
+         data-en="22 September 2008">22 septembre 2008</div>
+    <h3 data-fr="Lettre à la Présidence de la République"
+        data-en="Letter to the Presidency of the Republic">Lettre à la Présidence de la République</h3>
+    <p class="piece-nature"
+       data-fr="Courrier de Victor Waknine, gérant de Mozart Consulting, adressé à l'Élysée sous le titre « Travailler mieux pour vivre mieux© — Concevoir les indicateurs du bien-être au travail »."
+       data-en="Letter from Victor Waknine, managing director of Mozart Consulting, addressed to the Élysée under the title “Travailler mieux pour vivre mieux© — Concevoir les indicateurs du bien-être au travail” (“Working better to live better© — Designing indicators of well-being at work”).">Courrier de Victor Waknine, gérant de Mozart Consulting, adressé à l'Élysée sous le titre « Travailler mieux pour vivre mieux© — Concevoir les indicateurs du bien-être au travail ».</p>
+    <p data-fr="C'est l'acte de naissance du concept, et le document le plus saisissant du lot. Tout y est déjà. L'argument économique d'abord : les jours payés non travaillés représentent alors, selon le ministre du travail cité par la presse, un coût de soixante milliards d'euros par an — davantage que le déficit budgétaire de la France. Les quatre questions de la reconnaissance ensuite, qui deviendront la colonne vertébrale de la méthode : notre employeur nous connaît-il ; notre expertise est-elle reconnue dans les faits ; notre engagement est-il reconnu ; quelle est réellement notre contribution à la performance globale, et comment est-elle mesurée. Le diagnostic enfin : les systèmes fondés sur l'individualisation des tâches et l'autonomie font obstacle à la prise en compte globale de la personne, et créent un décalage entre le perçu et le vécu."
+       data-en="This is the birth certificate of the concept, and the most striking document of the four. Everything is already there. The economic argument first: paid but non-worked days then represented, according to the labour minister quoted in the press, a cost of sixty billion euros a year — more than France's budget deficit. Then the four questions of recognition, which will become the spine of the method: does our employer know us; is our expertise recognised in practice; is our engagement recognised; what really is our contribution to overall performance, and how is it measured. Finally the diagnosis: systems founded on the individualisation of tasks and on autonomy stand in the way of a holistic view of the person, and create a gap between the perceived and the lived.">C'est l'acte de naissance du concept, et le document le plus saisissant du lot. Tout y est déjà. L'argument économique d'abord : les jours payés non travaillés représentent alors, selon le ministre du travail cité par la presse, un coût de soixante milliards d'euros par an — davantage que le déficit budgétaire de la France. Les quatre questions de la reconnaissance ensuite, qui deviendront la colonne vertébrale de la méthode : notre employeur nous connaît-il ; notre expertise est-elle reconnue dans les faits ; notre engagement est-il reconnu ; quelle est réellement notre contribution à la performance globale, et comment est-elle mesurée. Le diagnostic enfin : les systèmes fondés sur l'individualisation des tâches et l'autonomie font obstacle à la prise en compte globale de la personne, et créent un décalage entre le perçu et le vécu.</p>
+    <p data-fr="La lettre pose surtout la stratégie qui ne variera plus : les seuls acteurs capables de modifier le cours des choses ne sont ni les victimes ni leurs témoins, mais les actionnaires et les dirigeants — et ceux-là n'entendent qu'une grille de lecture, l'économie. D'où la nécessité d'un indicateur. Le sigle apparaît en toutes lettres dans le texte : IBET, Indicateur du Bien Être au Travail. Et déjà la formule qui deviendra sa signature."
+       data-en="Above all, the letter sets out the strategy that will not change: the only actors able to alter the course of things are neither the victims nor their witnesses, but shareholders and executives — and those hear only one framework, economics. Hence the need for an indicator. The acronym appears in full in the text: IBET, Indicateur du Bien Être au Travail (Well-being at Work Indicator). And already the formula that will become his signature.">La lettre pose surtout la stratégie qui ne variera plus : les seuls acteurs capables de modifier le cours des choses ne sont ni les victimes ni leurs témoins, mais les actionnaires et les dirigeants — et ceux-là n'entendent qu'une grille de lecture, l'économie. D'où la nécessité d'un indicateur. Le sigle apparaît en toutes lettres dans le texte : IBET, Indicateur du Bien Être au Travail. Et déjà la formule qui deviendra sa signature.</p>
+    <div class="citation"
+         data-fr="Quand les actionnaires et investisseurs financiers admettront que l'EBIT c'est bien, mais que l'IBET c'est mieux, notre société aura progressé dans ce qui est son essence même : le lien social.&lt;span class=&quot;src&quot;&gt;Lettre à l'Élysée, 22 septembre 2008&lt;/span&gt;"
+         data-en="When shareholders and financial investors acknowledge that the EBIT is fine, but that the IBET is better, our society will have advanced in what is its very essence: the social bond.&lt;span class=&quot;src&quot;&gt;Letter to the Élysée, 22 September 2008&lt;/span&gt;">Quand les actionnaires et investisseurs financiers admettront que l'EBIT c'est bien, mais que l'IBET c'est mieux, notre société aura progressé dans ce qui est son essence même : le lien social.
     <span class="src">Lettre à l'Élysée, 22 septembre 2008</span></div>
   </div>
 
   <div class="piece">
-    <div class="piece-date">Octobre 2008 et mai 2009</div>
-    <h3>Les réponses de la Présidence</h3>
-    <p class="piece-nature">Deux courriers de la Présidence de la République, signés du chef de cabinet.</p>
-    <p>Le premier, daté du 2 octobre 2008, accuse réception. Le second, du 5 mai 2009, répond sur le
-    fond : il indique que la suggestion de créer un indicateur du bien-être au travail a retenu
-    l'attention, et signale l'installation, le 30 avril précédent, du Conseil d'orientation sur les
-    conditions de travail. On ne peut évidemment pas conclure d'un tel courrier que la démarche de
-    Waknine ait pesé sur cette décision. Ce qu'il établit, en revanche, est plus modeste et plus sûr :
-    en 2008-2009, un praticien isolé a porté cette question au plus haut niveau de l'État, et sa
-    proposition a été lue.</p>
+    <div class="piece-date"
+         data-fr="Octobre 2008 et mai 2009"
+         data-en="October 2008 and May 2009">Octobre 2008 et mai 2009</div>
+    <h3 data-fr="Les réponses de la Présidence"
+        data-en="The Presidency's replies">Les réponses de la Présidence</h3>
+    <p class="piece-nature"
+       data-fr="Deux courriers de la Présidence de la République, signés du chef de cabinet."
+       data-en="Two letters from the Presidency of the Republic, signed by the chief of staff.">Deux courriers de la Présidence de la République, signés du chef de cabinet.</p>
+    <p data-fr="Le premier, daté du 2 octobre 2008, accuse réception. Le second, du 5 mai 2009, répond sur le fond : il indique que la suggestion de créer un indicateur du bien-être au travail a retenu l'attention, et signale l'installation, le 30 avril précédent, du Conseil d'orientation sur les conditions de travail. On ne peut évidemment pas conclure d'un tel courrier que la démarche de Waknine ait pesé sur cette décision. Ce qu'il établit, en revanche, est plus modeste et plus sûr : en 2008-2009, un praticien isolé a porté cette question au plus haut niveau de l'État, et sa proposition a été lue."
+       data-en="The first, dated 2 October 2008, acknowledges receipt. The second, from 5 May 2009, addresses the substance: it states that the suggestion of creating a well-being-at-work indicator has drawn attention, and notes the installation, on the previous 30 April, of the Working Conditions Orientation Council. One cannot of course conclude from such a letter that Waknine's initiative bore on that decision. What it does establish, more modestly and more surely, is that in 2008-2009 an isolated practitioner carried this question to the highest level of the State, and his proposal was read.">Le premier, daté du 2 octobre 2008, accuse réception. Le second, du 5 mai 2009, répond sur le fond : il indique que la suggestion de créer un indicateur du bien-être au travail a retenu l'attention, et signale l'installation, le 30 avril précédent, du Conseil d'orientation sur les conditions de travail. On ne peut évidemment pas conclure d'un tel courrier que la démarche de Waknine ait pesé sur cette décision. Ce qu'il établit, en revanche, est plus modeste et plus sûr : en 2008-2009, un praticien isolé a porté cette question au plus haut niveau de l'État, et sa proposition a été lue.</p>
   </div>
 
   <div class="piece">
-    <div class="piece-date">3 novembre 2009</div>
-    <h3>Audition par la commission de réflexion sur la souffrance au travail</h3>
-    <p class="piece-nature">Commission composée de députés UMP et Nouveau Centre et de personnalités
-    qualifiées, co-présidée par Jean-François Copé et Pierre Méhaignerie, co-rapporteurs Jean-Frédéric
-    Poisson et Olivier Jardé.</p>
-    <p>Waknine y est entendu sur sa méthodologie « Travailler mieux pour vivre mieux© » et y dépose une
-    documentation complète. Il figure dans le rapport final au titre des personnes auditionnées, à la
-    page 57 : « Monsieur Victor WAKNINE, Gérant de la société de conseil Mozart Consulting ». Précisons
-    la nature exacte de cette participation, qui est celle d'un expert entendu et non d'un contributeur
-    engagé : le rapport comporte par ailleurs des contributions signées de membres de la commission,
-    parmi lesquelles il ne figure pas.</p>
-    <p>Le rapport lui-même mérite d'être lu aujourd'hui encore. Il refuse en préambule l'amalgame entre
-    souffrance et travail — « le travail, ce n'est pas la souffrance », et l'absence de travail est
-    souvent l'une des grandes causes de souffrance —, il relève que l'absence d'indicateurs fiables est
-    en elle-même problématique, et il constate le retard français en matière de prise de conscience.
-    Trois constats qui rejoignaient exactement la proposition entendue en novembre.</p>
+    <div class="piece-date"
+         data-fr="3 novembre 2009"
+         data-en="3 November 2009">3 novembre 2009</div>
+    <h3 data-fr="Audition par la commission de réflexion sur la souffrance au travail"
+        data-en="Hearing before the Commission of Inquiry on Workplace Suffering">Audition par la commission de réflexion sur la souffrance au travail</h3>
+    <p class="piece-nature"
+       data-fr="Commission composée de députés UMP et Nouveau Centre et de personnalités qualifiées, co-présidée par Jean-François Copé et Pierre Méhaignerie, co-rapporteurs Jean-Frédéric Poisson et Olivier Jardé."
+       data-en="Commission composed of UMP and Nouveau Centre members of parliament and qualified public figures, co-chaired by Jean-François Copé and Pierre Méhaignerie, co-rapporteurs Jean-Frédéric Poisson and Olivier Jardé.">Commission composée de députés UMP et Nouveau Centre et de personnalités qualifiées, co-présidée par Jean-François Copé et Pierre Méhaignerie, co-rapporteurs Jean-Frédéric Poisson et Olivier Jardé.</p>
+    <p data-fr="Waknine y est entendu sur sa méthodologie « Travailler mieux pour vivre mieux© » et y dépose une documentation complète. Il figure dans le rapport final au titre des personnes auditionnées, à la page 57 : « Monsieur Victor WAKNINE, Gérant de la société de conseil Mozart Consulting ». Précisons la nature exacte de cette participation, qui est celle d'un expert entendu et non d'un contributeur engagé : le rapport comporte par ailleurs des contributions signées de membres de la commission, parmi lesquelles il ne figure pas."
+       data-en="Waknine is heard there on his “Travailler mieux pour vivre mieux©” methodology and files a complete documentation with the commission. He appears in the final report among the persons heard, on page 57: “Monsieur Victor WAKNINE, Gérant de la société de conseil Mozart Consulting”. Let us specify the exact nature of this participation, which is that of an expert heard and not of a committed contributor: the report also contains signed contributions from members of the commission, among whom he does not appear.">Waknine y est entendu sur sa méthodologie « Travailler mieux pour vivre mieux© » et y dépose une documentation complète. Il figure dans le rapport final au titre des personnes auditionnées, à la page 57 : « Monsieur Victor WAKNINE, Gérant de la société de conseil Mozart Consulting ». Précisons la nature exacte de cette participation, qui est celle d'un expert entendu et non d'un contributeur engagé : le rapport comporte par ailleurs des contributions signées de membres de la commission, parmi lesquelles il ne figure pas.</p>
+    <p data-fr="Le rapport lui-même mérite d'être lu aujourd'hui encore. Il refuse en préambule l'amalgame entre souffrance et travail — « le travail, ce n'est pas la souffrance », et l'absence de travail est souvent l'une des grandes causes de souffrance —, il relève que l'absence d'indicateurs fiables est en elle-même problématique, et il constate le retard français en matière de prise de conscience. Trois constats qui rejoignaient exactement la proposition entendue en novembre."
+       data-en="The report itself deserves to be read even today. It refuses at the outset the conflation of suffering and work — “work is not suffering”, and the absence of work is often one of the great causes of suffering —, notes that the absence of reliable indicators is itself problematic, and observes the French lag in awareness. Three findings that coincided exactly with the proposal heard in November.">Le rapport lui-même mérite d'être lu aujourd'hui encore. Il refuse en préambule l'amalgame entre souffrance et travail — « le travail, ce n'est pas la souffrance », et l'absence de travail est souvent l'une des grandes causes de souffrance —, il relève que l'absence d'indicateurs fiables est en elle-même problématique, et il constate le retard français en matière de prise de conscience. Trois constats qui rejoignaient exactement la proposition entendue en novembre.</p>
   </div>
 
   <div class="piece">
-    <div class="piece-date">18 décembre 2009</div>
-    <h3>Communiqué de Mozart Consulting sur l'usage de sa marque</h3>
-    <p class="piece-nature">Communiqué de presse répondant au porte-parole du Parti socialiste, Alain
-    Vidalies, auteur d'un communiqué du 15 décembre 2009.</p>
-    <p>Le Parti socialiste présente alors ses conclusions sur la souffrance au travail sous un intitulé
-    identique au slogan de Mozart Consulting, déposé à l'INPI le 17 avril 2008. Waknine répond par un
-    communiqué qui demande la cessation de cet usage. Ce n'est pas une prise de position politique :
-    c'est une défense de propriété intellectuelle, et l'argument central en dit long sur l'homme. Son
-    activité de conseil et de formation en prévention des risques professionnels, écrit-il, suppose une
-    habilitation subordonnée à une condition — exercer en toute indépendance vis-à-vis des groupes de
-    pression, des partis politiques, des organisations syndicales et religieuses.</p>
-    <p>Mis bout à bout, ces quatre documents dessinent moins un engagement qu'une méthode. En quinze
-    mois, le même homme écrit au Président de la République, est auditionné par une commission de la
-    majorité d'alors, et demande à l'opposition de cesser d'utiliser son concept. Il frappe à toutes les
-    portes et n'entre dans aucune maison.</p>
+    <div class="piece-date"
+         data-fr="18 décembre 2009"
+         data-en="18 December 2009">18 décembre 2009</div>
+    <h3 data-fr="Communiqué de Mozart Consulting sur l'usage de sa marque"
+        data-en="Mozart Consulting's press release on the use of its trademark">Communiqué de Mozart Consulting sur l'usage de sa marque</h3>
+    <p class="piece-nature"
+       data-fr="Communiqué de presse répondant au porte-parole du Parti socialiste, Alain Vidalies, auteur d'un communiqué du 15 décembre 2009."
+       data-en="Press release responding to the spokesperson of the Socialist Party, Alain Vidalies, author of a communiqué of 15 December 2009.">Communiqué de presse répondant au porte-parole du Parti socialiste, Alain Vidalies, auteur d'un communiqué du 15 décembre 2009.</p>
+    <p data-fr="Le Parti socialiste présente alors ses conclusions sur la souffrance au travail sous un intitulé identique au slogan de Mozart Consulting, déposé à l'INPI le 17 avril 2008. Waknine répond par un communiqué qui demande la cessation de cet usage. Ce n'est pas une prise de position politique : c'est une défense de propriété intellectuelle, et l'argument central en dit long sur l'homme. Son activité de conseil et de formation en prévention des risques professionnels, écrit-il, suppose une habilitation subordonnée à une condition — exercer en toute indépendance vis-à-vis des groupes de pression, des partis politiques, des organisations syndicales et religieuses."
+       data-en="The Socialist Party then presents its conclusions on workplace suffering under a heading identical to Mozart Consulting's slogan, filed with the INPI on 17 April 2008. Waknine responds with a communiqué requesting that this use cease. It is not a political stance: it is a defence of intellectual property, and the central argument speaks volumes about the man. His consulting and training work in the prevention of occupational risks, he writes, presupposes an accreditation conditional on a single requirement — practising in full independence from pressure groups, political parties, trade unions and religious organisations.">Le Parti socialiste présente alors ses conclusions sur la souffrance au travail sous un intitulé identique au slogan de Mozart Consulting, déposé à l'INPI le 17 avril 2008. Waknine répond par un communiqué qui demande la cessation de cet usage. Ce n'est pas une prise de position politique : c'est une défense de propriété intellectuelle, et l'argument central en dit long sur l'homme. Son activité de conseil et de formation en prévention des risques professionnels, écrit-il, suppose une habilitation subordonnée à une condition — exercer en toute indépendance vis-à-vis des groupes de pression, des partis politiques, des organisations syndicales et religieuses.</p>
+    <p data-fr="Mis bout à bout, ces quatre documents dessinent moins un engagement qu'une méthode. En quinze mois, le même homme écrit au Président de la République, est auditionné par une commission de la majorité d'alors, et demande à l'opposition de cesser d'utiliser son concept. Il frappe à toutes les portes et n'entre dans aucune maison."
+       data-en="Taken together, these four documents sketch not a political engagement but a method. In fifteen months, the same man writes to the President of the Republic, is heard by a commission of the then-majority, and asks the opposition to stop using his concept. He knocks on every door and enters no house.">Mis bout à bout, ces quatre documents dessinent moins un engagement qu'une méthode. En quinze mois, le même homme écrit au Président de la République, est auditionné par une commission de la majorité d'alors, et demande à l'opposition de cesser d'utiliser son concept. Il frappe à toutes les portes et n'entre dans aucune maison.</p>
   </div>
 </section>
 
 <!-- ============ CE QU'IL EN EST ADVENU ============ -->
 <section class="bloc">
-  <div class="bloc-titre">Ce qu'il en est advenu</div>
-  <p>L'indicateur décrit dans la lettre de 2008 a été construit. Il s'appelle IBET©, il est déposé, et
-  il repose sur une équation simple : l'indice d'engagement additionné aux taux de désengagement égale
-  un. Il se calcule sans questionnaire, à partir de données sociales existantes, ce qui le distingue des
-  baromètres déclaratifs. Un point d'indice équivaut à un pour cent de la masse salariale — c'est cette
-  conversion en euros qui rend le désengagement visible dans la seule langue que Waknine jugeait, en
-  2008, susceptible d'être entendue.</p>
-  <p>La série nationale existe depuis 2009. Le partenariat avec le groupe APICIL date de 2011. Les
-  travaux ont été labellisés en innovation sociale par le pôle de compétitivité Finance Innovation, par
-  la médiation interentreprises et par l'Institut du Leadership de BPI Group. En 2020, Mozart Consulting
-  est devenu une filiale de Territoria Mutuelle, intégrée au groupe APICIL ; l'actionnariat du cabinet a
-  pu évoluer depuis. L'observatoire cumulait, à la date du dernier état public consulté, de l'ordre de
-  cent soixante millions de données sociales portant sur huit millions de salariés.</p>
-  <p>La question n'a pas vieilli. L'IBET national mesuré en 2024 s'établit à 0,72 — le niveau que
-  l'échelle qualifie d'épuisement. Bien après la lettre à l'Élysée, l'enjeu que Waknine annonçait
-  comme « social majeur des dix prochaines années » n'est pas derrière nous.</p>
+  <div class="bloc-titre"
+       data-fr="Ce qu'il en est advenu"
+       data-en="What came of it">Ce qu'il en est advenu</div>
+  <p data-fr="L'indicateur décrit dans la lettre de 2008 a été construit. Il s'appelle IBET©, il est déposé, et il repose sur une équation simple : l'indice d'engagement additionné aux taux de désengagement égale un. Il se calcule sans questionnaire, à partir de données sociales existantes, ce qui le distingue des baromètres déclaratifs. Un point d'indice équivaut à un pour cent de la masse salariale — c'est cette conversion en euros qui rend le désengagement visible dans la seule langue que Waknine jugeait, en 2008, susceptible d'être entendue."
+     data-en="The indicator described in the 2008 letter was built. It is called IBET©, it is registered, and it rests on a simple equation: the engagement index added to the rates of disengagement equals one. It is calculated without a questionnaire, from existing social data, which distinguishes it from declarative barometers. One index point equals one percent of the wage bill — this conversion into euros is what makes disengagement visible in the only language Waknine judged, in 2008, likely to be heard.">L'indicateur décrit dans la lettre de 2008 a été construit. Il s'appelle IBET©, il est déposé, et il repose sur une équation simple : l'indice d'engagement additionné aux taux de désengagement égale un. Il se calcule sans questionnaire, à partir de données sociales existantes, ce qui le distingue des baromètres déclaratifs. Un point d'indice équivaut à un pour cent de la masse salariale — c'est cette conversion en euros qui rend le désengagement visible dans la seule langue que Waknine jugeait, en 2008, susceptible d'être entendue.</p>
+  <p data-fr="La série nationale existe depuis 2009. Le partenariat avec le groupe APICIL date de 2011. Les travaux ont été labellisés en innovation sociale par le pôle de compétitivité Finance Innovation, par la médiation interentreprises et par l'Institut du Leadership de BPI Group. En 2020, Mozart Consulting est devenu une filiale de Territoria Mutuelle, intégrée au groupe APICIL ; l'actionnariat du cabinet a pu évoluer depuis. L'observatoire cumulait, à la date du dernier état public consulté, de l'ordre de cent soixante millions de données sociales portant sur huit millions de salariés."
+     data-en="The national series exists since 2009. The partnership with the APICIL group dates from 2011. The work has been certified as social innovation by the Finance Innovation competitiveness cluster, by inter-company mediation, and by the BPI Group Leadership Institute. In 2020, Mozart Consulting became a subsidiary of Territoria Mutuelle, part of the APICIL group; the firm's shareholding may have evolved since. The observatory had accumulated, as of the last public state consulted, on the order of one hundred and sixty million pieces of social data covering eight million employees.">La série nationale existe depuis 2009. Le partenariat avec le groupe APICIL date de 2011. Les travaux ont été labellisés en innovation sociale par le pôle de compétitivité Finance Innovation, par la médiation interentreprises et par l'Institut du Leadership de BPI Group. En 2020, Mozart Consulting est devenu une filiale de Territoria Mutuelle, intégrée au groupe APICIL ; l'actionnariat du cabinet a pu évoluer depuis. L'observatoire cumulait, à la date du dernier état public consulté, de l'ordre de cent soixante millions de données sociales portant sur huit millions de salariés.</p>
+  <p data-fr="La question n'a pas vieilli. L'IBET national mesuré en 2024 s'établit à 0,72 — le niveau que l'échelle qualifie d'épuisement. Bien après la lettre à l'Élysée, l'enjeu que Waknine annonçait comme « social majeur des dix prochaines années » n'est pas derrière nous."
+     data-en="The question has not aged. The national IBET measured in 2024 stands at 0.72 — the level the scale describes as exhaustion. Long after the letter to the Élysée, the issue Waknine announced as “a major social one for the next ten years” is not behind us.">La question n'a pas vieilli. L'IBET national mesuré en 2024 s'établit à 0,72 — le niveau que l'échelle qualifie d'épuisement. Bien après la lettre à l'Élysée, l'enjeu que Waknine annonçait comme « social majeur des dix prochaines années » n'est pas derrière nous.</p>
 </section>
 
 <!-- ============ LA RENCONTRE ============ -->
 <section class="bloc">
-  <div class="bloc-titre">La rencontre</div>
-  <p>Un ami commun l'avait invité à présenter son IBET à l'Association des anciens élèves de l'ESSEC
+  <div class="bloc-titre"
+       data-fr="La rencontre"
+       data-en="The encounter">La rencontre</div>
+  <p data-fr="Un ami commun l'avait invité à présenter son IBET à l'Association des anciens élèves de l'ESSEC un jour de 2010. Il parlait avec beaucoup de conviction, tout en projetant une slide parfaitement illisible. La scène m'avait amusé, mais le propos m'avait suffisamment interpellé pour que je l'invite à prendre un café. Nous nous sommes mis à discuter, et n'avons plus cessé depuis."
+     data-en="A mutual friend had invited him to present his IBET to the ESSEC alumni association one day in 2010. He spoke with great conviction, while projecting a perfectly unreadable slide. The scene had amused me, but what he was saying had drawn my attention enough that I invited him for a coffee. We started talking, and have not stopped since.">Un ami commun l'avait invité à présenter son IBET à l'Association des anciens élèves de l'ESSEC
   un jour de 2010. Il parlait avec beaucoup de conviction, tout en projetant une slide parfaitement
   illisible. La scène m'avait amusé, mais le propos m'avait suffisamment interpellé pour que je
   l'invite à prendre un café. Nous nous sommes mis à discuter, et n'avons plus cessé depuis.</p>
@@ -274,20 +279,18 @@
 
 <!-- ============ NOTRE COLLABORATION ============ -->
 <section class="encart">
-  <div class="encart-eyebrow">Notre collaboration</div>
-  <p>Je ne suis pas co-auteur de l'IBET. La marque, la méthode et les développements appartiennent à
-  Victor Waknine et à Mozart Consulting, et il serait malhonnête de laisser croire autre chose. Ce que
-  j'ai apporté relève d'un autre registre : un questionnement sur les fondements de la démarche — d'où
-  vient l'idée qu'un collectif produit autre chose que la somme de ses membres, ce que la psychologie de
-  la valorisation, l'anthropologie du don et l'histoire longue de la contrainte permettent d'en dire, et
-  à quelles conditions une mesure peut s'inscrire dans une vision élargie de la société sans devenir un
-  instrument de plus.</p>
-  <p>Nos deux trajectoires se sont rencontrées sur ce point précis : il cherchait à rendre le
-  désengagement mesurable, je cherchais à comprendre pourquoi les organisations le produisent. Aucun de
-  ces deux chemins ne suffit seul.</p>
+  <div class="encart-eyebrow"
+       data-fr="Notre collaboration"
+       data-en="Our collaboration">Notre collaboration</div>
+  <p data-fr="Je ne suis pas co-auteur de l'IBET. La marque, la méthode et les développements appartiennent à Victor Waknine et à Mozart Consulting, et il serait malhonnête de laisser croire autre chose. Ce que j'ai apporté relève d'un autre registre : un questionnement sur les fondements de la démarche — d'où vient l'idée qu'un collectif produit autre chose que la somme de ses membres, ce que la psychologie de la valorisation, l'anthropologie du don et l'histoire longue de la contrainte permettent d'en dire, et à quelles conditions une mesure peut s'inscrire dans une vision élargie de la société sans devenir un instrument de plus."
+     data-en="I am not a co-author of the IBET. The trademark, the method and the developments belong to Victor Waknine and Mozart Consulting, and it would be dishonest to suggest otherwise. What I have brought is of another register: a questioning of the foundations of the approach — where the idea comes from that a collective produces something other than the sum of its members, what the psychology of valorisation, the anthropology of the gift and the long history of constraint make it possible to say about it, and under what conditions a measure can inscribe itself in a broader vision of society without becoming yet another instrument.">Je ne suis pas co-auteur de l'IBET. La marque, la méthode et les développements appartiennent à Victor Waknine et à Mozart Consulting, et il serait malhonnête de laisser croire autre chose. Ce que j'ai apporté relève d'un autre registre : un questionnement sur les fondements de la démarche — d'où vient l'idée qu'un collectif produit autre chose que la somme de ses membres, ce que la psychologie de la valorisation, l'anthropologie du don et l'histoire longue de la contrainte permettent d'en dire, et à quelles conditions une mesure peut s'inscrire dans une vision élargie de la société sans devenir un instrument de plus.</p>
+  <p data-fr="Nos deux trajectoires se sont rencontrées sur ce point précis : il cherchait à rendre le désengagement mesurable, je cherchais à comprendre pourquoi les organisations le produisent. Aucun de ces deux chemins ne suffit seul."
+     data-en="Our two trajectories met on this precise point: he was seeking to make disengagement measurable, I was seeking to understand why organisations produce it. Neither of these two paths suffices on its own.">Nos deux trajectoires se sont rencontrées sur ce point précis : il cherchait à rendre le désengagement mesurable, je cherchais à comprendre pourquoi les organisations le produisent. Aucun de ces deux chemins ne suffit seul.</p>
 </section>
 
-<p class="colophon">Les articles et entretiens de Victor Waknine sont
+<p class="colophon"
+   data-fr="Les articles et entretiens de Victor Waknine sont &lt;a href=&quot;waknine-textes.html&quot;&gt;mis à disposition sur ce site avec son accord&lt;/a&gt;, en lecture directe et en téléchargement. La démarche IBET est par ailleurs présentée sur le &lt;a href=&quot;index.html#ibet&quot;&gt;site&lt;/a&gt;. Victor Waknine a signé la postface de &lt;em&gt;L'engagement collectif dans l'entreprise&lt;/em&gt; (L'Harmattan, 2019), et nous avons contribué tous deux à &lt;em&gt;Démocratie(s) en action&lt;/em&gt; — voir la page &lt;a href=&quot;contributions.html&quot;&gt;contributions&lt;/a&gt;."
+   data-en="Victor Waknine's articles and interviews are &lt;a href=&quot;waknine-textes.html&quot;&gt;made available on this site with his agreement&lt;/a&gt;, for direct reading and download. The IBET approach is also presented on the &lt;a href=&quot;index.html#ibet&quot;&gt;home page&lt;/a&gt;. Victor Waknine wrote the afterword to &lt;em&gt;L'engagement collectif dans l'entreprise&lt;/em&gt; (L'Harmattan, 2019), and we both contributed to &lt;em&gt;Démocratie(s) en action&lt;/em&gt; — see the &lt;a href=&quot;contributions.html&quot;&gt;contributions&lt;/a&gt; page.">Les articles et entretiens de Victor Waknine sont
 <a href="waknine-textes.html">mis à disposition sur ce site avec son accord</a>, en lecture
 directe et en téléchargement. La démarche IBET est par ailleurs présentée sur le
 <a href="index.html#ibet">site</a>. Victor Waknine a signé la postface de
@@ -295,20 +298,64 @@ directe et en téléchargement. La démarche IBET est par ailleurs présentée s
 à <em>Démocratie(s) en action</em> — voir la page
 <a href="contributions.html">contributions</a>.</p>
 
-<p class="note-droits">Les articles et entretiens de Victor Waknine sont reproduits sur ce site
+<p class="note-droits"
+   data-fr="Les articles et entretiens de Victor Waknine sont reproduits sur ce site avec son accord, sur une &lt;a href=&quot;waknine-textes.html&quot;&gt;page dédiée&lt;/a&gt;. Les autres documents évoqués ici appartiennent à d'autres auteurs — la Présidence de la République pour ses réponses, la commission de réflexion pour son rapport ; ceux-là sont cités et situés, non reproduits."
+   data-en="Victor Waknine's articles and interviews are reproduced on this site with his agreement, on a &lt;a href=&quot;waknine-textes.html&quot;&gt;dedicated page&lt;/a&gt;. The other documents mentioned here belong to other authors — the Presidency of the Republic for its replies, the Commission of Inquiry for its report; those are quoted and situated, not reproduced.">Les articles et entretiens de Victor Waknine sont reproduits sur ce site
 avec son accord, sur une <a href="waknine-textes.html">page dédiée</a>. Les autres documents évoqués
 ici appartiennent à d'autres auteurs — la Présidence de la République pour ses réponses, la commission
 de réflexion pour son rapport ; ceux-là sont cités et situés, non reproduits.</p>
 
 </div>
+
 <script>
+  // ---------- commutateur de langue ----------
+  function setLang(lang) {
+    if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-fr]').forEach(function(el) {
+      var t = el.getAttribute('data-' + lang);
+      if (t !== null) el.innerHTML = t;
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    document.querySelectorAll('a[href]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      if (!href) return;
+      if (/^(https?:|mailto:|tel:|#)/.test(href)) return;
+      var hashIdx = href.indexOf('#');
+      var hash = hashIdx >= 0 ? href.substring(hashIdx) : '';
+      var base = hashIdx >= 0 ? href.substring(0, hashIdx) : href;
+      base = base.split('?')[0];
+      a.setAttribute('href', (lang === 'en' ? base + '?lang=en' : base) + hash);
+    });
+    try {
+      var url = new URL(window.location.href);
+      if (lang === 'en') url.searchParams.set('lang', 'en');
+      else url.searchParams.delete('lang');
+      history.replaceState(null, '', url.toString());
+    } catch (e) { /* IE ou navigateur ancien : on ignore */ }
+  }
+
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var initial = params.get('lang') === 'en' ? 'en' : 'fr';
+    setLang(initial);
+  })();
+
+  document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+    btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
+  });
+
   if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    }), { threshold: 0.12 });
-    document.querySelectorAll('.bloc,.piece,.encart').forEach(c => io.observe(c));
+    var io = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.bloc,.piece,.encart').forEach(function(c) { io.observe(c); });
   } else {
-    document.querySelectorAll('.bloc,.piece,.encart').forEach(c => c.classList.add('visible'));
+    document.querySelectorAll('.bloc,.piece,.encart').forEach(function(c) { c.classList.add('visible'); });
   }
 </script>
 </body>
