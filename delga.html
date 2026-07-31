@@ -9,6 +9,8 @@
 <meta name="author" content="Bruno Brochenin">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://brunobrochenin.com/delga.html">
+<link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/delga.html">
+<link rel="alternate" hreflang="en" href="https://brunobrochenin.com/delga.html?lang=en">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Jacques Delga — une méthode d'ouverture du droit">
@@ -16,6 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://brunobrochenin.com/delga.html">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +41,22 @@
     line-height:1.65;
     font-size:17px;
   }
-  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;}
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;position:relative;}
+
+  /* ---------- commutateur de langue ---------- */
+  .lang-switch{
+    position:absolute;top:24px;right:24px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.08em;
+    z-index:10;
+  }
+  .lang-switch button{
+    background:none;border:none;color:var(--encre-douce);cursor:pointer;
+    padding:4px 6px;font:inherit;font-weight:500;letter-spacing:inherit;
+    transition:color .2s;
+  }
+  .lang-switch button.active{color:var(--sable);}
+  .lang-switch button:hover{color:var(--encre);}
+  .lang-switch .sep{color:var(--filet);}
 
   /* ---------- entête ---------- */
   header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
@@ -134,32 +152,46 @@
   @media (max-width:560px){
     header{padding-top:56px;}
     .bloc{margin-top:40px;}
+    .lang-switch{top:16px;right:16px;}
   }
 </style>
 </head>
 <body>
 <div class="page">
 
+<div class="lang-switch" role="group" aria-label="Language switcher">
+  <button data-lang="fr" class="active" aria-label="Français">FR</button>
+  <span class="sep" aria-hidden="true">/</span>
+  <button data-lang="en" aria-label="English">EN</button>
+</div>
+
 <header>
-  <a class="retour" href="index.html">← Retour à l'accueil</a>
-  <div class="surtitre">Une collaboration éditoriale</div>
-  <h1>Jacques Delga, ou le droit tenu ouvert</h1>
-  <p class="chapeau">Nous nous sommes rencontrés parce qu'un éditeur avait fait paraître nos deux
-  livres la même année et voulait nous voir en débattre. Nous avons découvert ce jour-là qu'il avait
-  été, vingt ans plus tôt, mon professeur de droit à l'ESSEC. De cette rencontre sont nés quatre
-  ouvrages communs — et l'occasion de dire ici ce que je dois à sa manière, singulière, de faire
-  travailler ensemble des gens que rien ne réunissait.</p>
+  <a class="retour" href="index.html"
+     data-fr="← Retour à l'accueil"
+     data-en="← Back to home">← Retour à l'accueil</a>
+  <div class="surtitre"
+       data-fr="Une collaboration éditoriale"
+       data-en="An editorial collaboration">Une collaboration éditoriale</div>
+  <h1 data-fr="Jacques Delga, ou le droit tenu ouvert"
+      data-en="Jacques Delga, or the law kept open">Jacques Delga, ou le droit tenu ouvert</h1>
+  <p class="chapeau"
+     data-fr="Nous nous sommes rencontrés parce qu'un éditeur avait fait paraître nos deux livres la même année et voulait nous voir en débattre. Nous avons découvert ce jour-là qu'il avait été, vingt ans plus tôt, mon professeur de droit à l'ESSEC. De cette rencontre sont nés quatre ouvrages communs — et l'occasion de dire ici ce que je dois à sa manière, singulière, de faire travailler ensemble des gens que rien ne réunissait."
+     data-en="We met because a publisher had brought out our two books the same year and wanted to see us debate. We discovered that day that he had been, twenty years earlier, my law professor at ESSEC. From that encounter four shared works were born — and the occasion to say here what I owe to his singular way of making people work together whom nothing had brought together.">Nous nous sommes rencontrés parce qu'un éditeur avait fait paraître nos deux livres la même année et voulait nous voir en débattre. Nous avons découvert ce jour-là qu'il avait été, vingt ans plus tôt, mon professeur de droit à l'ESSEC. De cette rencontre sont nés quatre ouvrages communs — et l'occasion de dire ici ce que je dois à sa manière, singulière, de faire travailler ensemble des gens que rien ne réunissait.</p>
 </header>
 
 <!-- ============ LA RENCONTRE ============ -->
 <section class="bloc">
-  <div class="bloc-titre">La rencontre</div>
-  <p>En 2010, les Éditions ESKA publient coup sur coup deux livres qui parlent, chacun à sa façon, du
+  <div class="bloc-titre"
+       data-fr="La rencontre"
+       data-en="The encounter">La rencontre</div>
+  <p data-fr="En 2010, les Éditions ESKA publient coup sur coup deux livres qui parlent, chacun à sa façon, du malaise des organisations : mon premier essai, &lt;em&gt;Où va l'entreprise ?&lt;/em&gt;, et un ouvrage collectif dirigé par un professeur de droit, &lt;em&gt;Souffrance au travail dans les grandes entreprises&lt;/em&gt;. L'éditeur, trouvant sans doute qu'ils se répondaient, organise dans ses locaux un débat entre les deux auteurs. C'est ainsi que j'ai fait la connaissance de Jacques Delga."
+     data-en="In 2010, Éditions ESKA published in quick succession two books that each spoke, in their own way, of the malaise of organisations: my first essay, &lt;em&gt;Où va l'entreprise ?&lt;/em&gt; (&lt;em&gt;Where is the corporate model going?&lt;/em&gt;), and a collective work coordinated by a law professor, &lt;em&gt;Souffrance au travail dans les grandes entreprises&lt;/em&gt; (&lt;em&gt;Workplace suffering in large companies&lt;/em&gt;). The publisher, no doubt finding that they answered each other, arranged a debate between the two authors on his premises. That is how I came to meet Jacques Delga.">En 2010, les Éditions ESKA publient coup sur coup deux livres qui parlent, chacun à sa façon, du
   malaise des organisations : mon premier essai, <em>Où va l'entreprise ?</em>, et un ouvrage
   collectif dirigé par un professeur de droit, <em>Souffrance au travail dans les grandes
   entreprises</em>. L'éditeur, trouvant sans doute qu'ils se répondaient, organise dans ses locaux un
   débat entre les deux auteurs. C'est ainsi que j'ai fait la connaissance de Jacques Delga.</p>
-  <p>La conversation a vite pris un tour singulier. À mesure qu'il parlait, quelque chose me revenait ;
+  <p data-fr="La conversation a vite pris un tour singulier. À mesure qu'il parlait, quelque chose me revenait ; à mesure que je parlais, quelque chose lui revenait aussi. Nous avons fini par comprendre que nous nous étions déjà connus : Jacques Delga avait été l'un de mes professeurs de droit à l'ESSEC, vingt ans auparavant. Nous ne nous étions pas reconnus — le temps avait fait son œuvre — mais la vieille relation de maître à élève était toujours là, sous la discussion entre pairs. Je crois que c'est de cet instant qu'est née l'envie de travailler ensemble."
+     data-en="The conversation quickly took a singular turn. As he spoke, something came back to me; as I spoke, something came back to him too. We eventually understood that we had already known one another: Jacques Delga had been one of my law professors at ESSEC, twenty years earlier. We had not recognised each other — time had done its work — but the old master-student relationship was still there, beneath the discussion between peers. I believe the desire to work together was born of that moment.">La conversation a vite pris un tour singulier. À mesure qu'il parlait, quelque chose me revenait ;
   à mesure que je parlais, quelque chose lui revenait aussi. Nous avons fini par comprendre que nous
   nous étions déjà connus : Jacques Delga avait été l'un de mes professeurs de droit à l'ESSEC, vingt
   ans auparavant. Nous ne nous étions pas reconnus — le temps avait fait son œuvre — mais la vieille
@@ -169,31 +201,39 @@
 
 <!-- ============ LA MÉTHODE ============ -->
 <section class="bloc">
-  <div class="bloc-titre">Une méthode : ouvrir le droit sur la société</div>
-  <p>Jacques Delga est professeur honoraire à l'ESSEC et avocat honoraire. Mais ce qui le définit, à
+  <div class="bloc-titre"
+       data-fr="Une méthode : ouvrir le droit sur la société"
+       data-en="A method: opening the law to society">Une méthode : ouvrir le droit sur la société</div>
+  <p data-fr="Jacques Delga est professeur honoraire à l'ESSEC et avocat honoraire. Mais ce qui le définit, à mes yeux, tient moins à ses titres qu'à une conviction : le droit ne peut pas se penser en vase clos. Une société qui change appelle un droit qui écoute, et un droit qui écoute doit d'abord tendre l'oreille à des voix qu'il n'a pas l'habitude d'entendre. C'est cette conviction, proprement démocratique, qui commande sa manière de faire des livres."
+     data-en="Jacques Delga is emeritus professor at ESSEC and honorary lawyer. But what defines him, in my eyes, has less to do with his titles than with a conviction: the law cannot be thought in a vacuum. A society that changes calls for a law that listens, and a law that listens must first lend its ear to voices it is not accustomed to hearing. It is this properly democratic conviction that governs his way of making books.">Jacques Delga est professeur honoraire à l'ESSEC et avocat honoraire. Mais ce qui le définit, à
   mes yeux, tient moins à ses titres qu'à une conviction : le droit ne peut pas se penser en vase clos.
   Une société qui change appelle un droit qui écoute, et un droit qui écoute doit d'abord tendre
   l'oreille à des voix qu'il n'a pas l'habitude d'entendre. C'est cette conviction, proprement
   démocratique, qui commande sa manière de faire des livres.</p>
-  <p>Car il ne dirige pas ses ouvrages collectifs comme on préside un colloque savant. Il réunit, autour
+  <p data-fr="Car il ne dirige pas ses ouvrages collectifs comme on préside un colloque savant. Il réunit, autour d'une question de société, des gens que tout sépare — universitaires et praticiens, hauts responsables et anonymes, spécialistes patentés et acteurs de terrain — et il leur laisse la liberté du titre comme du contenu. Chaque coauteur est responsable de son texte ; aucun cadre théorique imposé, aucune conclusion à réciter. Cette ouverture, presque sans filtre, est un risque assumé : elle expose le coordinateur à ce que son livre lui échappe. Elle suppose une confiance dont j'ai mesuré, avec le temps, la rareté."
+     data-en="For he does not conduct his collective works as one chairs an academic conference. He brings together, around a question of society, people whom everything separates — academics and practitioners, senior figures and unknowns, credentialed specialists and field actors — and leaves each free to choose the title as well as the content. Each coauthor is responsible for his own text; no theoretical framework imposed, no conclusion to recite. This openness, almost unfiltered, is a risk assumed: it exposes the coordinator to the possibility that his book may escape him. It presupposes a trust whose rarity, with time, I have come to measure.">Car il ne dirige pas ses ouvrages collectifs comme on préside un colloque savant. Il réunit, autour
   d'une question de société, des gens que tout sépare — universitaires et praticiens, hauts
   responsables et anonymes, spécialistes patentés et acteurs de terrain — et il leur laisse la liberté
   du titre comme du contenu. Chaque coauteur est responsable de son texte ; aucun cadre théorique
   imposé, aucune conclusion à réciter. Cette ouverture, presque sans filtre, est un risque assumé : elle
   expose le coordinateur à ce que son livre lui échappe. Elle suppose une confiance dont j'ai mesuré,
   avec le temps, la rareté.</p>
-  <p>Il faut le lire décrire lui-même sa démarche pour mesurer sa modestie. Le premier moteur, avoue-t-il,
+  <p data-fr="Il faut le lire décrire lui-même sa démarche pour mesurer sa modestie. Le premier moteur, avoue-t-il, est la curiosité. Il revendique de ne pas concurrencer la recherche universitaire — son groupe d'auteurs n'est, dit-il, « qu'un groupement de fait ». Il reconnaît sans détour ce qu'il ne sait pas faire : entreprenant un ouvrage où il fallait aussi des récits, il note que l'écriture d'un tel texte « nécessite des qualités que je ne possède pas », et se cantonne à l'analyse juridique. Cette franchise sur ses propres limites est, je crois, la condition secrète de son ouverture aux autres : qui se sait incomplet fait de la place."
+     data-en="One must read him describe his own approach to measure his modesty. The first engine, he admits, is curiosity. He claims not to compete with academic research — his group of authors, he says, is “no more than an informal grouping”. He acknowledges without detour what he does not know how to do: undertaking a book that also required narratives, he notes that writing such a text “requires qualities I do not possess”, and confines himself to legal analysis. This frankness about his own limits is, I believe, the secret condition of his openness to others: whoever knows himself incomplete makes room.">Il faut le lire décrire lui-même sa démarche pour mesurer sa modestie. Le premier moteur, avoue-t-il,
   est la curiosité. Il revendique de ne pas concurrencer la recherche universitaire — son groupe d'auteurs
   n'est, dit-il, « qu'un groupement de fait ». Il reconnaît sans détour ce qu'il ne sait pas faire :
   entreprenant un ouvrage où il fallait aussi des récits, il note que l'écriture d'un tel texte
   « nécessite des qualités que je ne possède pas », et se cantonne à l'analyse juridique. Cette franchise
   sur ses propres limites est, je crois, la condition secrète de son ouverture aux autres : qui se sait
   incomplet fait de la place.</p>
-  <div class="citation">La faiblesse d'un collectif d'auteurs libres — des portes qui se ferment, des
+  <div class="citation"
+       data-fr="La faiblesse d'un collectif d'auteurs libres — des portes qui se ferment, des témoignages rares — est, écrit-il en substance, « compensée par la personnalité de ceux qui ont été des acteurs de terrain, et par un mélange entre théorie et pratique ». Autrement dit : ce que la rigueur académique perd en protection, l'ouvrage le regagne en vérité vécue."
+       data-en="The weakness of a collective of free authors — doors that close, rare testimonies — is, he writes in substance, “compensated by the personality of those who have been field actors, and by a mixture of theory and practice”. In other words: what academic rigour loses in protection, the book gains back in lived truth.">La faiblesse d'un collectif d'auteurs libres — des portes qui se ferment, des
   témoignages rares — est, écrit-il en substance, « compensée par la personnalité de ceux qui ont été
   des acteurs de terrain, et par un mélange entre théorie et pratique ». Autrement dit : ce que la
   rigueur académique perd en protection, l'ouvrage le regagne en vérité vécue.</div>
-  <p>De livre en livre, une même équipe informelle se reforme — pas une société savante, pas une
+  <p data-fr="De livre en livre, une même équipe informelle se reforme — pas une société savante, pas une association, seulement des personnes qui se retrouvent parce qu'elles ont pris goût à cette liberté. J'ai eu la chance d'en être. Et lorsque la maladie a frappé certains coauteurs — la Covid a laissé des traces —, ses remerciements sont allés « aux présents comme aux absents, à ceux qui ont abandonné, à ceux qui sont encore à l'hôpital ». On juge un homme à ces phrases-là."
+     data-en="From book to book, the same informal team reassembles — not an academic society, not an association, only people who gather again because they have taken a taste for this freedom. I was fortunate to be part of it. And when illness struck some coauthors — Covid left its marks —, his acknowledgements went “to those present and those absent, to those who withdrew, to those still in hospital”. A man is judged by such sentences.">De livre en livre, une même équipe informelle se reforme — pas une société savante, pas une
   association, seulement des personnes qui se retrouvent parce qu'elles ont pris goût à cette liberté.
   J'ai eu la chance d'en être. Et lorsque la maladie a frappé certains coauteurs — la Covid a laissé des
   traces —, ses remerciements sont allés « aux présents comme aux absents, à ceux qui ont abandonné, à
@@ -202,8 +242,11 @@
 
 <!-- ============ LES QUATRE OUVRAGES ============ -->
 <section class="bloc">
-  <div class="bloc-titre">Quatre invitations, quatre déplacements</div>
-  <p>Quatre fois, Jacques Delga m'a confié un sujet dont je ne savais rien — et chaque fois, le sujet
+  <div class="bloc-titre"
+       data-fr="Quatre invitations, quatre déplacements"
+       data-en="Four invitations, four displacements">Quatre invitations, quatre déplacements</div>
+  <p data-fr="Quatre fois, Jacques Delga m'a confié un sujet dont je ne savais rien — et chaque fois, le sujet s'est révélé en cacher un autre : le mien. Ces quatre participations sont la meilleure illustration de sa méthode, puisqu'elles montrent ce qu'elle rend possible : qu'un consultant en organisation ait quelque chose à dire sur le terrorisme, la criminalité financière, la mort ou le libertinage, et que ce quelque chose finisse par éclairer, en retour, son propre domaine."
+     data-en="Four times, Jacques Delga entrusted me with a subject I knew nothing about — and each time, the subject turned out to conceal another: my own. These four participations are the best illustration of his method, since they show what it makes possible: that an organisational consultant should have something to say about terrorism, financial crime, death or libertinage, and that this something should end up shedding light, in return, on his own field.">Quatre fois, Jacques Delga m'a confié un sujet dont je ne savais rien — et chaque fois, le sujet
   s'est révélé en cacher un autre : le mien. Ces quatre participations sont la meilleure illustration de
   sa méthode, puisqu'elles montrent ce qu'elle rend possible : qu'un consultant en organisation ait
   quelque chose à dire sur le terrorisme, la criminalité financière, la mort ou le libertinage, et que
@@ -211,27 +254,38 @@
 
   <div class="ouvrage">
     <div class="ouvrage-annee">2015</div>
-    <h3>De l'équilibre de la terreur au terrorisme international</h3>
-    <p class="ouvrage-ref">dans <em>Penser et repenser le terrorisme</em> — MA Éditions, 2015.</p>
-    <p>Vingt-cinq contributions, et un éventail qui donne la mesure de la méthode : un colonel
+    <h3 data-fr="De l'équilibre de la terreur au terrorisme international"
+        data-en="From the balance of terror to international terrorism">De l'équilibre de la terreur au terrorisme international</h3>
+    <p class="ouvrage-ref"
+       data-fr="dans &lt;em&gt;Penser et repenser le terrorisme&lt;/em&gt; — MA Éditions, 2015."
+       data-en="in &lt;em&gt;Penser et repenser le terrorisme&lt;/em&gt; (&lt;em&gt;Rethinking terrorism&lt;/em&gt;) — MA Éditions, 2015.">dans <em>Penser et repenser le terrorisme</em> — MA Éditions, 2015.</p>
+    <p data-fr="Vingt-cinq contributions, et un éventail qui donne la mesure de la méthode : un colonel d'état-major de l'armée suisse, un ancien sous-directeur de la DST, un docteur en science politique, des neuropsychiatres et des psychologues sociaux, un professeur de l'École royale militaire de Bruxelles sur le coût économique d'une opération armée, un ancien détenu témoignant du prosélytisme en prison — et un troisième titre entier, « Terrorisme et sexualité », où se croisent le titulaire de la chaire Edgar Morin à l'ESSEC, un médecin sexologue, un chirurgien urologue et une animatrice de radio. Aucun cadre théorique commun ; chacun garde sa langue."
+       data-en="Twenty-five contributions, and a range that gives the measure of the method: a staff colonel of the Swiss army, a former deputy head of the DST, a doctor in political science, neuropsychiatrists and social psychologists, a professor from the Royal Military School of Brussels on the economic cost of an armed operation, a former detainee testifying to proselytism in prison — and a whole third part, “Terrorism and sexuality”, where the holder of the Edgar Morin chair at ESSEC, a sexologist, a urologist and a radio host cross paths. No common theoretical framework; each keeps his own language.">Vingt-cinq contributions, et un éventail qui donne la mesure de la méthode : un colonel
     d'état-major de l'armée suisse, un ancien sous-directeur de la DST, un docteur en science politique,
     des neuropsychiatres et des psychologues sociaux, un professeur de l'École royale militaire de
     Bruxelles sur le coût économique d'une opération armée, un ancien détenu témoignant du prosélytisme
     en prison — et un troisième titre entier, « Terrorisme et sexualité », où se croisent le titulaire de
     la chaire Edgar Morin à l'ESSEC, un médecin sexologue, un chirurgien urologue et une animatrice de
     radio. Aucun cadre théorique commun ; chacun garde sa langue.</p>
-    <p>Invité à traiter du terrorisme, j'ai fini par écrire sur la perte de sens : le terrorisme comme
+    <p data-fr="Invité à traiter du terrorisme, j'ai fini par écrire sur la perte de sens : le terrorisme comme symptôme d'une déstabilisation prolongée, dans une société dont le pouvoir a renoncé à produire du sens. Cette question m'a suivi, intacte, jusque dans des organisations infiniment plus paisibles."
+       data-en="Invited to address terrorism, I ended up writing about the loss of meaning: terrorism as the symptom of a prolonged destabilisation, in a society whose power has renounced the production of meaning. This question has followed me, intact, into infinitely more peaceful organisations.">Invité à traiter du terrorisme, j'ai fini par écrire sur la perte de sens : le terrorisme comme
     symptôme d'une déstabilisation prolongée, dans une société dont le pouvoir a renoncé à produire du
     sens. Cette question m'a suivi, intacte, jusque dans des organisations infiniment plus paisibles.</p>
-    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Penser-et-repenser-le-terrorisme/797243" target="_blank" rel="noopener">Voir sur Babelio ↗</a>
+    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Penser-et-repenser-le-terrorisme/797243" target="_blank" rel="noopener"
+       data-fr="Voir sur Babelio ↗"
+       data-en="View on Babelio ↗">Voir sur Babelio ↗</a>
   </div>
 
   <div class="ouvrage">
     <div class="ouvrage-annee">2017</div>
-    <h3>La guerre économique contre la démocratie se mène en col blanc</h3>
-    <p class="ouvrage-ref">dans <em>Criminalité en col blanc — délinquance d'affaires, financière,
+    <h3 data-fr="La guerre économique contre la démocratie se mène en col blanc"
+        data-en="The economic war against democracy is waged in white collar">La guerre économique contre la démocratie se mène en col blanc</h3>
+    <p class="ouvrage-ref"
+       data-fr="dans &lt;em&gt;Criminalité en col blanc — délinquance d'affaires, financière, fiscale&lt;/em&gt; — L'Harmattan, 2017."
+       data-en="in &lt;em&gt;Criminalité en col blanc — délinquance d'affaires, financière, fiscale&lt;/em&gt; (&lt;em&gt;White-collar crime — business, financial and tax offences&lt;/em&gt;) — L'Harmattan, 2017.">dans <em>Criminalité en col blanc — délinquance d'affaires, financière,
     fiscale</em> — L'Harmattan, 2017.</p>
-    <p>Seize contributions réparties en cinq parties, signées de magistrats, d'avocats, de professeurs
+    <p data-fr="Seize contributions réparties en cinq parties, signées de magistrats, d'avocats, de professeurs de droit et de gestion, d'un inspecteur général honoraire de la police, d'un sémioticien, d'un expert en cyberfinance, d'un inspecteur d'assurances — et d'un consultant en organisation. Delga y annonce d'emblée qu'aucun cadre théorique n'a été imposé, le concept même de crime en col blanc étant trop incertain pour cela. Il en résulte des convergences non concertées — quatre disciplines établissent séparément que le col blanc n'est pas un caractère mais une position dans un système — et des divergences assumées, notamment entre les partisans d'une répression renforcée et ceux qui alertent sur les dangers du principe de précaution appliqué au pénal. J'ai consacré à ces lignes de force &lt;a href=&quot;https://www.babelio.com/livres/Delga-Criminalite-en-col-blanc-Delinquance-daffaires-de/2067563&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;une analyse d'ensemble sur Babelio&lt;/a&gt;."
+       data-en="Sixteen contributions in five parts, signed by magistrates, lawyers, professors of law and management, an honorary general inspector of the police, a semiotician, a cyberfinance expert, an insurance inspector — and an organisational consultant. Delga states from the outset that no theoretical framework has been imposed, the very concept of white-collar crime being too uncertain for that. The result is unconcerted convergences — four disciplines separately establish that white-collar is not a character but a position within a system — and openly assumed divergences, notably between the proponents of reinforced repression and those who warn against the dangers of the precautionary principle applied to criminal law. I have devoted &lt;a href=&quot;https://www.babelio.com/livres/Delga-Criminalite-en-col-blanc-Delinquance-daffaires-de/2067563&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;an overall analysis on Babelio&lt;/a&gt; to these lines of force.">Seize contributions réparties en cinq parties, signées de magistrats, d'avocats, de professeurs
     de droit et de gestion, d'un inspecteur général honoraire de la police, d'un sémioticien, d'un expert
     en cyberfinance, d'un inspecteur d'assurances — et d'un consultant en organisation. Delga y annonce
     d'emblée qu'aucun cadre théorique n'a été imposé, le concept même de crime en col blanc étant trop
@@ -240,7 +294,8 @@
     divergences assumées, notamment entre les partisans d'une répression renforcée et ceux qui alertent
     sur les dangers du principe de précaution appliqué au pénal. J'ai consacré à ces lignes de force
     <a href="https://www.babelio.com/livres/Delga-Criminalite-en-col-blanc-Delinquance-daffaires-de/2067563" target="_blank" rel="noopener">une analyse d'ensemble sur Babelio</a>.</p>
-    <p>Consultant en organisation au milieu d'avocats, de procureurs et de fiscalistes, j'y suis parti du
+    <p data-fr="Consultant en organisation au milieu d'avocats, de procureurs et de fiscalistes, j'y suis parti du délinquant en col blanc pour décrire non plus un homme fautif mais une position — celle du pouvoir dans l'entreprise, dont l'insertion sociale est le bien le plus précieux et la condition de la fraude éventuelle, et dont la survie exige de se préserver des regards. Le sujet confié s'est révélé être celui de l'opacité comme condition de fonctionnement."
+       data-en="An organisational consultant among lawyers, prosecutors and tax specialists, I started from the white-collar offender to describe no longer a guilty man but a position — that of power within the corporation, whose social standing is its most precious asset and the very condition of possible fraud, and whose survival requires shielding it from scrutiny. The assigned subject turned out to be that of opacity as a condition of operation.">Consultant en organisation au milieu d'avocats, de procureurs et de fiscalistes, j'y suis parti du
     délinquant en col blanc pour décrire non plus un homme fautif mais une position — celle du pouvoir dans
     l'entreprise, dont l'insertion sociale est le bien le plus précieux et la condition de la fraude
     éventuelle, et dont la survie exige de se préserver des regards. Le sujet confié s'est révélé être
@@ -249,9 +304,13 @@
 
   <div class="ouvrage">
     <div class="ouvrage-annee">2018</div>
-    <h3>Expérience de mort imminente : mythe ou vérité d'une époque ?</h3>
-    <p class="ouvrage-ref">dans <em>Face à la mort</em> — MA Éditions, 2018.</p>
-    <p>Dix-neuf auteurs, et sans doute le plus improbable des attelages : le directeur de l'Institut
+    <h3 data-fr="Expérience de mort imminente : mythe ou vérité d'une époque ?"
+        data-en="Near-death experience: myth or truth of an era?">Expérience de mort imminente : mythe ou vérité d'une époque ?</h3>
+    <p class="ouvrage-ref"
+       data-fr="dans &lt;em&gt;Face à la mort&lt;/em&gt; — MA Éditions, 2018."
+       data-en="in &lt;em&gt;Face à la mort&lt;/em&gt; (&lt;em&gt;Facing death&lt;/em&gt;) — MA Éditions, 2018.">dans <em>Face à la mort</em> — MA Éditions, 2018.</p>
+    <p data-fr="Dix-neuf auteurs, et sans doute le plus improbable des attelages : le directeur de l'Institut médico-légal de Paris et deux autres médecins légistes, un neurologue, un psychologue clinicien gérontologue, un philosophe ancien directeur de l'ESSEC, un mathématicien, une historienne de l'art sur la représentation de la mort en peinture, un praticien de shiatsu, un professeur de danse classique accompagnatrice en soins palliatifs, une animatrice de radio, un inspecteur général de la police sur la mort dans le métier. Delga y signe lui-même un texte à la première personne sur le suicide — « Du suicide, de mon suicide » — qui dit assez qu'il ne demande à personne un engagement qu'il ne prend pas."
+       data-en="Nineteen authors, and no doubt the most improbable of harnessings: the director of the Paris Forensic Medicine Institute and two other forensic doctors, a neurologist, a clinical gerontologist psychologist, a philosopher and former director of ESSEC, a mathematician, an art historian on the representation of death in painting, a shiatsu practitioner, a classical dance teacher who accompanies palliative care, a radio host, a general inspector of police on death in the profession. Delga signs a text himself in the first person, on suicide — “Du suicide, de mon suicide” (“On suicide, on my suicide”) — enough to show that he asks of no one an engagement he does not undertake himself.">Dix-neuf auteurs, et sans doute le plus improbable des attelages : le directeur de l'Institut
     médico-légal de Paris et deux autres médecins légistes, un neurologue, un psychologue clinicien
     gérontologue, un philosophe ancien directeur de l'ESSEC, un mathématicien, une historienne de l'art
     sur la représentation de la mort en peinture, un praticien de shiatsu, un professeur de danse
@@ -259,60 +318,82 @@
     police sur la mort dans le métier. Delga y signe lui-même un texte à la première personne sur le
     suicide — « Du suicide, de mon suicide » — qui dit assez qu'il ne demande à personne un engagement
     qu'il ne prend pas.</p>
-    <p>Ma contribution est un hommage à Paul Diel. J'y prends le récit au sérieux <em>comme récit</em> —
+    <p data-fr="Ma contribution est un hommage à Paul Diel. J'y prends le récit au sérieux &lt;em&gt;comme récit&lt;/em&gt; — comme une production de l'esprit dans son langage propre, le langage symbolique. La permanence de structure de ces témoignages, à travers des cultures que rien ne relie, interdit de les traiter comme des anecdotes cliniques. Ce détour par la mort m'a appris une règle que je n'ai plus quittée : écouter un discours dans sa langue propre, et non le traduire d'office dans celle qui arrange l'observateur."
+       data-en="My contribution is a tribute to Paul Diel. I take the account seriously &lt;em&gt;as an account&lt;/em&gt; — as a production of the mind in its own language, symbolic language. The structural permanence of these testimonies, across cultures that nothing else connects, forbids treating them as clinical anecdotes. This detour through death taught me a rule I have not since abandoned: to listen to a discourse in its own language, not to translate it by default into the one that suits the observer.">Ma contribution est un hommage à Paul Diel. J'y prends le récit au sérieux <em>comme récit</em> —
     comme une production de l'esprit dans son langage propre, le langage symbolique. La permanence de
     structure de ces témoignages, à travers des cultures que rien ne relie, interdit de les traiter comme
     des anecdotes cliniques. Ce détour par la mort m'a appris une règle que je n'ai plus quittée :
     écouter un discours dans sa langue propre, et non le traduire d'office dans celle qui arrange
     l'observateur.</p>
-    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Face-a-la-mort/2067565" target="_blank" rel="noopener">Voir sur Babelio ↗</a>
+    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Face-a-la-mort/2067565" target="_blank" rel="noopener"
+       data-fr="Voir sur Babelio ↗"
+       data-en="View on Babelio ↗">Voir sur Babelio ↗</a>
   </div>
 
   <div class="ouvrage">
     <div class="ouvrage-annee">2023</div>
-    <h3>Le théâtre du libertinage, entre sexe, pouvoir et religion</h3>
-    <p class="ouvrage-ref">dans <em>Libertaire, libertinage et intervention de l'État dans la vie sexuelle
+    <h3 data-fr="Le théâtre du libertinage, entre sexe, pouvoir et religion"
+        data-en="The theatre of libertinage, between sex, power and religion">Le théâtre du libertinage, entre sexe, pouvoir et religion</h3>
+    <p class="ouvrage-ref"
+       data-fr="dans &lt;em&gt;Libertaire, libertinage et intervention de l'État dans la vie sexuelle des Français&lt;/em&gt; — L'Harmattan, 2023."
+       data-en="in &lt;em&gt;Libertaire, libertinage et intervention de l'État dans la vie sexuelle des Français&lt;/em&gt; (&lt;em&gt;Libertarian, libertinage and state intervention in the sexual life of the French&lt;/em&gt;) — L'Harmattan, 2023.">dans <em>Libertaire, libertinage et intervention de l'État dans la vie sexuelle
     des Français</em> — L'Harmattan, 2023.</p>
-    <p>Sept auteurs seulement, mais le volume où Delga expose sa méthode avec le plus de franchise. Il y
+    <p data-fr="Sept auteurs seulement, mais le volume où Delga expose sa méthode avec le plus de franchise. Il y croise une analyse juridique austère — l'échangisme, le sadomasochisme et l'impact de la Cour européenne des droits de l'homme — avec des témoignages intimes, un texte humoristique sur le libertaire et une contribution d'analyse. Il y avoue aussi ses limites : entreprenant un livre qui demandait des récits, il note que cette écriture « nécessite des qualités que je ne possède pas » et se cantonne à l'analyse juridique. Il précise que les auteurs ont été libres du choix des sujets, et que le groupe n'est « qu'un groupement de fait » — ni société savante, ni association."
+       data-en="Only seven authors, but the volume in which Delga sets out his method with the greatest frankness. He combines an austere legal analysis — partner-swapping, sadomasochism and the impact of the European Court of Human Rights — with intimate testimonies, a humorous text on the libertarian, and an analytical contribution. He also admits his limits: undertaking a book that called for narratives, he notes that such writing “requires qualities I do not possess”, and confines himself to legal analysis. He specifies that the authors were free in their choice of subjects, and that the group is “no more than an informal grouping” — neither an academic society nor an association.">Sept auteurs seulement, mais le volume où Delga expose sa méthode avec le plus de franchise. Il y
     croise une analyse juridique austère — l'échangisme, le sadomasochisme et l'impact de la Cour
     européenne des droits de l'homme — avec des témoignages intimes, un texte humoristique sur le
     libertaire et une contribution d'analyse. Il y avoue aussi ses limites : entreprenant un livre qui
     demandait des récits, il note que cette écriture « nécessite des qualités que je ne possède pas » et
     se cantonne à l'analyse juridique. Il précise que les auteurs ont été libres du choix des sujets, et
     que le groupe n'est « qu'un groupement de fait » — ni société savante, ni association.</p>
-    <p>Celui-là m'a d'abord fait sourire : que venait faire un consultant en organisation dans un volume
+    <p data-fr="Celui-là m'a d'abord fait sourire : que venait faire un consultant en organisation dans un volume sur le libertinage ? Puis j'ai compris que la question était la mienne, déplacée d'un cran — qui décide de ce qui est permis, au nom de quelles valeurs ? Le mot qui compte est le premier : théâtre. Une scène sociale se lit à deux niveaux, ce qui s'y joue littéralement et ce qui s'y joue pour autre chose. On ne comprend pas davantage une réunion d'entreprise qu'un souper libertin si l'on s'en tient au premier."
+       data-en="This one first made me smile: what business had an organisational consultant in a volume on libertinage? Then I realised the question was mine, shifted one notch — who decides what is permitted, in the name of which values? The word that matters is the first: theatre. A social scene reads on two levels, what is literally played out and what is played out for something else. One understands a corporate meeting no better than a libertine supper if one stops at the first level.">Celui-là m'a d'abord fait sourire : que venait faire un consultant en organisation dans un volume
     sur le libertinage ? Puis j'ai compris que la question était la mienne, déplacée d'un cran — qui décide
     de ce qui est permis, au nom de quelles valeurs ? Le mot qui compte est le premier : théâtre. Une scène
     sociale se lit à deux niveaux, ce qui s'y joue littéralement et ce qui s'y joue pour autre chose. On ne
     comprend pas davantage une réunion d'entreprise qu'un souper libertin si l'on s'en tient au premier.</p>
-    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Libertaire-libertinage-et-intervention-de-lEtat-d/2067570" target="_blank" rel="noopener">Voir sur Babelio ↗</a>
+    <a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Libertaire-libertinage-et-intervention-de-lEtat-d/2067570" target="_blank" rel="noopener"
+       data-fr="Voir sur Babelio ↗"
+       data-en="View on Babelio ↗">Voir sur Babelio ↗</a>
   </div>
 </section>
 
 <!-- ============ SOUFFRANCE AU TRAVAIL ============ -->
 <section class="encart">
-  <div class="encart-eyebrow">Le livre par lequel tout a commencé</div>
-  <h3>Souffrance au travail dans les grandes entreprises</h3>
-  <p class="encart-ref">Sous la direction de Jacques Delga — Éditions ESKA, 2010.</p>
-  <p>Je n'ai pas participé à celui-ci — et pourtant c'est lui qui nous a réunis. Paru chez ESKA la même
+  <div class="encart-eyebrow"
+       data-fr="Le livre par lequel tout a commencé"
+       data-en="The book by which it all began">Le livre par lequel tout a commencé</div>
+  <h3 data-fr="Souffrance au travail dans les grandes entreprises"
+      data-en="Souffrance au travail dans les grandes entreprises (Workplace suffering in large companies)">Souffrance au travail dans les grandes entreprises</h3>
+  <p class="encart-ref"
+     data-fr="Sous la direction de Jacques Delga — Éditions ESKA, 2010."
+     data-en="Coordinated by Jacques Delga — ESKA Editions, 2010.">Sous la direction de Jacques Delga — Éditions ESKA, 2010.</p>
+  <p data-fr="Je n'ai pas participé à celui-ci — et pourtant c'est lui qui nous a réunis. Paru chez ESKA la même année que mon premier essai, il applique déjà la méthode Delga à un sujet que le haut management de l'époque préférait nier : il fait dialoguer le juriste, le médecin, le sociologue, le psychanalyste et le journaliste autour d'une souffrance que les directions attribuaient volontiers à la seule fragilité des salariés. C'est en confrontant ce livre au mien que l'éditeur a eu l'idée de nous faire débattre. Je le cite ici pour cette raison, et parce qu'il montre que l'ouverture pluridisciplinaire n'était pas, chez Delga, une coquetterie tardive : elle était déjà son geste, il y a quinze ans."
+     data-en="I did not take part in this one — and yet it is the one that brought us together. Published at ESKA the same year as my first essay, it already applies the Delga method to a subject the senior management of the time preferred to deny: it brings the jurist, the physician, the sociologist, the psychoanalyst and the journalist into dialogue around a form of suffering that management readily attributed to the sole fragility of employees. It was by comparing this book with mine that the publisher had the idea of setting us to debate. I cite it here for that reason, and because it shows that multidisciplinary openness was not, in Delga, a late affectation: it was already his gesture, fifteen years ago.">Je n'ai pas participé à celui-ci — et pourtant c'est lui qui nous a réunis. Paru chez ESKA la même
   année que mon premier essai, il applique déjà la méthode Delga à un sujet que le haut management de
   l'époque préférait nier : il fait dialoguer le juriste, le médecin, le sociologue, le psychanalyste et
   le journaliste autour d'une souffrance que les directions attribuaient volontiers à la seule fragilité
   des salariés. C'est en confrontant ce livre au mien que l'éditeur a eu l'idée de nous faire débattre.
   Je le cite ici pour cette raison, et parce qu'il montre que l'ouverture pluridisciplinaire n'était pas,
   chez Delga, une coquetterie tardive : elle était déjà son geste, il y a quinze ans.</p>
-  <a class="encart-lien" href="https://www.babelio.com/livres/Delga-Souffrance-au-travail-dans-les-grandes-entreprises/2077122" target="_blank" rel="noopener">Voir sur Babelio ↗</a>
+  <a class="encart-lien" href="https://www.babelio.com/livres/Delga-Souffrance-au-travail-dans-les-grandes-entreprises/2077122" target="_blank" rel="noopener"
+     data-fr="Voir sur Babelio ↗"
+     data-en="View on Babelio ↗">Voir sur Babelio ↗</a>
 </section>
 
 <!-- ============ CE QUE JE LUI DOIS ============ -->
 <section class="bloc">
-  <div class="bloc-titre">Ce que je lui dois</div>
-  <p>On croit d'ordinaire qu'un maître transmet un savoir. Jacques Delga m'a transmis autre chose : la
+  <div class="bloc-titre"
+       data-fr="Ce que je lui dois"
+       data-en="What I owe him">Ce que je lui dois</div>
+  <p data-fr="On croit d'ordinaire qu'un maître transmet un savoir. Jacques Delga m'a transmis autre chose : la permission de sortir de mon domaine. Sans ces quatre invitations, je n'aurais sans doute jamais écrit sur le terrorisme, la mort ou le libertinage — et je n'aurais pas découvert que chacun de ces détours me ramenait, par un chemin que je n'avais pas prévu, à la question qui m'occupe : que devient un collectif dont le pouvoir ne produit plus de sens ?"
+     data-en="It is ordinarily thought that a master transmits knowledge. Jacques Delga transmitted something else: permission to leave my field. Without those four invitations, I would probably never have written on terrorism, death or libertinage — and I would not have discovered that each of those detours brought me back, by a path I had not foreseen, to the question that occupies me: what becomes of a collective whose power no longer produces meaning?">On croit d'ordinaire qu'un maître transmet un savoir. Jacques Delga m'a transmis autre chose : la
   permission de sortir de mon domaine. Sans ces quatre invitations, je n'aurais sans doute jamais écrit
   sur le terrorisme, la mort ou le libertinage — et je n'aurais pas découvert que chacun de ces détours
   me ramenait, par un chemin que je n'avais pas prévu, à la question qui m'occupe : que devient un
   collectif dont le pouvoir ne produit plus de sens ?</p>
-  <p>C'est le propre des vrais maîtres que de faire trouver à l'élève ce qu'ils ne lui ont pas enseigné.
+  <p data-fr="C'est le propre des vrais maîtres que de faire trouver à l'élève ce qu'ils ne lui ont pas enseigné. Le professeur de droit de l'ESSEC m'avait appris le droit ; le coordinateur d'ouvrages, vingt ans plus tard, m'a appris à penser hors de mes murs. Qu'un même homme ait tenu ces deux rôles, à deux âges de ma vie, sans que je le sache d'abord, est le genre de coïncidence dont je crois qu'elle n'en est pas tout à fait une : elle ressemble trop à sa méthode — faire se rencontrer des gens qui se seraient ignorés, y compris quand ces gens se connaissent déjà sans le savoir."
+     data-en="It is the mark of true masters to make the student find what they did not teach him. The ESSEC law professor had taught me law; the coordinator of collective works, twenty years later, taught me to think outside my walls. That a single man played those two roles, at two ages of my life, without my knowing it at first, is the kind of coincidence which I do not think is quite one: it resembles his method too closely — bringing together people who would otherwise have ignored each other, including when those people already know each other without knowing it.">C'est le propre des vrais maîtres que de faire trouver à l'élève ce qu'ils ne lui ont pas enseigné.
   Le professeur de droit de l'ESSEC m'avait appris le droit ; le coordinateur d'ouvrages, vingt ans plus
   tard, m'a appris à penser hors de mes murs. Qu'un même homme ait tenu ces deux rôles, à deux âges de ma
   vie, sans que je le sache d'abord, est le genre de coïncidence dont je crois qu'elle n'en est pas tout
@@ -320,20 +401,64 @@
   y compris quand ces gens se connaissent déjà sans le savoir.</p>
 </section>
 
-<p class="colophon">Ces ouvrages collectifs sont référencés sur ma
+<p class="colophon"
+   data-fr="Ces ouvrages collectifs sont référencés sur ma &lt;a href=&quot;https://www.babelio.com/auteur/Bruno-Brochenin/720540&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;page auteur Babelio&lt;/a&gt;. Ce que chacune de ces invitations a ouvert en moi est détaillé sur la page &lt;a href=&quot;contributions.html&quot;&gt;contributions&lt;/a&gt;."
+   data-en="These collective works are referenced on my &lt;a href=&quot;https://www.babelio.com/auteur/Bruno-Brochenin/720540&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Babelio author page&lt;/a&gt;. What each of these invitations opened in me is detailed on the &lt;a href=&quot;contributions.html&quot;&gt;contributions&lt;/a&gt; page.">Ces ouvrages collectifs sont référencés sur ma
 <a href="https://www.babelio.com/auteur/Bruno-Brochenin/720540" target="_blank" rel="noopener">page auteur Babelio</a>.
 Ce que chacune de ces invitations a ouvert en moi est détaillé sur la page
 <a href="contributions.html">contributions</a>.</p>
 
 </div>
+
 <script>
+  // ---------- commutateur de langue ----------
+  function setLang(lang) {
+    if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-fr]').forEach(function(el) {
+      var t = el.getAttribute('data-' + lang);
+      if (t !== null) el.innerHTML = t;
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    document.querySelectorAll('a[href]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      if (!href) return;
+      if (/^(https?:|mailto:|tel:|#)/.test(href)) return;
+      var hashIdx = href.indexOf('#');
+      var hash = hashIdx >= 0 ? href.substring(hashIdx) : '';
+      var base = hashIdx >= 0 ? href.substring(0, hashIdx) : href;
+      base = base.split('?')[0];
+      a.setAttribute('href', (lang === 'en' ? base + '?lang=en' : base) + hash);
+    });
+    try {
+      var url = new URL(window.location.href);
+      if (lang === 'en') url.searchParams.set('lang', 'en');
+      else url.searchParams.delete('lang');
+      history.replaceState(null, '', url.toString());
+    } catch (e) { /* IE ou navigateur ancien : on ignore */ }
+  }
+
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var initial = params.get('lang') === 'en' ? 'en' : 'fr';
+    setLang(initial);
+  })();
+
+  document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+    btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
+  });
+
   if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    }), { threshold: 0.12 });
-    document.querySelectorAll('.bloc,.ouvrage,.encart').forEach(c => io.observe(c));
+    var io = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.bloc,.ouvrage,.encart').forEach(function(c) { io.observe(c); });
   } else {
-    document.querySelectorAll('.bloc,.ouvrage,.encart').forEach(c => c.classList.add('visible'));
+    document.querySelectorAll('.bloc,.ouvrage,.encart').forEach(function(c) { c.classList.add('visible'); });
   }
 </script>
 </body>
