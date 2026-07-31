@@ -9,6 +9,8 @@
 <meta name="author" content="Bruno Brochenin">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://brunobrochenin.com/auteurs.html">
+<link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/auteurs.html">
+<link rel="alternate" hreflang="en" href="https://brunobrochenin.com/auteurs.html?lang=en">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Les auteurs qui inspirent mes travaux — Bruno Brochenin">
@@ -16,6 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://brunobrochenin.com/auteurs.html">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +41,22 @@
     line-height:1.65;
     font-size:17px;
   }
-  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;}
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;position:relative;}
+
+  /* ---------- commutateur de langue ---------- */
+  .lang-switch{
+    position:absolute;top:24px;right:24px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.08em;
+    z-index:10;
+  }
+  .lang-switch button{
+    background:none;border:none;color:var(--encre-douce);cursor:pointer;
+    padding:4px 6px;font:inherit;font-weight:500;letter-spacing:inherit;
+    transition:color .2s;
+  }
+  .lang-switch button.active{color:var(--sable);}
+  .lang-switch button:hover{color:var(--encre);}
+  .lang-switch .sep{color:var(--filet);}
 
   /* ---------- entête ---------- */
   header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
@@ -60,9 +78,11 @@
   /* ---------- regroupement par pilier ---------- */
   .pilier{
     margin-top:60px;
+    padding-bottom:10px;border-bottom:1px solid var(--filet);
+  }
+  .pilier-titre{
     font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:600;
     letter-spacing:.2em;text-transform:uppercase;color:var(--marine);
-    padding-bottom:10px;border-bottom:1px solid var(--filet);
   }
   .pilier-sous{
     margin-top:8px;font-size:15px;color:var(--encre-douce);font-style:italic;max-width:60ch;
@@ -125,17 +145,31 @@
     header{padding-top:56px;}
     .livre{margin-top:36px;}
     .pilier{margin-top:48px;}
+    .lang-switch{top:16px;right:16px;}
   }
 </style>
 </head>
 <body>
 <div class="page">
 
+<div class="lang-switch" role="group" aria-label="Language switcher">
+  <button data-lang="fr" class="active" aria-label="Français">FR</button>
+  <span class="sep" aria-hidden="true">/</span>
+  <button data-lang="en" aria-label="English">EN</button>
+</div>
+
 <header>
-  <a class="retour" href="index.html">← Retour à l'accueil</a>
-  <div class="surtitre">Bibliothèque de travail</div>
-  <h1>Les auteurs qui inspirent mes travaux</h1>
-  <p class="chapeau">Ceux qui pourraient inspirer le renouveau de la pensée managériale se lisent
+  <a class="retour" href="index.html"
+     data-fr="← Retour à l'accueil"
+     data-en="← Back to home">← Retour à l'accueil</a>
+  <div class="surtitre"
+       data-fr="Bibliothèque de travail"
+       data-en="Working library">Bibliothèque de travail</div>
+  <h1 data-fr="Les auteurs qui inspirent mes travaux"
+      data-en="The authors that inspire my work">Les auteurs qui inspirent mes travaux</h1>
+  <p class="chapeau"
+     data-fr="Ceux qui pourraient inspirer le renouveau de la pensée managériale se lisent rarement dans les rayons du management. Je les ai cherchés ailleurs — dans la psychologie de la valorisation, dans l'anthropologie de l'efficacité collective, dans l'histoire longue de la contrainte. Voici neuf livres qui fondent mes propres travaux, et, pour chacun, &lt;em&gt;pourquoi&lt;/em&gt; il compte. Le commentaire complet est ici même ; si vous voulez le voir vivre dans la conversation des lecteurs, chaque notice ouvre sur sa fiche Babelio."
+     data-en="Those who might inspire the renewal of management thought are rarely found on the management shelves. I have looked for them elsewhere — in the psychology of valorisation, in the anthropology of collective efficacy, in the long history of constraint. Here are nine books that ground my own work, and, for each, &lt;em&gt;why&lt;/em&gt; it counts. The full commentary is right here; if you want to see it live in the conversation of readers, each notice opens onto its Babelio page.">Ceux qui pourraient inspirer le renouveau de la pensée managériale se lisent
   rarement dans les rayons du management. Je les ai cherchés ailleurs — dans la psychologie de la
   valorisation, dans l'anthropologie de l'efficacité collective, dans l'histoire longue de la
   contrainte. Voici neuf livres qui fondent mes propres travaux, et, pour chacun, <em>pourquoi</em>
@@ -144,24 +178,34 @@
 </header>
 
 <!-- ============ PILIER 1 : la valorisation ============ -->
-<div class="pilier">Premier pilier — la psychologie de la valorisation
-  <div class="pilier-sous">Paul Diel : rien ne se fait dans un collectif qui ne soit d'abord,
+<div class="pilier">
+  <div class="pilier-titre"
+       data-fr="Premier pilier — la psychologie de la valorisation"
+       data-en="First pillar — the psychology of valorisation">Premier pilier — la psychologie de la valorisation</div>
+  <div class="pilier-sous"
+       data-fr="Paul Diel : rien ne se fait dans un collectif qui ne soit d'abord, chez chacun, psychiquement motivé — et la vanité est la première des fausses valeurs."
+       data-en="Paul Diel: nothing happens in a collective that is not first, in each person, psychically motivated — and vanity is the first of the false values.">Paul Diel : rien ne se fait dans un collectif qui ne soit d'abord,
   chez chacun, psychiquement motivé — et la vanité est la première des fausses valeurs.</div>
 </div>
 
 <section class="livre">
   <div class="livre-auteur">Paul Diel</div>
   <h2>Psychologie de la motivation</h2>
-  <p class="livre-ref">Théorie et application thérapeutique — Payot, coll. « Petite Bibliothèque Payot »
+  <p class="livre-ref"
+     data-fr="Théorie et application thérapeutique — Payot, coll. « Petite Bibliothèque Payot » (1&lt;sup&gt;re&lt;/sup&gt; éd. PUF, 1947)."
+     data-en="Theory and therapeutic application — Payot, “Petite Bibliothèque Payot” series (1st ed. PUF, 1947).">Théorie et application thérapeutique — Payot, coll. « Petite Bibliothèque Payot »
   (1<sup>re</sup> éd. PUF, 1947).</p>
-  <p class="livre-accroche">Une théorie de la motivation qui ne flatte personne — ni l'individu,
+  <p class="livre-accroche"
+     data-fr="Une théorie de la motivation qui ne flatte personne — ni l'individu, jamais simple victime de son contexte, ni la société, dont elle voit lucidement les dérèglements de valeurs. C'est l'un des trois piliers sur lesquels j'ai construit mes travaux, et celui par lequel je conseille de commencer."
+     data-en="A theory of motivation that flatters no one — neither the individual, never simply a victim of his context, nor the society, whose disorders of values it sees lucidly. It is one of the three pillars on which I have built my work, and the one I recommend starting with.">Une théorie de la motivation qui ne flatte personne — ni l'individu,
   jamais simple victime de son contexte, ni la société, dont elle voit lucidement les dérèglements de
   valeurs. C'est l'un des trois piliers sur lesquels j'ai construit mes travaux, et celui par lequel
   je conseille de commencer.</p>
   <details class="livre-note">
-    <summary>Lire mon commentaire</summary>
+    <summary data-fr="Lire mon commentaire" data-en="Read my commentary">Lire mon commentaire</summary>
     <div class="livre-note-corps">
-      <p>Il y a des livres qu'on lit, et des livres avec lesquels on travaille pendant des décennies.
+      <p data-fr="Il y a des livres qu'on lit, et des livres avec lesquels on travaille pendant des décennies. &lt;em&gt;Psychologie de la motivation&lt;/em&gt; appartient pour moi à la seconde catégorie. Diel y construit une chose rare : une théorie de la motivation qui ne flatte personne. Ni l'individu, jamais simple victime de son contexte puisque rien ne se fait en lui qui ne soit d'abord psychiquement motivé ; ni la société, dont il voit lucidement les dérèglements de valeurs. Sa clé de voûte — la vanité comme faute primordiale, cause unique d'aveuglement, aux mille visages versatiles (l'exaltation, la colère, le désespoir, la flagornerie, l'apitoiement) — est d'une fécondité que je n'ai cessé d'éprouver sur un terrain que Diel n'a jamais foulé : l'entreprise."
+         data-en="Some books one reads, and some books one works with for decades. &lt;em&gt;Psychologie de la motivation&lt;/em&gt; belongs, for me, to the second kind. In it, Diel builds something rare: a theory of motivation that flatters no one. Neither the individual, never simply a victim of his context since nothing happens in him that is not first psychically motivated; nor the society, whose disorders of values he sees lucidly. Its keystone — vanity as primordial fault, unique cause of blindness, with a thousand fickle faces (exaltation, anger, despair, flattery, self-pity) — has a fecundity I have never ceased to test on ground Diel himself never trod: the enterprise.">Il y a des livres qu'on lit, et des livres avec lesquels on travaille pendant des décennies.
       <em>Psychologie de la motivation</em> appartient pour moi à la seconde catégorie. Diel y construit
       une chose rare : une théorie de la motivation qui ne flatte personne. Ni l'individu, jamais simple
       victime de son contexte puisque rien ne se fait en lui qui ne soit d'abord psychiquement motivé ;
@@ -169,7 +213,8 @@
       comme faute primordiale, cause unique d'aveuglement, aux mille visages versatiles (l'exaltation,
       la colère, le désespoir, la flagornerie, l'apitoiement) — est d'une fécondité que je n'ai cessé
       d'éprouver sur un terrain que Diel n'a jamais foulé : l'entreprise.</p>
-      <p>Car c'est là que je l'ai fait travailler. La surestime et la sous-estime de soi et d'autrui,
+      <p data-fr="Car c'est là que je l'ai fait travailler. La surestime et la sous-estime de soi et d'autrui, les quatre fautes d'évaluation qu'il identifie, se rencontrent chaque jour dans les équipes — chez le dirigeant infatué de son plan stratégique comme chez le collaborateur muré dans le déni ou l'accusation. Sa distinction entre valeurs vitalement fondées et fausses valeurs, entre juste estime et estime faussée, m'a fourni l'armature de ce que je cherchais : comprendre pourquoi des organisations techniquement irréprochables produisent du désengagement, et pourquoi aucun système de sanctions/récompenses n'y remédie. La réponse de Diel : parce que le comportement procède de la dynamique intérieure du sujet, dont le social n'est que le contexte — on ne « motive » pas autrui, on crée ou détruit les conditions de sa motivation."
+         data-en="For that is where I have made it work. The overestimation and underestimation of self and others, the four errors of evaluation he identifies, are encountered every day in teams — in the executive besotted with his strategic plan as in the collaborator walled up in denial or accusation. His distinction between vitally grounded values and false values, between right esteem and distorted esteem, has given me the framework of what I was looking for: to understand why technically impeccable organisations produce disengagement, and why no system of reward and punishment remedies it. Diel's answer: because behaviour proceeds from the subject's inner dynamic, of which the social is only the context — one does not “motivate” another; one creates or destroys the conditions of his motivation.">Car c'est là que je l'ai fait travailler. La surestime et la sous-estime de soi et d'autrui,
       les quatre fautes d'évaluation qu'il identifie, se rencontrent chaque jour dans les équipes —
       chez le dirigeant infatué de son plan stratégique comme chez le collaborateur muré dans le déni
       ou l'accusation. Sa distinction entre valeurs vitalement fondées et fausses valeurs, entre juste
@@ -178,7 +223,8 @@
       de sanctions/récompenses n'y remédie. La réponse de Diel : parce que le comportement procède de la
       dynamique intérieure du sujet, dont le social n'est que le contexte — on ne « motive » pas autrui,
       on crée ou détruit les conditions de sa motivation.</p>
-      <p>On lui reprochera sa dureté apparente, son refus sans concession de la sentimentalité et de
+      <p data-fr="On lui reprochera sa dureté apparente, son refus sans concession de la sentimentalité et de l'apitoiement. J'y vois l'inverse d'une dureté : une main tendue à quiconque accepte de sortir de ses postures pour une action mûrie. Soixante-quinze ans après, ce livre exigeant reste d'une actualité que la vogue du bien-être marchandisé rend presque cruelle. C'est un des trois piliers sur lesquels j'ai construit mes propres travaux, et celui par lequel je conseille de commencer."
+         data-en="He will be reproached for his apparent harshness, his uncompromising refusal of sentimentality and self-pity. I see in it the opposite of harshness: a hand extended to whoever agrees to step out of his postures for a mature action. Seventy-five years on, this demanding book remains of a topicality that the fashion of commodified well-being makes almost cruel. It is one of the three pillars on which I have built my own work, and the one I recommend starting with.">On lui reprochera sa dureté apparente, son refus sans concession de la sentimentalité et de
       l'apitoiement. J'y vois l'inverse d'une dureté : une main tendue à quiconque accepte de sortir de
       ses postures pour une action mûrie. Soixante-quinze ans après, ce livre exigeant reste d'une
       actualité que la vogue du bien-être marchandisé rend presque cruelle. C'est un des trois piliers
@@ -186,24 +232,32 @@
     </div>
   </details>
   <br>
-  <a class="livre-lien" href="https://www.babelio.com/livres/Diel-Psychologie-de-la-motivation/134207" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Diel-Psychologie-de-la-motivation/134207" target="_blank" rel="noopener"
+     data-fr="En discuter sur Babelio ↗"
+     data-en="Discuss on Babelio ↗">En discuter sur Babelio ↗</a>
 </section>
 
 <section class="livre">
   <div class="livre-auteur">Jeanine Solotareff</div>
   <h2>Le symbolisme dans les rêves</h2>
-  <p class="livre-ref">La méthode de traduction de Paul Diel — Payot, coll. « Petite Bibliothèque Payot ».</p>
-  <p class="livre-accroche">L'atelier de Diel plutôt que sa théorie : le livre qui montre comment on
+  <p class="livre-ref"
+     data-fr="La méthode de traduction de Paul Diel — Payot, coll. « Petite Bibliothèque Payot »."
+     data-en="Paul Diel's method of translation — Payot, “Petite Bibliothèque Payot” series.">La méthode de traduction de Paul Diel — Payot, coll. « Petite Bibliothèque Payot ».</p>
+  <p class="livre-accroche"
+     data-fr="L'atelier de Diel plutôt que sa théorie : le livre qui montre comment on travaille. Il m'a donné une méthode dont je me sers depuis plus de vingt ans, bien au-delà des rêves — jusque dans les réunions, où l'on dit toujours une chose pour une autre."
+     data-en="Diel's workshop rather than his theory: the book that shows how one works. It has given me a method I have used for more than twenty years, far beyond dreams — right into meetings, where one always says one thing for another.">L'atelier de Diel plutôt que sa théorie : le livre qui montre comment on
   travaille. Il m'a donné une méthode dont je me sers depuis plus de vingt ans, bien au-delà des
   rêves — jusque dans les réunions, où l'on dit toujours une chose pour une autre.</p>
   <details class="livre-note">
-    <summary>Lire mon commentaire</summary>
+    <summary data-fr="Lire mon commentaire" data-en="Read my commentary">Lire mon commentaire</summary>
     <div class="livre-note-corps">
-      <p>Il y a deux façons d'aborder Paul Diel. Par la théorie, avec <em>Psychologie de la
+      <p data-fr="Il y a deux façons d'aborder Paul Diel. Par la théorie, avec &lt;em&gt;Psychologie de la motivation&lt;/em&gt;, qui expose sa lecture de la vanité et des fausses valeurs. Ou par l'atelier, avec ce livre-ci, qui montre comment on travaille. Je conseillerais volontiers l'atelier : c'est là qu'on comprend, en le pratiquant, ce que vaut l'instrument."
+         data-en="There are two ways to approach Paul Diel. Through theory, with &lt;em&gt;Psychologie de la motivation&lt;/em&gt;, which sets out his reading of vanity and false values. Or through the workshop, with this book here, which shows how one works. I would readily recommend the workshop: it is there, in practising it, that one understands what the instrument is worth.">Il y a deux façons d'aborder Paul Diel. Par la théorie, avec <em>Psychologie de la
       motivation</em>, qui expose sa lecture de la vanité et des fausses valeurs. Ou par l'atelier,
       avec ce livre-ci, qui montre comment on travaille. Je conseillerais volontiers l'atelier : c'est
       là qu'on comprend, en le pratiquant, ce que vaut l'instrument.</p>
-      <p>La thèse est simple et vertigineuse. Le langage symbolique n'est pas un décor poétique posé
+      <p data-fr="La thèse est simple et vertigineuse. Le langage symbolique n'est pas un décor poétique posé sur les idées : c'est le mode d'expression naturel de l'esprit, une langue à part entière, partagée par tous — les rêveurs, les poètes, les malades, les chamanes et les auteurs de mythes. Diel en établit la grammaire avec une patience d'artisan. Chaque figure du récit onirique n'est pas un symbole flottant qu'on interpréterait au gré de son humeur, mais un élément d'un système cohérent où le père, le monstre, la mer, le héros occupent des positions déterminées dans l'économie psychique. La lecture se conduit sur trois plans distincts — réel, linguistique, symbolique — et c'est leur croisement qui fait la preuve."
+         data-en="The thesis is simple and dizzying. Symbolic language is not a poetic decor laid over ideas: it is the natural mode of expression of the mind, a language in its own right, shared by all — dreamers, poets, the sick, shamans and the authors of myths. Diel establishes its grammar with an artisan's patience. Each figure in the dream narrative is not a floating symbol to be interpreted according to one's mood, but an element of a coherent system in which father, monster, sea and hero occupy determined positions in the psychic economy. Reading is conducted on three distinct planes — the real, the linguistic, the symbolic — and it is their crossing that provides the proof.">La thèse est simple et vertigineuse. Le langage symbolique n'est pas un décor poétique posé
       sur les idées : c'est le mode d'expression naturel de l'esprit, une langue à part entière,
       partagée par tous — les rêveurs, les poètes, les malades, les chamanes et les auteurs de mythes.
       Diel en établit la grammaire avec une patience d'artisan. Chaque figure du récit onirique n'est
@@ -211,7 +265,8 @@
       cohérent où le père, le monstre, la mer, le héros occupent des positions déterminées dans
       l'économie psychique. La lecture se conduit sur trois plans distincts — réel, linguistique,
       symbolique — et c'est leur croisement qui fait la preuve.</p>
-      <p>Ce livre m'a donné une méthode dont je me sers depuis plus de vingt ans, bien au-delà des
+      <p data-fr="Ce livre m'a donné une méthode dont je me sers depuis plus de vingt ans, bien au-delà des rêves. Je l'ai appliquée aux récits d'expérience de mort imminente : leur permanence de structure, à travers des cultures et des époques que rien ne relie, interdit de les traiter comme des anecdotes cliniques et oblige à les lire comme un mythe au sens de Diel, c'est-à-dire comme l'énoncé d'une vérité de la vie de l'esprit. Mais je m'en sers tout autant en réunion. Car dans une organisation, on parle rarement littéralement : on dit une chose pour une autre, on assigne des rôles, on rejoue des scènes anciennes — et qui n'entend que le premier degré ne comprend rien à ce qui se joue."
+         data-en="This book has given me a method I have used for more than twenty years, far beyond dreams. I applied it to accounts of near-death experience: their structural permanence, across cultures and eras that nothing else connects, forbids treating them as clinical anecdotes and obliges us to read them as myth in Diel's sense — that is, as the statement of a truth of the life of the mind. But I use it just as much in meetings. For in an organisation, one rarely speaks literally: one says one thing for another, one assigns roles, one replays old scenes — and whoever hears only the first level understands nothing of what is at stake.">Ce livre m'a donné une méthode dont je me sers depuis plus de vingt ans, bien au-delà des
       rêves. Je l'ai appliquée aux récits d'expérience de mort imminente : leur permanence de
       structure, à travers des cultures et des époques que rien ne relie, interdit de les traiter comme
       des anecdotes cliniques et oblige à les lire comme un mythe au sens de Diel, c'est-à-dire comme
@@ -219,22 +274,31 @@
       une organisation, on parle rarement littéralement : on dit une chose pour une autre, on assigne
       des rôles, on rejoue des scènes anciennes — et qui n'entend que le premier degré ne comprend rien
       à ce qui se joue.</p>
-      <p>Le reproche qu'on fera à Diel est celui qu'on fait à toute méthode d'interprétation : qu'elle
+      <p data-fr="Le reproche qu'on fera à Diel est celui qu'on fait à toute méthode d'interprétation : qu'elle trouve ce qu'elle cherche. Il l'a devancé, précisément en imposant l'examen conjoint des trois plans, qui interdit les lectures complaisantes. Reste que ce livre exige un lecteur actif : on ne le consomme pas, on l'exerce. Ce qui est, je crois, la définition d'un maître."
+         data-en="The reproach one will make of Diel is the one made of every interpretative method: that it finds what it seeks. He forestalled it, precisely by imposing the joint examination of the three planes, which forbids indulgent readings. Still, this book demands an active reader: one does not consume it, one exercises it. Which is, I believe, the definition of a master.">Le reproche qu'on fera à Diel est celui qu'on fait à toute méthode d'interprétation : qu'elle
       trouve ce qu'elle cherche. Il l'a devancé, précisément en imposant l'examen conjoint des trois
       plans, qui interdit les lectures complaisantes. Reste que ce livre exige un lecteur actif : on
       ne le consomme pas, on l'exerce. Ce qui est, je crois, la définition d'un maître.</p>
-      <p>Une dernière chose. Le langage symbolique n'est pas une langue morte, puisque c'est celle de
+      <p data-fr="Une dernière chose. Le langage symbolique n'est pas une langue morte, puisque c'est celle de l'esprit — et l'entreprise obstinée de notre époque pour n'écouter que le sens littéral n'est pas une victoire de la rigueur : c'est un appauvrissement dont nous mesurons chaque jour les effets."
+         data-en="One last thing. Symbolic language is not a dead language, since it is the language of the mind — and our age's obstinate effort to listen only to the literal sense is not a victory of rigour: it is an impoverishment whose effects we measure every day.">Une dernière chose. Le langage symbolique n'est pas une langue morte, puisque c'est celle de
       l'esprit — et l'entreprise obstinée de notre époque pour n'écouter que le sens littéral n'est pas
       une victoire de la rigueur : c'est un appauvrissement dont nous mesurons chaque jour les effets.</p>
     </div>
   </details>
   <br>
-  <a class="livre-lien" href="https://www.babelio.com/livres/Solotareff-Le-symbolisme-dans-les-reves/1117181" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Solotareff-Le-symbolisme-dans-les-reves/1117181" target="_blank" rel="noopener"
+     data-fr="En discuter sur Babelio ↗"
+     data-en="Discuss on Babelio ↗">En discuter sur Babelio ↗</a>
 </section>
 
 <!-- ============ PILIER 2 : l'efficacité magique du collectif ============ -->
-<div class="pilier">Deuxième pilier — l'efficacité magique du collectif
-  <div class="pilier-sous">Mauss et Hubert : le résultat collectif n'émerge ni des machines ni des
+<div class="pilier">
+  <div class="pilier-titre"
+       data-fr="Deuxième pilier — l'efficacité magique du collectif"
+       data-en="Second pillar — the magical efficacy of the collective">Deuxième pilier — l'efficacité magique du collectif</div>
+  <div class="pilier-sous"
+       data-fr="Mauss et Hubert : le résultat collectif n'émerge ni des machines ni des procédures, mais de la croyance partagée qui fait entrer les acteurs dans le cercle. Autour : ceux qui outillent ou prolongent cette intuition."
+       data-en="Mauss and Hubert: the collective outcome emerges neither from machines nor from procedures, but from the shared belief that draws the actors into the circle. Around them: those who equip or extend this intuition.">Mauss et Hubert : le résultat collectif n'émerge ni des machines ni des
   procédures, mais de la croyance partagée qui fait entrer les acteurs dans le cercle. Autour :
   ceux qui outillent ou prolongent cette intuition.</div>
 </div>
@@ -242,23 +306,29 @@
 <section class="livre">
   <div class="livre-auteur">Henri Hubert &amp; Marcel Mauss</div>
   <h2>Esquisse d'une théorie générale de la magie</h2>
-  <p class="livre-ref">Paru dans <em>L'Année sociologique</em>, 1904 — éd. PUF, présentée par
+  <p class="livre-ref"
+     data-fr="Paru dans &lt;em&gt;L'Année sociologique&lt;/em&gt;, 1904 — éd. PUF, présentée par Frédéric Keck."
+     data-en="Published in &lt;em&gt;L'Année sociologique&lt;/em&gt;, 1904 — PUF edition, presented by Frédéric Keck.">Paru dans <em>L'Année sociologique</em>, 1904 — éd. PUF, présentée par
   Frédéric Keck.</p>
-  <p class="livre-accroche">La magie n'est pas une erreur de primitifs mal informés : c'est une
+  <p class="livre-accroche"
+     data-fr="La magie n'est pas une erreur de primitifs mal informés : c'est une institution sociale d'une efficacité réelle, dont la condition n'est ni le trucage ni la crédulité, mais la croyance collective. C'est de ce petit essai centenaire que j'ai tiré le concept autour duquel s'organisent mes travaux."
+     data-en="Magic is not the mistake of ill-informed primitives: it is a social institution of real efficacy, whose condition is neither trickery nor credulity, but collective belief. It is from this small centenarian essay that I drew the concept around which my work is organised.">La magie n'est pas une erreur de primitifs mal informés : c'est une
   institution sociale d'une efficacité réelle, dont la condition n'est ni le trucage ni la crédulité,
   mais la croyance collective. C'est de ce petit essai centenaire que j'ai tiré le concept autour
   duquel s'organisent mes travaux.</p>
   <details class="livre-note">
-    <summary>Lire mon commentaire</summary>
+    <summary data-fr="Lire mon commentaire" data-en="Read my commentary">Lire mon commentaire</summary>
     <div class="livre-note-corps">
-      <p>De tous les textes de Mauss, c'est celui-ci — écrit avec Henri Hubert, on l'oublie trop — qui
+      <p data-fr="De tous les textes de Mauss, c'est celui-ci — écrit avec Henri Hubert, on l'oublie trop — qui a le plus durablement travaillé ma propre réflexion. Sa thèse tient en peu de mots et n'a pas fini de déranger : la magie n'est pas une erreur de primitifs mal informés des lois de la physique, c'est une institution sociale d'une efficacité réelle, dont la condition n'est ni le trucage ni la crédulité, mais la croyance collective. Le rite ne produit rien si le groupe n'y entre pas ; il produit réellement dès que le groupe y croit assez pour s'y engager. Et le magicien n'est ni dupe ni charlatan : il connaît son artifice et son efficacité tout ensemble."
+         data-en="Of all Mauss's texts, this one — written with Henri Hubert, too often forgotten — has most durably shaped my own reflection. Its thesis holds in few words and has not finished disturbing: magic is not the mistake of primitives ill-informed of the laws of physics; it is a social institution of real efficacy, whose condition is neither trickery nor credulity, but collective belief. The rite produces nothing if the group does not enter it; it truly produces as soon as the group believes in it enough to commit itself. And the magician is neither duped nor a charlatan: he knows his artifice and its efficacy together.">De tous les textes de Mauss, c'est celui-ci — écrit avec Henri Hubert, on l'oublie trop — qui
       a le plus durablement travaillé ma propre réflexion. Sa thèse tient en peu de mots et n'a pas fini
       de déranger : la magie n'est pas une erreur de primitifs mal informés des lois de la physique,
       c'est une institution sociale d'une efficacité réelle, dont la condition n'est ni le trucage ni la
       crédulité, mais la croyance collective. Le rite ne produit rien si le groupe n'y entre pas ; il
       produit réellement dès que le groupe y croit assez pour s'y engager. Et le magicien n'est ni dupe
       ni charlatan : il connaît son artifice et son efficacité tout ensemble.</p>
-      <p>J'ai passé une partie de ma vie professionnelle dans les organisations, et je n'y ai rien vu
+      <p data-fr="J'ai passé une partie de ma vie professionnelle dans les organisations, et je n'y ai rien vu d'autre. Une entreprise est un cercle magique : une ambition proclamée, des valeurs affichées, des rôles distribués, des règles, une mesure de la performance — un décor qui ne produit strictement rien par lui-même, et qui produit tout dès que les acteurs y adhèrent. Le résultat collectif ne sort ni des machines ni des procédures : il émerge de la mobilisation des forces psychiques en présence. Quand les esprits rationalistes s'étonnent qu'un projet techniquement parfait échoue, Hubert et Mauss ont la réponse depuis 1903 : on a oublié de faire entrer les participants dans le cercle. Et quand les modernes invoquent sans rougir la « main invisible » des marchés ou les « miracles » de la technologie, ils font exactement ce qu'ils croient que font les sorciers."
+         data-en="I have spent a part of my professional life in organisations, and I have seen nothing else there. A company is a magic circle: a proclaimed ambition, displayed values, distributed roles, rules, a measure of performance — a set that produces strictly nothing by itself, and produces everything as soon as the actors subscribe to it. The collective outcome does not come from machines or procedures: it emerges from the mobilisation of the psychic forces present. When rationalist minds are astonished that a technically perfect project fails, Hubert and Mauss have had the answer since 1903: they forgot to bring the participants into the circle. And when the moderns invoke without blushing the “invisible hand” of markets or the “miracles” of technology, they do exactly what they believe the sorcerers do.">J'ai passé une partie de ma vie professionnelle dans les organisations, et je n'y ai rien vu
       d'autre. Une entreprise est un cercle magique : une ambition proclamée, des valeurs affichées, des
       rôles distribués, des règles, une mesure de la performance — un décor qui ne produit strictement
       rien par lui-même, et qui produit tout dès que les acteurs y adhèrent. Le résultat collectif ne
@@ -267,7 +337,8 @@
       Hubert et Mauss ont la réponse depuis 1903 : on a oublié de faire entrer les participants dans le
       cercle. Et quand les modernes invoquent sans rougir la « main invisible » des marchés ou les
       « miracles » de la technologie, ils font exactement ce qu'ils croient que font les sorciers.</p>
-      <p>Lu avec l'<em>Essai sur le don</em>, ce texte dessine une mécanique complète : la magie agit
+      <p data-fr="Lu avec l'&lt;em&gt;Essai sur le don&lt;/em&gt;, ce texte dessine une mécanique complète : la magie agit sur les choses par le truchement des dieux, le don agit sur les hommes par le truchement des choses. Qui veut comprendre pourquoi les collectifs humains tiennent — ou se défont — trouvera ici plus que dans bien des traités de management. C'est de ce petit essai centenaire que j'ai tiré le concept autour duquel s'organisent mes propres travaux."
+         data-en="Read alongside the &lt;em&gt;Essai sur le don&lt;/em&gt;, this text sketches a complete mechanism: magic acts on things through the intermediary of the gods, the gift acts on men through the intermediary of things. Whoever wants to understand why human collectives hold together — or unravel — will find more here than in many treatises of management. It is from this small centenarian essay that I drew the concept around which my own work is organised.">Lu avec l'<em>Essai sur le don</em>, ce texte dessine une mécanique complète : la magie agit
       sur les choses par le truchement des dieux, le don agit sur les hommes par le truchement des
       choses. Qui veut comprendre pourquoi les collectifs humains tiennent — ou se défont — trouvera ici
       plus que dans bien des traités de management. C'est de ce petit essai centenaire que j'ai tiré le
@@ -275,66 +346,85 @@
     </div>
   </details>
   <br>
-  <a class="livre-lien" href="https://www.babelio.com/livres/Mauss-Esquisse-dune-theorie-generale-de-la-magie/1166030" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Mauss-Esquisse-dune-theorie-generale-de-la-magie/1166030" target="_blank" rel="noopener"
+     data-fr="En discuter sur Babelio ↗"
+     data-en="Discuss on Babelio ↗">En discuter sur Babelio ↗</a>
 </section>
 
 <section class="livre">
   <div class="livre-auteur">Georges-Yves Kervern &amp; Philippe Boulenger</div>
   <h2>Cindyniques — Concepts et mode d'emploi</h2>
-  <p class="livre-ref">Economica, 2007.</p>
-  <p class="livre-accroche">Ce livre m'a donné plus qu'une méthode : par contrecoup, il m'a donné le
+  <p class="livre-ref"
+     data-fr="Economica, 2007."
+     data-en="Economica, 2007.">Economica, 2007.</p>
+  <p class="livre-accroche"
+     data-fr="Ce livre m'a donné plus qu'une méthode : par contrecoup, il m'a donné le concept autour duquel j'ai construit tout mon travail. C'est en devant traduire « l'hyperespace cindynique du danger » pour des cadres américains — « magic circle » — que j'ai compris ce que la formalisation ne pouvait pas nommer : la part magique."
+     data-en="This book gave me more than a method: as a side-effect, it gave me the concept around which I have built all my work. It was in having to translate “the cindynic hyperspace of danger” for American executives — “magic circle” — that I understood what formalisation could not name: the magical share.">Ce livre m'a donné plus qu'une méthode : par contrecoup, il m'a donné le
   concept autour duquel j'ai construit tout mon travail. C'est en devant traduire « l'hyperespace
   cindynique du danger » pour des cadres américains — « magic circle » — que j'ai compris ce que la
   formalisation ne pouvait pas nommer : la part magique.</p>
   <details class="livre-note">
-    <summary>Lire mon commentaire</summary>
+    <summary data-fr="Lire mon commentaire" data-en="Read my commentary">Lire mon commentaire</summary>
     <div class="livre-note-corps">
-      <p>Ce livre m'a donné plus qu'une méthode : il m'a donné, par contrecoup, le concept autour duquel
+      <p data-fr="Ce livre m'a donné plus qu'une méthode : il m'a donné, par contrecoup, le concept autour duquel j'ai construit tout mon travail depuis. Je dois donc commencer par une dette."
+         data-en="This book gave me more than a method: it gave me, as a side-effect, the concept around which I have built all my work since. I must therefore begin with a debt.">Ce livre m'a donné plus qu'une méthode : il m'a donné, par contrecoup, le concept autour duquel
       j'ai construit tout mon travail depuis. Je dois donc commencer par une dette.</p>
-      <p>Kervern et Boulenger proposent ici une science du danger — les cindyniques — dont la clé est un
+      <p data-fr="Kervern et Boulenger proposent ici une science du danger — les cindyniques — dont la clé est un espace à cinq dimensions : les faits, les modèles, les règles, les objectifs et les valeurs. Le danger, disent-ils, ne naît pas d'une défaillance technique mais des dissonances entre ces cinq plans : quand ce qu'une organisation sait, ce qu'elle croit, ce qu'elle prescrit, ce qu'elle vise et ce qu'elle tient pour bon cessent d'être cohérents. C'est rigoureux, c'est opérant, et c'est d'une justesse que vingt ans de pratique n'ont pas démentie."
+         data-en="Kervern and Boulenger propose here a science of danger — the cindyniques — whose key is a five-dimensional space: facts, models, rules, objectives and values. Danger, they say, does not arise from a technical failure but from the dissonances between these five planes: when what an organisation knows, what it believes, what it prescribes, what it aims for and what it holds to be good cease to be coherent. It is rigorous, it is operative, and it is of a rightness twenty years of practice have not belied.">Kervern et Boulenger proposent ici une science du danger — les cindyniques — dont la clé est un
       espace à cinq dimensions : les faits, les modèles, les règles, les objectifs et les valeurs. Le
       danger, disent-ils, ne naît pas d'une défaillance technique mais des dissonances entre ces cinq
       plans : quand ce qu'une organisation sait, ce qu'elle croit, ce qu'elle prescrit, ce qu'elle vise
       et ce qu'elle tient pour bon cessent d'être cohérents. C'est rigoureux, c'est opérant, et c'est
       d'une justesse que vingt ans de pratique n'ont pas démentie.</p>
-      <p>Reste que je me souviens du jour où j'ai dû l'expliquer. J'étais aux États-Unis, devant une
+      <p data-fr="Reste que je me souviens du jour où j'ai dû l'expliquer. J'étais aux États-Unis, devant une salle de cadres américains, et il m'est apparu avec une clarté soudaine que jamais aucun d'eux n'écouterait trois minutes un exposé sur « l'hyperespace cindynique du danger ». J'ai dit « magic circle ». Ils ont adoré, et se sont mis à prendre des notes. Sur le moment, j'ai cru n'avoir fait que traduire pour un public. J'ai compris ensuite que j'avais dit autre chose — et quelque chose de plus exact."
+         data-en="Still, I remember the day I had to explain it. I was in the United States, before a room of American executives, and it appeared to me with sudden clarity that not one of them would listen for three minutes to a lecture on “the cindynic hyperspace of danger”. I said “magic circle”. They loved it, and set about taking notes. At the time, I thought I had merely translated for an audience. I later understood I had said something else — and something more exact.">Reste que je me souviens du jour où j'ai dû l'expliquer. J'étais aux États-Unis, devant une
       salle de cadres américains, et il m'est apparu avec une clarté soudaine que jamais aucun d'eux
       n'écouterait trois minutes un exposé sur « l'hyperespace cindynique du danger ». J'ai dit « magic
       circle ». Ils ont adoré, et se sont mis à prendre des notes. Sur le moment, j'ai cru n'avoir fait
       que traduire pour un public. J'ai compris ensuite que j'avais dit autre chose — et quelque chose
       de plus exact.</p>
-      <p>Car ce que la formalisation cindynique ne peut pas nommer, c'est ce qui fait tenir l'ensemble :
+      <p data-fr="Car ce que la formalisation cindynique ne peut pas nommer, c'est ce qui fait tenir l'ensemble : la part magique. Les cinq dimensions ne produisent pas la cohérence, elles la mesurent ; ce qui la produit, c'est l'adhésion des acteurs à un pacte qui n'existe que parce qu'ils y croient — exactement comme le cercle du magicien, qui ne fait rien tant que le groupe n'y entre pas. Je ne le reproche pas aux auteurs : leur qualité d'ingénieurs, qui fait la force du modèle, leur interdisait sans doute de concevoir cette part-là plus encore que de l'exprimer. Un ingénieur ne peut pas écrire que son objet repose sur une croyance."
+         data-en="For what cindynic formalisation cannot name is what makes the whole hold together: the magical share. The five dimensions do not produce coherence, they measure it; what produces it is the adherence of the actors to a pact that exists only because they believe in it — exactly like the magician's circle, which does nothing until the group enters it. I do not blame the authors: their quality as engineers, which makes the strength of the model, doubtless prevented them from even conceiving that share, let alone expressing it. An engineer cannot write that his object rests on a belief.">Car ce que la formalisation cindynique ne peut pas nommer, c'est ce qui fait tenir l'ensemble :
       la part magique. Les cinq dimensions ne produisent pas la cohérence, elles la mesurent ; ce qui la
       produit, c'est l'adhésion des acteurs à un pacte qui n'existe que parce qu'ils y croient —
       exactement comme le cercle du magicien, qui ne fait rien tant que le groupe n'y entre pas. Je ne
       le reproche pas aux auteurs : leur qualité d'ingénieurs, qui fait la force du modèle, leur
       interdisait sans doute de concevoir cette part-là plus encore que de l'exprimer. Un ingénieur ne
       peut pas écrire que son objet repose sur une croyance.</p>
-      <p>C'est donc à ce livre que je dois à la fois mon outillage et l'endroit précis où j'ai dû le
+      <p data-fr="C'est donc à ce livre que je dois à la fois mon outillage et l'endroit précis où j'ai dû le dépasser. On ne peut pas demander davantage à un ouvrage de méthode."
+         data-en="It is therefore to this book that I owe both my toolkit and the precise place where I had to go beyond it. One cannot ask more of a work of method.">C'est donc à ce livre que je dois à la fois mon outillage et l'endroit précis où j'ai dû le
       dépasser. On ne peut pas demander davantage à un ouvrage de méthode.</p>
     </div>
   </details>
   <br>
-  <a class="livre-lien" href="https://www.babelio.com/livres/Georges-Yves-Kervern-Cindyniques--Concepts-et-mode-demploi/2076428" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Georges-Yves-Kervern-Cindyniques--Concepts-et-mode-demploi/2076428" target="_blank" rel="noopener"
+     data-fr="En discuter sur Babelio ↗"
+     data-en="Discuss on Babelio ↗">En discuter sur Babelio ↗</a>
 </section>
 
 <section class="livre">
   <div class="livre-auteur">Robert Hertz</div>
   <h2>Sociologie religieuse et anthropologie</h2>
-  <p class="livre-ref">Deux enquêtes de terrain, 1912-1915 — PUF, coll. « Quadrige », 2015, postface
+  <p class="livre-ref"
+     data-fr="Deux enquêtes de terrain, 1912-1915 — PUF, coll. « Quadrige », 2015, postface de Marcel Mauss. Contient « Saint Besse, étude d'un culte alpestre » (1913)."
+     data-en="Two field investigations, 1912-1915 — PUF, “Quadrige” series, 2015, afterword by Marcel Mauss. Includes “Saint Besse, study of an Alpine cult” (1913).">Deux enquêtes de terrain, 1912-1915 — PUF, coll. « Quadrige », 2015, postface
   de Marcel Mauss. Contient « Saint Besse, étude d'un culte alpestre » (1913).</p>
-  <p class="livre-accroche">Un texte fondateur que presque personne ne lit. « Saint Besse » démontre,
+  <p class="livre-accroche"
+     data-fr="Un texte fondateur que presque personne ne lit. « Saint Besse » démontre, un demi-siècle avant les grandes synthèses, qu'un objet n'est jamais ni pure chose ni pur symbole, et que la géographie sociale renverse la géographie physique. C'est, pour ma part, la référence absolue de ce que j'appelle la géographie sociale."
+     data-en="A foundational text almost no one reads. “Saint Besse” demonstrates, half a century before the great syntheses, that an object is never either pure thing or pure symbol, and that social geography overturns physical geography. It is, for my part, the absolute reference for what I call social geography.">Un texte fondateur que presque personne ne lit. « Saint Besse » démontre,
   un demi-siècle avant les grandes synthèses, qu'un objet n'est jamais ni pure chose ni pur symbole,
   et que la géographie sociale renverse la géographie physique. C'est, pour ma part, la référence
   absolue de ce que j'appelle la géographie sociale.</p>
   <details class="livre-note">
-    <summary>Lire mon commentaire</summary>
+    <summary data-fr="Lire mon commentaire" data-en="Read my commentary">Lire mon commentaire</summary>
     <div class="livre-note-corps">
-      <p>Il y a des textes fondateurs que tout le monde cite, et des textes fondateurs que presque
+      <p data-fr="Il y a des textes fondateurs que tout le monde cite, et des textes fondateurs que presque personne ne lit. « Saint Besse » appartient à la seconde espèce, et c'est une injustice que chaque lecteur peut réparer en quelques heures — l'étude est courte, limpide, et d'une modernité stupéfiante pour un texte de 1913."
+         data-en="There are foundational texts everyone cites, and foundational texts almost no one reads. “Saint Besse” belongs to the second kind, and it is an injustice each reader can redress in a few hours — the study is short, limpid, and of a modernity stunning for a text from 1913.">Il y a des textes fondateurs que tout le monde cite, et des textes fondateurs que presque
       personne ne lit. « Saint Besse » appartient à la seconde espèce, et c'est une injustice que chaque
       lecteur peut réparer en quelques heures — l'étude est courte, limpide, et d'une modernité
       stupéfiante pour un texte de 1913.</p>
-      <p>Robert Hertz, le plus doué des élèves de Mauss, y fait ce que son maître théorisait : il monte.
+      <p data-fr="Robert Hertz, le plus doué des élèves de Mauss, y fait ce que son maître théorisait : il monte. À deux mille mètres, dans les Alpes, un rocher attire chaque 10 août des milliers de montagnards venus de vallées qui s'ignorent tout le reste de l'année. Hertz observe tout : la procession et ses querelles de préséance, les communautés qui se disputent la propriété du saint, les fragments de pierre qu'on détache et qu'on emporte comme reliques, et ce dédoublement admirable — pour le clergé, Besse est un soldat de la légion thébaine ; pour les bergers, c'est un des leurs, martyrisé sur sa montagne. Même rocher, même saint, deux lectures — et chacune dit la vérité de ceux qui la portent."
+         data-en="Robert Hertz, the most gifted of Mauss's students, does here what his master theorised: he climbs. At two thousand metres, in the Alps, a rock draws thousands of mountaineers every 10 August, coming from valleys that ignore one another all the rest of the year. Hertz observes everything: the procession and its quarrels of precedence, the communities that dispute the ownership of the saint, the fragments of stone detached and carried away as relics, and that admirable doubling — for the clergy, Besse is a soldier of the Theban legion; for the shepherds, he is one of their own, martyred on his mountain. Same rock, same saint, two readings — and each speaks the truth of those who carry it.">Robert Hertz, le plus doué des élèves de Mauss, y fait ce que son maître théorisait : il monte.
       À deux mille mètres, dans les Alpes, un rocher attire chaque 10 août des milliers de montagnards
       venus de vallées qui s'ignorent tout le reste de l'année. Hertz observe tout : la procession et
       ses querelles de préséance, les communautés qui se disputent la propriété du saint, les fragments
@@ -342,7 +432,8 @@
       clergé, Besse est un soldat de la légion thébaine ; pour les bergers, c'est un des leurs,
       martyrisé sur sa montagne. Même rocher, même saint, deux lectures — et chacune dit la vérité de
       ceux qui la portent.</p>
-      <p>Ce petit texte démontre, un demi-siècle avant les grandes synthèses, qu'un objet matériel n'est
+      <p data-fr="Ce petit texte démontre, un demi-siècle avant les grandes synthèses, qu'un objet matériel n'est jamais ni une pure chose ni un pur symbole, mais les deux simultanément ; que le même lieu est enjeu de culte pour les uns et enjeu de conflit entre les autres, à quelques mètres de distance ; et que la géographie sociale renverse la géographie physique — cette montagne que les cartes donnent pour l'obstacle entre les vallées est en réalité leur centre, le seul point où elles font société. Quiconque observe une organisation moderne — ses machines vénérées, ses lieux évités, ses querelles de préséance — retrouvera tout, absolument tout, dans ces pages. Hertz est tombé au front en 1915, à trente-trois ans. Mauss édita pieusement ses papiers. Lisez « Saint Besse » pour ce qu'il est : le chef-d'œuvre bref d'une sociologie de terrain qui n'a jamais été dépassée sur son objet — et, pour ma part, la référence absolue de ce que j'appelle ailleurs la géographie sociale."
+         data-en="This short text demonstrates, half a century before the great syntheses, that a material object is never either pure thing or pure symbol, but both at once; that the same place is a stake of worship for some and of conflict between others, a few metres apart; and that social geography overturns physical geography — this mountain that maps give as the obstacle between the valleys is in reality their centre, the only point where they form society. Whoever observes a modern organisation — its venerated machines, its avoided places, its quarrels of precedence — will find everything, absolutely everything, in these pages. Hertz fell at the front in 1915, at thirty-three. Mauss piously edited his papers. Read “Saint Besse” for what it is: the brief masterpiece of a field sociology never surpassed on its object — and, for my part, the absolute reference for what I call, elsewhere, social geography.">Ce petit texte démontre, un demi-siècle avant les grandes synthèses, qu'un objet matériel n'est
       jamais ni une pure chose ni un pur symbole, mais les deux simultanément ; que le même lieu est
       enjeu de culte pour les uns et enjeu de conflit entre les autres, à quelques mètres de distance ;
       et que la géographie sociale renverse la géographie physique — cette montagne que les cartes
@@ -356,34 +447,43 @@
     </div>
   </details>
   <br>
-  <a class="livre-lien" href="https://www.babelio.com/livres/Hertz-Sociologie-religieuse-et-anthropologie-Deux-enque/2076325" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Hertz-Sociologie-religieuse-et-anthropologie-Deux-enque/2076325" target="_blank" rel="noopener"
+     data-fr="En discuter sur Babelio ↗"
+     data-en="Discuss on Babelio ↗">En discuter sur Babelio ↗</a>
 </section>
 
 <section class="livre">
   <div class="livre-auteur">Louis Dumont</div>
   <h2>Essais sur l'individualisme</h2>
-  <p class="livre-ref">Une perspective anthropologique sur l'idéologie moderne — Seuil, coll. « Esprit ».</p>
-  <p class="livre-accroche">Et si l'individu n'allait pas de soi ? Dumont montre que l'individu comme
+  <p class="livre-ref"
+     data-fr="Une perspective anthropologique sur l'idéologie moderne — Seuil, coll. « Esprit »."
+     data-en="An anthropological perspective on modern ideology — Seuil, “Esprit” series.">Une perspective anthropologique sur l'idéologie moderne — Seuil, coll. « Esprit ».</p>
+  <p class="livre-accroche"
+     data-fr="Et si l'individu n'allait pas de soi ? Dumont montre que l'individu comme valeur suprême est une exception historique, devenue si évidente que nous la prenons pour la nature humaine. Il donne la clé de ce qui manque à nos tableaux de bord : nos instruments ne mesurent pas les relations parce que notre idéologie ne les voit pas."
+     data-en="What if the individual were not self-evident? Dumont shows that the individual as supreme value is a historical exception, become so obvious that we take it for human nature. He gives the key to what is missing from our dashboards: our instruments do not measure relations because our ideology does not see them.">Et si l'individu n'allait pas de soi ? Dumont montre que l'individu comme
   valeur suprême est une exception historique, devenue si évidente que nous la prenons pour la nature
   humaine. Il donne la clé de ce qui manque à nos tableaux de bord : nos instruments ne mesurent pas
   les relations parce que notre idéologie ne les voit pas.</p>
   <details class="livre-note">
-    <summary>Lire mon commentaire</summary>
+    <summary data-fr="Lire mon commentaire" data-en="Read my commentary">Lire mon commentaire</summary>
     <div class="livre-note-corps">
-      <p>Louis Dumont pose une question que presque personne n'ose formuler : et si l'individu n'allait
+      <p data-fr="Louis Dumont pose une question que presque personne n'ose formuler : et si l'individu n'allait pas de soi ? Non pas l'être humain concret — qui a toujours existé — mais l'individu comme valeur suprême, comme unité de base à partir de laquelle on penserait légitimement la société. Dumont montre que cette configuration est une exception historique, née en Occident, longuement élaborée du christianisme primitif aux Lumières, et devenue si évidente à nos yeux que nous la prenons pour la nature humaine elle-même."
+         data-en="Louis Dumont poses a question almost no one dares to formulate: what if the individual were not self-evident? Not the concrete human being — which has always existed — but the individual as supreme value, as the base unit from which one would legitimately think society. Dumont shows that this configuration is a historical exception, born in the West, long elaborated from early Christianity to the Enlightenment, and now so obvious to our eyes that we take it for human nature itself.">Louis Dumont pose une question que presque personne n'ose formuler : et si l'individu n'allait
       pas de soi ? Non pas l'être humain concret — qui a toujours existé — mais l'individu comme valeur
       suprême, comme unité de base à partir de laquelle on penserait légitimement la société. Dumont
       montre que cette configuration est une exception historique, née en Occident, longuement élaborée
       du christianisme primitif aux Lumières, et devenue si évidente à nos yeux que nous la prenons pour
       la nature humaine elle-même.</p>
-      <p>Sa méthode est comparative et son geste consiste à nous rendre étrangers à nous-mêmes. Face à
+      <p data-fr="Sa méthode est comparative et son geste consiste à nous rendre étrangers à nous-mêmes. Face à l'individualisme moderne, il place l'holisme — ces sociétés où la totalité prime sur ses parties, où l'homme se définit d'abord par sa place dans un ensemble. Il ne s'agit pas de préférer l'une à l'autre : Dumont n'est pas un nostalgique des hiérarchies. Il s'agit de comprendre que notre idéologie, précisément parce qu'elle se croit universelle, est aveugle aux relations — elle voit des individus et des contrats là où opèrent aussi des appartenances, des dettes, des hiérarchies de valeurs qu'elle refuse de nommer et qui n'en agissent pas moins."
+         data-en="His method is comparative and his gesture consists in making us foreigners to ourselves. Against modern individualism he sets holism — those societies where the totality takes precedence over its parts, where a person is defined first by his place in a whole. It is not a matter of preferring one to the other: Dumont is no nostalgic for hierarchies. It is a matter of understanding that our ideology, precisely because it believes itself universal, is blind to relations — it sees individuals and contracts where there also operate belongings, debts, hierarchies of values that it refuses to name and that act no less for that.">Sa méthode est comparative et son geste consiste à nous rendre étrangers à nous-mêmes. Face à
       l'individualisme moderne, il place l'holisme — ces sociétés où la totalité prime sur ses parties,
       où l'homme se définit d'abord par sa place dans un ensemble. Il ne s'agit pas de préférer l'une à
       l'autre : Dumont n'est pas un nostalgique des hiérarchies. Il s'agit de comprendre que notre
       idéologie, précisément parce qu'elle se croit universelle, est aveugle aux relations — elle voit
       des individus et des contrats là où opèrent aussi des appartenances, des dettes, des hiérarchies
       de valeurs qu'elle refuse de nommer et qui n'en agissent pas moins.</p>
-      <p>C'est là que ce livre difficile devient d'une utilité redoutable pour qui observe les
+      <p data-fr="C'est là que ce livre difficile devient d'une utilité redoutable pour qui observe les organisations. On y célèbre l'autonomie, la performance individuelle, le contrat de travail entre parties égales — et l'on s'étonne ensuite que le collectif se délite, que les appartenances se réfugient dans des sous-groupes, que ce qui tient réellement les équipes ne figure dans aucun tableau de bord. Dumont donne la clé : nos instruments ne mesurent pas les relations parce que notre idéologie ne les voit pas. Le lecteur de Mauss retrouvera d'ailleurs ici son héritier le plus rigoureux — celui qui a compris que l'&lt;em&gt;Essai sur le don&lt;/em&gt; n'était pas une curiosité ethnographique mais une machine à démonter nos évidences."
+         data-en="It is here that this difficult book becomes redoubtably useful for whoever observes organisations. Autonomy, individual performance, the work contract between equal parties are celebrated — and one is then astonished that the collective unravels, that belongings take refuge in sub-groups, that what really holds teams together appears on no dashboard. Dumont gives the key: our instruments do not measure relations because our ideology does not see them. The reader of Mauss will find here his most rigorous heir — the one who understood that the &lt;em&gt;Essai sur le don&lt;/em&gt; was not an ethnographic curiosity but a machine for dismantling our self-evidences.">C'est là que ce livre difficile devient d'une utilité redoutable pour qui observe les
       organisations. On y célèbre l'autonomie, la performance individuelle, le contrat de travail entre
       parties égales — et l'on s'étonne ensuite que le collectif se délite, que les appartenances se
       réfugient dans des sous-groupes, que ce qui tient réellement les équipes ne figure dans aucun
@@ -391,18 +491,26 @@
       notre idéologie ne les voit pas. Le lecteur de Mauss retrouvera d'ailleurs ici son héritier le
       plus rigoureux — celui qui a compris que l'<em>Essai sur le don</em> n'était pas une curiosité
       ethnographique mais une machine à démonter nos évidences.</p>
-      <p>L'ouvrage est exigeant, parfois aride, et l'on peut discuter sa lecture de l'histoire
+      <p data-fr="L'ouvrage est exigeant, parfois aride, et l'on peut discuter sa lecture de l'histoire chrétienne. Mais il fait ce que peu de livres font : il rend visible l'eau dans laquelle nous nageons."
+         data-en="The work is demanding, sometimes arid, and one may debate his reading of Christian history. But it does what few books do: it makes visible the water in which we swim.">L'ouvrage est exigeant, parfois aride, et l'on peut discuter sa lecture de l'histoire
       chrétienne. Mais il fait ce que peu de livres font : il rend visible l'eau dans laquelle nous
       nageons.</p>
     </div>
   </details>
   <br>
-  <a class="livre-lien" href="https://www.babelio.com/livres/Dumont-Essais-sur-lindividualisme-Une-perspective-anthr/346829" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Dumont-Essais-sur-lindividualisme-Une-perspective-anthr/346829" target="_blank" rel="noopener"
+     data-fr="En discuter sur Babelio ↗"
+     data-en="Discuss on Babelio ↗">En discuter sur Babelio ↗</a>
 </section>
 
 <!-- ============ PILIER 3 : l'histoire longue de la contrainte ============ -->
-<div class="pilier">Troisième pilier — l'histoire longue de la contrainte
-  <div class="pilier-sous">James Scott : l'ordre inégalitaire a une date de naissance, donc une
+<div class="pilier">
+  <div class="pilier-titre"
+       data-fr="Troisième pilier — l'histoire longue de la contrainte"
+       data-en="Third pillar — the long history of constraint">Troisième pilier — l'histoire longue de la contrainte</div>
+  <div class="pilier-sous"
+       data-fr="James Scott : l'ordre inégalitaire a une date de naissance, donc une composition — et ce qui est composé peut être recomposé. Autour : ceux qui, du néolithique à la France d'aujourd'hui, apprennent à relire le paysage comme un fait social."
+       data-en="James Scott: the unequal order has a date of birth, therefore a composition — and what is composed can be recomposed. Around him: those who, from the Neolithic to today's France, teach us to read the landscape as a social fact.">James Scott : l'ordre inégalitaire a une date de naissance, donc une
   composition — et ce qui est composé peut être recomposé. Autour : ceux qui, du néolithique à la
   France d'aujourd'hui, apprennent à relire le paysage comme un fait social.</div>
 </div>
@@ -410,16 +518,21 @@
 <section class="livre">
   <div class="livre-auteur">James C. Scott</div>
   <h2>Homo domesticus</h2>
-  <p class="livre-ref">Une histoire profonde des premiers États — La Découverte, 2019 ; trad.
+  <p class="livre-ref"
+     data-fr="Une histoire profonde des premiers États — La Découverte, 2019 ; trad. Marc Saint-Upéry, préf. Jean-Paul Demoule."
+     data-en="A deep history of the first States — La Découverte, 2019; trans. Marc Saint-Upéry, preface by Jean-Paul Demoule. (Original: &lt;em&gt;Against the Grain&lt;/em&gt;.)">Une histoire profonde des premiers États — La Découverte, 2019 ; trad.
   Marc Saint-Upéry, préf. Jean-Paul Demoule.</p>
-  <p class="livre-accroche">Un livre qui ruine tranquillement le plus vieux mensonge du monde :
+  <p class="livre-accroche"
+     data-fr="Un livre qui ruine tranquillement le plus vieux mensonge du monde : « c'est la nature humaine ». On croit lire de l'archéologie ; on lit une généalogie du management. Si ce modèle a un commencement, alors il a une composition — et ce qui est composé peut être recomposé. C'est le troisième pilier de mes travaux."
+     data-en="A book that calmly ruins the oldest lie in the world: “it's human nature”. One thinks one is reading archaeology; one is reading a genealogy of management. If this model has a beginning, then it has a composition — and what is composed can be recomposed. It is the third pillar of my work.">Un livre qui ruine tranquillement le plus vieux mensonge du monde :
   « c'est la nature humaine ». On croit lire de l'archéologie ; on lit une généalogie du management.
   Si ce modèle a un commencement, alors il a une composition — et ce qui est composé peut être
   recomposé. C'est le troisième pilier de mes travaux.</p>
   <details class="livre-note">
-    <summary>Lire mon commentaire</summary>
+    <summary data-fr="Lire mon commentaire" data-en="Read my commentary">Lire mon commentaire</summary>
     <div class="livre-note-corps">
-      <p>Voilà un livre qui ruine tranquillement le plus vieux mensonge du monde : « c'est la nature
+      <p data-fr="Voilà un livre qui ruine tranquillement le plus vieux mensonge du monde : « c'est la nature humaine ». Scott y démonte, sources archéologiques à l'appui, le récit héroïque de la « révolution néolithique » — cette fable du progrès où l'humanité, lasse d'errer, aurait inventé l'agriculture, la ville et l'État dans un même élan de civilisation. La réalité qu'il restitue est tout autre : les premières cités-États furent des machines à capter, retenir et faire produire un cheptel humain, si dures pour le plus grand nombre qu'on les fuyait dès qu'on le pouvait. Elles n'ont pas gagné parce qu'on les aimait ; elles ont gagné parce qu'autour d'elles, millénaire après millénaire, l'espace où vivre autrement se refermait. Et le choix des cultures elles-mêmes — le blé plutôt que tout ce qui se cache, se disperse ou mûrit à des dates imprévisibles — obéissait aux exigences du percepteur : prévisible, mesurable, stockable, taxable. On croit lire de l'archéologie ; on lit une généalogie du management."
+         data-en="Here is a book that calmly ruins the oldest lie in the world: “it's human nature”. Scott dismantles here, archaeological sources in hand, the heroic narrative of the “Neolithic revolution” — that fable of progress in which humanity, tired of wandering, would have invented agriculture, the city and the State in one same civilising impulse. The reality he restores is quite otherwise: the first city-States were machines to capture, retain and make produce a human livestock, so harsh for the greater number that they were fled as soon as one could. They did not win because they were loved; they won because around them, millennium after millennium, the space to live otherwise was closing in. And the choice of the crops themselves — wheat rather than everything that hides, disperses or ripens at unpredictable dates — obeyed the requirements of the tax collector: predictable, measurable, storable, taxable. One thinks one is reading archaeology; one is reading a genealogy of management.">Voilà un livre qui ruine tranquillement le plus vieux mensonge du monde : « c'est la nature
       humaine ». Scott y démonte, sources archéologiques à l'appui, le récit héroïque de la « révolution
       néolithique » — cette fable du progrès où l'humanité, lasse d'errer, aurait inventé l'agriculture,
       la ville et l'État dans un même élan de civilisation. La réalité qu'il restitue est tout autre :
@@ -430,7 +543,8 @@
       blé plutôt que tout ce qui se cache, se disperse ou mûrit à des dates imprévisibles — obéissait
       aux exigences du percepteur : prévisible, mesurable, stockable, taxable. On croit lire de
       l'archéologie ; on lit une généalogie du management.</p>
-      <p>Car c'est bien là que ce livre m'a saisi. Quiconque a fréquenté les organisations modernes
+      <p data-fr="Car c'est bien là que ce livre m'a saisi. Quiconque a fréquenté les organisations modernes reconnaîtra tout : la captation et la rétention des « talents », les enceintes faites autant pour retenir que pour protéger, la production dictée par ce qui se mesure plutôt que par ce qui nourrit. L'entrepreneur qui dit « produire du blé » a littéralement raison, même s'il ignore pourquoi. Mais la leçon décisive est ailleurs : si ce modèle a un commencement — une consolidation vieille de cinq mille ans à peine, un raz de marée aux XIX&lt;sup&gt;e&lt;/sup&gt; et XX&lt;sup&gt;e&lt;/sup&gt; siècles —, alors il a une composition, et ce qui est composé peut être recomposé. Ce que la société a fait, la société peut le défaire."
+         data-en="For it is truly there that this book seized me. Whoever has frequented modern organisations will recognise everything: the capture and retention of “talents”, the enclosures made as much to retain as to protect, the production dictated by what is measured rather than by what nourishes. The entrepreneur who says “to produce wheat” is literally right, even if he does not know why. But the decisive lesson lies elsewhere: if this model has a beginning — a consolidation barely five thousand years old, a tidal wave in the 19th and 20th centuries —, then it has a composition, and what is composed can be recomposed. What society has made, society can unmake.">Car c'est bien là que ce livre m'a saisi. Quiconque a fréquenté les organisations modernes
       reconnaîtra tout : la captation et la rétention des « talents », les enceintes faites autant pour
       retenir que pour protéger, la production dictée par ce qui se mesure plutôt que par ce qui nourrit.
       L'entrepreneur qui dit « produire du blé » a littéralement raison, même s'il ignore pourquoi. Mais
@@ -438,7 +552,8 @@
       mille ans à peine, un raz de marée aux XIX<sup>e</sup> et XX<sup>e</sup> siècles —, alors il a une
       composition, et ce qui est composé peut être recomposé. Ce que la société a fait, la société peut
       le défaire.</p>
-      <p>Une réserve, qui est aussi un hommage : la sociologie de Scott, admirable au constat, reste
+      <p data-fr="Une réserve, qui est aussi un hommage : la sociologie de Scott, admirable au constat, reste muette sur la cause profonde et le remède — tous les systèmes ne sont pas par essence des dominations perverses, ils le deviennent par perte du sens de leurs propres valeurs, et cela se joue aussi dans chaque conscience. Il y faut un autre compagnon de route. Mais pour libérer le regard de la fausse fatalité, je ne connais pas de meilleur livre — c'est le troisième pilier sur lequel j'ai construit mes propres travaux."
+         data-en="One reservation, which is also a tribute: Scott's sociology, admirable in its diagnosis, remains silent on the deep cause and on the remedy — not all systems are by essence perverse dominations; they become so through the loss of the meaning of their own values, and this is played out also in each conscience. Another companion of the road is needed for that. But to free the gaze from false fatality, I know no better book — it is the third pillar on which I have built my own work.">Une réserve, qui est aussi un hommage : la sociologie de Scott, admirable au constat, reste
       muette sur la cause profonde et le remède — tous les systèmes ne sont pas par essence des
       dominations perverses, ils le deviennent par perte du sens de leurs propres valeurs, et cela se
       joue aussi dans chaque conscience. Il y faut un autre compagnon de route. Mais pour libérer le
@@ -447,29 +562,37 @@
     </div>
   </details>
   <br>
-  <a class="livre-lien" href="https://www.babelio.com/livres/Scott-Homo-Domesticus/1280556" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Scott-Homo-Domesticus/1280556" target="_blank" rel="noopener"
+     data-fr="En discuter sur Babelio ↗"
+     data-en="Discuss on Babelio ↗">En discuter sur Babelio ↗</a>
 </section>
 
 <section class="livre">
   <div class="livre-auteur">Marshall Sahlins</div>
   <h2>Âge de pierre, âge d'abondance</h2>
-  <p class="livre-ref">L'économie des sociétés primitives — Gallimard, 1976 ; trad. Tina Jolas,
+  <p class="livre-ref"
+     data-fr="L'économie des sociétés primitives — Gallimard, 1976 ; trad. Tina Jolas, préf. Pierre Clastres."
+     data-en="The economics of primitive societies — Gallimard, 1976; trans. Tina Jolas, preface by Pierre Clastres. (Original: &lt;em&gt;Stone Age Economics&lt;/em&gt;.)">L'économie des sociétés primitives — Gallimard, 1976 ; trad. Tina Jolas,
   préf. Pierre Clastres.</p>
-  <p class="livre-accroche">L'abondance n'est pas la quantité de biens accumulés, c'est le rapport
+  <p class="livre-accroche"
+     data-fr="L'abondance n'est pas la quantité de biens accumulés, c'est le rapport entre les désirs et les moyens de les satisfaire — on peut donc y parvenir en produisant beaucoup, ou en désirant peu. Quiconque s'interroge sur le bien-être au travail finit par buter sur la question que Sahlins pose de biais."
+     data-en="Abundance is not the quantity of goods accumulated, it is the ratio between desires and the means of satisfying them — one can therefore reach it by producing much, or by desiring little. Whoever questions well-being at work eventually stumbles on the question Sahlins asks obliquely.">L'abondance n'est pas la quantité de biens accumulés, c'est le rapport
   entre les désirs et les moyens de les satisfaire — on peut donc y parvenir en produisant beaucoup,
   ou en désirant peu. Quiconque s'interroge sur le bien-être au travail finit par buter sur la
   question que Sahlins pose de biais.</p>
   <details class="livre-note">
-    <summary>Lire mon commentaire</summary>
+    <summary data-fr="Lire mon commentaire" data-en="Read my commentary">Lire mon commentaire</summary>
     <div class="livre-note-corps">
-      <p>Il faut un certain culot pour intituler « âge d'abondance » l'étude des sociétés que l'Occident
+      <p data-fr="Il faut un certain culot pour intituler « âge d'abondance » l'étude des sociétés que l'Occident a le plus obstinément décrites comme misérables. Le culot de Sahlins repose pourtant sur une opération simple : compter. Combien d'heures par jour les chasseurs-cueilleurs consacrent-ils réellement à leur subsistance ? Les données qu'il rassemble donnent le vertige — trois à cinq heures, souvent moins, avec des journées entières sans activité productive, et une insouciance du lendemain qui scandalisait les observateurs européens bien plus qu'elle n'inquiétait les intéressés. Le reste du temps était à eux."
+         data-en="It takes a certain nerve to entitle “age of abundance” the study of the societies the West has most stubbornly described as miserable. Sahlins's nerve rests, however, on a simple operation: counting. How many hours a day do hunter-gatherers actually devote to their subsistence? The data he assembles are dizzying — three to five hours, often less, with entire days without productive activity, and an unconcern for tomorrow that scandalised the European observers far more than it worried the persons concerned. The rest of the time was theirs.">Il faut un certain culot pour intituler « âge d'abondance » l'étude des sociétés que l'Occident
       a le plus obstinément décrites comme misérables. Le culot de Sahlins repose pourtant sur une
       opération simple : compter. Combien d'heures par jour les chasseurs-cueilleurs consacrent-ils
       réellement à leur subsistance ? Les données qu'il rassemble donnent le vertige — trois à cinq
       heures, souvent moins, avec des journées entières sans activité productive, et une insouciance du
       lendemain qui scandalisait les observateurs européens bien plus qu'elle n'inquiétait les
       intéressés. Le reste du temps était à eux.</p>
-      <p>Sahlins en tire une définition qui retourne la nôtre comme un gant : l'abondance n'est pas la
+      <p data-fr="Sahlins en tire une définition qui retourne la nôtre comme un gant : l'abondance n'est pas la quantité de biens accumulés, c'est le rapport entre les désirs et les moyens de les satisfaire. On peut donc y parvenir par deux chemins opposés — produire beaucoup, ou désirer peu. Notre économie a choisi le premier et l'a érigé en évidence naturelle ; les sociétés dites primitives avaient choisi le second, et vivaient dans une abondance que nos statistiques sont structurellement incapables de mesurer, puisqu'elles ne comptent que ce qui se produit et jamais ce qui se vit. C'est ici que ce livre d'ethnologie devient un livre sur nous. Quiconque s'interroge sur le bien-être au travail finit par buter sur la question que Sahlins pose de biais : à quoi bon améliorer les conditions d'une activité qui absorbe l'essentiel de nos journées, si l'on n'interroge jamais la place que cette activité occupe dans une vie ? Nietzsche l'avait dit brutalement — celui qui n'a pas les deux tiers de sa journée pour lui-même est un esclave. Sahlins le démontre patiemment, chiffres à l'appui, et sans jamais céder à la nostalgie du paradis perdu : il ne s'agit pas de retourner au Kalahari, mais de cesser de croire que notre rapport au travail va de soi."
+         data-en="Sahlins draws from this a definition that turns ours inside out: abundance is not the quantity of goods accumulated, it is the ratio between desires and the means of satisfying them. One can therefore reach it by two opposed paths — produce much, or desire little. Our economy has chosen the first and set it up as a natural self-evidence; the so-called primitive societies had chosen the second, and lived in an abundance our statistics are structurally incapable of measuring, since they count only what is produced and never what is lived. It is here that this ethnological book becomes a book about us. Whoever questions well-being at work eventually stumbles on the question Sahlins asks obliquely: what is the point of improving the conditions of an activity that absorbs the essential of our days, if we never question the place that activity occupies in a life? Nietzsche had put it brutally — he who has not two-thirds of his day to himself is a slave. Sahlins demonstrates it patiently, figures in hand, and without ever giving in to nostalgia for a lost paradise: it is not a matter of returning to the Kalahari, but of ceasing to believe that our relation to work goes without saying.">Sahlins en tire une définition qui retourne la nôtre comme un gant : l'abondance n'est pas la
       quantité de biens accumulés, c'est le rapport entre les désirs et les moyens de les satisfaire. On
       peut donc y parvenir par deux chemins opposés — produire beaucoup, ou désirer peu. Notre économie
       a choisi le premier et l'a érigé en évidence naturelle ; les sociétés dites primitives avaient
@@ -483,33 +606,42 @@
       le démontre patiemment, chiffres à l'appui, et sans jamais céder à la nostalgie du paradis perdu :
       il ne s'agit pas de retourner au Kalahari, mais de cesser de croire que notre rapport au travail
       va de soi.</p>
-      <p>On lui a reproché d'avoir forcé le trait, et les débats sur ses données restent ouverts. Peu
+      <p data-fr="On lui a reproché d'avoir forcé le trait, et les débats sur ses données restent ouverts. Peu importe : même corrigée, sa démonstration a définitivement fêlé une évidence. C'est ce qu'on attend d'un grand livre."
+         data-en="He has been reproached for overstating his case, and debates on his data remain open. It matters little: even corrected, his demonstration has definitively cracked a self-evidence. That is what one asks of a great book.">On lui a reproché d'avoir forcé le trait, et les débats sur ses données restent ouverts. Peu
       importe : même corrigée, sa démonstration a définitivement fêlé une évidence. C'est ce qu'on
       attend d'un grand livre.</p>
     </div>
   </details>
   <br>
-  <a class="livre-lien" href="https://www.babelio.com/livres/Sahlins-Age-de-pierre-age-dabondance/116803" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Sahlins-Age-de-pierre-age-dabondance/116803" target="_blank" rel="noopener"
+     data-fr="En discuter sur Babelio ↗"
+     data-en="Discuss on Babelio ↗">En discuter sur Babelio ↗</a>
 </section>
 
 <section class="livre">
   <div class="livre-auteur">Jérôme Fourquet &amp; Jean-Laurent Cassely</div>
   <h2>La France sous nos yeux</h2>
-  <p class="livre-ref">Économie, paysages, nouveaux modes de vie — Seuil, 2021.</p>
-  <p class="livre-accroche">Un exercice de géographie sociale au sens le plus fort : chaque objet —
+  <p class="livre-ref"
+     data-fr="Économie, paysages, nouveaux modes de vie — Seuil, 2021."
+     data-en="Economy, landscapes, new ways of life — Seuil, 2021.">Économie, paysages, nouveaux modes de vie — Seuil, 2021.</p>
+  <p class="livre-accroche"
+     data-fr="Un exercice de géographie sociale au sens le plus fort : chaque objet — un rond-point, une friche, un entrepôt — n'est jamais seulement matériel, c'est aussi un signe, valorisé ou dévalorisé. Depuis, je ne traverse plus une zone d'activité de la même façon — ni, d'ailleurs, un open space."
+     data-en="An exercise in social geography in the strongest sense: every object — a roundabout, a wasteland, a warehouse — is never merely material, it is also a sign, valued or devalued. Since then, I no longer cross a business park the same way — nor, for that matter, an open-plan office.">Un exercice de géographie sociale au sens le plus fort : chaque objet —
   un rond-point, une friche, un entrepôt — n'est jamais seulement matériel, c'est aussi un signe,
   valorisé ou dévalorisé. Depuis, je ne traverse plus une zone d'activité de la même façon — ni,
   d'ailleurs, un open space.</p>
   <details class="livre-note">
-    <summary>Lire mon commentaire</summary>
+    <summary data-fr="Lire mon commentaire" data-en="Read my commentary">Lire mon commentaire</summary>
     <div class="livre-note-corps">
-      <p>Voilà un livre qui fait ce que personne ne faisait plus : regarder. Fourquet et Cassely ont
+      <p data-fr="Voilà un livre qui fait ce que personne ne faisait plus : regarder. Fourquet et Cassely ont sillonné le pays, relevé les enseignes des zones commerciales, compté les salles de sport et les instituts d'ongleries, observé ce que deviennent les anciennes usines, écouté les noms qu'on donne aux lotissements. De cette collecte patiente sort une France qu'aucun débat télévisé ne décrit : ni celle des cartes électorales, ni celle des slogans, mais celle qui s'est construite sous nos yeux pendant quarante ans, précisément parce que nous ne la regardions pas."
+         data-en="Here is a book that does what no one was doing anymore: looking. Fourquet and Cassely have crisscrossed the country, noted down the signs of commercial zones, counted gyms and nail salons, observed what becomes of former factories, listened to the names given to new housing developments. From this patient collection emerges a France that no televised debate describes: neither that of electoral maps nor that of slogans, but the one that has built itself before our eyes over forty years, precisely because we were not looking at it.">Voilà un livre qui fait ce que personne ne faisait plus : regarder. Fourquet et Cassely ont
       sillonné le pays, relevé les enseignes des zones commerciales, compté les salles de sport et les
       instituts d'ongleries, observé ce que deviennent les anciennes usines, écouté les noms qu'on donne
       aux lotissements. De cette collecte patiente sort une France qu'aucun débat télévisé ne décrit :
       ni celle des cartes électorales, ni celle des slogans, mais celle qui s'est construite sous nos
       yeux pendant quarante ans, précisément parce que nous ne la regardions pas.</p>
-      <p>Ce qui m'a saisi, c'est que ce livre est un exercice de géographie sociale au sens le plus
+      <p data-fr="Ce qui m'a saisi, c'est que ce livre est un exercice de géographie sociale au sens le plus fort. Chaque objet qu'il décrit — un rond-point, une friche, un entrepôt logistique, une salle de padel — n'est jamais seulement une réalité matérielle : c'est aussi un signe, valorisé ou dévalorisé, et l'on ne comprend rien au paysage si l'on refuse de lire les deux à la fois. Le paysage français d'aujourd'hui se donne à lire comme un palimpseste : les strates de l'industrie, du commerce, du tourisme, de la logistique s'y superposent, et chaque époque y a laissé ce qu'elle honorait comme ce qu'elle a laissé mourir. Fourquet et Cassely montrent en outre ce que je retrouve dans toutes les organisations : la saturation progressive de l'espace par des activités dictées d'en haut, en dépit des populations qui y vivent — et le repli de ces populations sur des sous-groupes de proximité qui se consolident par leurs oppositions mutuelles bien plus que par un projet commun."
+         data-en="What seized me is that this book is an exercise in social geography in the strongest sense. Every object it describes — a roundabout, a wasteland, a logistics warehouse, a padel court — is never merely a material reality: it is also a sign, valued or devalued, and one understands nothing of the landscape if one refuses to read both together. Today's French landscape reads as a palimpsest: the strata of industry, commerce, tourism, logistics superimpose upon it, and each era has left there what it honoured as well as what it let die. Fourquet and Cassely further show what I find again in all organisations: the progressive saturation of space by activities dictated from above, in spite of the populations who live there — and the retreat of these populations onto sub-groups of proximity that consolidate themselves through their mutual oppositions much more than through a common project.">Ce qui m'a saisi, c'est que ce livre est un exercice de géographie sociale au sens le plus
       fort. Chaque objet qu'il décrit — un rond-point, une friche, un entrepôt logistique, une salle de
       padel — n'est jamais seulement une réalité matérielle : c'est aussi un signe, valorisé ou
       dévalorisé, et l'on ne comprend rien au paysage si l'on refuse de lire les deux à la fois. Le
@@ -520,7 +652,8 @@
       dictées d'en haut, en dépit des populations qui y vivent — et le repli de ces populations sur des
       sous-groupes de proximité qui se consolident par leurs oppositions mutuelles bien plus que par un
       projet commun.</p>
-      <p>On pourra reprocher à l'ouvrage son foisonnement, parfois vertigineux, et une certaine
+      <p data-fr="On pourra reprocher à l'ouvrage son foisonnement, parfois vertigineux, et une certaine réticence à conclure. Je crois que c'est sa vertu : les auteurs préfèrent nous rendre le regard plutôt que nous fournir une thèse à réciter. Ce qu'on fait ensuite de ce regard nous appartient. Pour ma part, je ne traverse plus une zone d'activité de la même façon — ni, d'ailleurs, un open space."
+         data-en="One may reproach the work its profusion, sometimes dizzying, and a certain reluctance to conclude. I believe that is its virtue: the authors prefer to give us back our gaze rather than provide us with a thesis to recite. What we do with that gaze afterwards belongs to us. For my part, I no longer cross a business park the same way — nor, for that matter, an open-plan office.">On pourra reprocher à l'ouvrage son foisonnement, parfois vertigineux, et une certaine
       réticence à conclure. Je crois que c'est sa vertu : les auteurs préfèrent nous rendre le regard
       plutôt que nous fournir une thèse à réciter. Ce qu'on fait ensuite de ce regard nous appartient.
       Pour ma part, je ne traverse plus une zone d'activité de la même façon — ni, d'ailleurs, un open
@@ -528,24 +661,69 @@
     </div>
   </details>
   <br>
-  <a class="livre-lien" href="https://www.babelio.com/livres/Fourquet-La-France-sous-nos-yeux/1382219" target="_blank" rel="noopener">En discuter sur Babelio ↗</a>
+  <a class="livre-lien" href="https://www.babelio.com/livres/Fourquet-La-France-sous-nos-yeux/1382219" target="_blank" rel="noopener"
+     data-fr="En discuter sur Babelio ↗"
+     data-en="Discuss on Babelio ↗">En discuter sur Babelio ↗</a>
 </section>
 
-<p class="colophon">Ces neuf ouvrages sont référencés dans ma
+<p class="colophon"
+   data-fr="Ces neuf ouvrages sont référencés dans ma &lt;a href=&quot;https://www.babelio.com/mon-profil/2540252/bibliotheque&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;bibliothèque de lecteur sur Babelio&lt;/a&gt;, aux côtés de la &lt;a href=&quot;https://www.babelio.com/auteur/Bruno-Brochenin/720540&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;page auteur&lt;/a&gt; consacrée à mes propres livres. Les commentaires reproduits ici sont les miens ; sur Babelio, ils vivent parmi les critiques des autres lecteurs, ouverts à la discussion."
+   data-en="These nine works are referenced in my &lt;a href=&quot;https://www.babelio.com/mon-profil/2540252/bibliotheque&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;reader's library on Babelio&lt;/a&gt;, alongside the &lt;a href=&quot;https://www.babelio.com/auteur/Bruno-Brochenin/720540&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;author page&lt;/a&gt; devoted to my own books. The commentaries reproduced here are mine; on Babelio, they live among the reviews of other readers, open to discussion.">Ces neuf ouvrages sont référencés dans ma
 <a href="https://www.babelio.com/mon-profil/2540252/bibliotheque" target="_blank" rel="noopener">bibliothèque de lecteur sur Babelio</a>,
 aux côtés de la <a href="https://www.babelio.com/auteur/Bruno-Brochenin/720540" target="_blank" rel="noopener">page auteur</a>
 consacrée à mes propres livres. Les commentaires reproduits ici sont les miens ; sur Babelio, ils vivent
 parmi les critiques des autres lecteurs, ouverts à la discussion.</p>
 
 </div>
+
 <script>
+  function setLang(lang) {
+    if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-fr]').forEach(function(el) {
+      var t = el.getAttribute('data-' + lang);
+      if (t !== null) el.innerHTML = t;
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    document.querySelectorAll('a[href]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      if (!href) return;
+      if (/^(https?:|mailto:|tel:|#)/.test(href)) return;
+      var hashIdx = href.indexOf('#');
+      var hash = hashIdx >= 0 ? href.substring(hashIdx) : '';
+      var base = hashIdx >= 0 ? href.substring(0, hashIdx) : href;
+      base = base.split('?')[0];
+      a.setAttribute('href', (lang === 'en' ? base + '?lang=en' : base) + hash);
+    });
+    try {
+      var url = new URL(window.location.href);
+      if (lang === 'en') url.searchParams.set('lang', 'en');
+      else url.searchParams.delete('lang');
+      history.replaceState(null, '', url.toString());
+    } catch (e) { /* IE ou navigateur ancien : on ignore */ }
+  }
+
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var initial = params.get('lang') === 'en' ? 'en' : 'fr';
+    setLang(initial);
+  })();
+
+  document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+    btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
+  });
+
   if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    }), { threshold: 0.15 });
-    document.querySelectorAll('.livre').forEach(c => io.observe(c));
+    var io = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.livre').forEach(function(c) { io.observe(c); });
   } else {
-    document.querySelectorAll('.livre').forEach(c => c.classList.add('visible'));
+    document.querySelectorAll('.livre').forEach(function(c) { c.classList.add('visible'); });
   }
 </script>
 </body>
