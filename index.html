@@ -1037,7 +1037,30 @@ function setLang(l){
   document.querySelectorAll('[data-fr]').forEach(function(e){e.innerHTML=e.getAttribute('data-'+l)});
   document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent===l.toUpperCase())});
   document.documentElement.lang=l;
+  // Propager ?lang=en aux liens internes (pages compagnes et PDF locaux)
+  document.querySelectorAll('a[href]').forEach(function(a){
+    var href=a.getAttribute('href');
+    if(!href) return;
+    if(/^(https?:|mailto:|tel:|#)/.test(href)) return;
+    var hashIdx=href.indexOf('#');
+    var hash=hashIdx>=0?href.substring(hashIdx):'';
+    var base=hashIdx>=0?href.substring(0,hashIdx):href;
+    base=base.split('?')[0];
+    a.setAttribute('href',(l==='en'?base+'?lang=en':base)+hash);
+  });
+  // Mettre à jour l'URL sans recharger
+  try{
+    var url=new URL(window.location.href);
+    if(l==='en')url.searchParams.set('lang','en');
+    else url.searchParams.delete('lang');
+    history.replaceState(null,'',url.toString());
+  }catch(e){/* IE ou navigateur ancien : on ignore */}
 }
+// À l'ouverture : lire ?lang= dans l'URL et l'appliquer
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  if(params.get('lang')==='en') setLang('en');
+})();
 function go(id,btn){
   var el=document.getElementById(id);
   if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
