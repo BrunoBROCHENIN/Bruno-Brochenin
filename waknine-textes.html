@@ -5,14 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Textes de Victor Waknine — Bruno Brochenin</title>
 <meta name="description" content="Articles et entretiens de Victor Waknine, concepteur de l'IBET, mis à disposition avec son accord : cinq textes en lecture directe et en PDF.">
+<meta name="keywords" content="Victor Waknine, IBET, Mozart Consulting, goodwill social, bien-être au travail, engagement réciproque, transition managériale, Transversus, MagRH, CFE-CGC">
 <meta name="author" content="Victor Waknine">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://brunobrochenin.com/waknine-textes.html">
+<link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/waknine-textes.html">
+<link rel="alternate" hreflang="en" href="https://brunobrochenin.com/waknine-textes.html?lang=en">
 <meta property="og:title" content="Textes de Victor Waknine">
 <meta property="og:description" content="Articles et entretiens du concepteur de l'IBET, mis à disposition avec son accord.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://brunobrochenin.com/waknine-textes.html">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -80,49 +84,103 @@
   .colophon a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);}
   .colophon a:hover{color:var(--sable);}
   .note{margin-top:18px;font-size:13.5px;color:var(--encre-douce);font-style:italic;max-width:64ch;}
-  @media (max-width:560px){header{padding-top:56px;}article{margin-top:48px;}}
+  /* ---------- commutateur de langue ---------- */
+  .page{position:relative;}
+  .lang-switch{position:absolute;top:24px;right:24px;font-family:'IBM Plex Sans',sans-serif;
+               font-size:12px;letter-spacing:.08em;z-index:10;}
+  .lang-switch button{background:none;border:none;color:var(--encre-douce);cursor:pointer;
+                      padding:4px 6px;font:inherit;font-weight:500;letter-spacing:inherit;
+                      transition:color .2s;}
+  .lang-switch button.active{color:var(--sable);}
+  .lang-switch button:hover{color:var(--encre);}
+  .lang-switch .sep{color:var(--filet);}
+  .original-notice{margin-top:18px;padding:14px 18px;background:#F6F4EF;border:1px solid var(--filet);
+                   border-radius:2px;font-size:14px;color:var(--encre-douce);font-style:italic;
+                   max-width:64ch;}
+  .original-notice:empty{display:none;}
+  @media (max-width:560px){header{padding-top:56px;}article{margin-top:48px;}
+    .lang-switch{top:16px;right:16px;}
+  }
 </style>
 </head>
 <body>
 <div class="page">
 
+<div class="lang-switch" role="group" aria-label="Language switcher">
+  <button data-lang="fr" class="active" aria-label="Français">FR</button>
+  <span class="sep" aria-hidden="true">/</span>
+  <button data-lang="en" aria-label="English">EN</button>
+</div>
+
 <header>
-  <a class="retour" href="waknine.html">← Retour à la trajectoire de Victor Waknine</a>
-  <div class="surtitre">Textes mis à disposition</div>
-  <h1>Victor Waknine, dans ses propres mots</h1>
-  <p class="chapeau">Les textes réunis ici sont de Victor Waknine, concepteur de l'IBET©. Ils sont
+  <a class="retour" href="waknine.html"
+     data-fr="← Retour à la trajectoire de Victor Waknine"
+     data-en="← Back to Victor Waknine's trajectory">← Retour à la trajectoire de Victor Waknine</a>
+  <div class="surtitre"
+       data-fr="Textes mis à disposition"
+       data-en="Texts made available">Textes mis à disposition</div>
+  <h1 data-fr="Victor Waknine, dans ses propres mots"
+      data-en="Victor Waknine, in his own words">Victor Waknine, dans ses propres mots</h1>
+  <p class="chapeau"
+     data-fr="Les textes réunis ici sont de Victor Waknine, concepteur de l'IBET©. Ils sont publiés sur ce site avec son accord. On y suit, de 2013 à 2025, la formation puis l'approfondissement d'une même question : comment rendre le désengagement visible à ceux qui ont le pouvoir d'y remédier."
+     data-en="The texts gathered here are by Victor Waknine, designer of the IBET©. They are published on this site with his agreement. One follows, from 2013 to 2025, the formation and then the deepening of a single question: how to make disengagement visible to those with the power to address it.">Les textes réunis ici sont de Victor Waknine, concepteur de l'IBET©. Ils sont
   publiés sur ce site avec son accord. On y suit, de 2013 à 2025, la formation puis l'approfondissement
   d'une même question : comment rendre le désengagement visible à ceux qui ont le pouvoir d'y remédier.</p>
+  <div class="original-notice"
+       data-fr=""
+       data-en="Note. The five reproduced texts appear on this page in their original French, as archived documents of Victor Waknine's work. The editorial apparatus around them — page introduction, contents, article leads, notes — is translated. Whoever wishes to read the texts themselves in English will need to work from the French versions."></div>
 </header>
 
 <nav class="sommaire">
-  <div class="sommaire-titre">Sommaire</div>
+  <div class="sommaire-titre"
+       data-fr="Sommaire"
+       data-en="Contents">Sommaire</div>
   <ol>
     <li><a href="#transversus-2013">À la recherche d&#x27;une nouvelle norme « socioéconomique »</a>
-        <span class="src">Revue Transversus n°5, 2013</span></li>
+        <span class="src"
+              data-fr="Revue Transversus n°5, 2013"
+              data-en="Transversus journal, issue 5, 2013">Revue Transversus n°5, 2013</span></li>
     <li><a href="#ipse-2015">Focus sur l&#x27;Indice de Bien-Être au Travail</a>
-        <span class="src">Folio de l&#x27;Ipse n°67, février 2015</span></li>
+        <span class="src"
+              data-fr="Folio de l&#x27;Ipse n°67, février 2015"
+              data-en="Folio de l'Ipse, issue 67, February 2015">Folio de l&#x27;Ipse n°67, février 2015</span></li>
     <li><a href="#applications-financieres-2014">L&#x27;IBET et les applications financières</a>
-        <span class="src">Document de travail, révision 2014</span></li>
+        <span class="src"
+              data-fr="Document de travail, révision 2014"
+              data-en="Working paper, 2014 revision">Document de travail, révision 2014</span></li>
     <li><a href="#cfecgc-2025">Grand témoin</a>
-        <span class="src">Magazine CFE-CGC, septembre 2025</span></li>
+        <span class="src"
+              data-fr="Magazine CFE-CGC, septembre 2025"
+              data-en="CFE-CGC magazine, September 2025">Magazine CFE-CGC, septembre 2025</span></li>
     <li><a href="#magrh-drh">J&#x27;aurais voulu être un DRH</a>
-        <span class="src">MagRH n°14</span></li>
+        <span class="src"
+              data-fr="MagRH n°14"
+              data-en="MagRH, issue 14">MagRH n°14</span></li>
   </ol>
   <div class="sommaire-plus">
-    <span class="lbl">À lire par ailleurs</span>
+    <span class="lbl"
+          data-fr="À lire par ailleurs"
+          data-en="Further reading">À lire par ailleurs</span>
     <a href="#demoaction">L&#x27;opérateur d&#x27;assurance, témoin de l&#x27;urgence démocratique
     en entreprise</a>
-    <span class="src">Sa contribution à <em>Démocratie(s) en action</em>, Le Bord de l&#x27;eau, 2025
+    <span class="src"
+          data-fr="Sa contribution à &lt;em&gt;Démocratie(s) en action&lt;/em&gt;, Le Bord de l&#x27;eau, 2025 — résumé et renvoi"
+          data-en="His contribution to &lt;em&gt;Démocratie(s) en action&lt;/em&gt;, Le Bord de l'eau, 2025 — summary and cross-reference">Sa contribution à <em>Démocratie(s) en action</em>, Le Bord de l&#x27;eau, 2025
     — résumé et renvoi</span>
   </div>
 </nav>
 
 <article id="transversus-2013">
-  <div class="art-source">Revue Transversus n°5, 2013</div>
+  <div class="art-source"
+       data-fr="Revue Transversus n°5, 2013"
+       data-en="Transversus journal, issue 5, 2013">Revue Transversus n°5, 2013</div>
   <h2>À la recherche d&#x27;une nouvelle norme « socioéconomique »</h2>
-  <p class="art-chapo">L&#x27;article fondateur : pourquoi il n&#x27;existe pas de norme commune entre les acteurs du jeu économique, et ce que serait un « goodwill social ».</p>
-  <a class="art-pdf" href="textes/transversus-2013.pdf" download>Télécharger en PDF ↓</a>
+  <p class="art-chapo"
+     data-fr="L&#x27;article fondateur : pourquoi il n&#x27;existe pas de norme commune entre les acteurs du jeu économique, et ce que serait un « goodwill social »."
+     data-en="The founding article: why there is no common norm among the actors of the economic game, and what a “social goodwill” would be.">L&#x27;article fondateur : pourquoi il n&#x27;existe pas de norme commune entre les acteurs du jeu économique, et ce que serait un « goodwill social ».</p>
+  <a class="art-pdf" href="textes/transversus-2013.pdf" download
+     data-fr="Télécharger en PDF ↓"
+     data-en="Download as PDF ↓">Télécharger en PDF ↓</a>
   <div class="corps">
   <p>La stratégie opérationnelle est déployée à la lumière d’une approche mécaniste d’alignement entre le &quot;comment&quot; et le &quot;avec&quot;. Elle conçoit la relation entre l’individu et l’entreprise comme une transaction utilitariste, et assimile le pilotage des équipes à une allocation et une gestion de ressources qu’elles soient présentes ou pas.</p>
   <p>Mais avant, c’était avant. Aujourd’hui, la recherche de compétitivité imprègne tous les étages de l’entreprise. La demande des dirigeants à l’égard des équipes évolue vers une attente d’engagement individuel au service de l’entreprise et de ses objectifs légitimes de performance.</p>
@@ -236,10 +294,16 @@
 </article>
 
 <article id="ipse-2015">
-  <div class="art-source">Folio de l&#x27;Ipse n°67, février 2015</div>
+  <div class="art-source"
+       data-fr="Folio de l&#x27;Ipse n°67, février 2015"
+       data-en="Folio de l'Ipse, issue 67, February 2015">Folio de l&#x27;Ipse n°67, février 2015</div>
   <h2>Focus sur l&#x27;Indice de Bien-Être au Travail</h2>
-  <p class="art-chapo">Trois questions sur l&#x27;IBET : la symétrie des attentes, le rôle des groupes de protection sociale, la prévention primaire.</p>
-  <a class="art-pdf" href="textes/ipse-2015.pdf" download>Télécharger en PDF ↓</a>
+  <p class="art-chapo"
+     data-fr="Trois questions sur l&#x27;IBET : la symétrie des attentes, le rôle des groupes de protection sociale, la prévention primaire."
+     data-en="Three questions on the IBET: the symmetry of expectations, the role of social-protection groups, primary prevention.">Trois questions sur l&#x27;IBET : la symétrie des attentes, le rôle des groupes de protection sociale, la prévention primaire.</p>
+  <a class="art-pdf" href="textes/ipse-2015.pdf" download
+     data-fr="Télécharger en PDF ↓"
+     data-en="Download as PDF ↓">Télécharger en PDF ↓</a>
   <div class="corps">
   <p>Trois questions à Victor Waknine, Président et Fondateur de la SAS Mozart Consulting, à l’origine de l’IBET.</p>
   <p>1) Pouvez-vous présenter succinctement l’IBET©, en quoi ce concept est d’une part innovant, d’autre part efficient ?</p>
@@ -263,10 +327,16 @@
 </article>
 
 <article id="applications-financieres-2014">
-  <div class="art-source">Document de travail, révision 2014</div>
+  <div class="art-source"
+       data-fr="Document de travail, révision 2014"
+       data-en="Working paper, 2014 revision">Document de travail, révision 2014</div>
   <h2>L&#x27;IBET et les applications financières</h2>
-  <p class="art-chapo">L&#x27;IBET comme méta-mesure d&#x27;objectivation des signaux faibles, applicable aux conformités ESG, VaR et Bâle III.</p>
-  <a class="art-pdf" href="textes/applications-financieres-2014.pdf" download>Télécharger en PDF ↓</a>
+  <p class="art-chapo"
+     data-fr="L&#x27;IBET comme méta-mesure d&#x27;objectivation des signaux faibles, applicable aux conformités ESG, VaR et Bâle III."
+     data-en="The IBET as a meta-measure for the objectification of weak signals, applicable to ESG, VaR and Basel III compliance.">L&#x27;IBET comme méta-mesure d&#x27;objectivation des signaux faibles, applicable aux conformités ESG, VaR et Bâle III.</p>
+  <a class="art-pdf" href="textes/applications-financieres-2014.pdf" download
+     data-fr="Télécharger en PDF ↓"
+     data-en="Download as PDF ↓">Télécharger en PDF ↓</a>
   <div class="corps">
   <p>L’IBET ( L’Indice de Bien Etre au Travail)© une méta-mesure d’objectivation de signaux faibles, applicable aux demandes de mise en conformité comptables de type :</p>
   <p>ESG / VaR / Bâle 3 / Risque Social / Analyse de portefeuilles</p>
@@ -373,10 +443,16 @@
 </article>
 
 <article id="cfecgc-2025">
-  <div class="art-source">Magazine CFE-CGC, septembre 2025</div>
+  <div class="art-source"
+       data-fr="Magazine CFE-CGC, septembre 2025"
+       data-en="CFE-CGC magazine, September 2025">Magazine CFE-CGC, septembre 2025</div>
   <h2>Grand témoin</h2>
-  <p class="art-chapo">Le plus récent de ces textes : la genèse de la démarche, l&#x27;état de l&#x27;observatoire en 2025, la transition managériale.</p>
-  <a class="art-pdf" href="textes/cfecgc-2025.pdf" download>Télécharger en PDF ↓</a>
+  <p class="art-chapo"
+     data-fr="Le plus récent de ces textes : la genèse de la démarche, l&#x27;état de l&#x27;observatoire en 2025, la transition managériale."
+     data-en="The most recent of these texts: the genesis of the approach, the state of the observatory in 2025, the managerial transition.">Le plus récent de ces textes : la genèse de la démarche, l&#x27;état de l&#x27;observatoire en 2025, la transition managériale.</p>
+  <a class="art-pdf" href="textes/cfecgc-2025.pdf" download
+     data-fr="Télécharger en PDF ↓"
+     data-en="Download as PDF ↓">Télécharger en PDF ↓</a>
   <div class="corps">
   <p>Ingénieur de formation, Victor Waknine a occupé dans les années 1980 et jusqu’en 2003 plusieurs fonctions de direction générale, d’abord chez</p>
   <p>France Télécom comme directeur des nouvelles technologies, puis chez Matra-Lagardère en direction recherche et technologie et comme directeur général d’activités (aérospatial, défense, télécoms, informatique).</p>
@@ -449,10 +525,16 @@
 </article>
 
 <article id="magrh-drh">
-  <div class="art-source">MagRH n°14</div>
+  <div class="art-source"
+       data-fr="MagRH n°14"
+       data-en="MagRH, issue 14">MagRH n°14</div>
   <h2>J&#x27;aurais voulu être un DRH</h2>
-  <p class="art-chapo">Un texte court sur la place de la fonction RH dans la mesure de l&#x27;engagement.</p>
-  <a class="art-pdf" href="textes/magrh-drh.pdf" download>Télécharger en PDF ↓</a>
+  <p class="art-chapo"
+     data-fr="Un texte court sur la place de la fonction RH dans la mesure de l&#x27;engagement."
+     data-en="A short text on the place of the HR function in the measurement of engagement.">Un texte court sur la place de la fonction RH dans la mesure de l&#x27;engagement.</p>
+  <a class="art-pdf" href="textes/magrh-drh.pdf" download
+     data-fr="Télécharger en PDF ↓"
+     data-en="Download as PDF ↓">Télécharger en PDF ↓</a>
   <div class="corps">
   <p>Expert associé WillBe Group. Fondateur de Mozart Consulting.</p>
   <p>Ingénieur Polytech Lille. IAE. Inventeur-concepteur de l’IBET.</p>
@@ -483,29 +565,36 @@
 </article>
 
 <section class="renvoi" id="demoaction">
-  <div class="renvoi-eyebrow">À lire par ailleurs</div>
+  <div class="renvoi-eyebrow"
+       data-fr="À lire par ailleurs"
+       data-en="Further reading">À lire par ailleurs</div>
   <h2>L'opérateur d'assurance, témoin de l'urgence démocratique en entreprise</h2>
-  <p class="renvoi-ref">Contribution de Victor Waknine à <em>Démocratie(s) en action</em>,
+  <p class="renvoi-ref"
+     data-fr="Contribution de Victor Waknine à &lt;em&gt;Démocratie(s) en action&lt;/em&gt;, &lt;em&gt;50 approches renouvelées de l'entreprise et du travail&lt;/em&gt;, ouvrage collectif dirigé par Corentin Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani, issu des travaux de l'Agora D.O.D.E.S., laboratoire d'idées de l'École des Mines de Paris — Éditions Le Bord de l'eau, 2025. Ce texte n'est pas reproduit ici : il se lit dans l'ouvrage."
+     data-en="Contribution by Victor Waknine to &lt;em&gt;Démocratie(s) en action&lt;/em&gt;, &lt;em&gt;50 renewed approaches to enterprise and work&lt;/em&gt;, a collective work edited by Corentin Gombert, Eline Vivet-Maladry and Fadi Joseph Lahiani, arising from the work of the Agora D.O.D.E.S., think-tank of the École des Mines de Paris — Le Bord de l'eau, 2025. This text is not reproduced here: it is to be read in the volume itself.">Contribution de Victor Waknine à <em>Démocratie(s) en action</em>,
   <em>50 approches renouvelées de l'entreprise et du travail</em>, ouvrage collectif dirigé par Corentin
   Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani, issu des travaux de l'Agora D.O.D.E.S.,
   laboratoire d'idées de l'École des Mines de Paris — Éditions Le Bord de l'eau, 2025.
   Ce texte n'est pas reproduit ici : il se lit dans l'ouvrage.</p>
 
-  <p>C'est le texte le plus politique de Victor Waknine, et le plus récent de ses écrits publiés.
+  <p data-fr="C'est le texte le plus politique de Victor Waknine, et le plus récent de ses écrits publiés. Il part d'un constat brutal : la République française a conduit son dispositif d'assurance sociale — chômage, retraite, maladie — dans une impasse. La dette sociale enfle, les réformes se succèdent, et les assureurs du secteur concurrentiel appelés à la rescousse semblent sur le point de jeter l'éponge. En 2024, Axa se retire du contrat d'assurance statutaire des centres de gestion des petites collectivités territoriales : le signal, pour lui, d'une demande devenue insolvable."
+     data-en="This is Victor Waknine's most political text, and the most recent of his published writings. It starts from a brutal observation: the French Republic has driven its social insurance system — unemployment, pensions, health — into an impasse. Social debt swells, reforms follow one another, and the competitive-sector insurers called to the rescue seem about to throw in the towel. In 2024, Axa withdrew from the statutory insurance contract of the management centres of small local authorities: the signal, for him, of a demand that has become uninsurable.">C'est le texte le plus politique de Victor Waknine, et le plus récent de ses écrits publiés.
   Il part d'un constat brutal : la République française a conduit son dispositif d'assurance sociale
   — chômage, retraite, maladie — dans une impasse. La dette sociale enfle, les réformes se succèdent,
   et les assureurs du secteur concurrentiel appelés à la rescousse semblent sur le point de jeter
   l'éponge. En 2024, Axa se retire du contrat d'assurance statutaire des centres de gestion des petites
   collectivités territoriales : le signal, pour lui, d'une demande devenue insolvable.</p>
 
-  <p>Il en retrace la généalogie sur soixante-dix ans. De la Sécurité sociale de 1945, où la République
+  <p data-fr="Il en retrace la généalogie sur soixante-dix ans. De la Sécurité sociale de 1945, où la République se fait garante du pouvoir de chacun d'agir selon ses aspirations, jusqu'au basculement des années 1990 — la contribution sociale généralisée qui renvoie aux salariés les dettes accumulées, l'allongement des durées de cotisation, le jeu sur les régimes catégoriels pour dénoncer les « privilèges » des uns et monter les autres contre eux. Le passage, résume-t-il, d'un pouvoir d'agir universel à un pouvoir d'achat catégoriel."
+     data-en="He traces its genealogy over seventy years. From the Social Security system of 1945, where the Republic makes itself the guarantor of everyone's power to act according to their aspirations, to the turning point of the 1990s — the general social contribution that sends accumulated debts back to employees, the lengthening of contribution periods, the game played on category-based schemes to denounce the “privileges” of some and set the others against them. The passage, he sums up, from a universal power to act to a category-based purchasing power.">Il en retrace la généalogie sur soixante-dix ans. De la Sécurité sociale de 1945, où la République
   se fait garante du pouvoir de chacun d'agir selon ses aspirations, jusqu'au basculement des années
   1990 — la contribution sociale généralisée qui renvoie aux salariés les dettes accumulées, l'allongement
   des durées de cotisation, le jeu sur les régimes catégoriels pour dénoncer les « privilèges » des uns
   et monter les autres contre eux. Le passage, résume-t-il, d'un pouvoir d'agir universel à un pouvoir
   d'achat catégoriel.</p>
 
-  <p>Son diagnostic est sans ménagement. Le marché tire sa fortune d'un mode de consommation dont il
+  <p data-fr="Son diagnostic est sans ménagement. Le marché tire sa fortune d'un mode de consommation dont il refuse de reconnaître les conséquences — maladies chroniques, compulsions, addictions ; l'entreprise esquive le coût des arrêts de travail par la rotation des personnels, le report sur le régime de base ou la sous-traitance ; la justice, ne traitant que de situations individuelles, empêche que la question soit posée collectivement. Et lorsque les services publics sous-dotés recourent à des méthodes managériales qui font grimper les arrêts, les assureurs constatent que la demande n'est plus finançable. Le piège se referme sur le citoyen-salarié comme sur la République."
+     data-en="His diagnosis is unsparing. The market draws its fortune from a mode of consumption whose consequences it refuses to acknowledge — chronic illnesses, compulsions, addictions; the enterprise dodges the cost of sick leave through staff rotation, transfer to the basic scheme, or outsourcing; justice, dealing only with individual situations, prevents the question from being posed collectively. And when underfunded public services resort to managerial methods that drive absences up, insurers observe that the demand can no longer be financed. The trap closes on the citizen-employee as on the Republic.">Son diagnostic est sans ménagement. Le marché tire sa fortune d'un mode de consommation dont il
   refuse de reconnaître les conséquences — maladies chroniques, compulsions, addictions ; l'entreprise
   esquive le coût des arrêts de travail par la rotation des personnels, le report sur le régime de base
   ou la sous-traitance ; la justice, ne traitant que de situations individuelles, empêche que la
@@ -513,7 +602,8 @@
   méthodes managériales qui font grimper les arrêts, les assureurs constatent que la demande n'est plus
   finançable. Le piège se referme sur le citoyen-salarié comme sur la République.</p>
 
-  <p>D'où sa proposition, qui rejoint celle de toute sa trajectoire : imposer une norme comptable
+  <p data-fr="D'où sa proposition, qui rejoint celle de toute sa trajectoire : imposer une norme comptable socio-économique garantissant, pour toute activité, la transparence de sa valeur socialement utile et des coûts systémiques associés. Il refuse à cet égard le vocabulaire du risque — ce que produisent les processus d'une entreprise n'est pas un aléa, c'est un résultat, et parler de « risques résiduels » est un abus de langage. Les assureurs, avec la force de frappe de leurs actuaires et de leurs bases de données, pourraient accompagner cette transition en aidant à distinguer l'aléa véritable des conséquences systémiques de l'activité. Sa définition de la démocratie d'entreprise tient alors en une phrase : partager les données socio-économiques disponibles avec les parties prenantes du dialogue social."
+     data-en="Hence his proposal, which rejoins that of his whole trajectory: to impose a socio-economic accounting norm that guarantees, for any activity, the transparency of its socially useful value and of the systemic costs associated with it. He refuses in this connection the vocabulary of risk — what an enterprise's processes produce is not a hazard, it is a result, and to speak of “residual risks” is an abuse of language. Insurers, with the striking force of their actuaries and their databases, could accompany this transition by helping to distinguish true hazard from the systemic consequences of the activity. His definition of corporate democracy then holds in one sentence: share the available socio-economic data with the stakeholders of social dialogue.">D'où sa proposition, qui rejoint celle de toute sa trajectoire : imposer une norme comptable
   socio-économique garantissant, pour toute activité, la transparence de sa valeur socialement utile et
   des coûts systémiques associés. Il refuse à cet égard le vocabulaire du risque — ce que produisent les
   processus d'une entreprise n'est pas un aléa, c'est un résultat, et parler de « risques résiduels »
@@ -523,21 +613,69 @@
   phrase : partager les données socio-économiques disponibles avec les parties prenantes du dialogue
   social.</p>
 
-  <p>Ce texte a une particularité que les autres n'ont pas. Il cite trois fois mes propres travaux — les
+  <p data-fr="Ce texte a une particularité que les autres n'ont pas. Il cite trois fois mes propres travaux — les deux livres et la contribution que j'ai donnée au même volume. Nos deux textes se répondent ainsi dans le même ouvrage, chacun abordant par son versant une question commune : à quelles conditions l'entreprise peut-elle devenir un lieu démocratique."
+     data-en="This text has a particularity the others do not. It cites my own work three times — the two books and the contribution I gave to the same volume. Our two texts thus answer each other in the same work, each addressing from its own side a common question: on what conditions can the enterprise become a democratic place.">Ce texte a une particularité que les autres n'ont pas. Il cite trois fois mes propres travaux — les
   deux livres et la contribution que j'ai donnée au même volume. Nos deux textes se répondent ainsi dans
   le même ouvrage, chacun abordant par son versant une question commune : à quelles conditions
   l'entreprise peut-elle devenir un lieu démocratique.</p>
 
-  <a class="renvoi-lien" href="https://www.babelio.com/livres/Gombert-Democratiesen-action-50-approches-renouvelees-/2067572" target="_blank" rel="noopener">Voir l'ouvrage sur Babelio ↗</a>
+  <a class="renvoi-lien" href="https://www.babelio.com/livres/Gombert-Democratiesen-action-50-approches-renouvelees-/2067572" target="_blank" rel="noopener"
+     data-fr="Voir l'ouvrage sur Babelio ↗"
+     data-en="View the work on Babelio ↗">Voir l'ouvrage sur Babelio ↗</a>
 </section>
 
-<p class="colophon">Ces textes accompagnent la page consacrée à
+<p class="colophon"
+   data-fr="Ces textes accompagnent la page consacrée à &lt;a href=&quot;waknine.html&quot;&gt;la trajectoire de Victor Waknine&lt;/a&gt; et à notre collaboration."
+   data-en="These texts accompany the page devoted to &lt;a href=&quot;waknine.html&quot;&gt;Victor Waknine's trajectory&lt;/a&gt; and to our collaboration.">Ces textes accompagnent la page consacrée à
 <a href="waknine.html">la trajectoire de Victor Waknine</a> et à notre collaboration.</p>
 
-<p class="note">Textes de Victor Waknine, reproduits avec son accord. Les articles parus en revue
+<p class="note"
+   data-fr="Textes de Victor Waknine, reproduits avec son accord. Les articles parus en revue restent soumis aux droits de leurs éditeurs respectifs ; ils sont donnés ici dans leur version d'auteur. Toute reproduction ultérieure suppose l'accord de l'auteur."
+   data-en="Texts by Victor Waknine, reproduced with his agreement. Articles that appeared in journals remain subject to the rights of their respective editors; they are given here in their author's version. Any further reproduction requires the author's agreement.">Textes de Victor Waknine, reproduits avec son accord. Les articles parus en revue
 restent soumis aux droits de leurs éditeurs respectifs ; ils sont donnés ici dans leur version
 d'auteur. Toute reproduction ultérieure suppose l'accord de l'auteur.</p>
 
 </div>
+
+<script>
+  // ---------- commutateur de langue ----------
+  function setLang(lang) {
+    if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-fr]').forEach(function(el) {
+      var t = el.getAttribute('data-' + lang);
+      if (t !== null) el.innerHTML = t;
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    document.querySelectorAll('a[href]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      if (!href) return;
+      if (/^(https?:|mailto:|tel:|#)/.test(href)) return;
+      var hashIdx = href.indexOf('#');
+      var hash = hashIdx >= 0 ? href.substring(hashIdx) : '';
+      var base = hashIdx >= 0 ? href.substring(0, hashIdx) : href;
+      base = base.split('?')[0];
+      a.setAttribute('href', (lang === 'en' ? base + '?lang=en' : base) + hash);
+    });
+    try {
+      var url = new URL(window.location.href);
+      if (lang === 'en') url.searchParams.set('lang', 'en');
+      else url.searchParams.delete('lang');
+      history.replaceState(null, '', url.toString());
+    } catch (e) { /* IE ou navigateur ancien : on ignore */ }
+  }
+
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var initial = params.get('lang') === 'en' ? 'en' : 'fr';
+    setLang(initial);
+  })();
+
+  document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+    btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
+  });
+</script>
 </body>
 </html>
