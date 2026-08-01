@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Démocratie(s) en action — Note de lecture — Bruno Brochenin</title>
+<meta name="description" content="Ma lecture de Démocratie(s) en action, ouvrage collectif dirigé par Corentin Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani, et un guide pour y entrer selon dix-sept auteurs.">
+<meta name="keywords" content="Démocratie en action, démocratie au travail, Corentin Gombert, Isabelle Ferreras, Christian Guibert, Ingrid Dromard, Bruno Brochenin, Victor Waknine, codétermination, dialogue social">
+<meta name="author" content="Bruno Brochenin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brunobrochenin.com/lectures/democratie-en-action.html">
+<link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/lectures/democratie-en-action.html">
+<link rel="alternate" hreflang="en" href="https://brunobrochenin.com/lectures/democratie-en-action.html?lang=en">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Démocratie(s) en action — Note de lecture — Bruno Brochenin">
+<meta property="og:description" content="Une note personnelle et un guide pour entrer dans l'ouvrage collectif Démocratie(s) en action — cinquante approches, soixante-sept voix.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://brunobrochenin.com/lectures/democratie-en-action.html">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papier:#FDFDFB;
+    --encre:#212A33;
+    --encre-douce:#4A5560;
+    --marine:#2C4A6E;
+    --filet:#DCE0E4;
+    --sable:#B08D57;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--papier);
+    color:var(--encre);
+    font-family:'Spectral',Georgia,serif;
+    font-weight:300;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;position:relative;}
+
+  /* ---------- commutateur de langue ---------- */
+  .lang-switch{
+    position:absolute;top:24px;right:24px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.08em;
+    z-index:10;
+  }
+  .lang-switch button{
+    background:none;border:none;color:var(--encre-douce);cursor:pointer;
+    padding:4px 6px;font:inherit;font-weight:500;letter-spacing:inherit;
+    transition:color .2s;
+  }
+  .lang-switch button.active{color:var(--sable);}
+  .lang-switch button:hover{color:var(--encre);}
+  .lang-switch .sep{color:var(--filet);}
+
+  /* ---------- entête ---------- */
+  header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
+  .retour{
+    display:inline-block;margin-bottom:26px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;
+    letter-spacing:.08em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .retour:hover{color:var(--sable);border-color:var(--sable);}
+  .surtitre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--sable);margin-bottom:18px;
+  }
+  h1{font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.01em;}
+  .book-meta{
+    margin-top:14px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;
+    color:var(--encre-douce);letter-spacing:.01em;
+  }
+  .chapeau{margin-top:24px;font-size:18px;color:var(--encre-douce);max-width:62ch;}
+  .chapeau em{font-style:italic;}
+  .chapeau-nav{
+    margin-top:18px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:13px;
+    color:var(--encre-douce);
+  }
+  .chapeau-nav a{
+    color:var(--marine);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .chapeau-nav a:hover{color:var(--sable);border-color:var(--sable);}
+
+  /* ---------- blocs de section ---------- */
+  .bloc{margin-top:72px;}
+  .bloc-titre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--marine);
+    padding-bottom:10px;border-bottom:1px solid var(--filet);margin-bottom:28px;
+  }
+  .bloc h2{font-weight:600;font-size:24px;line-height:1.3;letter-spacing:-.005em;margin-top:32px;margin-bottom:12px;max-width:60ch;}
+  .bloc h2 a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--filet);}
+  .bloc h2 a:hover{color:var(--sable);border-color:var(--sable);}
+  .bloc p{max-width:62ch;margin-bottom:18px;}
+  .bloc p em{font-style:italic;}
+  .bloc p a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);transition:color .2s;}
+  .bloc p a:hover{color:var(--sable);}
+
+  /* ---------- pilier (sous-section dans par où entrer) ---------- */
+  .pilier{
+    margin-top:56px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--marine);
+    padding-bottom:10px;border-bottom:1px solid var(--filet);
+  }
+  .pilier-sous{
+    margin-top:10px;font-size:15px;color:var(--encre-douce);font-style:italic;max-width:60ch;
+    font-family:'Spectral',Georgia,serif;letter-spacing:0;text-transform:none;font-weight:300;
+  }
+
+  /* ---------- profils ---------- */
+  .profil{
+    margin-top:32px;padding:22px 24px;background:#F6F4EF;border:1px solid var(--filet);
+    border-radius:2px;
+  }
+  .profil-titre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--sable);margin-bottom:10px;
+  }
+  .profil h3{font-weight:600;font-size:18px;line-height:1.35;letter-spacing:-.005em;margin-bottom:12px;max-width:60ch;}
+  .profil p{max-width:62ch;margin-bottom:14px;font-size:16px;}
+  .profil ul{list-style:none;padding:0;margin-top:12px;}
+  .profil li{
+    padding:6px 0;border-top:1px solid var(--filet);
+    font-size:15.5px;
+  }
+  .profil li:first-child{border-top:none;}
+  .profil li a{color:var(--marine);text-decoration:none;font-weight:400;border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;}
+  .profil li a:hover{color:var(--sable);border-color:var(--sable);}
+  .profil li em{font-style:italic;color:var(--encre-douce);font-size:14px;display:block;margin-top:2px;}
+
+  /* ---------- partie du livre (regroupement des fiches) ---------- */
+  .partie{
+    margin-top:56px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--sable);
+    padding-bottom:8px;border-bottom:1px solid var(--filet);
+  }
+
+  /* ---------- fiches auteur ---------- */
+  .fiche{margin-top:36px;padding-top:24px;border-top:1px solid var(--filet);scroll-margin-top:24px;}
+  .fiche:first-of-type{border-top:none;padding-top:16px;}
+  .fiche-auteur{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--marine);margin-bottom:6px;
+  }
+  .fiche h3{font-weight:600;font-size:19px;line-height:1.35;letter-spacing:-.005em;max-width:60ch;font-family:'Spectral',Georgia,serif;font-style:italic;}
+  .fiche-commentaire{margin-top:14px;max-width:62ch;}
+  .fiche-commentaire em{font-style:italic;}
+  .fiche-commentaire a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;}
+  .fiche-commentaire a:hover{color:var(--sable);border-color:var(--sable);}
+
+  /* ---------- pied ---------- */
+  .colophon{
+    margin-top:80px;padding-top:28px;border-top:1px solid var(--filet);
+    color:var(--encre-douce);font-size:15px;max-width:64ch;
+  }
+  .colophon p{margin-bottom:8px;}
+  .colophon a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);}
+  .colophon a:hover{color:var(--sable);}
+
+  /* ---------- apparition douce ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .fiche,.profil{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;}
+    .fiche.visible,.profil.visible{opacity:1;transform:none;}
+  }
+  @media (max-width:560px){
+    header{padding-top:56px;}
+    .bloc{margin-top:56px;}
+    .fiche{margin-top:28px;}
+    .pilier{margin-top:44px;}
+    .lang-switch{top:16px;right:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="lang-switch" role="group" aria-label="Language switcher">
+  <button data-lang="fr" class="active" aria-label="Français">FR</button>
+  <span class="sep" aria-hidden="true">/</span>
+  <button data-lang="en" aria-label="English">EN</button>
+</div>
+
+<header>
+  <a class="retour" href="../index.html"
+     data-fr="← Retour à l'accueil"
+     data-en="← Back to home">← Retour à l'accueil</a>
+  <div class="surtitre"
+       data-fr="Note de lecture · ouvrage collectif"
+       data-en="Reading note · collective work">Note de lecture · ouvrage collectif</div>
+  <h1>Démocratie(s) en action</h1>
+  <p class="book-meta"
+     data-fr="Sous la direction de Corentin Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani — 50 approches renouvelées de l'entreprise et du travail — Le Bord de l'Eau, 2025."
+     data-en="Edited by Corentin Gombert, Eline Vivet-Maladry and Fadi Joseph Lahiani — 50 approches renouvelées de l'entreprise et du travail (50 renewed approaches to enterprise and work) — Le Bord de l'Eau, 2025.">Sous la direction de Corentin Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani —
+  50 approches renouvelées de l'entreprise et du travail — Le Bord de l'Eau, 2025.</p>
+  <p class="chapeau"
+     data-fr="Cinquante approches, soixante-sept voix, douze parties : un objet-monde plutôt qu'un manuel, dont la richesse se prête à plusieurs itinéraires de lecture. Deux vous sont proposés ici — le mien, et le vôtre."
+     data-en="Fifty approaches, sixty-seven voices, twelve parts: a book-world rather than a manual, whose richness lends itself to several reading itineraries. Two are proposed here — mine, and yours.">Cinquante approches, soixante-sept voix, douze parties : un objet-monde plutôt qu'un
+  manuel, dont la richesse se prête à plusieurs itinéraires de lecture. Deux vous sont proposés ici —
+  le mien, et le vôtre.</p>
+  <p class="chapeau-nav"
+     data-fr="&lt;a href=&quot;#ma-lecture&quot;&gt;Lire ma note&lt;/a&gt; — ou &lt;a href=&quot;#par-ou-entrer&quot;&gt;choisir votre porte d'entrée&lt;/a&gt;."
+     data-en="&lt;a href=&quot;#ma-lecture&quot;&gt;Read my note&lt;/a&gt; — or &lt;a href=&quot;#par-ou-entrer&quot;&gt;choose your entry point&lt;/a&gt;."><a href="#ma-lecture">Lire ma note</a> — ou <a href="#par-ou-entrer">choisir votre porte d'entrée</a>.</p>
+</header>
+
+<!-- ================ MA LECTURE ================ -->
+<section id="ma-lecture" class="bloc">
+  <div class="bloc-titre"
+       data-fr="Ma lecture"
+       data-en="My reading">Ma lecture</div>
+
+  <p data-fr="Il est délicat de rendre compte d'un livre auquel on a soi-même participé. On ne peut pas prendre tout à fait la distance du lecteur, et on ne peut pas non plus se citer sans donner l'impression de tirer la couverture. C'est pourtant l'exercice que je vais tenter ici, parce que &lt;em&gt;Démocratie(s) en action&lt;/em&gt; me paraît trop notable pour le laisser simplement passer."
+     data-en="It is delicate to give an account of a book in which one has taken part oneself. One cannot quite take the reader's distance, nor can one cite oneself without giving the impression of pulling the cover. And yet this is the exercise I am going to attempt here, because &lt;em&gt;Démocratie(s) en action&lt;/em&gt; seems to me too notable to let simply pass.">Il est délicat de rendre compte d'un livre auquel on a soi-même participé. On ne peut pas prendre
+  tout à fait la distance du lecteur, et on ne peut pas non plus se citer sans donner l'impression de
+  tirer la couverture. C'est pourtant l'exercice que je vais tenter ici, parce que <em>Démocratie(s)
+  en action</em> me paraît trop notable pour le laisser simplement passer.</p>
+
+  <p data-fr="C'est un ouvrage épais, choral — cinquante approches signées par soixante-sept voix de chercheurs, dirigeants, syndicalistes, juristes et praticiens, regroupées en douze parties. Le parti pris éditorial est explicite : ne pas trancher, ne pas unifier, mais laisser entendre la diversité de ce que peut vouloir dire démocratiser une entreprise aujourd'hui. Ce parti pris est déjà une prise de position — celle qui reconnaît que la démocratie au travail est un objet vivant, discuté, en formation, et non un modèle fini à décréter."
+     data-en="It is a thick, choral work — fifty approaches signed by sixty-seven voices of researchers, executives, trade unionists, jurists and practitioners, gathered in twelve parts. The editorial choice is explicit: not to settle, not to unify, but to let the diversity be heard of what democratising an enterprise might mean today. That choice is already a position — the one that recognises that democracy at work is a living, discussed, formative object, and not a finished model to decree.">C'est un ouvrage épais, choral — cinquante approches signées par soixante-sept voix de chercheurs,
+  dirigeants, syndicalistes, juristes et praticiens, regroupées en douze parties. Le parti pris éditorial
+  est explicite : ne pas trancher, ne pas unifier, mais laisser entendre la diversité de ce que peut
+  vouloir dire démocratiser une entreprise aujourd'hui. Ce parti pris est déjà une prise de position —
+  celle qui reconnaît que la démocratie au travail est un objet vivant, discuté, en formation, et non
+  un modèle fini à décréter.</p>
+
+  <p data-fr="Je ne vais pas résumer, ni reprendre chapitre par chapitre — Babelio et le site de l'éditeur le font mieux. Je préfère m'arrêter sur trois idées, lues dans d'autres contributions, qui dialoguent avec mes propres convictions."
+     data-en="I am not going to summarise, nor go through chapter by chapter — Babelio and the publisher's site do it better. I prefer to dwell on three ideas, read in other contributions, that dialogue with my own convictions.">Je ne vais pas résumer, ni reprendre chapitre par chapitre — Babelio et le site de l'éditeur le
+  font mieux. Je préfère m'arrêter sur trois idées, lues dans d'autres contributions, qui dialoguent
+  avec mes propres convictions.</p>
+
+  <h2 data-fr="&lt;a href=&quot;#ferreras&quot;&gt;Isabelle Ferreras&lt;/a&gt; — distinguer gouvernement et gestion"
+      data-en="&lt;a href=&quot;#ferreras&quot;&gt;Isabelle Ferreras&lt;/a&gt; — distinguishing government from management"><a href="#ferreras">Isabelle Ferreras</a> — distinguer gouvernement et gestion</h2>
+  <p data-fr="Dans la partie 1 (« Une étape historique : le Gouvernement espagnol se lance dans la démocratisation des entreprises », propos recueillis par Corentin Gombert), Isabelle Ferreras rappelle une distinction qu'elle porte de longue date : la gestion concerne les modalités d'organisation du travail, tandis que le gouvernement concerne les finalités poursuivies par le collectif — et c'est ce dernier qui appelle une légitimité démocratique. La distinction paraît simple ; elle est en réalité coupante. Elle explique pourquoi tant d'expériences dites participatives finissent par tourner en rond : elles démocratisent la gestion en laissant le gouvernement entièrement au capital. Elle éclaire aussi pourquoi les propositions législatives sérieuses en la matière portent en premier lieu sur les organes de gouvernance, et non sur la « qualité de vie au travail »."
+     data-en="In Part 1 (“A historic step: the Spanish Government embarks on the democratisation of enterprises”, interview by Corentin Gombert), Isabelle Ferreras recalls a distinction she has carried for a long time: management concerns the modalities of organising work, while government concerns the ends pursued by the collective — and it is the latter that calls for democratic legitimacy. The distinction seems simple; it is in fact cutting. It explains why so many so-called participative experiments end up going in circles: they democratise management while leaving government entirely to capital. It also sheds light on why serious legislative proposals in this area bear first of all on the organs of governance, not on “quality of life at work”.">Dans la partie 1 (« Une étape historique : le Gouvernement espagnol se lance dans la démocratisation
+  des entreprises », propos recueillis par Corentin Gombert), Isabelle Ferreras rappelle une distinction
+  qu'elle porte de longue date : la gestion concerne les modalités d'organisation du travail, tandis que
+  le gouvernement concerne les finalités poursuivies par le collectif — et c'est ce dernier qui appelle
+  une légitimité démocratique. La distinction paraît simple ; elle est en réalité coupante. Elle explique
+  pourquoi tant d'expériences dites participatives finissent par tourner en rond : elles démocratisent la
+  gestion en laissant le gouvernement entièrement au capital. Elle éclaire aussi pourquoi les propositions
+  législatives sérieuses en la matière portent en premier lieu sur les organes de gouvernance, et non sur
+  la « qualité de vie au travail ».</p>
+
+  <h2 data-fr="&lt;a href=&quot;#dromard&quot;&gt;Ingrid Dromard&lt;/a&gt; — le débat de normes comme fondement"
+      data-en="&lt;a href=&quot;#dromard&quot;&gt;Ingrid Dromard&lt;/a&gt; — the debate of norms as foundation"><a href="#dromard">Ingrid Dromard</a> — le débat de normes comme fondement</h2>
+  <p data-fr="Dans la partie 4 (« Le débat de normes comme fondement de la démocratie au travail »), Ingrid Dromard aborde la démocratie au travail par un angle très concret, hérité des ergonomes et des cliniciens du travail : ce qui rend un collectif démocratique, c'est sa capacité à mettre en délibération les normes qui régissent son activité, plutôt que de les recevoir depuis le haut. On y comprend que la démocratie ne se joue pas seulement dans les instances formelles, mais dans la manière dont on parle du travail réel, dans les tensions qu'on accepte de faire remonter, dans les arbitrages qu'on rend visibles. Une lecture qui redonne un rôle central aux managers de proximité et aux collectifs de métier, souvent oubliés des débats plus institutionnels."
+     data-en="In Part 4 (“The debate of norms as the foundation of democracy at work”), Ingrid Dromard approaches democracy at work from a very concrete angle, inherited from ergonomists and work clinicians: what makes a collective democratic is its capacity to put into deliberation the norms that govern its activity, rather than receiving them from above. One understands that democracy is played out not only in formal bodies, but in the way real work is spoken about, in the tensions one accepts to bring up, in the arbitrations one makes visible. A reading that gives a central role back to line managers and craft collectives, often forgotten in the more institutional debates.">Dans la partie 4 (« Le débat de normes comme fondement de la démocratie au travail »), Ingrid Dromard
+  aborde la démocratie au travail par un angle très concret, hérité des ergonomes et des cliniciens du
+  travail : ce qui rend un collectif démocratique, c'est sa capacité à mettre en délibération les normes
+  qui régissent son activité, plutôt que de les recevoir depuis le haut. On y comprend que la démocratie
+  ne se joue pas seulement dans les instances formelles, mais dans la manière dont on parle du travail
+  réel, dans les tensions qu'on accepte de faire remonter, dans les arbitrages qu'on rend visibles. Une
+  lecture qui redonne un rôle central aux managers de proximité et aux collectifs de métier, souvent
+  oubliés des débats plus institutionnels.</p>
+
+  <h2 data-fr="&lt;a href=&quot;#guibert&quot;&gt;Christian Guibert&lt;/a&gt; — la question du travail elle-même"
+      data-en="&lt;a href=&quot;#guibert&quot;&gt;Christian Guibert&lt;/a&gt; — the question of work itself"><a href="#guibert">Christian Guibert</a> — la question du travail elle-même</h2>
+  <p data-fr="Dans la partie 7 (« La question du travail à l'heure de la démocratie »), Christian Guibert rappelle qu'il ne suffit pas d'ajouter de la démocratie à un travail dont on garderait les traits abîmés — subordination indéfinie, prescription détaillée, dépossession du sens. Redonner du pouvoir d'agir aux travailleurs suppose de transformer aussi ce qu'on leur demande de faire, comment et pour quoi. On peut le lire comme une objection amicale à toutes les entreprises « démocratiques » qui laisseraient intactes leurs impasses de production. Cette lecture me paraît indispensable pour éviter que l'entreprise démocratique ne devienne une façade sur un contenu inchangé."
+     data-en="In Part 7 (“The question of work at the hour of democracy”), Christian Guibert reminds us that it is not enough to add democracy to a form of work whose damaged features would be kept — indefinite subordination, detailed prescription, dispossession of meaning. Giving back the power to act to workers presupposes transforming also what they are asked to do, how, and for what. One can read it as a friendly objection to all “democratic” enterprises that would leave their production dead-ends intact. This reading seems indispensable to me if one wants to avoid that the democratic enterprise become a façade on unchanged content.">Dans la partie 7 (« La question du travail à l'heure de la démocratie »), Christian Guibert rappelle
+  qu'il ne suffit pas d'ajouter de la démocratie à un travail dont on garderait les traits abîmés —
+  subordination indéfinie, prescription détaillée, dépossession du sens. Redonner du pouvoir d'agir aux
+  travailleurs suppose de transformer aussi ce qu'on leur demande de faire, comment et pour quoi. On peut
+  le lire comme une objection amicale à toutes les entreprises « démocratiques » qui laisseraient intactes
+  leurs impasses de production. Cette lecture me paraît indispensable pour éviter que l'entreprise
+  démocratique ne devienne une façade sur un contenu inchangé.</p>
+
+  <p data-fr="Ces trois entrées, prises parmi cinquante possibles, donnent une idée du grain du livre. On y trouve aussi bien des propositions institutionnelles fortes (statuts, codétermination, mesures de démocratie), des expérimentations concrètes (la reprise de Duralex en SCOP, Upcoop, coopératives d'activité), des réflexions critiques — la démocratie d'entreprise n'est-elle pas parfois le placebo d'un despotisme éclairé, se demande &lt;a href=&quot;#briere&quot;&gt;Thibaud Brière&lt;/a&gt; — des lectures d'auteurs classiques (Mary Parker Follett, Dewey, Ostrom) et des témoignages de terrain. Cette diversité est parfois vertigineuse ; elle est aussi la meilleure preuve que le sujet est vivant."
+     data-en="These three entries, taken from among fifty possible, give an idea of the grain of the book. One finds there strong institutional proposals (statutes, codetermination, measures of democracy), concrete experiments (the Duralex takeover as a SCOP, Upcoop, activity cooperatives), critical reflections — is corporate democracy not sometimes the placebo of an enlightened despotism, asks &lt;a href=&quot;#briere&quot;&gt;Thibaud Brière&lt;/a&gt; — readings of classical authors (Mary Parker Follett, Dewey, Ostrom) and field testimonies. This diversity is sometimes dizzying; it is also the best proof that the subject is alive.">Ces trois entrées, prises parmi cinquante possibles, donnent une idée du grain du livre. On y trouve
+  aussi bien des propositions institutionnelles fortes (statuts, codétermination, mesures de démocratie),
+  des expérimentations concrètes (la reprise de Duralex en SCOP, Upcoop, coopératives d'activité), des
+  réflexions critiques — la démocratie d'entreprise n'est-elle pas parfois le placebo d'un despotisme
+  éclairé, se demande <a href="#briere">Thibaud Brière</a> — des lectures d'auteurs classiques (Mary Parker
+  Follett, Dewey, Ostrom) et des témoignages de terrain. Cette diversité est parfois vertigineuse ; elle
+  est aussi la meilleure preuve que le sujet est vivant.</p>
+
+  <p data-fr="Ma propre contribution, &lt;a href=&quot;#brochenin&quot;&gt;&lt;em&gt;Une entreprise démocratique dans une république sociale : pour qui ? pourquoi ? comment ?&lt;/em&gt;&lt;/a&gt; (partie 1), part d'une intuition simple : la démocratisation de l'entreprise n'a de sens complet qu'inscrite dans un projet de société qui la porte. Je renvoie au chapitre les lecteurs qui voudront le fil détaillé."
+     data-en="My own contribution, &lt;a href=&quot;#brochenin&quot;&gt;&lt;em&gt;Une entreprise démocratique dans une république sociale : pour qui ? pourquoi ? comment ?&lt;/em&gt; (&lt;em&gt;A democratic enterprise in a social republic: for whom? why? how?&lt;/em&gt;)&lt;/a&gt; (Part 1), starts from a simple intuition: the democratisation of the enterprise makes complete sense only when inscribed in a societal project that carries it. I refer readers who want the detailed thread to the chapter itself.">Ma propre contribution, <a href="#brochenin"><em>Une entreprise démocratique dans une république
+  sociale : pour qui ? pourquoi ? comment ?</em></a> (partie 1), part d'une intuition simple : la
+  démocratisation de l'entreprise n'a de sens complet qu'inscrite dans un projet de société qui la porte.
+  Je renvoie au chapitre les lecteurs qui voudront le fil détaillé.</p>
+
+  <p data-fr="Ce que je retiens, au-delà des désaccords qui traversent l'ouvrage — et il y en a — c'est que nous sommes plusieurs, venus d'horizons différents, à faire converger un constat : la démocratie a besoin, pour se refonder, de trouver sa place là où se joue une part décisive de nos vies. Le reste — les statuts, les procédures, les instances — est indispensable, mais vient après cette conviction-là."
+     data-en="What I retain, beyond the disagreements running through the work — and there are some — is that we are several, coming from different horizons, converging on a common observation: democracy needs, to refound itself, to find its place where a decisive part of our lives is played out. The rest — the statutes, the procedures, the bodies — is indispensable, but comes after that conviction.">Ce que je retiens, au-delà des désaccords qui traversent l'ouvrage — et il y en a — c'est que nous
+  sommes plusieurs, venus d'horizons différents, à faire converger un constat : la démocratie a besoin,
+  pour se refonder, de trouver sa place là où se joue une part décisive de nos vies. Le reste — les
+  statuts, les procédures, les instances — est indispensable, mais vient après cette conviction-là.</p>
+</section>
+
+<!-- ================ PAR OÙ ENTRER ================ -->
+<section id="par-ou-entrer" class="bloc">
+  <div class="bloc-titre"
+       data-fr="Par où entrer"
+       data-en="Where to start">Par où entrer</div>
+
+  <p data-fr="Cinq cents pages, soixante-sept auteurs, douze parties : un ouvrage-monde plutôt qu'un manuel. On peut le lire d'un trait, mais on peut aussi y entrer par une porte choisie — soit selon ce qu'on cherche, soit selon un auteur qui nous intrigue."
+     data-en="Five hundred pages, sixty-seven authors, twelve parts: a book-world rather than a manual. One can read it in one go, but one can also enter it through a chosen door — either by what one is looking for, or by an author who intrigues one.">Cinq cents pages, soixante-sept auteurs, douze parties : un ouvrage-monde plutôt qu'un manuel. On
+  peut le lire d'un trait, mais on peut aussi y entrer par une porte choisie — soit selon ce qu'on
+  cherche, soit selon un auteur qui nous intrigue.</p>
+
+  <!-- ---- Selon votre profil ---- -->
+  <div class="pilier"
+       data-fr="Selon votre profil&lt;div class=&quot;pilier-sous&quot;&gt;Trois figures que je croise régulièrement dans mon activité — chacune y trouvera un chemin d'entrée court, adossé à quatre chapitres.&lt;/div&gt;"
+       data-en="By your profile&lt;div class=&quot;pilier-sous&quot;&gt;Three figures I meet regularly in my work — each will find here a short entry path, backed by four chapters.&lt;/div&gt;">Selon votre profil
+    <div class="pilier-sous">Trois figures que je croise régulièrement dans mon activité —
+    chacune y trouvera un chemin d'entrée court, adossé à quatre chapitres.</div>
+  </div>
+
+  <div class="profil">
+    <div class="profil-titre"
+         data-fr="Profil I"
+         data-en="Profile I">Profil I</div>
+    <h3 data-fr="Si vous êtes dirigeant et que la question vous intrigue sans vous convaincre"
+        data-en="If you are an executive and the question intrigues you without convincing you">Si vous êtes dirigeant et que la question vous intrigue sans vous convaincre</h3>
+    <p data-fr="Vous n'êtes pas hostile à la démocratie au travail, mais vous vous demandez si ce n'est pas un habillage de plus, ou une contrainte que vous ne pouvez pas vous permettre. Commencez par lire les critiques — elles sont souvent les meilleures introductions — puis un témoignage long qui montre que ce n'est ni de la théorie ni de la magie."
+       data-en="You are not hostile to democracy at work, but you wonder whether it isn't just another dressing, or a constraint you cannot afford. Start with the critiques — they are often the best introductions — then a long testimony that shows it is neither theory nor magic.">Vous n'êtes pas hostile à la démocratie au travail, mais vous vous demandez si ce n'est pas un
+    habillage de plus, ou une contrainte que vous ne pouvez pas vous permettre. Commencez par lire les
+    critiques — elles sont souvent les meilleures introductions — puis un témoignage long qui montre que
+    ce n'est ni de la théorie ni de la magie.</p>
+    <ul>
+      <li data-fr="&lt;a href=&quot;#briere&quot;&gt;Thibaud Brière&lt;/a&gt; &lt;em&gt;le chapitre le plus dérangeant du livre&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#briere&quot;&gt;Thibaud Brière&lt;/a&gt; &lt;em&gt;the most disturbing chapter of the book&lt;/em&gt;"><a href="#briere">Thibaud Brière</a> <em>le chapitre le plus dérangeant du livre</em></li>
+      <li data-fr="&lt;a href=&quot;#ternier&quot;&gt;Camille Ternier&lt;/a&gt; &lt;em&gt;le panorama des arguments&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#ternier&quot;&gt;Camille Ternier&lt;/a&gt; &lt;em&gt;the panorama of arguments&lt;/em&gt;"><a href="#ternier">Camille Ternier</a> <em>le panorama des arguments</em></li>
+      <li data-fr="&lt;a href=&quot;#jegou&quot;&gt;Olivier Jégou&lt;/a&gt; &lt;em&gt;les cinq scénarios pour se situer&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#jegou&quot;&gt;Olivier Jégou&lt;/a&gt; &lt;em&gt;the five scenarios for situating yourself&lt;/em&gt;"><a href="#jegou">Olivier Jégou</a> <em>les cinq scénarios pour se situer</em></li>
+      <li data-fr="&lt;a href=&quot;#achour&quot;&gt;Youssef Achour&lt;/a&gt; &lt;em&gt;60 ans de démocratie chez Upcoop, en pratique&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#achour&quot;&gt;Youssef Achour&lt;/a&gt; &lt;em&gt;60 years of democracy at Upcoop, in practice&lt;/em&gt;"><a href="#achour">Youssef Achour</a> <em>60 ans de démocratie chez Upcoop, en pratique</em></li>
+    </ul>
+  </div>
+
+  <div class="profil">
+    <div class="profil-titre"
+         data-fr="Profil II"
+         data-en="Profile II">Profil II</div>
+    <h3 data-fr="Si vous accompagnez des organisations en transformation"
+        data-en="If you accompany organisations in transformation">Si vous accompagnez des organisations en transformation</h3>
+    <p data-fr="Vous êtes consultant, coach, formateur ; vous intervenez sur des enjeux d'organisation ou de gouvernance. Ce que vous cherchez : des cadres opérationnels et des points de vigilance concrets, pas seulement de la philosophie politique."
+       data-en="You are a consultant, coach or trainer; you intervene on issues of organisation or governance. What you are looking for: operational frameworks and concrete points of vigilance, not just political philosophy.">Vous êtes consultant, coach, formateur ; vous intervenez sur des enjeux d'organisation ou de
+    gouvernance. Ce que vous cherchez : des cadres opérationnels et des points de vigilance concrets, pas
+    seulement de la philosophie politique.</p>
+    <ul>
+      <li data-fr="&lt;a href=&quot;#arnoud&quot;&gt;Justine Arnoud&lt;/a&gt; &lt;em&gt;manuel pour l'intervenant extérieur&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#arnoud&quot;&gt;Justine Arnoud&lt;/a&gt; &lt;em&gt;manual for the outside intervener&lt;/em&gt;"><a href="#arnoud">Justine Arnoud</a> <em>manuel pour l'intervenant extérieur</em></li>
+      <li data-fr="&lt;a href=&quot;#dromard&quot;&gt;Ingrid Dromard&lt;/a&gt; &lt;em&gt;le débat de normes comme cadre&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#dromard&quot;&gt;Ingrid Dromard&lt;/a&gt; &lt;em&gt;the debate of norms as a framework&lt;/em&gt;"><a href="#dromard">Ingrid Dromard</a> <em>le débat de normes comme cadre</em></li>
+      <li data-fr="&lt;a href=&quot;#crismer&quot;&gt;Thibault Crismer&lt;/a&gt; &lt;em&gt;construire une mesure honnête&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#crismer&quot;&gt;Thibault Crismer&lt;/a&gt; &lt;em&gt;building an honest measure&lt;/em&gt;"><a href="#crismer">Thibault Crismer</a> <em>construire une mesure honnête</em></li>
+      <li data-fr="&lt;a href=&quot;#colling&quot;&gt;Louise Colling, Frédéric Dufays et Didier Van Caillie&lt;/a&gt; &lt;em&gt;l'autorité informelle qui rejoue la subordination&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#colling&quot;&gt;Louise Colling, Frédéric Dufays and Didier Van Caillie&lt;/a&gt; &lt;em&gt;informal authority that replays subordination&lt;/em&gt;"><a href="#colling">Louise Colling, Frédéric Dufays et Didier Van Caillie</a>
+      <em>l'autorité informelle qui rejoue la subordination</em></li>
+    </ul>
+  </div>
+
+  <div class="profil">
+    <div class="profil-titre"
+         data-fr="Profil III"
+         data-en="Profile III">Profil III</div>
+    <h3 data-fr="Si vous êtes représentant du personnel ou syndicaliste"
+        data-en="If you are a staff representative or trade unionist">Si vous êtes représentant du personnel ou syndicaliste</h3>
+    <p data-fr="Vous vous demandez ce que ces débats sur la démocratie au travail changent — ou non — au dialogue social tel que vous le pratiquez. Vous voulez aussi savoir si les propositions qui circulent sont des alliées ou des concurrentes."
+       data-en="You wonder what these debates on democracy at work change — or do not change — in the social dialogue as you practise it. You also want to know whether the proposals in circulation are allies or competitors.">Vous vous demandez ce que ces débats sur la démocratie au travail changent — ou non — au dialogue
+    social tel que vous le pratiquez. Vous voulez aussi savoir si les propositions qui circulent sont des
+    alliées ou des concurrentes.</p>
+    <ul>
+      <li data-fr="&lt;a href=&quot;#lallemand&quot;&gt;Nathalie Lallemand-Stempak&lt;/a&gt; &lt;em&gt;ce que les lois Auroux nous apprennent encore&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#lallemand&quot;&gt;Nathalie Lallemand-Stempak&lt;/a&gt; &lt;em&gt;what the Auroux laws still teach us&lt;/em&gt;"><a href="#lallemand">Nathalie Lallemand-Stempak</a> <em>ce que les lois Auroux nous apprennent encore</em></li>
+      <li data-fr="&lt;a href=&quot;#salvetat&quot;&gt;Marianne Salvetat Bernard&lt;/a&gt; &lt;em&gt;le dialogue social comme moteur d'innovation&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#salvetat&quot;&gt;Marianne Salvetat Bernard&lt;/a&gt; &lt;em&gt;social dialogue as an engine of innovation&lt;/em&gt;"><a href="#salvetat">Marianne Salvetat Bernard</a> <em>le dialogue social comme moteur d'innovation</em></li>
+      <li data-fr="&lt;a href=&quot;#elmoussaoui&quot;&gt;Suliman El Moussaoui, Vasco Da Silva et Florence Delacroix&lt;/a&gt; &lt;em&gt;Duralex, la reprise racontée par les militants CFDT&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#elmoussaoui&quot;&gt;Suliman El Moussaoui, Vasco Da Silva and Florence Delacroix&lt;/a&gt; &lt;em&gt;Duralex, the takeover as told by CFDT activists&lt;/em&gt;"><a href="#elmoussaoui">Suliman El Moussaoui, Vasco Da Silva et Florence Delacroix</a>
+      <em>Duralex, la reprise racontée par les militants CFDT</em></li>
+      <li data-fr="&lt;a href=&quot;#favereau&quot;&gt;Olivier Favereau&lt;/a&gt; &lt;em&gt;la codétermination, ce dont il est question&lt;/em&gt;"
+          data-en="&lt;a href=&quot;#favereau&quot;&gt;Olivier Favereau&lt;/a&gt; &lt;em&gt;codetermination, what is really at stake&lt;/em&gt;"><a href="#favereau">Olivier Favereau</a> <em>la codétermination, ce dont il est question</em></li>
+    </ul>
+  </div>
+
+  <!-- ---- Selon un auteur ---- -->
+  <div class="pilier"
+       data-fr="Selon un auteur qui vous intrigue&lt;div class=&quot;pilier-sous&quot;&gt;Dix-sept fiches, classées par partie du livre — chaque commentaire ne se substitue pas au chapitre, il invite à l'ouvrir.&lt;/div&gt;"
+       data-en="By an author who intrigues you&lt;div class=&quot;pilier-sous&quot;&gt;Seventeen entries, arranged by part of the book — each commentary does not substitute for the chapter, it invites to open it.&lt;/div&gt;">Selon un auteur qui vous intrigue
+    <div class="pilier-sous">Dix-sept fiches, classées par partie du livre — chaque commentaire ne se
+    substitue pas au chapitre, il invite à l'ouvrir.</div>
+  </div>
+
+  <!-- ==== PARTIE 1 ==== -->
+  <div class="partie"
+       data-fr="Partie 1 — Réconcilier l'entreprise et la société"
+       data-en="Part 1 — Reconciling the enterprise and society">Partie 1 — Réconcilier l'entreprise et la société</div>
+
+  <section id="ferreras" class="fiche">
+    <div class="fiche-auteur">Isabelle Ferreras</div>
+    <h3>Une étape historique : le Gouvernement espagnol se lance dans la démocratisation des entreprises</h3>
+    <p class="fiche-commentaire"
+       data-fr="Propos recueillis par Corentin Gombert. Ferreras porte depuis longtemps la distinction entre gouvernement et gestion. Ce chapitre en montre la portée politique concrète : quand un État européen décide de légiférer, c'est cette distinction qui fait la charnière. À lire pour saisir ce qui se joue au niveau institutionnel."
+       data-en="Interview by Corentin Gombert. Ferreras has long carried the distinction between government and management. This chapter shows its concrete political scope: when a European State decides to legislate, it is this distinction that is the hinge. To be read to grasp what is at stake at the institutional level.">Propos recueillis par Corentin Gombert. Ferreras porte depuis longtemps
+    la distinction entre gouvernement et gestion. Ce chapitre en montre la portée politique concrète :
+    quand un État européen décide de légiférer, c'est cette distinction qui fait la charnière. À lire
+    pour saisir ce qui se joue au niveau institutionnel.</p>
+  </section>
+
+  <section id="briere" class="fiche">
+    <div class="fiche-auteur">Thibaud Brière</div>
+    <h3>La démocratie d'entreprise, placebo d'un despotisme éclairé ?</h3>
+    <p class="fiche-commentaire"
+       data-fr="Un critique aguerri qui a longtemps travaillé dans des entreprises « libérées ». Sa question dérange, y compris les enthousiastes : et si tout cela n'était qu'une nouvelle façade sur une autorité inchangée ? Le chapitre le plus dérangeant du livre, à lire tôt."
+       data-en="A seasoned critic who worked for a long time in “liberated” enterprises. His question disturbs, including the enthusiasts: what if all this were only a new façade on an unchanged authority? The most disturbing chapter of the book, to be read early.">Un critique aguerri qui a longtemps travaillé dans des entreprises
+    « libérées ». Sa question dérange, y compris les enthousiastes : et si tout cela n'était qu'une
+    nouvelle façade sur une autorité inchangée ? Le chapitre le plus dérangeant du livre, à lire tôt.</p>
+  </section>
+
+  <section id="ternier" class="fiche">
+    <div class="fiche-auteur">Camille Ternier</div>
+    <h3>Pourquoi démocratiser les entreprises ? Panorama des arguments en faveur de la démocratisation des entreprises</h3>
+    <p class="fiche-commentaire"
+       data-fr="Ternier fait le travail que tout débat mérite mais qu'on saute souvent : établir la liste raisonnée des arguments avant de prendre position. Utile pour vérifier que ses convictions sont solides, quel que soit leur bord."
+       data-en="Ternier does the work every debate deserves but often skips: establishing a reasoned list of the arguments before taking sides. Useful to verify one's convictions are solid, whichever side they lean.">Ternier fait le travail que tout débat mérite mais qu'on saute souvent :
+    établir la liste raisonnée des arguments avant de prendre position. Utile pour vérifier que ses
+    convictions sont solides, quel que soit leur bord.</p>
+  </section>
+
+  <section id="fraisse" class="fiche">
+    <div class="fiche-auteur">Henri Fraisse</div>
+    <h3>Démocratie et entreprise, une nourriture réciproque. Réflexions sur les apports de l'entreprise à la démocratie</h3>
+    <p class="fiche-commentaire"
+       data-fr="Fraisse renverse la question dominante du livre : plutôt que « comment démocratiser l'entreprise ? », il demande « qu'est-ce que l'entreprise apporte à la démocratie ? ». Depuis son expérience du développement durable et de la responsabilité systémique — développée plus longuement dans &lt;em&gt;Comprendre la RSE, levier de transformation durable&lt;/em&gt; (avec Antoine Jaulmes et Frédéric Ménard, Larcier, 2023 — &lt;a href=&quot;https://www.babelio.com/livres/Bellanger-RSE-et-Creation-de-valeur/1402133&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;fiche Babelio&lt;/a&gt;) — il défend l'entreprise comme un des rares lieux capables d'un apprentissage collectif à l'échelle des enjeux écologiques et technologiques du siècle. Une voix de praticien, singulière dans cet ouvrage, dont les positions sur les cadres RSE/CSRD comme vecteurs de démocratie mériteront d'être discutées avec d'autres contributions du livre."
+       data-en="Fraisse reverses the dominant question of the book: rather than “how to democratise the enterprise?”, he asks “what does the enterprise contribute to democracy?”. From his experience of sustainable development and systemic responsibility — developed at greater length in &lt;em&gt;Comprendre la RSE, levier de transformation durable&lt;/em&gt; (with Antoine Jaulmes and Frédéric Ménard, Larcier, 2023 — &lt;a href=&quot;https://www.babelio.com/livres/Bellanger-RSE-et-Creation-de-valeur/1402133&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Babelio page&lt;/a&gt;) — he defends the enterprise as one of the rare places capable of a collective learning at the scale of the century's ecological and technological stakes. A practitioner's voice, singular in this work, whose positions on CSR/CSRD frameworks as vectors of democracy will deserve to be discussed with other contributions in the book.">Fraisse renverse la question dominante du livre : plutôt que « comment
+    démocratiser l'entreprise ? », il demande « qu'est-ce que l'entreprise apporte à la démocratie ? ».
+    Depuis son expérience du développement durable et de la responsabilité systémique — développée plus
+    longuement dans <em>Comprendre la RSE, levier de transformation durable</em> (avec Antoine Jaulmes et
+    Frédéric Ménard, Larcier, 2023 —
+    <a href="https://www.babelio.com/livres/Bellanger-RSE-et-Creation-de-valeur/1402133" target="_blank" rel="noopener">fiche Babelio</a>) —
+    il défend l'entreprise comme un des rares lieux capables d'un apprentissage collectif à l'échelle des
+    enjeux écologiques et technologiques du siècle. Une voix de praticien, singulière dans cet ouvrage,
+    dont les positions sur les cadres RSE/CSRD comme vecteurs de démocratie mériteront d'être discutées
+    avec d'autres contributions du livre.</p>
+  </section>
+
+  <section id="brochenin" class="fiche">
+    <div class="fiche-auteur">Bruno Brochenin</div>
+    <h3>Une entreprise démocratique dans une république sociale : pour qui ? pourquoi ? comment ?</h3>
+    <p class="fiche-commentaire"
+       data-fr="Ma propre contribution — je passe donc à la première personne. J'y pars d'une intuition simple : la démocratisation de l'entreprise n'a de sens complet qu'inscrite dans un projet de société qui la porte. Les trois questions du titre — pour qui démocratiser, pourquoi, comment — organisent le chapitre. Je préfère renvoyer au livre plutôt que d'en résumer ici le fil ; l'exercice serait délicat."
+       data-en="My own contribution — so I switch to the first person. I start from a simple intuition: the democratisation of the enterprise makes complete sense only when inscribed in a societal project that carries it. The three questions of the title — for whom to democratise, why, how — organise the chapter. I prefer to refer to the book rather than summarising its thread here; the exercise would be delicate.">Ma propre contribution — je passe donc à la première personne. J'y pars
+    d'une intuition simple : la démocratisation de l'entreprise n'a de sens complet qu'inscrite dans un
+    projet de société qui la porte. Les trois questions du titre — pour qui démocratiser, pourquoi,
+    comment — organisent le chapitre. Je préfère renvoyer au livre plutôt que d'en résumer ici le fil ;
+    l'exercice serait délicat.</p>
+  </section>
+
+  <!-- ==== PARTIE 2 ==== -->
+  <div class="partie"
+       data-fr="Partie 2 — Démocratiser l'entreprise"
+       data-en="Part 2 — Democratising the enterprise">Partie 2 — Démocratiser l'entreprise</div>
+
+  <section id="jegou" class="fiche">
+    <div class="fiche-auteur">Olivier Jégou</div>
+    <h3>La gestion participative contribue-t-elle à la démocratisation du travail ?</h3>
+    <p class="fiche-commentaire"
+       data-fr="Cinq scénarios pour évaluer où se situe une organisation, sans les illusions du vocabulaire managérial à la mode. Un chapitre pratique à ouvrir devant un tableau blanc, avec sa direction ou son collectif."
+       data-en="Five scenarios to assess where an organisation stands, without the illusions of fashionable managerial vocabulary. A practical chapter to open in front of a whiteboard, with one's management or one's team.">Cinq scénarios pour évaluer où se situe une organisation, sans les
+    illusions du vocabulaire managérial à la mode. Un chapitre pratique à ouvrir devant un tableau blanc,
+    avec sa direction ou son collectif.</p>
+  </section>
+
+  <section id="arnoud" class="fiche">
+    <div class="fiche-auteur">Justine Arnoud</div>
+    <h3>Petit manuel à destination des chercheurs en quête de plus de démocratie dans les organisations</h3>
+    <p class="fiche-commentaire"
+       data-fr="Le titre trompe : ce chapitre est en réalité un guide pour toute personne extérieure — consultant, chercheur, formateur — qui prétend accompagner un collectif vers plus de démocratie. Une boussole précieuse contre les pièges de la posture intervenante."
+       data-en="The title is misleading: this chapter is in reality a guide for any outside person — consultant, researcher, trainer — who claims to accompany a collective towards more democracy. A precious compass against the traps of the intervener's posture.">Le titre trompe : ce chapitre est en réalité un guide pour toute
+    personne extérieure — consultant, chercheur, formateur — qui prétend accompagner un collectif vers
+    plus de démocratie. Une boussole précieuse contre les pièges de la posture intervenante.</p>
+  </section>
+
+  <!-- ==== PARTIE 4 ==== -->
+  <div class="partie"
+       data-fr="Partie 4 — Le Je dans le Nous"
+       data-en="Part 4 — The I within the We">Partie 4 — Le Je dans le Nous</div>
+
+  <section id="dromard" class="fiche">
+    <div class="fiche-auteur">Ingrid Dromard</div>
+    <h3>Le débat de normes comme fondement de la démocratie au travail : un retour d'expérience</h3>
+    <p class="fiche-commentaire"
+       data-fr="Dromard aborde la démocratie par le travail réel : ce qui rend un collectif démocratique, c'est sa capacité à mettre en délibération les normes qui régissent son activité. Un chapitre qui redonne du rôle aux managers de proximité et aux collectifs de métier, souvent absents des débats plus institutionnels."
+       data-en="Dromard approaches democracy through real work: what makes a collective democratic is its capacity to put into deliberation the norms that govern its activity. A chapter that gives a role back to line managers and craft collectives, often absent from more institutional debates.">Dromard aborde la démocratie par le travail réel : ce qui rend un
+    collectif démocratique, c'est sa capacité à mettre en délibération les normes qui régissent son
+    activité. Un chapitre qui redonne du rôle aux managers de proximité et aux collectifs de métier,
+    souvent absents des débats plus institutionnels.</p>
+  </section>
+
+  <!-- ==== PARTIE 6 ==== -->
+  <div class="partie"
+       data-fr="Partie 6 — Mesurer la démocratie"
+       data-en="Part 6 — Measuring democracy">Partie 6 — Mesurer la démocratie</div>
+
+  <section id="crismer" class="fiche">
+    <div class="fiche-auteur">Thibault Crismer</div>
+    <h3>De la nécessité d'une mesure de démocratie dans les organisations</h3>
+    <p class="fiche-commentaire"
+       data-fr="Comment évaluer où en est un collectif, avec quels indicateurs, sans réduire la démocratie à un score qui la trahirait ? Utile à qui veut construire un tableau de bord honnête plutôt qu'un KPI habillé."
+       data-en="How to assess where a collective stands, with what indicators, without reducing democracy to a score that would betray it? Useful for whoever wants to build an honest dashboard rather than a dressed-up KPI.">Comment évaluer où en est un collectif, avec quels indicateurs, sans
+    réduire la démocratie à un score qui la trahirait ? Utile à qui veut construire un tableau de bord
+    honnête plutôt qu'un KPI habillé.</p>
+  </section>
+
+  <!-- ==== PARTIE 7 ==== -->
+  <div class="partie"
+       data-fr="Partie 7 — Autorité et émancipation"
+       data-en="Part 7 — Authority and emancipation">Partie 7 — Autorité et émancipation</div>
+
+  <section id="favereau" class="fiche">
+    <div class="fiche-auteur">Olivier Favereau</div>
+    <h3>La codétermination ou les deux sources de la démocratie</h3>
+    <p class="fiche-commentaire"
+       data-fr="La proposition institutionnelle la plus travaillée du livre, par un économiste qui la porte en France depuis vingt ans. À lire pour savoir précisément ce dont il est question dans les débats législatifs actuels — et pour comprendre pourquoi cette voie n'est ni cosmétique ni inaccessible."
+       data-en="The most thoroughly worked institutional proposal of the book, by an economist who has been carrying it in France for twenty years. To be read in order to know precisely what is at stake in the current legislative debates — and to understand why this path is neither cosmetic nor inaccessible.">La proposition institutionnelle la plus travaillée du livre, par un
+    économiste qui la porte en France depuis vingt ans. À lire pour savoir précisément ce dont il est
+    question dans les débats législatifs actuels — et pour comprendre pourquoi cette voie n'est ni
+    cosmétique ni inaccessible.</p>
+  </section>
+
+  <section id="colling" class="fiche">
+    <div class="fiche-auteur">Louise Colling, Frédéric Dufays et Didier Van Caillie</div>
+    <h3>Résurgence de l'autorité informelle dans les organisations démocratiques, un frein à l'émancipation des travailleurs ?</h3>
+    <p class="fiche-commentaire"
+       data-fr="Un chapitre honnête sur ce qui se passe quand on retire l'autorité formelle sans traiter l'autorité tout court. À lire par tous ceux tentés d'installer des dispositifs qui produisent, en pratique, l'inverse de leur intention."
+       data-en="An honest chapter on what happens when formal authority is removed without addressing authority itself. To be read by all those tempted to install arrangements that produce, in practice, the opposite of their intention.">Un chapitre honnête sur ce qui se passe quand on retire l'autorité
+    formelle sans traiter l'autorité tout court. À lire par tous ceux tentés d'installer des dispositifs
+    qui produisent, en pratique, l'inverse de leur intention.</p>
+  </section>
+
+  <section id="guibert" class="fiche">
+    <div class="fiche-auteur">Christian Guibert</div>
+    <h3>La question du travail à l'heure de la démocratie</h3>
+    <p class="fiche-commentaire"
+       data-fr="Guibert rappelle qu'il ne suffit pas d'ajouter de la démocratie à un travail dont on garderait les traits abîmés — subordination indéfinie, prescription détaillée, dépossession du sens. Une objection amicale à toutes les entreprises « démocratiques » qui laisseraient intactes leurs impasses de production."
+       data-en="Guibert reminds us that it is not enough to add democracy to a form of work whose damaged features would be kept — indefinite subordination, detailed prescription, dispossession of meaning. A friendly objection to all “democratic” enterprises that would leave their production dead-ends intact.">Guibert rappelle qu'il ne suffit pas d'ajouter de la démocratie à un
+    travail dont on garderait les traits abîmés — subordination indéfinie, prescription détaillée,
+    dépossession du sens. Une objection amicale à toutes les entreprises « démocratiques » qui
+    laisseraient intactes leurs impasses de production.</p>
+  </section>
+
+  <!-- ==== PARTIE 8 ==== -->
+  <div class="partie"
+       data-fr="Partie 8 — Le dialogue social"
+       data-en="Part 8 — Social dialogue">Partie 8 — Le dialogue social</div>
+
+  <section id="lallemand" class="fiche">
+    <div class="fiche-auteur">Nathalie Lallemand-Stempak</div>
+    <h3>Les lois Auroux (1982) : le précédent français du « democratizing work » ?</h3>
+    <p class="fiche-commentaire"
+       data-fr="Une remise en perspective historique qui montre que la France a déjà tenté quelque chose de radical, dont on a beaucoup à réapprendre. Utile pour ne pas partir de zéro dans les débats en cours et éviter les faux départs."
+       data-en="A historical reframing that shows France has already attempted something radical, from which there is much to relearn. Useful to avoid starting from zero in the current debates and to avoid false starts.">Une remise en perspective historique qui montre que la France a déjà
+    tenté quelque chose de radical, dont on a beaucoup à réapprendre. Utile pour ne pas partir de zéro
+    dans les débats en cours et éviter les faux départs.</p>
+  </section>
+
+  <section id="salvetat" class="fiche">
+    <div class="fiche-auteur">Marianne Salvetat Bernard</div>
+    <h3>Le dialogue social, vecteur de démocratie au soutien des innovations ?</h3>
+    <p class="fiche-commentaire"
+       data-fr="Comment le dialogue social peut redevenir un moteur, à condition d'être renouvelé dans ses modalités et son ambition. Écrit par quelqu'un qui connaît de l'intérieur ce qu'elle décrit."
+       data-en="How social dialogue can become an engine again, provided it is renewed in its modalities and its ambition. Written by someone who knows from the inside what she describes.">Comment le dialogue social peut redevenir un moteur, à condition d'être
+    renouvelé dans ses modalités et son ambition. Écrit par quelqu'un qui connaît de l'intérieur ce
+    qu'elle décrit.</p>
+  </section>
+
+  <section id="elmoussaoui" class="fiche">
+    <div class="fiche-auteur">Suliman El Moussaoui, Vasco Da Silva et Florence Delacroix</div>
+    <h3>Duralex : la reprise en SCOP racontée par les militants CFDT</h3>
+    <p class="fiche-commentaire"
+       data-fr="Le récit d'une reprise emblématique par ceux qui l'ont menée. Un cas dont chaque section syndicale peut tirer des leçons — pas comme modèle à copier, mais comme miroir des dilemmes que tout collectif rencontrera."
+       data-en="The account of an emblematic takeover by those who led it. A case from which every union section can draw lessons — not as a model to copy, but as a mirror of the dilemmas every collective will meet.">Le récit d'une reprise emblématique par ceux qui l'ont menée. Un cas
+    dont chaque section syndicale peut tirer des leçons — pas comme modèle à copier, mais comme miroir
+    des dilemmes que tout collectif rencontrera.</p>
+  </section>
+
+  <!-- ==== PARTIE 10 ==== -->
+  <div class="partie"
+       data-fr="Partie 10 — Démocratie, santé et sécurité des citoyens"
+       data-en="Part 10 — Democracy, health and safety of citizens">Partie 10 — Démocratie, santé et sécurité des citoyens</div>
+
+  <section id="waknine" class="fiche">
+    <div class="fiche-auteur">Victor Waknine</div>
+    <h3>L'opérateur d'assurance, témoin de l'urgence démocratique en entreprise</h3>
+    <p class="fiche-commentaire"
+       data-fr="Depuis son observatoire d'opérateur d'assurance, Waknine documente ce que les statistiques d'absentéisme, de sinistralité et de mal-être au travail disent de l'état démocratique — ou non — des entreprises françaises. Il présente l'IBET (Indice de Bien-Être au Travail), outil qu'il a développé, qui fait l'objet d'un chapitre dédié dans &lt;em&gt;Comprendre la RSE, levier de transformation durable&lt;/em&gt;, ouvrage co-dirigé par Henri Fraisse avec Antoine Jaulmes et Frédéric Ménard (Larcier, 2023 — &lt;a href=&quot;https://www.babelio.com/livres/Bellanger-RSE-et-Creation-de-valeur/1402133&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;fiche Babelio&lt;/a&gt;). Une contribution qui rappelle que la démocratie au travail se lit aussi dans la santé de celles et ceux qui y sont exposés."
+       data-en="From his observatory as an insurance operator, Waknine documents what the statistics of absenteeism, claims and workplace suffering say about the democratic — or non-democratic — state of French enterprises. He presents the IBET (Indice de Bien-Être au Travail, Well-being at Work Indicator), a tool he developed, which is the subject of a dedicated chapter in &lt;em&gt;Comprendre la RSE, levier de transformation durable&lt;/em&gt;, a work co-edited by Henri Fraisse with Antoine Jaulmes and Frédéric Ménard (Larcier, 2023 — &lt;a href=&quot;https://www.babelio.com/livres/Bellanger-RSE-et-Creation-de-valeur/1402133&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Babelio page&lt;/a&gt;). A contribution that reminds us that democracy at work is also read in the health of those exposed to it.">Depuis son observatoire d'opérateur d'assurance, Waknine documente ce
+    que les statistiques d'absentéisme, de sinistralité et de mal-être au travail disent de l'état
+    démocratique — ou non — des entreprises françaises. Il présente l'IBET (Indice de Bien-Être au
+    Travail), outil qu'il a développé, qui fait l'objet d'un chapitre dédié dans <em>Comprendre la RSE,
+    levier de transformation durable</em>, ouvrage co-dirigé par Henri Fraisse avec Antoine Jaulmes et
+    Frédéric Ménard (Larcier, 2023 —
+    <a href="https://www.babelio.com/livres/Bellanger-RSE-et-Creation-de-valeur/1402133" target="_blank" rel="noopener">fiche Babelio</a>).
+    Une contribution qui rappelle que la démocratie au travail se lit aussi dans la santé de celles et
+    ceux qui y sont exposés.</p>
+  </section>
+
+  <!-- ==== PARTIE 12 ==== -->
+  <div class="partie"
+       data-fr="Partie 12 — Témoignages inspirants"
+       data-en="Part 12 — Inspiring testimonies">Partie 12 — Témoignages inspirants</div>
+
+  <section id="achour" class="fiche">
+    <div class="fiche-auteur">Youssef Achour</div>
+    <h3>Upcoop célèbre 60 ans de démocratie en entreprise</h3>
+    <p class="fiche-commentaire"
+       data-fr="Propos recueillis par Marc Buisson. Un témoignage long, incarné, d'une entreprise qui vit démocratiquement depuis six décennies — avec ses tensions, ses réussites et ce qu'elle a appris de ses erreurs. Précieux pour montrer que ce n'est ni de la théorie, ni de la magie."
+       data-en="Interview by Marc Buisson. A long, embodied testimony of an enterprise that has lived democratically for six decades — with its tensions, its successes and what it has learned from its mistakes. Precious to show that it is neither theory nor magic.">Propos recueillis par Marc Buisson. Un témoignage long, incarné, d'une
+    entreprise qui vit démocratiquement depuis six décennies — avec ses tensions, ses réussites et ce
+    qu'elle a appris de ses erreurs. Précieux pour montrer que ce n'est ni de la théorie, ni de la magie.</p>
+  </section>
+</section>
+
+<!-- ================ COLOPHON ================ -->
+<p class="colophon"
+   data-fr="Corentin Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani (dir.), &lt;em&gt;Démocratie(s) en action. 50 approches renouvelées de l'entreprise et du travail&lt;/em&gt;, Le Bord de l'Eau, 2025.&lt;br&gt;&lt;a href=&quot;https://www.editionsbdl.com/produit/democraties-en-action/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fiche éditeur&lt;/a&gt; — &lt;a href=&quot;https://www.babelio.com/livres/Gombert-Democratiesen-action-50-approches-renouvelees-/2067572&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fiche Babelio&lt;/a&gt;."
+   data-en="Corentin Gombert, Eline Vivet-Maladry and Fadi Joseph Lahiani (eds.), &lt;em&gt;Démocratie(s) en action. 50 approches renouvelées de l'entreprise et du travail&lt;/em&gt;, Le Bord de l'Eau, 2025.&lt;br&gt;&lt;a href=&quot;https://www.editionsbdl.com/produit/democraties-en-action/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Publisher page&lt;/a&gt; — &lt;a href=&quot;https://www.babelio.com/livres/Gombert-Democratiesen-action-50-approches-renouvelees-/2067572&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Babelio page&lt;/a&gt;.">
+Corentin Gombert, Eline Vivet-Maladry et Fadi Joseph Lahiani (dir.),
+<em>Démocratie(s) en action. 50 approches renouvelées de l'entreprise et du travail</em>, Le Bord de l'Eau, 2025.
+<br>
+<a href="https://www.editionsbdl.com/produit/democraties-en-action/" target="_blank" rel="noopener">Fiche éditeur</a>
+—
+<a href="https://www.babelio.com/livres/Gombert-Democratiesen-action-50-approches-renouvelees-/2067572" target="_blank" rel="noopener">Fiche Babelio</a>.
+</p>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-fr]').forEach(function(el) {
+      var t = el.getAttribute('data-' + lang);
+      if (t !== null) el.innerHTML = t;
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    document.querySelectorAll('a[href]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      if (!href) return;
+      if (/^(https?:|mailto:|tel:|#)/.test(href)) return;
+      var hashIdx = href.indexOf('#');
+      var hash = hashIdx >= 0 ? href.substring(hashIdx) : '';
+      var base = hashIdx >= 0 ? href.substring(0, hashIdx) : href;
+      base = base.split('?')[0];
+      a.setAttribute('href', (lang === 'en' ? base + '?lang=en' : base) + hash);
+    });
+    try {
+      var url = new URL(window.location.href);
+      if (lang === 'en') url.searchParams.set('lang', 'en');
+      else url.searchParams.delete('lang');
+      history.replaceState(null, '', url.toString());
+    } catch (e) { /* IE ou navigateur ancien : on ignore */ }
+  }
+
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var initial = params.get('lang') === 'en' ? 'en' : 'fr';
+    setLang(initial);
+  })();
+
+  document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+    btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
+  });
+
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    var io = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fiche, .profil').forEach(function(el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.fiche, .profil').forEach(function(el) { el.classList.add('visible'); });
+  }
+</script>
+</body>
+</html>
