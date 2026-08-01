@@ -3,53 +3,75 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://brunobrochenin.com/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://brunobrochenin.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunobrochenin.com/"/>
   </url>
   <url>
     <loc>https://brunobrochenin.com/chronologie.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/chronologie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunobrochenin.com/chronologie.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunobrochenin.com/chronologie.html"/>
   </url>
   <url>
     <loc>https://brunobrochenin.com/contributions.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/contributions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunobrochenin.com/contributions.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunobrochenin.com/contributions.html"/>
   </url>
   <url>
     <loc>https://brunobrochenin.com/auteurs.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/auteurs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunobrochenin.com/auteurs.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunobrochenin.com/auteurs.html"/>
   </url>
   <url>
     <loc>https://brunobrochenin.com/delga.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/delga.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunobrochenin.com/delga.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunobrochenin.com/delga.html"/>
   </url>
   <url>
     <loc>https://brunobrochenin.com/waknine.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/waknine.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunobrochenin.com/waknine.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunobrochenin.com/waknine.html"/>
   </url>
   <url>
     <loc>https://brunobrochenin.com/laffargue.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/laffargue.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunobrochenin.com/laffargue.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunobrochenin.com/laffargue.html"/>
   </url>
   <url>
     <loc>https://brunobrochenin.com/waknine-textes.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunobrochenin.com/waknine-textes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunobrochenin.com/waknine-textes.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunobrochenin.com/waknine-textes.html"/>
   </url>
   <url>
     <loc>https://brunobrochenin.com/lectures/democratie-en-action.html</loc>
