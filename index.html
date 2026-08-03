@@ -124,11 +124,25 @@ main{max-width:900px;margin:0 auto;padding:4rem 2rem}
 .book-note-body p:last-child{margin-bottom:0}
 .biblio-invite a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold);font-style:normal}
 .biblio-invite a:hover{color:var(--gold)}
-.articles-list{display:flex;flex-direction:column;gap:.75rem}
-.article-row{padding:1.1rem 1.4rem;background:white;border:1px solid var(--rule);border-radius:2px;border-left:3px solid var(--gold)}
-.article-meta{font-size:10px;color:var(--ink3);letter-spacing:.05em;margin-bottom:.25rem}
-.article-title{font-size:.9rem;font-weight:500;color:var(--ink);line-height:1.4;margin-bottom:.25rem}
-.article-venue{font-size:11px;color:var(--accent);font-style:italic}
+/* ---- Section IV : Publications — bibliographie chronologique ---- */
+.biblio-lead{font-size:.95rem;color:var(--ink2);margin-bottom:1.5rem;max-width:62ch;line-height:1.55}
+.biblio-timeline{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
+.biblio-item{display:grid;grid-template-columns:4.2rem 1fr auto;gap:1.5rem;padding:.9rem 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.biblio-item:last-child{border-bottom:none}
+.biblio-year{font-family:"DM Sans",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--ink3);font-weight:500;padding-top:.15rem;white-space:nowrap}
+.biblio-body{min-width:0}
+.biblio-title{font-size:1rem;color:var(--ink);line-height:1.4;margin-bottom:.15rem}
+.biblio-title em{font-style:italic}
+.biblio-venue{font-size:.78rem;color:var(--ink2);line-height:1.4}
+.biblio-venue em{font-style:italic}
+.biblio-link{font-family:"DM Sans",sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);text-decoration:none;padding-top:.15rem;white-space:nowrap;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.biblio-link:hover{color:var(--accent);border-bottom-color:var(--accent)}
+@media (max-width:640px){
+  .biblio-item{grid-template-columns:auto 1fr;gap:.35rem 1rem;padding:.85rem 0}
+  .biblio-year{grid-column:1;grid-row:1}
+  .biblio-body{grid-column:2;grid-row:1}
+  .biblio-link{grid-column:2;grid-row:2;justify-self:start;padding-top:.3rem}
+}
 .outils-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:1rem}
 .outil-card{background:var(--ink);color:var(--cream);padding:1.6rem 1.4rem;border-radius:2px}
 .outil-acronym{font-family:"Cormorant Garamond",serif;font-size:2.2rem;font-weight:600;color:var(--accent2);line-height:1;margin-bottom:.4rem}
@@ -680,21 +694,123 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
   <p class="biblio-invite"><span data-fr="Neuf de ces ouvrages fondent mes travaux — de Diel à Scott. Pour chacun, pourquoi il compte. " data-en="Nine of these books underpin my work — from Diel to Scott. For each, why it matters. ">Neuf de ces ouvrages fondent mes travaux — de Diel à Scott. Pour chacun, pourquoi il compte. </span><a href="auteurs.html" data-fr="Les auteurs qui m'inspirent ↗" data-en="The authors who inspire me ↗">Les auteurs qui m'inspirent ↗</a></p>
 </section>
 
-<section class="section" id="articles" aria-label="Articles et contributions de Bruno Brochenin dans Qualitique et autres revues">
+<section class="section" id="publications" aria-label="Publications de Bruno Brochenin — bibliographie chronologique">
   <div class="section-header">
     <span class="section-num">IV</span>
-    <h2 class="section-title" data-fr="Contributions et articles" data-en="Contributions and articles">Contributions et articles</h2>
+    <h2 class="section-title" data-fr="Publications" data-en="Publications">Publications</h2>
   </div>
-  <div class="articles-list">
-    <div class="article-row"><div class="article-meta">2011</div><div class="article-title" data-fr="L'entreprise contemporaine face aux risques : des opportunités à trouver du côté de l'état d'esprit des équipes opérationnelles" data-en="The contemporary firm facing risk: opportunities to be found in the mindset of operational teams">L'entreprise contemporaine face aux risques</div><div class="article-venue">Qualitique n°229</div></div>
-    <div class="article-row"><div class="article-meta" data-fr="2015 — coord. Jacques Delga" data-en="2015 — ed. Jacques Delga">2015 — coord. Jacques Delga</div><div class="article-title" data-fr="De l'équilibre de la terreur au terrorisme international" data-en="From the balance of terror to international terrorism">De l'équilibre de la terreur au terrorisme international</div><div class="article-venue" data-fr="Penser et repenser le terrorisme · MA Éditions" data-en="Thinking and rethinking terrorism · MA Éditions">Penser et repenser le terrorisme · MA Éditions</div></div>
-    <div class="article-row"><div class="article-meta" data-fr="2017 — coord. Jacques Delga" data-en="2017 — ed. Jacques Delga">2017 — coord. Jacques Delga</div><div class="article-title" data-fr="Corsaires ou pirates ? La guerre économique contre la démocratie se mène en col blanc" data-en="Privateers or pirates? The economic war against democracy is waged in white collar">Corsaires ou pirates ? La guerre économique en col blanc</div><div class="article-venue" data-fr="Criminalité en col blanc · L'Harmattan" data-en="White-collar Crime · L'Harmattan">Criminalité en col blanc · L'Harmattan</div></div>
-    <div class="article-row"><div class="article-meta" data-fr="2023 — coord. Jacques Delga" data-en="2023 — ed. Jacques Delga">2023 — coord. Jacques Delga</div><div class="article-title" data-fr="Le théâtre du libertinage : modèle à trois axes ago-antagoniques" data-en="The theatre of libertinage: a three-axis ago-antagonistic model">Le théâtre du libertinage</div><div class="article-venue" data-fr="Libertaire, libertinage et intervention de l'État · L'Harmattan" data-en="Libertarian thought, libertinage and state intervention · L'Harmattan">Libertaire, libertinage · L'Harmattan</div></div>
-    <div class="article-row"><div class="article-meta" data-fr="2018 — coord. Jacques Delga" data-en="2018 — ed. Jacques Delga">2018 — coord. Jacques Delga</div><div class="article-title" data-fr="Expérience de mort imminente : lecture symbolique selon Paul Diel" data-en="Near-death experience: a symbolic reading through Paul Diel">Expérience de mort imminente</div><div class="article-venue" data-fr="Face à la mort · MA Éditions" data-en="Facing death · MA Éditions">Face à la mort · MA Éditions</div></div>
-    <div class="article-row"><div class="article-meta" data-fr="2025 — Agora D.O.D.E.S." data-en="2025 — Agora D.O.D.E.S.">2025 — Agora D.O.D.E.S.</div><div class="article-title" data-fr="Une entreprise démocratique dans une république sociale" data-en="A democratic firm within a social republic">Une entreprise démocratique dans une république sociale</div><div class="article-venue" data-fr="Démocratie(s) en action · Le Bord de l'eau" data-en="Democracy in action · Le Bord de l'eau">Démocratie(s) en action · Le Bord de l'eau</div></div>
-  </div>
-  <p class="biblio-invite"><span data-fr="Cinq de ces contributions font l'objet d'une note détaillée : ce que chaque invitation a ouvert. " data-en="Five of these contributions have a detailed note: what each invitation opened up. ">Cinq de ces contributions font l'objet d'une note détaillée : ce que chaque invitation a ouvert. </span><a href="contributions.html" data-fr="Lire les notes ↗" data-en="Read the notes ↗">Lire les notes ↗</a></p>
-  <p class="biblio-invite"><span data-fr="Pour la plus récente, Démocratie(s) en action, j'ai développé une lecture élargie de tout l'ouvrage collectif. " data-en="For the most recent, Démocratie(s) en action, I have developed an extended reading of the entire collective work. ">Pour la plus récente, Démocratie(s) en action, j'ai développé une lecture élargie de tout l'ouvrage collectif. </span><a href="lectures/democratie-en-action.html" data-fr="Découvrir ↗" data-en="Discover ↗">Découvrir ↗</a></p>
+  <p class="biblio-lead" data-fr="Quinze ans de publications : trois livres, quatre articles de revue, cinq contributions à des ouvrages collectifs. Chaque ligne renvoie au détail." data-en="Fifteen years of publications: three books, four journal articles, five contributions to collective works. Each entry links to the detail.">Quinze ans de publications : trois livres, quatre articles de revue, cinq contributions à des ouvrages collectifs. Chaque ligne renvoie au détail.</p>
+  <ol class="biblio-timeline">
+
+    <li class="biblio-item">
+      <span class="biblio-year">2010</span>
+      <div class="biblio-body">
+        <div class="biblio-title"><em>Où va l'entreprise ? Organisation et dérives</em></div>
+        <div class="biblio-venue" data-fr="Livre · Éditions ESKA" data-en="Book · Éditions ESKA">Livre · Éditions ESKA</div>
+      </div>
+      <a class="biblio-link" href="#livres" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year" data-fr="2011 · jan-fév" data-en="2011 · Jan-Feb">2011 · jan-fév</span>
+      <div class="biblio-body">
+        <div class="biblio-title">Travaillons mieux pour vivre mieux !</div>
+        <div class="biblio-venue" data-fr="Article · Qualitique n°222" data-en="Article · Qualitique No. 222">Article · Qualitique n°222</div>
+      </div>
+      <a class="biblio-link" href="#qualitique" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year" data-fr="2011 · mai" data-en="2011 · May">2011 · mai</span>
+      <div class="biblio-body">
+        <div class="biblio-title">Quelle est la valeur économique de la prestation des sapeurs-pompiers ?</div>
+        <div class="biblio-venue" data-fr="Article · Qualitique n°225" data-en="Article · Qualitique No. 225">Article · Qualitique n°225</div>
+      </div>
+      <a class="biblio-link" href="#qualitique" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year" data-fr="2011 · nov" data-en="2011 · Nov">2011 · nov</span>
+      <div class="biblio-body">
+        <div class="biblio-title">L'entreprise contemporaine face aux risques</div>
+        <div class="biblio-venue" data-fr="Article · Qualitique n°229" data-en="Article · Qualitique No. 229">Article · Qualitique n°229</div>
+      </div>
+      <a class="biblio-link" href="#qualitique" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year" data-fr="2012 · avr" data-en="2012 · Apr">2012 · avr</span>
+      <div class="biblio-body">
+        <div class="biblio-title">La conduite du changement est-elle une croyance efficace ?</div>
+        <div class="biblio-venue" data-fr="Article · Qualitique n°233" data-en="Article · Qualitique No. 233">Article · Qualitique n°233</div>
+      </div>
+      <a class="biblio-link" href="#qualitique" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year">2015</span>
+      <div class="biblio-body">
+        <div class="biblio-title">De l'équilibre de la terreur au terrorisme international</div>
+        <div class="biblio-venue" data-fr="Contribution · &lt;em&gt;Penser et repenser le terrorisme&lt;/em&gt; (dir. J. Delga, MA Éditions)" data-en="Contribution · &lt;em&gt;Penser et repenser le terrorisme&lt;/em&gt; (ed. J. Delga, MA Éditions)">Contribution · <em>Penser et repenser le terrorisme</em> (dir. J. Delga, MA Éditions)</div>
+      </div>
+      <a class="biblio-link" href="contributions.html" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year">2017</span>
+      <div class="biblio-body">
+        <div class="biblio-title">La guerre économique contre la démocratie</div>
+        <div class="biblio-venue" data-fr="Contribution · &lt;em&gt;Criminalité en col blanc&lt;/em&gt; (dir. J. Delga, L'Harmattan)" data-en="Contribution · &lt;em&gt;Criminalité en col blanc&lt;/em&gt; (ed. J. Delga, L'Harmattan)">Contribution · <em>Criminalité en col blanc</em> (dir. J. Delga, L'Harmattan)</div>
+      </div>
+      <a class="biblio-link" href="contributions.html" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year">2018</span>
+      <div class="biblio-body">
+        <div class="biblio-title">Expérience de mort imminente : mythe ou vérité d'une époque ?</div>
+        <div class="biblio-venue" data-fr="Contribution · &lt;em&gt;Face à la mort&lt;/em&gt; (dir. J. Delga, MA Éditions)" data-en="Contribution · &lt;em&gt;Face à la mort&lt;/em&gt; (ed. J. Delga, MA Éditions)">Contribution · <em>Face à la mort</em> (dir. J. Delga, MA Éditions)</div>
+      </div>
+      <a class="biblio-link" href="contributions.html" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year">2019</span>
+      <div class="biblio-body">
+        <div class="biblio-title"><em>L'engagement collectif dans l'entreprise, part magique de la performance</em></div>
+        <div class="biblio-venue" data-fr="Livre · L'Harmattan · préface Victor Waknine" data-en="Book · L'Harmattan · foreword by Victor Waknine">Livre · L'Harmattan · préface Victor Waknine</div>
+      </div>
+      <a class="biblio-link" href="#livres" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year">2023</span>
+      <div class="biblio-body">
+        <div class="biblio-title">Le théâtre du libertinage : une légèreté de mœurs entre sexe, pouvoir et religion</div>
+        <div class="biblio-venue" data-fr="Contribution · &lt;em&gt;Libertaire, libertinage et intervention de l'État dans la vie sexuelle des Français&lt;/em&gt; (dir. J. Delga, L'Harmattan)" data-en="Contribution · &lt;em&gt;Libertaire, libertinage et intervention de l'État dans la vie sexuelle des Français&lt;/em&gt; (ed. J. Delga, L'Harmattan)">Contribution · <em>Libertaire, libertinage et intervention de l'État dans la vie sexuelle des Français</em> (dir. J. Delga, L'Harmattan)</div>
+      </div>
+      <a class="biblio-link" href="contributions.html" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year">2024</span>
+      <div class="biblio-body">
+        <div class="biblio-title"><em>Indice de bien-être au travail : on compte tout sauf ce qui compte</em></div>
+        <div class="biblio-venue" data-fr="Livre · L'Harmattan · préface Victor Waknine" data-en="Book · L'Harmattan · foreword by Victor Waknine">Livre · L'Harmattan · préface Victor Waknine</div>
+      </div>
+      <a class="biblio-link" href="#livres" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+    <li class="biblio-item">
+      <span class="biblio-year">2025</span>
+      <div class="biblio-body">
+        <div class="biblio-title">Une entreprise démocratique dans une république sociale : pour qui ? pourquoi ? comment ?</div>
+        <div class="biblio-venue" data-fr="Contribution · &lt;em&gt;Démocratie(s) en action&lt;/em&gt; (dir. C. Gombert et al., Le Bord de l'eau)" data-en="Contribution · &lt;em&gt;Démocratie(s) en action&lt;/em&gt; (ed. C. Gombert et al., Le Bord de l'eau)">Contribution · <em>Démocratie(s) en action</em> (dir. C. Gombert et al., Le Bord de l'eau)</div>
+      </div>
+      <a class="biblio-link" href="lectures/democratie-en-action.html" data-fr="Voir →" data-en="See →">Voir →</a>
+    </li>
+
+  </ol>
 </section>
 
 <section class="section" id="outils" aria-label="Outils conceptuels : cindyniques, entropie organisationnelle, management collaboratif">
