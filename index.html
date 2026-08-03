@@ -92,7 +92,7 @@ header::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;backgr
 .header-tagline{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;max-width:480px;font-weight:300;margin-bottom:1rem}
 .header-thesis{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.05rem;color:rgba(255,255,255,.7);max-width:480px;line-height:1.6}
 nav{background:var(--paper);border-bottom:1px solid var(--rule);padding:0 2rem;display:flex;justify-content:center;position:sticky;top:0;z-index:100;overflow-x:auto}
-.nav-link{padding:1rem 1.1rem;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);border-bottom:2px solid transparent;transition:all .2s;cursor:pointer;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:"DM Sans",sans-serif}
+.nav-link{padding:1rem 1.1rem;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);border-bottom:2px solid transparent;transition:all .2s;cursor:pointer;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:"DM Sans",sans-serif;text-decoration:none;display:inline-block}
 .nav-link:hover,.nav-link.active{color:var(--accent);border-bottom-color:var(--accent)}
 main{max-width:900px;margin:0 auto;padding:4rem 2rem}
 .section{margin-bottom:5rem}
@@ -581,12 +581,12 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:1.25rem 
   <button class="nav-link active" onclick="go('these',this)" data-fr="Thèse" data-en="Thesis">Thèse</button>
   <button class="nav-link" onclick="go('reperes',this)" data-fr="Repères" data-en="Timeline">Repères</button>
   <button class="nav-link" onclick="go('livres',this)" data-fr="Livres" data-en="Books">Livres</button>
-  <button class="nav-link" onclick="go('articles',this)" data-fr="Articles" data-en="Articles">Articles</button>
+  <button class="nav-link" onclick="go('qualitique',this)" data-fr="Articles" data-en="Articles">Articles</button>
   <button class="nav-link" onclick="go('outils',this)" data-fr="Outils" data-en="Concepts">Outils</button>
   <button class="nav-link" onclick="go('formation',this)" data-fr="Formation" data-en="Training">Formation</button>
   <button class="nav-link" onclick="go('collab',this)" data-fr="Collaboration" data-en="Collaboration">Collaboration</button>
   <button class="nav-link" onclick="go('ibet-chiffres',this)" data-fr="IBET" data-en="IBET">IBET</button>
-  <button class="nav-link" onclick="go('qualitique',this)" data-fr="Articles" data-en="Articles">Articles</button>
+  <a class="nav-link" href="auteurs.html" data-fr="Bibliothèque" data-en="Library">Bibliothèque</a>
   <button class="nav-link" onclick="go('presse',this)" data-fr="Presse" data-en="Press">Presse</button>
 </nav>
 
