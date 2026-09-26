@@ -1,0 +1,32 @@
+# Migration FR/EN — redirections 301 pour préserver le référencement.
+# Netlify évalue les règles dans l'ordre : la première correspondance gagne.
+# Le paramètre de requête se déclare via la colonne "Query=", jamais dans
+# le chemin "from" lui-même — chaque ancienne URL a donc une règle
+# conditionnelle (Query=lang:en) listée AVANT la règle inconditionnelle.
+
+/                                      /en/index.html                          301  Query=lang:en
+/                                      /fr/index.html                          301
+
+/chronologie.html                      /en/chronologie.html                    301  Query=lang:en
+/chronologie.html                      /fr/chronologie.html                    301
+
+/contributions.html                    /en/contributions.html                  301  Query=lang:en
+/contributions.html                    /fr/contributions.html                  301
+
+/delga.html                            /en/delga.html                          301  Query=lang:en
+/delga.html                            /fr/delga.html                          301
+
+/waknine.html                          /en/waknine.html                        301  Query=lang:en
+/waknine.html                          /fr/waknine.html                        301
+
+/auteurs.html                          /en/auteurs.html                        301  Query=lang:en
+/auteurs.html                          /fr/auteurs.html                        301
+
+/waknine-textes.html                   /en/waknine-textes.html                 301  Query=lang:en
+/waknine-textes.html                   /fr/waknine-textes.html                 301
+
+/laffargue.html                        /en/laffargue.html                      301  Query=lang:en
+/laffargue.html                        /fr/laffargue.html                      301
+
+/lectures/democratie-en-action.html    /en/lectures/democratie-en-action.html  301  Query=lang:en
+/lectures/democratie-en-action.html    /fr/lectures/democratie-en-action.html  301
