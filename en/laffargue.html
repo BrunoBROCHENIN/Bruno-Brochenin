@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jean-Luc Laffargue et la revue Qualitique — Bruno Brochenin</title>
+<meta content="Portrait de Jean-Luc Laffargue, qui dirigea la revue Qualitique vingt-huit ans, et récit d'une collaboration en quatre articles (2011-2012)." name="description"/>
+<meta content="Jean-Luc Laffargue, Qualitique, Groupe Qualitique, revue qualité, management responsable, RSE, ISO 26000, Bruno Brochenin, Jacques Ségot" name="keywords"/>
+<meta content="Bruno Brochenin" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://brunobrochenin.com/en/laffargue.html" rel="canonical"/><link href="https://brunobrochenin.com/fr/laffargue.html" hreflang="fr" rel="alternate"/><link href="https://brunobrochenin.com/en/laffargue.html" hreflang="en" rel="alternate"/><link href="https://brunobrochenin.com/fr/laffargue.html" hreflang="x-default" rel="alternate"/>
+
+
+<!-- Open Graph -->
+<meta content="Jean-Luc Laffargue, ou la qualité comme question de sens" property="og:title"/>
+<meta content="Une revue de la qualité dont le rédacteur en chef écrivait sur la perte de sens — et quatre articles qui y trouvèrent leur place." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://brunobrochenin.com/en/laffargue.html" property="og:url"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --papier:#FDFDFB;
+    --encre:#212A33;
+    --encre-douce:#4A5560;
+    --marine:#2C4A6E;
+    --filet:#DCE0E4;
+    --sable:#B08D57;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--papier);
+    color:var(--encre);
+    font-family:'Spectral',Georgia,serif;
+    font-weight:300;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;position:relative;}
+
+  /* ---------- commutateur de langue ---------- */
+  .lang-switch{
+    position:absolute;top:24px;right:24px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.08em;
+    z-index:10;
+  }
+  .lang-switch button{
+    background:none;border:none;color:var(--encre-douce);cursor:pointer;
+    padding:4px 6px;font:inherit;font-weight:500;letter-spacing:inherit;
+    transition:color .2s;
+  }
+  .lang-switch button.active{color:var(--sable);}
+  .lang-switch button:hover{color:var(--encre);}
+  .lang-switch .sep{color:var(--filet);}
+
+  /* ---------- entête ---------- */
+  header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
+  .retour{
+    display:inline-block;margin-bottom:26px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;
+    letter-spacing:.08em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .retour:hover{color:var(--sable);border-color:var(--sable);}
+  .surtitre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--sable);margin-bottom:18px;
+  }
+  h1{font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.01em;}
+  .chapeau{margin-top:22px;font-size:18px;color:var(--encre-douce);max-width:62ch;}
+  .chapeau em{font-style:italic;}
+
+  /* ---------- corps ---------- */
+  .bloc{margin-top:54px;}
+  .bloc-titre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--marine);
+    margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--filet);
+  }
+  .bloc p{margin-bottom:16px;max-width:64ch;}
+  .bloc p:last-child{margin-bottom:0;}
+  .bloc em{font-style:italic;}
+  .citation{
+    margin:26px 0;padding-left:20px;border-left:2px solid var(--sable);
+    font-style:italic;color:var(--encre-douce);max-width:60ch;
+  }
+  .citation .src{
+    display:block;margin-top:8px;font-style:normal;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.04em;
+  }
+
+  /* ---------- articles ---------- */
+  .article{margin-top:36px;padding-top:26px;border-top:1px solid var(--filet);}
+  .article:first-of-type{margin-top:26px;}
+  .article-ref{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--marine);margin-bottom:8px;
+  }
+  .article h3{font-weight:600;font-size:19.5px;line-height:1.32;letter-spacing:-.005em;max-width:60ch;}
+  .article p{margin-top:14px;max-width:62ch;}
+
+  /* ---------- encart ---------- */
+  .encart{
+    margin-top:44px;padding:22px 24px;background:#F6F4EF;border:1px solid var(--filet);
+    border-radius:2px;
+  }
+  .encart-eyebrow{
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--sable);margin-bottom:12px;
+  }
+  .encart p{max-width:62ch;margin-bottom:14px;}
+  .encart p:last-child{margin-bottom:0;}
+
+  /* ---------- pied ---------- */
+  .colophon{
+    margin-top:80px;padding-top:28px;border-top:1px solid var(--filet);
+    color:var(--encre-douce);font-size:15px;max-width:64ch;
+  }
+  .colophon a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);}
+  .colophon a:hover{color:var(--sable);}
+  .note-sources{
+    margin-top:18px;font-size:13.5px;color:var(--encre-douce);font-style:italic;max-width:64ch;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .bloc,.article,.encart{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;}
+    .bloc.visible,.article.visible,.encart.visible{opacity:1;transform:none;}
+  }
+  @media (max-width:560px){
+    header{padding-top:56px;}
+    .bloc{margin-top:40px;}
+    .lang-switch{top:16px;right:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<div aria-label="Language switcher" class="lang-switch" role="group"><a aria-label="Français" href="/fr/laffargue.html">FR</a><span aria-hidden="true" class="sep">/</span><a aria-label="English" class="active" href="/en/laffargue.html">EN</a></div>
+<header>
+<a class="retour" href="index.html">← Back to home</a>
+<div class="surtitre">An editorial collaboration</div>
+<h1>Jean-Luc Laffargue, or quality as a question of meaning</h1>
+<p class="chapeau">One imagines a professional quality journal devoted to standards, audits and procedures. This one was that too. But its editor wrote in it, month after month, on the financialisation of the world, democratic failure and the loss of meaning — which is why four texts about priest-kings, Order and Disorder, and civilisational crisis naturally found their place in it.</p>
+</header>
+<!-- ============ LA CHAÎNE ============ -->
+<section class="bloc">
+<div class="bloc-titre">A chain of introductions</div>
+<p>It was Jacques Delga who introduced me to Jean-Luc Laffargue. The fact is worth noting, because it says something about both men: the encounter arranged by a publisher in 2010 between two authors who did not know each other produced, from one step to the next, a chain. Delga opened his collective works to me; then he opened the door of a journal that was not his own. Connecting people who would not otherwise have met was not, for him, an occasional courtesy, but a way of being.</p>
+<p>From this introduction four articles were born, published between January 2011 and April 2012. They could have appeared as an ordinary contribution among others. They were worked on: introductory leads, epigraphs pulled from the body of the text and set in large characters, sidebars, footnoted sources. The first appeared in the “Strategy and Management” section, the next three in “Innovation” — a reclassification that is not trivial, and that implies an editor who had read the texts attentively enough to decide where they belonged in the architecture of his journal.</p>
+</section>
+<!-- ============ LA REVUE ============ -->
+<section class="bloc">
+<div class="bloc-titre">A journal held for twenty-eight years</div>
+<p><em>Qualitique</em> was a monthly professional journal — ten issues per year — published by the Groupe Qualitique, a company founded in October 1987 and based in Seine-et-Marne, first in Champs-sur-Marne then in Bussy-Saint-Georges. It first presented itself as the journal of “managerial culture for the 21st century”, before adopting an even more explicit formula: “the journal of responsible managers and organisations”. Its cover bore seven words — social responsibility, sustainable development, corporate social responsibility, environment, safety, quality, ethics — enough to indicate the breadth of its scope.</p>
+<p>Jean-Luc Laffargue was both its publisher of record and its editor-in-chief: he carried both its legal responsibility and its editorial line. An editorial committee of a dozen people surrounded him, including the academic Françoise de Bry, a specialist in business ethics. The journal lived on very little — the Groupe Qualitique was a company with a capital of two thousand euros — and yet it held on for twenty-eight years, until it ceased operations in the spring of 2016.</p>
+<p>It counted in its field. In a reference bibliography on the quality function published by Eyrolles in 2010, only three journals are recommended to professionals: <em>Qualité références</em>, <em>QSE Management</em> and <em>Qualitique</em>. Laffargue had also co-authored, with Jacques Ségot — chair of the AFNOR standards committee on “Quality and Management”, responsible for the evolution of the ISO 9000 standards, and head of the excellence programme of the La Poste group — a book published by his own house, <em>L'Évolution des systèmes de management</em> (<em>The evolution of management systems</em>). Ségot summarises its purpose as follows: how management systems allow the enterprise to achieve balance between stakeholders in an increasingly turbulent context. Laffargue is found again in 2010 among the seventy-eight contributors to the Festschrift offered to Michel Joras, alongside Henri Savall, Maurice Thévenet, Hubert Landier and Yvon Pesqueux.</p>
+</section>
+<!-- ============ LES ÉDITORIAUX ============ -->
+<section class="bloc">
+<div class="bloc-titre">What he wrote</div>
+<p>So much for the titles. But what strikes one, on opening an issue, is the editorial. One expects a routine note on the latest revision of a standard; one finds a long, argued text, radical in a way unexpected of a professional journal.</p>
+<p>In March 2015, he devotes his editorial to the financialisation of the economy. He denounces “the accumulation of dirty money”, “the hypocrisy and cowardice of States obsessed with their very short-term economic interests”, the commodification of the world, democratic failure, the loss of meaning. He observes that financial assets, once spread among numerous savers, are now concentrated in the hands of a minority of institutional investors, and that “from an empirical economy grounded in human labour, we have thus moved to a virtual economy of speculation”. He goes so far as to describe the commodification of nature itself — natural areas bought by investment funds, turned into stock-market products, and sold back in the form of good-conduct certificates to polluting companies.</p>
+<div class="citation">Will we now have to work more just to hope to earn no less, solely to satisfy the immoderate dividend expectations of financiers who are seizing more and more of the productive economy?<span class="src">Editorial, Qualitique No. 259, March 2015</span></div>
+<p>The following month, he takes on the utopia of zero risk. After listing the industrial and health disasters of recent decades, he notes that risk management is a paradoxical expression, since it presupposes accepting a non-zero level of risk — and he draws from it a formula that reaches well beyond his subject: structures that harden into certainties can no longer adapt or survive, because life is at odds with the search for certainties. He adds that the notion of risk is irreducibly subjective, tied to the culture and history of each actor concerned.</p>
+<p>He was not content to editorialise. The dossier introductions, which set the contributors' work in context and give it coherence, also bear his signature. It is the gesture of a man who reads what he publishes.</p>
+</section>
+<!-- ============ LES QUATRE ARTICLES ============ -->
+<section class="bloc">
+<div class="bloc-titre">Four articles, 2011-2012</div>
+<p>Read again today, these texts form a more coherent whole than I sensed while writing them. They all seek the same thing: what indicators do not measure, and why.</p>
+<div class="article">
+<div class="article-ref">No. 222 — January-February 2011 — Strategy and Management</div>
+<h3>Let us work better to live better! Between psychosocial risks and corporate social responsibility, are stakeholders victims or responsible?</h3>
+<p>The first article states the thesis that will govern all the rest: psychosocial risks, far from being an inevitability, are the predictable outcome of a mode of operation — and a statistical study of the time showed that they spared family-owned SMEs, making it a disease specific to large anonymous organisations. Here one already finds the notions of Social Goodwill and Social Badwill, the collective-effort dissipation index — and Victor Waknine's IBET, presented with its formulas. That is to say: my two collaborations meet from this first article on. Jean-Luc Laffargue's journal is the place where they meet, years before I knew they would converge.</p>
+</div>
+<div class="article">
+<div class="article-ref">No. 225 — May 2011 — Innovation</div>
+<h3>What is the economic value of the service delivered by fire brigades?</h3>
+<p>Born from a question raised at a cocktail by a representative of the fire brigade corps, this article transposes the analysis to the public sector and runs into a problem that national accounts cannot address: comparing public and private enterprises on the basis of value added makes no sense. It proposes a taxonomy of demand and a formula suited to non-profit organisations.</p>
+</div>
+<div class="article">
+<div class="article-ref">No. 229 — November 2011 — Innovation</div>
+<h3>The contemporary enterprise facing risks: opportunities to be found in the mindset of operational teams</h3>
+<p>This article starts from NASA's internal report after the Columbia disaster — the agency's culture and organisation played as great a part as the tank's insulation — to establish that a team's mindset governs its exposure to risk, and that an overabundance of restrictive procedures only aggravates it. It presents Victor Waknine's IBET as one of the two techniques that allow mindsets to be financially valued.</p>
+</div>
+<div class="article">
+<div class="article-ref">No. 233 — April 2012 — Innovation</div>
+<h3>Is change management an effective belief?</h3>
+<p>The last article takes on the contradictions of large transformation projects and the Cartesian representation that underpins them, before offering Kervern's cindynic model as a way beyond. The title is a question, and not a rhetorical one: the mutual engagement of stakeholders cannot be decreed; it hinges on the meaning of the project. That would become the subject of my next books.</p>
+</div>
+</section>
+<!-- ============ CE QU'IL A RENDU POSSIBLE ============ -->
+<section class="encart">
+<div class="encart-eyebrow">What that made possible</div>
+<p>A professional journal usually publishes what its readers expect: case studies, methods, commentaries on standards. The texts Jean-Luc Laffargue welcomed spoke of priest-kings governing Order and Disorder for entire peoples, of the original Consciousness of Destiny, of an economy that needed to be reconciled with meaning. In many editorial offices, I would have been asked to cut.</p>
+<p>That he did not do so was not indulgence: it was because those questions were his own. A man who writes that life is at odds with the search for certainties is not put off by an anthropological detour. The freedom he left me was the same as the one he took.</p>
+</section>
+<p class="colophon">The collaboration with Jacques Delga, who introduced me to Jean-Luc Laffargue, is retraced on <a href="delga.html">a dedicated page</a>. The four articles cited here are referenced in the <a href="chronologie.html">timeline</a>.</p>
+<p class="note-sources">This page draws on two issues of the journal given to me by Jean-Luc Laffargue in 2015 (No. 259 and No. 260), on the four articles published between 2011 and 2012, and on public sources — trade registers, academic bibliographies. Editorial quotations are given as short excerpts; the texts belong to their author.</p>
+</div>
+<script>
+
+  // ---------- apparition douce ----------
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    var io = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.bloc,.article,.encart').forEach(function(c) { io.observe(c); });
+  } else {
+    document.querySelectorAll('.bloc,.article,.encart').forEach(function(c) { c.classList.add('visible'); });
+  }
+</script>
+</body>
+</html>

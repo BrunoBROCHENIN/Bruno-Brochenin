@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jacques Delga, ou le droit tenu ouvert — Bruno Brochenin</title>
+<meta content="Portrait de la méthode de Jacques Delga, qui coordonne des ouvrages collectifs sans filtre, et récit d'une collaboration en quatre volumes." name="description"/>
+<meta content="Jacques Delga, ESSEC, ouvrage collectif, pluridisciplinarité, droit et société, Bruno Brochenin, Souffrance au travail, Eska" name="keywords"/>
+<meta content="Bruno Brochenin" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://brunobrochenin.com/en/delga.html" rel="canonical"/><link href="https://brunobrochenin.com/fr/delga.html" hreflang="fr" rel="alternate"/><link href="https://brunobrochenin.com/en/delga.html" hreflang="en" rel="alternate"/><link href="https://brunobrochenin.com/fr/delga.html" hreflang="x-default" rel="alternate"/>
+
+
+<!-- Open Graph -->
+<meta content="Jacques Delga — une méthode d'ouverture du droit" property="og:title"/>
+<meta content="Portrait de la méthode d'un professeur de droit qui coordonne des ouvrages collectifs sans filtre — et récit d'une collaboration en quatre volumes." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://brunobrochenin.com/en/delga.html" property="og:url"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --papier:#FDFDFB;
+    --encre:#212A33;
+    --encre-douce:#4A5560;
+    --marine:#2C4A6E;
+    --filet:#DCE0E4;
+    --sable:#B08D57;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--papier);
+    color:var(--encre);
+    font-family:'Spectral',Georgia,serif;
+    font-weight:300;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .page{max-width:760px;margin:0 auto;padding:0 24px 96px;position:relative;}
+
+  /* ---------- commutateur de langue ---------- */
+  .lang-switch{
+    position:absolute;top:24px;right:24px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.08em;
+    z-index:10;
+  }
+  .lang-switch button{
+    background:none;border:none;color:var(--encre-douce);cursor:pointer;
+    padding:4px 6px;font:inherit;font-weight:500;letter-spacing:inherit;
+    transition:color .2s;
+  }
+  .lang-switch button.active{color:var(--sable);}
+  .lang-switch button:hover{color:var(--encre);}
+  .lang-switch .sep{color:var(--filet);}
+
+  /* ---------- entête ---------- */
+  header{padding:88px 0 40px;border-bottom:1px solid var(--filet);}
+  .retour{
+    display:inline-block;margin-bottom:26px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;
+    letter-spacing:.08em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .retour:hover{color:var(--sable);border-color:var(--sable);}
+  .surtitre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--sable);margin-bottom:18px;
+  }
+  h1{font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.01em;}
+  .chapeau{margin-top:22px;font-size:18px;color:var(--encre-douce);max-width:62ch;}
+  .chapeau em{font-style:italic;}
+
+  /* ---------- corps de texte ---------- */
+  .bloc{margin-top:54px;}
+  .bloc-titre{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--marine);
+    margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--filet);
+  }
+  .bloc p{margin-bottom:16px;max-width:64ch;}
+  .bloc p:last-child{margin-bottom:0;}
+  .bloc em{font-style:italic;}
+  .citation{
+    margin:26px 0;padding-left:20px;border-left:2px solid var(--sable);
+    font-style:italic;color:var(--encre-douce);max-width:60ch;
+  }
+
+  /* ---------- les quatre ouvrages ---------- */
+  .ouvrage{margin-top:40px;padding-top:28px;border-top:1px solid var(--filet);}
+  .ouvrage:first-of-type{margin-top:28px;}
+  .ouvrage-annee{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--marine);margin-bottom:8px;
+  }
+  .ouvrage h3{font-weight:600;font-size:20px;line-height:1.3;letter-spacing:-.005em;max-width:60ch;}
+  .ouvrage-ref{
+    margin-top:8px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:13px;
+    color:var(--encre-douce);letter-spacing:.01em;max-width:62ch;
+  }
+  .ouvrage-ref em{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:14.5px;}
+  .ouvrage p{margin-top:16px;max-width:62ch;}
+  .ouvrage-lien{
+    display:inline-block;margin-top:16px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:500;
+    letter-spacing:.05em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .ouvrage-lien:hover{color:var(--sable);border-color:var(--sable);}
+
+  /* ---------- encart livre sans participation ---------- */
+  .encart{
+    margin-top:44px;padding:22px 24px;background:#F6F4EF;border:1px solid var(--filet);
+    border-radius:2px;
+  }
+  .encart-eyebrow{
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--sable);margin-bottom:12px;
+  }
+  .encart h3{font-weight:600;font-size:19px;line-height:1.3;margin-bottom:4px;}
+  .encart-ref{
+    font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:var(--encre-douce);margin-bottom:14px;
+  }
+  .encart p{max-width:62ch;margin-bottom:14px;}
+  .encart p:last-child{margin-bottom:0;}
+  .encart-lien{
+    display:inline-block;margin-top:6px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:500;
+    letter-spacing:.05em;color:var(--encre-douce);text-decoration:none;
+    border-bottom:1px solid var(--filet);transition:color .2s,border-color .2s;
+  }
+  .encart-lien:hover{color:var(--sable);border-color:var(--sable);}
+
+  /* ---------- pied ---------- */
+  .colophon{
+    margin-top:80px;padding-top:28px;border-top:1px solid var(--filet);
+    color:var(--encre-douce);font-size:15px;max-width:64ch;
+  }
+  .colophon a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--sable);}
+  .colophon a:hover{color:var(--sable);}
+
+  /* ---------- apparition douce ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .bloc,.ouvrage,.encart{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;}
+    .bloc.visible,.ouvrage.visible,.encart.visible{opacity:1;transform:none;}
+  }
+  @media (max-width:560px){
+    header{padding-top:56px;}
+    .bloc{margin-top:40px;}
+    .lang-switch{top:16px;right:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<div aria-label="Language switcher" class="lang-switch" role="group"><a aria-label="Français" href="/fr/delga.html">FR</a><span aria-hidden="true" class="sep">/</span><a aria-label="English" class="active" href="/en/delga.html">EN</a></div>
+<header>
+<a class="retour" href="index.html">← Back to home</a>
+<div class="surtitre">An editorial collaboration</div>
+<h1>Jacques Delga, or the law kept open</h1>
+<p class="chapeau">We met because a publisher had brought out our two books the same year and wanted to see us debate. We discovered that day that he had been, twenty years earlier, my law professor at ESSEC. From that encounter four shared works were born — and the occasion to say here what I owe to his singular way of making people work together whom nothing had brought together.</p>
+</header>
+<!-- ============ LA RENCONTRE ============ -->
+<section class="bloc">
+<div class="bloc-titre">The encounter</div>
+<p>In 2010, Éditions ESKA published in quick succession two books that each spoke, in their own way, of the malaise of organisations: my first essay, <em>Où va l'entreprise ?</em> (<em>Where is the corporate model going?</em>), and a collective work coordinated by a law professor, <em>Souffrance au travail dans les grandes entreprises</em> (<em>Workplace suffering in large companies</em>). The publisher, no doubt finding that they answered each other, arranged a debate between the two authors on his premises. That is how I came to meet Jacques Delga.</p>
+<p>The conversation quickly took a singular turn. As he spoke, something came back to me; as I spoke, something came back to him too. We eventually understood that we had already known one another: Jacques Delga had been one of my law professors at ESSEC, twenty years earlier. We had not recognised each other — time had done its work — but the old master-student relationship was still there, beneath the discussion between peers. I believe the desire to work together was born of that moment.</p>
+</section>
+<!-- ============ LA MÉTHODE ============ -->
+<section class="bloc">
+<div class="bloc-titre">A method: opening the law to society</div>
+<p>Jacques Delga is emeritus professor at ESSEC and honorary lawyer. But what defines him, in my eyes, has less to do with his titles than with a conviction: the law cannot be thought in a vacuum. A society that changes calls for a law that listens, and a law that listens must first lend its ear to voices it is not accustomed to hearing. It is this properly democratic conviction that governs his way of making books.</p>
+<p>For he does not conduct his collective works as one chairs an academic conference. He brings together, around a question of society, people whom everything separates — academics and practitioners, senior figures and unknowns, credentialed specialists and field actors — and leaves each free to choose the title as well as the content. Each coauthor is responsible for his own text; no theoretical framework imposed, no conclusion to recite. This openness, almost unfiltered, is a risk assumed: it exposes the coordinator to the possibility that his book may escape him. It presupposes a trust whose rarity, with time, I have come to measure.</p>
+<p>One must read him describe his own approach to measure his modesty. The first engine, he admits, is curiosity. He claims not to compete with academic research — his group of authors, he says, is “no more than an informal grouping”. He acknowledges without detour what he does not know how to do: undertaking a book that also required narratives, he notes that writing such a text “requires qualities I do not possess”, and confines himself to legal analysis. This frankness about his own limits is, I believe, the secret condition of his openness to others: whoever knows himself incomplete makes room.</p>
+<div class="citation">The weakness of a collective of free authors — doors that close, rare testimonies — is, he writes in substance, “compensated by the personality of those who have been field actors, and by a mixture of theory and practice”. In other words: what academic rigour loses in protection, the book gains back in lived truth.</div>
+<p>From book to book, the same informal team reassembles — not an academic society, not an association, only people who gather again because they have taken a taste for this freedom. I was fortunate to be part of it. And when illness struck some coauthors — Covid left its marks —, his acknowledgements went “to those present and those absent, to those who withdrew, to those still in hospital”. A man is judged by such sentences.</p>
+</section>
+<!-- ============ LES QUATRE OUVRAGES ============ -->
+<section class="bloc">
+<div class="bloc-titre">Four invitations, four displacements</div>
+<p>Four times, Jacques Delga entrusted me with a subject I knew nothing about — and each time, the subject turned out to conceal another: my own. These four participations are the best illustration of his method, since they show what it makes possible: that an organisational consultant should have something to say about terrorism, financial crime, death or libertinage, and that this something should end up shedding light, in return, on his own field.</p>
+<div class="ouvrage">
+<div class="ouvrage-annee">2015</div>
+<h3>From the balance of terror to international terrorism</h3>
+<p class="ouvrage-ref">in <em>Penser et repenser le terrorisme</em> (<em>Rethinking terrorism</em>) — MA Éditions, 2015.</p>
+<p>Twenty-five contributions, and a range that gives the measure of the method: a staff colonel of the Swiss army, a former deputy head of the DST, a doctor in political science, neuropsychiatrists and social psychologists, a professor from the Royal Military School of Brussels on the economic cost of an armed operation, a former detainee testifying to proselytism in prison — and a whole third part, “Terrorism and sexuality”, where the holder of the Edgar Morin chair at ESSEC, a sexologist, a urologist and a radio host cross paths. No common theoretical framework; each keeps his own language.</p>
+<p>Invited to address terrorism, I ended up writing about the loss of meaning: terrorism as the symptom of a prolonged destabilisation, in a society whose power has renounced the production of meaning. This question has followed me, intact, into infinitely more peaceful organisations.</p>
+<a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Penser-et-repenser-le-terrorisme/797243" rel="noopener" target="_blank">View on Babelio ↗</a>
+</div>
+<div class="ouvrage">
+<div class="ouvrage-annee">2017</div>
+<h3>Privateers or pirates? The economic war against democracy is waged in white collar</h3>
+<p class="ouvrage-ref">in <em>Criminalité en col blanc — délinquance d'affaires, financière, fiscale</em> (<em>White-collar crime — business, financial and tax offences</em>) — L'Harmattan, 2017.</p>
+<p>Sixteen contributions in five parts, signed by magistrates, lawyers, professors of law and management, an honorary general inspector of the police, a semiotician, a cyberfinance expert, an insurance inspector — and an organisational consultant. Delga states from the outset that no theoretical framework has been imposed, the very concept of white-collar crime being too uncertain for that. The result is unconcerted convergences — four disciplines separately establish that white-collar is not a character but a position within a system — and openly assumed divergences, notably between the proponents of reinforced repression and those who warn against the dangers of the precautionary principle applied to criminal law. I have devoted <a href="https://www.babelio.com/livres/Delga-Criminalite-en-col-blanc-Delinquance-daffaires-de/2067563" rel="noopener" target="_blank">an overall analysis on Babelio</a> to these lines of force.</p>
+<p>An organisational consultant among lawyers, prosecutors and tax specialists, I started from the white-collar offender to describe no longer a guilty man but a position — that of power within the corporation, whose social standing is its most precious asset and the very condition of possible fraud, and whose survival requires shielding it from scrutiny. The assigned subject turned out to be that of opacity as a condition of operation.</p>
+</div>
+<div class="ouvrage">
+<div class="ouvrage-annee">2018</div>
+<h3>Near-death experience: myth or truth of an era?</h3>
+<p class="ouvrage-ref">in <em>Face à la mort</em> (<em>Facing death</em>) — MA Éditions, 2018.</p>
+<p>Nineteen authors, and no doubt the most improbable of harnessings: the director of the Paris Forensic Medicine Institute and two other forensic doctors, a neurologist, a clinical gerontologist psychologist, a philosopher and former director of ESSEC, a mathematician, an art historian on the representation of death in painting, a shiatsu practitioner, a classical dance teacher who accompanies palliative care, a radio host, a general inspector of police on death in the profession. Delga signs a text himself in the first person, on suicide — “Du suicide, de mon suicide” (“On suicide, on my suicide”) — enough to show that he asks of no one an engagement he does not undertake himself.</p>
+<p>My contribution is a tribute to Paul Diel. I take the account seriously <em>as an account</em> — as a production of the mind in its own language, symbolic language. The structural permanence of these testimonies, across cultures that nothing else connects, forbids treating them as clinical anecdotes. This detour through death taught me a rule I have not since abandoned: to listen to a discourse in its own language, not to translate it by default into the one that suits the observer.</p>
+<a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Face-a-la-mort/2067565" rel="noopener" target="_blank">View on Babelio ↗</a>
+</div>
+<div class="ouvrage">
+<div class="ouvrage-annee">2023</div>
+<h3>The theatre of libertinage, between sex, power and religion</h3>
+<p class="ouvrage-ref">in <em>Libertaire, libertinage et intervention de l'État dans la vie sexuelle des Français</em> (<em>Libertarian, libertinage and state intervention in the sexual life of the French</em>) — L'Harmattan, 2023.</p>
+<p>Only seven authors, but the volume in which Delga sets out his method with the greatest frankness. He combines an austere legal analysis — partner-swapping, sadomasochism and the impact of the European Court of Human Rights — with intimate testimonies, a humorous text on the libertarian, and an analytical contribution. He also admits his limits: undertaking a book that called for narratives, he notes that such writing “requires qualities I do not possess”, and confines himself to legal analysis. He specifies that the authors were free in their choice of subjects, and that the group is “no more than an informal grouping” — neither an academic society nor an association.</p>
+<p>This one first made me smile: what business had an organisational consultant in a volume on libertinage? Then I realised the question was mine, shifted one notch — who decides what is permitted, in the name of which values? The word that matters is the first: theatre. A social scene reads on two levels, what is literally played out and what is played out for something else. One understands a corporate meeting no better than a libertine supper if one stops at the first level.</p>
+<a class="ouvrage-lien" href="https://www.babelio.com/livres/Delga-Libertaire-libertinage-et-intervention-de-lEtat-d/2067570" rel="noopener" target="_blank">View on Babelio ↗</a>
+</div>
+</section>
+<!-- ============ SOUFFRANCE AU TRAVAIL ============ -->
+<section class="encart">
+<div class="encart-eyebrow">The book by which it all began</div>
+<h3>Souffrance au travail dans les grandes entreprises (Workplace suffering in large companies)</h3>
+<p class="encart-ref">Coordinated by Jacques Delga — ESKA Editions, 2010.</p>
+<p>I did not take part in this one — and yet it is the one that brought us together. Published at ESKA the same year as my first essay, it already applies the Delga method to a subject the senior management of the time preferred to deny: it brings the jurist, the physician, the sociologist, the psychoanalyst and the journalist into dialogue around a form of suffering that management readily attributed to the sole fragility of employees. It was by comparing this book with mine that the publisher had the idea of setting us to debate. I cite it here for that reason, and because it shows that multidisciplinary openness was not, in Delga, a late affectation: it was already his gesture, fifteen years ago.</p>
+<a class="encart-lien" href="https://www.babelio.com/livres/Delga-Souffrance-au-travail-dans-les-grandes-entreprises/2077122" rel="noopener" target="_blank">View on Babelio ↗</a>
+</section>
+<!-- ============ CE QUE JE LUI DOIS ============ -->
+<section class="bloc">
+<div class="bloc-titre">What I owe him</div>
+<p>It is ordinarily thought that a master transmits knowledge. Jacques Delga transmitted something else: permission to leave my field. Without those four invitations, I would probably never have written on terrorism, death or libertinage — and I would not have discovered that each of those detours brought me back, by a path I had not foreseen, to the question that occupies me: what becomes of a collective whose power no longer produces meaning?</p>
+<p>It is the mark of true masters to make the student find what they did not teach him. The ESSEC law professor had taught me law; the coordinator of collective works, twenty years later, taught me to think outside my walls. That a single man played those two roles, at two ages of my life, without my knowing it at first, is the kind of coincidence which I do not think is quite one: it resembles his method too closely — bringing together people who would otherwise have ignored each other, including when those people already know each other without knowing it.</p>
+</section>
+<p class="colophon">These collective works are referenced on my <a href="https://www.babelio.com/auteur/Bruno-Brochenin/720540" rel="noopener" target="_blank">Babelio author page</a>. What each of these invitations opened in me is detailed on the <a href="contributions.html">contributions</a> page.</p>
+</div>
+<script>
+
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    var io = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.bloc,.ouvrage,.encart').forEach(function(c) { io.observe(c); });
+  } else {
+    document.querySelectorAll('.bloc,.ouvrage,.encart').forEach(function(c) { c.classList.add('visible'); });
+  }
+</script>
+</body>
+</html>
